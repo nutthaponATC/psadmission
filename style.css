@@ -1,0 +1,56 @@
+html body {
+	font-family: 'Mitr', sans-serif;
+	font-weight: bold;
+	/*background: url('image/bg.jpg');
+	background-size: 100%;*/
+}
+
+.type {
+	width:250px; 
+	height:250px; 
+	/*background-color:#0000b9; */
+	background-color:#e0e0e0; 
+	float:left;
+	/*border-radius: 25px;*/
+	border-radius: 50%;
+	color: #0000b9;
+}
+
+.type:hover {
+	background-color:#0000b9; 
+	transition: 0.2s;
+	color: white;
+}
+
+.head-type {
+	margin-top: 40px;
+	font-size: 60px;		
+}
+
+.text-type {
+	margin-top: -30px;
+	font-size: 25px;	
+	color: #e100e1;
+}
+
+.form-control {
+	width: 200px;
+}
+
+.identity {
+	width: 20px;
+}
+
+#form-table {
+	border: 1px solid black;
+	padding: 30px;
+}
+
+#form-line {
+	margin-top: 15px;	
+}
+
+#smenu:hover {
+	color: #6d6dff;
+	cursor:pointer;
+}
