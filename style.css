@@ -47,10 +47,19 @@ html body {
 }
 
 #form-line {
-	margin-top: 15px;	
+	margin-top: 20px;	
 }
 
 #smenu:hover {
-	color: #6d6dff;
-	cursor:pointer;
+	color: #e100e1;
+}
+
+.login {
+	width:500px; 
+	height:300px; 
+	background-color: #0000b9;
+	border-radius: 25px;
+	margin-top:calc(50vh - 150px);
+	margin-left:calc(50vw - 250px);
+	color: white;
 }
