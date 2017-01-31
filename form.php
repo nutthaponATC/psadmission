@@ -166,7 +166,11 @@ if ($type == 1) {
 			</div>
 		</div>
 
-
+		<div class="container">
+			<div style="width:50px; height:50px; border-radius:50%; background-color:red; padding:22px; padding-top:14px;">
+				1
+			</div>
+		</div>
 
 		<div class="container" id="form-table" style="margin-top:30px;">
 			<div class="col-md-12">

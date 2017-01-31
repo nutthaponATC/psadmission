@@ -19,7 +19,7 @@
 	<form action="login_process.php" method="post" name="form1">
 		<div class="login">
 			<div class="col-md-12">
-				<center><h3 style="">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</h3></center>
+				<center><h3 style="font-style: italic;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</h3></center>
 			</div>
 			<div class="col-md-12" style="margin-top: 20px;">
 				<div style="width: 30%; float:left;" style="margin-top: 20px;">
