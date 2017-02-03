@@ -63,3 +63,9 @@ html body {
 	margin-left:calc(50vw - 250px);
 	color: white;
 }
+
+.rdo {
+	float:left; 
+	width:1em; 
+	height:1em;
+}

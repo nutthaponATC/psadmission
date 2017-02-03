@@ -1,130 +1,3 @@
-<?php 
-$type = $_GET['type'];
-
-if ($type == 1) {
-	$headerType = "English Program (EP)";
-	$subType = "<div class='col-md-4'>
-		<p>ประเภทการคัดเลือก
-	</div>
-	<div class='col-md-4'>
-		<input type='radio' name='sType' value='1' style='float:left; width:1em; height:1em;'>
-		วิทย์ - คณิต
-	</div>
-	<div class='col-md-4'>
-		<input type='radio' name='sType' value='2' style='float:left; width:1em; height:1em;'>
-		คณิต - ภาษาจีน
-	</div>";
-} elseif ($type == 2) {
-	$headerType = "Intensive English Program (IEP)";
-	$subType = "<div class='col-md-4'>
-		<p>ประเภทการคัดเลือก
-	</div>
-	<div class='col-md-4'>
-		<input type='radio' name='sType' value='1' style='float:left; width:1em; height:1em;'>
-		ในเขตพื้นที่บริการ สอบคัดเลือก
-		<br>
-		<input type='radio' name='sType' value='3' style='width:1em; height:1em;'>ในเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ
-	</div>
-	<div class='col-md-4'>
-		<input type='radio' name='sType' value='2' style='float:left; width:1em; height:1em;'>
-		นอกเขตพื้นที่บริการ สอบคัดเลือก
-		<br>
-		<input type='radio' name='sType' value='4' style='float:left; width:1em; height:1em;'>
-		นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ
-	</div>";
-} elseif ($type == 3) {
-	$headerType = "ภาคปกติ (GP)";
-	$subType = "<div class='col-md-4'>
-		<p>ประเภทการคัดเลือก
-	</div>
-	<div class='col-md-4'>
-		<input type='radio' name='sType' value='1' style='float:left; width:1em; height:1em;'>
-		ในเขตพื้นที่บริการ สอบคัดเลือก
-		<br>
-		<input type='radio' name='sType' value='3' style='float:left; width:1em; height:1em;'>
-		ในเขตพื้นที่บริการ ความสามารถพิเศษกีฬา
-	</div>
-	<div class='col-md-4'>
-		<input type='radio' name='sType' value='2' style='float:left; width:1em; height:1em;'>
-		นอกเขตพื้นที่บริการ สอบคัดเลือก
-		<br>
-		<input type='radio' name='sType' value='4' style='float:left; width:1em; height:1em;'>
-		นอกเขตพื้นที่บริการ ความสามารถพิเศษกีฬา
-	</div>";
-} elseif ($type == 4) {
-	$headerType = "English Program (EP)";
-	$subType = "<div class='col-md-3'>
-		<p>ประเภทการคัดเลือก
-	</div>
-	<div class='col-md-3'>
-		<input type='radio' name='sType' value='1' style='float:left; width:1em; height:1em;'>
-		วิทย์ - คณิต
-		<br>
-		<input type='radio' name='sType' value='2' style='float:left; width:1em; height:1em;'>
-		คณิต - อังกฤษ
-	</div>
-	<div class='col-md-3'>
-		<input type='radio' name='sType' value='3' style='float:left; width:1em; height:1em;'>
-		อังกฤษ - ภาษา เลือก ฝรั่งเศษ
-		<br>
-		<input type='radio' name='sType' value='4' style='float:left; width:1em; height:1em;'>
-		อังกฤษ - ภาษา เลือก ญี่ปุ่น
-	</div>
-	<div class='col-md-3'>
-		<input type='radio' name='sType' value='5' style='float:left; width:1em; height:1em;'>
-		อังกฤษ - ภาษา เลือก จีน
-	</div>";
-} elseif ($type == 5) {
-	$headerType = "Intensive English Program (IEP)";
-	$subType = "<div class='col-md-3'>
-		<p>ประเภทการคัดเลือก
-	</div>
-	<div class='col-md-3'>
-		<input type='radio' name='sType' value='1' style='float:left; width:1em; height:1em;'>
-		วิทย์ - คณิต
-		<br>
-		<input type='radio' name='sType' value='2' style='float:left; width:1em; height:1em;'>
-		คณิต - อังกฤษ
-	</div>
-	<div class='col-md-3'>
-		<input type='radio' name='sType' value='3' style='float:left; width:1em; height:1em;'>
-		อังกฤษ - ภาษา เลือก ฝรั่งเศษ
-		<br>
-		<input type='radio' name='sType' value='4' style='float:left; width:1em; height:1em;'>
-		อังกฤษ - ภาษา เลือก ญี่ปุ่น
-	</div>
-	<div class='col-md-3'>
-		<input type='radio' name='sType' value='5' style='float:left; width:1em; height:1em;'>
-		อังกฤษ - ภาษา เลือก จีน
-	</div>";
-} else {
-	$headerType = "ภาคปกติ (GP)";
-	$subType = "<div class='col-md-3'>
-		<p>ประเภทการคัดเลือก
-	</div>
-	<div class='col-md-3'>
-		<input type='radio' name='sType' value='1' style='float:left; width:1em; height:1em;'>
-		วิทย์ - คณิต
-		<br>
-		<input type='radio' name='sType' value='2' style='float:left; width:1em; height:1em;'>
-		คณิต - อังกฤษ
-	</div>
-	<div class='col-md-3'>
-		<input type='radio' name='sType' value='3' style='float:left; width:1em; height:1em;'>
-		อังกฤษ - ภาษา เลือก ฝรั่งเศษ
-		<br>
-		<input type='radio' name='sType' value='4' style='float:left; width:1em; height:1em;'>
-		อังกฤษ - ภาษา เลือก ญี่ปุ่น
-	</div>
-	<div class='col-md-3'>
-		<input type='radio' name='sType' value='5' style='float:left; width:1em; height:1em;'>
-		อังกฤษ - ภาษา เลือก จีน
-	</div>";
-}
-
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -145,6 +18,134 @@ if ($type == 1) {
 	
 </head>
 <body style="font-size:17px;">
+	<span style=""></span>
+	<?php 
+	$type = $_GET['type'];
+
+	if ($type == 1) {
+		$headerType = "English Program (EP)";
+		$subType = "<div class='col-md-4'>
+			<p>ประเภทการคัดเลือก
+		</div>
+		<div class='col-md-4'>
+			<input type='radio' name='sType' class='rdo' value='1' >
+			วิทย์ - คณิต
+		</div>
+		<div class='col-md-4'>
+			<input type='radio' name='sType' class='rdo' value='2' >
+			คณิต - ภาษาจีน
+		</div>";
+	} elseif ($type == 2) {
+		$headerType = "Intensive English Program (IEP)";
+		$subType = "<div class='col-md-4'>
+			<p>ประเภทการคัดเลือก
+		</div>
+		<div class='col-md-4'>
+			<input type='radio' name='sType' class='rdo' value='1' >
+			ในเขตพื้นที่บริการ สอบคัดเลือก
+			<br>
+			<input type='radio' name='sType' class='rdo' value='3' style='width:1em; height:1em;'>ในเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ
+		</div>
+		<div class='col-md-4'>
+			<input type='radio' name='sType' class='rdo' value='2' >
+			นอกเขตพื้นที่บริการ สอบคัดเลือก
+			<br>
+			<input type='radio' name='sType' class='rdo' value='4' >
+			นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ
+		</div>";
+	} elseif ($type == 3) {
+		$headerType = "ภาคปกติ (GP)";
+		$subType = "<div class='col-md-4'>
+			<p>ประเภทการคัดเลือก
+		</div>
+		<div class='col-md-4'>
+			<input type='radio' name='sType' class='rdo' value='1' >
+			ในเขตพื้นที่บริการ สอบคัดเลือก
+			<br>
+			<input type='radio' name='sType' class='rdo' value='3' >
+			ในเขตพื้นที่บริการ ความสามารถพิเศษกีฬา
+		</div>
+		<div class='col-md-4'>
+			<input type='radio' name='sType' class='rdo' value='2' >
+			นอกเขตพื้นที่บริการ สอบคัดเลือก
+			<br>
+			<input type='radio' name='sType' class='rdo' value='4' >
+			นอกเขตพื้นที่บริการ ความสามารถพิเศษกีฬา
+		</div>";
+	} elseif ($type == 4) {
+		$headerType = "English Program (EP)";
+		$subType = "<div class='col-md-3'>
+			<p>ประเภทการคัดเลือก
+		</div>
+		<div class='col-md-3'>
+			<input type='radio' name='sType' class='rdo' value='1' >
+			วิทย์ - คณิต
+			<br>
+			<input type='radio' name='sType' class='rdo' value='2' >
+			คณิต - อังกฤษ
+		</div>
+		<div class='col-md-3'>
+			<input type='radio' name='sType' class='rdo' value='3' >
+			อังกฤษ - ภาษา เลือก ฝรั่งเศษ
+			<br>
+			<input type='radio' name='sType' class='rdo' value='4' >
+			อังกฤษ - ภาษา เลือก ญี่ปุ่น
+		</div>
+		<div class='col-md-3'>
+			<input type='radio' name='sType' class='rdo' value='5' >
+			อังกฤษ - ภาษา เลือก จีน
+		</div>";
+	} elseif ($type == 5) {
+		$headerType = "Intensive English Program (IEP)";
+		$subType = "<div class='col-md-3'>
+			<p>ประเภทการคัดเลือก
+		</div>
+		<div class='col-md-3'>
+			<input type='radio' name='sType' class='rdo' value='1' >
+			วิทย์ - คณิต
+			<br>
+			<input type='radio' name='sType' class='rdo' value='2' >
+			คณิต - อังกฤษ
+		</div>
+		<div class='col-md-3'>
+			<input type='radio' name='sType' class='rdo' value='3' >
+			อังกฤษ - ภาษา เลือก ฝรั่งเศษ
+			<br>
+			<input type='radio' name='sType' class='rdo' value='4' >
+			อังกฤษ - ภาษา เลือก ญี่ปุ่น
+		</div>
+		<div class='col-md-3'>
+			<input type='radio' name='sType' class='rdo' value='5' >
+			อังกฤษ - ภาษา เลือก จีน
+		</div>";
+	} else {
+		$headerType = "ภาคปกติ (GP)";
+		$subType = "<div class='col-md-3'>
+			<p>ประเภทการคัดเลือก
+		</div>
+		<div class='col-md-3'>
+			<input type='radio' name='sType' class='rdo' value='1' >
+			วิทย์ - คณิต
+			<br>
+			<input type='radio' name='sType' class='rdo' value='2' >
+			คณิต - อังกฤษ
+		</div>
+		<div class='col-md-3'>
+			<input type='radio' name='sType' class='rdo' value='3' >
+			อังกฤษ - ภาษา เลือก ฝรั่งเศษ
+			<br>
+			<input type='radio' name='sType' class='rdo' value='4' >
+			อังกฤษ - ภาษา เลือก ญี่ปุ่น
+		</div>
+		<div class='col-md-3'>
+			<input type='radio' name='sType' class='rdo' value='5' >
+			อังกฤษ - ภาษา เลือก จีน
+		</div>";
+	}
+
+
+	?>
+
 	<form id="form1" name="form1" method="post" action="form-process.php">
 		<div style="height:50px; width: 100%; background-color:#0000b9; color:white;">
 			<div class="container">
@@ -166,37 +167,57 @@ if ($type == 1) {
 			</div>
 		</div>
 
-		<div class="container">
-			<div style="width:50px; height:50px; border-radius:50%; background-color:red; padding:22px; padding-top:14px;">
-				1
+		<div class="container" style="margin-top:30px;">
+			<div class="col-md-3"></div>
+			<div class="col-md-2">
+				<div style="width:50px; float:left; height:50px; border-radius:50%; background-color:#d1e0e0; padding:22px; padding-top:14px; margin:calc(50vw-400px);">
+					1
+				</div>
 			</div>
+			<div class="col-md-2">
+				<div style="width:50px; float:left; height:50px; border-radius:50%; background-color:#d1e0e0; padding:22px; padding-top:14px;">
+					2
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div style="width:50px; float:left; height:50px; border-radius:50%; background-color:#d1e0e0; padding:22px; padding-top:14px;">
+					3
+				</div>
+			</div>
+			<div class="col-md-3"></div>
 		</div>
 
 		<div class="container" id="form-table" style="margin-top:30px;">
 			<div class="col-md-12">
 				<div class="col-md-12" style="padding-bottom:20px;">
 					<center>
-						<h3>
+						<h2 style="font-weight:bold;">
 						<?php echo $headerType; ?>	
-						</h3>
+						</h2>
 					</center>
 				</div>
-				<?php echo $subType; ?>	
+				<h3 style="font-weight:bold;">
+					<?php echo $subType; ?>	
+				</h3>
 			</div>
 		</div>
 		<div class="container" id="form-table">
 			<div class="col-md-12" id="form-line">
-				<div class="col-md-4">
-					ข้อมูลนักเรียน
+				<div class="col-md-12">
+					<h2 style="margin-top:-10px; font-weight:bold;">ข้อมูลนักเรียน</h2>
 				</div>
-				<div class="col-md-8" style="text-align:right;">
+				<div class="col-md-6" id="form-line">
+					รหัสใบสมัคร
+					<input type="text" style="width:360px;">
+				</div>
+				<div class="col-md-6" id="form-line">
 					รหัสประจำตัวประชาชนนักเรียน 
-					<input name="data" type="text" id="data" maxlength="13"/>
+					<input name="data" type="text" id="data" maxlength="13" style="width:280px;">
 				</div>
 			</div>
 
 			<div class="col-md-12" id="form-line">
-				<div class="col-md-7">
+				<div class="col-md-6">
 					<select name="fname">
 						<option value="0" selected>เลือกคำนำหน้า</option>
 						<option value="1">ด.ช.</option>
@@ -207,22 +228,22 @@ if ($type == 1) {
 					ชื่อ
 					<input type="text" name="name" style="width:300px;">
 				</div>
-				<div class="col-md-5">
+				<div class="col-md-6">
 					นามสกุล
-					<input type="text" name="name" style="margin-left:35px; width:300px;">
+					<input type="text" name="name" style="margin-left:35px; width:390px;">
 				</div>
 			</div>
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-1">
 				</div>
-				<div class="col-md-6" style="margin-left:-38px;">
+				<div class="col-md-5" style="margin-left:-38px;">
 					FIRST NAME
 					<input type="text" name="name" style="width:300px;">
 				</div>
-				<div class="col-md-5" style="margin-left:38px;">
+				<div class="col-md-6" style="margin-left:38px;">
 					LAST NAME
-					<input type="text" name="name" style="width:300px;">
+					<input type="text" name="name" style="width:390px;">
 				</div>
 			</div>
 
@@ -275,7 +296,7 @@ if ($type == 1) {
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-7">
 					รหัสประจำบ้าน
-					<input type="text" name="">
+					<input type="text" name="" style="width:380px;">
 					<p style="margin-left: 110px; font-size:14px;">(ดูจากทะเบียนบ้านที่นักเรียนอาศัยอยู่)</p>
 				</div>
 				<div class="col-md-5">
@@ -407,13 +428,18 @@ if ($type == 1) {
 			</div>
 
 			<div class="col-md-12" id="form-line">
-				<div class="col-md-12">
+				<div class="col-md-3">
 					ความพิการ
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio1' id="radio1-1" value='1'>
 					ไม่พิการ
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
-					พิการ ด้าน
-					<input type="text" name="" style="margin-right:40px;">
+					<input style="width:1em; height:1em;" type='radio' name='radio1' id="radio1-2" value='0'>
+					พิการ 
+				</div>
+				<div class="col-md-3" id="radio1-type">
+					ด้าน
+					<input type="text" name=""  style="margin-right:40px; width:150px;">
+				</div>
+				<div class="col-md-6">
 					น้ำหนัก
 					<input type="text" name="" style="width:50px;">
 					กิโลกรัม
@@ -432,43 +458,46 @@ if ($type == 1) {
 		</div>
 
 		<div class="container" id="form-table" style="padding-top:30px;">
-			<div class="col-md-12" id="form-line">
-				<div class="col-md-12">
-					<span style="margin-right:20px;">ข้อมูลการศึกษา (โรงเรียนเดิม)</span>
-				</div>
 
-				<div style="width:100%; padding-top:20px;" id="form-line">
-					<div class="col-md-6">
+			<div class="col-md-12" id="form-line" style="margin-bottom:-15px;">
+				<div class="col-md-12">
+					<h2 style="margin-right:20px; margin-top:-10px; font-weight:bold;">ข้อมูลการศึกษา (โรงเรียนเดิม)</h2>
+				</div>
+			</div>
+
+			<div class="col-md-12" id="form-line">
+				<div id="form-line">
+					<div class="col-md-6" style="margin-bottom:20px;">
 						<?php 
 						if ($type == 1 OR $type == 2 OR $type == 3) {
-							echo "<input style='width:1em; height:1em;' type='radio' name='' value='1'>";
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='1'>";
 							echo " กำลังเรียนชั้น ป.6 ";
-							echo "<input style='width:1em; height:1em;' type='radio' name='' value='1'>";
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='2'>";
 							echo " จบชั้น ป.6 ";
-							echo "<input style='width:1em; height:1em;' type='radio' name='' value='3'>";
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='3'>";
 							echo " จบการศึกษาเทียบเท่าชั้น ป.6";
 						} else {
-							echo "<input style='width:1em; height:1em;' type='radio' name='' value='1'>";
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='1'>";
 							echo " กำลังเรียนชั้น ม.3 ";
-							echo "<input style='width:1em; height:1em;' type='radio' name='' value='2'>";
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='2'>";
 							echo " จบชั้น ม.3 ";
-							echo "<input style='width:1em; height:1em;' type='radio' name='' value='3'>";
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='3'>";
 							echo " จบการศึกษาเทียบเท่าชั้น ม.3";
 						}
 						?>
 					</div>
 					
-					<div class="col-md-6">
+					<div class="col-md-6" style="margin-bottom:20px;">
 						สังกัด
-						<input style="width:1em; height:1em;" type='radio' name='' value='3' style="margin-left:20;">
+						<input style="width:1em; height:1em; margin-left:20px;" type='radio' name='radio3' value='3'>
 						สปช.เดิม
-						<input style="width:1em; height:1em;" type='radio' name='' value='3'>
+						<input style="width:1em; height:1em;" type='radio' name='radio3' value='3'>
 						สพฐ.
-						<input style="width:1em; height:1em;" type='radio' name='' value='3'>
+						<input style="width:1em; height:1em;" type='radio' name='radio3' value='3'>
 						สช.
-						<input style="width:1em; height:1em;" type='radio' name='' value='3'>
+						<input style="width:1em; height:1em;" type='radio' name='radio3' value='3'>
 						กทม.
-						<input style="width:1em; height:1em;" type='radio' name='' value='3'>
+						<input style="width:1em; height:1em;" type='radio' name='radio3' value='3'>
 						อื่นๆ
 					</div>
 				</div>
@@ -480,9 +509,9 @@ if ($type == 1) {
 					</div>
 					<div class="col-md-8">
 						ร.ร.ตั้งอยู่
-						<input style="width:1em; height:1em;" type='radio' name='' value='1'>
+						<input style="width:1em; height:1em;" type='radio' name='radio4' value='1'>
 						ในเขตพื้นที่ (คลองชักพระ/บางระมาด/บางพรม/ฉิมพลี)
-						<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+						<input style="width:1em; height:1em;" type='radio' name='radio4' value='0'>
 						นอกเขตพื้นที่	
 					</div>
 				</div>
@@ -500,7 +529,7 @@ if ($type == 1) {
 		<div class="container" id="form-table" style="padding-top:30px;">
 			<div class="col-md-12">
 				<div class="col-md-12">
-					ข้อมูล บิดา - มารดา
+					<h2 style="margin-bottom:10px; font-weight:bold;">ข้อมูล บิดา - มารดา</h2>
 				</div>
 			</div>
 
@@ -509,36 +538,43 @@ if ($type == 1) {
 					ชื่อสกุล บิดา
 					<input type="text" name="" style="width:300px;">
 				</div>
-				<div class="col-md-7">
+				<div class="col-md-4">
 					ความพิการของบิดา 
-					<input type='radio' name='disabled' value='1'>
+					<input type='radio' style="width:1em; height:1em;" name='radio5' id="radio5-1" value='1'>
 					ไม่พิการ
-					<input type='radio' name='disabled' value='0'>
-					พิการ ด้าน
-					<input type="text" name="disabled">
+					<input type='radio' style="width:1em; height:1em;" name='radio5' id="radio5-2" value='0'>
+					พิการ 
+				</div>
+				<div class="col-md-3" id="radio5-type">
+					ด้าน
+					<input type="text" name="" style="width:150px;">
 				</div>
 			</div>
 
 			<div class="col-md-12" id="form-line">
-				<div class="col-md-12">
+				<div class="col-md-4">
 					รายได้ของบิดา 
 					<input type="text" name="" style="width:150px;">
 					บาท/ปี
-					&nbsp
+				</div>
+				<div class="col-md-2" style="text-align:right;">
 					อาชีพของบิดา
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+				</div>
+				<div class="col-md-6">
+					<input style="width:1em; height:1em;" type='radio' name='radio6' value='0'>
 					ค้าขาย
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio6' value='0'>
 					รับจ้าง
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio6' value='0'>
 					รับราชการ
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio6' value='0'>
 					พนักงาน
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio6' value='0'>
 					นักธุรกิจ
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<br>
+					<input style="width:1em; height:1em;" type='radio' name='radio6' value='0'>
 					อาชีพอิสระ
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio6' value='0'>
 					ไม่ประกอบอาชีพ	
 				</div>
 			</div>
@@ -546,7 +582,7 @@ if ($type == 1) {
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
 					รหัสประจำตัวประชาชนบิดา 
-					<input type="text" name="">	
+					<input type="text" name="" maxlength="13">	
 				</div>
 				<div class="col-md-6">
 					โทรศัพท์ที่สามารถติดต่อได้
@@ -556,39 +592,46 @@ if ($type == 1) {
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-5">
-					ชื่อสกุล มารดา
+					ชื่อสกุล บิดา
 					<input type="text" name="" style="width:300px;">
 				</div>
-				<div class="col-md-7">
-					ความพิการของมารดา 
-					<input type='radio' name='disabled' value='1'>
+				<div class="col-md-4">
+					ความพิการของบิดา 
+					<input type='radio' style="width:1em; height:1em;" name='radio7' id="radio7-1" value='1'>
 					ไม่พิการ
-					<input type='radio' name='disabled' value='0'>
-					พิการ ด้าน
-					<input type="text" name="disabled">
+					<input type='radio' style="width:1em; height:1em;" name='radio7' id="radio7-2" value='0'>
+					พิการ 
+				</div>
+				<div class="col-md-3" id="radio7-type">
+					ด้าน
+					<input type="text" name="" style="width:150px;">
 				</div>
 			</div>
 
 			<div class="col-md-12" id="form-line">
-				<div class="col-md-12">
+				<div class="col-md-4">
 					รายได้ของมารดา 
 					<input type="text" name="" style="width:150px;">
 					บาท/ปี
-					&nbsp
+				</div>
+				<div class="col-md-2" style="text-align:right;">
 					อาชีพของมารดา
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+				</div>
+				<div class="col-md-6">
+					<input style="width:1em; height:1em;" type='radio' name='radio8' value='0'>
 					ค้าขาย
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio8' value='0'>
 					รับจ้าง
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio8' value='0'>
 					รับราชการ
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio8' value='0'>
 					พนักงาน
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio8' value='0'>
 					นักธุรกิจ
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<br>
+					<input style="width:1em; height:1em;" type='radio' name='radio8' value='0'>
 					อาชีพอิสระ
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio8' value='0'>
 					ไม่ประกอบอาชีพ	
 				</div>
 			</div>
@@ -596,7 +639,7 @@ if ($type == 1) {
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
 					รหัสประจำตัวประชาชนมารดา 
-					<input type="text" name="">	
+					<input type="text" name="" maxlength="13">	
 				</div>
 				<div class="col-md-6">
 					โทรศัพท์ที่สามารถติดต่อได้
@@ -607,19 +650,20 @@ if ($type == 1) {
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-12">
 					สถานภาพของบิดา-มารดา
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<br>
+					<input style="width:1em; height:1em;" type='radio' name='radio9' value='0'>
 					อยู่ด้วยกัน
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio9' value='0'>
 					แยกกันอยู่
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio9' value='0'>
 					หย่าร้าง
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio9' value='0'>
 					บิดาถึงแก่กรรม
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio9' value='0'>
 					มารดาถึงแก่กรรม
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio9' value='0'>
 					บิดาแต่งงานใหม่
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio9' value='0'>
 					มารดาแต่งงานใหม่
 				</div>
 			</div>
@@ -627,119 +671,182 @@ if ($type == 1) {
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
 					จำนวนพี่น้องทั้งหมด (รวมตัวเอง) 
-					<input type="text" name="">
+					<input type="text" name="" style="width:50px;">
 					คน
 				</div>
 				<div class="col-md-6">
 					กำลังศึกษาอยู่ จำนวน
-					<input type="text" name="">
+					<input type="text" name="" style="width:50px;">
 					คน
 				</div>
 			</div>
 		</div>
 		<div class="container" id="form-table" style="padding-top:30px;">
 			<div class="col-md-12">
-				<div class="col-md-4">
-					ข้อมูลผู้ปกครอง เกี่ยวข้างกับนักเรียนเป็น
+				<div class="col-md-12">
+					<h2 style="font-weight:bold;">ข้อมูลผู้ปกครอง</h2>
 				</div>
-				<div class="col-md-8">
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+			</div>
+
+			<div class="col-md-12" id="form-line">
+				<div class="col-md-3">
+					เกี่ยวข้างกับนักเรียนเป็น
+				</div>
+				<div class="col-md-9">
+					<input style="width:1em; height:1em;" type='radio' name='radio10' id="radio10-1" value='0'>
 					บิดา
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio10' id="radio10-2" value='0'>
 					มารดา
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio10' id="radio10-3" value='0'>
 					อื่นๆ (หากไม่ใช่ บิดา มารดา ให้กรอกข้อมูลด้านล่าง)
 				</div>
 			</div>
 
-			<div class="col-md-12" id="form-line">
-				<div class="col-md-6">
-					ชื่อสกุล ผู้ปกครอง
-					<input type="text" name="">
+			<span id="parent">
+				<div class="col-md-12" id="form-line">
+					<div class="col-md-6">
+						ชื่อสกุล ผู้ปกครอง
+						<input type="text" name="">
+					</div>
+					<div class="col-md-6">
+						รายได้ของผู้ปกครอง 
+						<input type="text" name="">
+						บาท/ปี
+					</div>
 				</div>
-				<div class="col-md-6">
-					รายได้ของผู้ปกครอง 
-					<input type="text" name="">
-					บาท/ปี
-				</div>
-			</div>
 
-			<div class="col-md-12" id="form-line">
-				<div class="col-md-4">
-					ความพิการของผู้ปกครอง 
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
-					ไม่พิการ
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
-					พิการ ด้าน
-					<input type="text" name="">
+				<div class="col-md-12" id="form-line">
+					<div class="col-md-6">
+						ความพิการของผู้ปกครอง 
+						<br>
+						<input style="width:1em; height:1em;" type='radio' name='radio11' id="radio11-1" value='0'>
+						ไม่พิการ
+						<input style="width:1em; height:1em;" type='radio' name='radio11' id="radio11-2" value='0'>
+						พิการ 
+						<span id="radio11-type">
+							ด้าน
+							<input type="text" name='radio11'>
+						</span>
+					</div>
+					<div class="col-md-6">
+						อาชีพของผู้ปกครอง 
+						<input style="width:1em; height:1em;" type='radio' name='radio12' value='0'>
+						ค้าขาย
+						<input style="width:1em; height:1em;" type='radio' name='radio12' value='0'>
+						รับจ้าง
+						<input style="width:1em; height:1em;" type='radio' name='radio12' value='0'>
+						รับราชการ
+						<input style="width:1em; height:1em;" type='radio' name='radio12' value='0'>
+						พนักงาน
+						<br>
+						<input style="width:1em; height:1em;" type='radio' name='radio12' value='0'>
+						นักธุรกิจ
+						<input style="width:1em; height:1em;" type='radio' name='radio12' value='0'>
+						อาชีพอิสระ
+						<input style="width:1em; height:1em;" type='radio' name='radio12' value='0'>
+						ไม่ประกอบอาชีพ
+					</div>
 				</div>
-				<div class="col-md-8">
-					อาชีพของผู้ปกครอง <br>
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
-					ค้าขาย
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
-					รับจ้าง
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
-					รับราชการ
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
-					พนักงาน
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
-					นักธุรกิจ
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
-					อาชีพอิสระ
-					<input style="width:1em; height:1em;" type='radio' name='' value='0'>
-					ไม่ประกอบอาชีพ
-				</div>
-			</div>
 
-			<div class="col-md-12" id="form-line">
-				<div class="col-md-6">
-					รหัสประจำตัวประชาชนผู้ปกครอง 
-					<input type="text" name="">
+				<div class="col-md-12" id="form-line">
+					<div class="col-md-6">
+						รหัสประจำตัวประชาชนผู้ปกครอง 
+						<input type="text" name="" maxlength="13">
+					</div>
+					<div class="col-md-6">
+						โทรศัพท์ที่สามารถติดต่อได้
+						<input type="text" name="">
+					</div>
 				</div>
-				<div class="col-md-6">
-					โทรศัพท์ที่สามารถติดต่อได้
-					<input type="text" name="">
-				</div>
-			</div>
+			</span>
 		</div>
 		<div class="container" id="form-table" style="padding-top:30px; margin-bottom:50px;">
-			<div class="col-md-6">
+			<div class="col-md-12">
 				<div class="col-md-12">
-					ข้อมูลผลการเรียน (ผลการเรียนเฉลี่ย ม.1 - ม.3 รวม 5 ภาคเรียน)
-				</div>
-				<div class="col-md-4" id="form-line">
-					ผลการเรียนเฉลี่ย
-				</div>
-				<div class="col-md-8" id="form-line">
-					<input type="text" name="">
-				</div>
-				<div class="col-md-4" id="form-line">
-					หรือ ร้อยละ
-				</div>
-				<div class="col-md-8" id="form-line">
-					<input type="text" name="">
+					<h2 style="font-weight:bold;">
+						ข้อมูลผลการเรียน (ผลการเรียนเฉลี่ย ม.1 - ม.3 รวม 5 ภาคเรียน)
+					</h2>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-12">
+				<div class="col-md-12" id="form-line">
+					ผลการเรียนเฉลี่ย
+					<input type="text" name="" style="width:50px;">
+					หรือ ร้อยละ
+					<input type="text" name="" style="width:50px;">
+				</div>
+			</div>
+			<div class="col-md-12">
 				<div class="col-md-12">
-					ข้อมูลคะแนน O-NET
+					<h2 style="font-weight:bold;">
+						ข้อมูลคะแนน O-NET
+					</h2>
 				</div>
-				<div class="col-md-5" id="form-line">
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-12" id="form-line">
 					ได้คะแนนเฉลี่ย O-NET
-				</div>
-				<div class="col-md-7" id="form-line">
-					<input type="text" name="">
+					<input type="text" name="" style="width:50px;">
 					คะแนน
-				</div>
-				<div class="col-md-5" id="form-line">
+				
+					<span style="margin-left:20px;">
 					คิดเป็นร้อยละ
-				</div>
-				<div class="col-md-7" id="form-line">
-					<input type="text" name="">
+					<input type="text" name="" style="width:50px;">
+					</span>
 				</div>
 			</div>
 		</div>
+		<div class="container" style="margin-bottom:50px; margin-top:-10px;">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<input type="submit" name="submit" value="บันทึกข้อมูล" class="form-control">
+			</div>
+			<div class="col-md-4"></div>
+		</div>
 
+		<script src="js/jquery.js"></script>
 </body>
 </html>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#radio1-type").hide();
+		$("#radio5-type").hide();
+		$("#radio7-type").hide();
+		$("#radio11-type").hide();
+		$("#parent").hide();
+		$("#radio1-2").click(function(){
+			$("#radio1-type").show();
+		});
+		$("#radio1-1").click(function(){
+			$("#radio1-type").hide();
+		});
+		$("#radio5-2").click(function(){
+			$("#radio5-type").show();
+		});
+		$("#radio5-1").click(function(){
+			$("#radio5-type").hide();
+		});
+		$("#radio7-2").click(function(){
+			$("#radio7-type").show();
+		});
+		$("#radio7-1").click(function(){
+			$("#radio7-type").hide();
+		});
+		$("#radio11-2").click(function(){
+			$("#radio11-type").show();
+		});
+		$("#radio11-1").click(function(){
+			$("#radio11-type").hide();
+		});
+		$("#radio10-3").click(function(){
+			$("#parent").show();
+		});
+		$("#radio10-1").click(function(){
+			$("#parent").hide();
+		});
+		$("#radio10-2").click(function(){
+			$("#parent").hide();
+		});
+	});
+</script>
