@@ -14,14 +14,13 @@
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 	<!-- fa -->
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
-	
 </head>
 <body>
-	<div style="height:50px; width: 100%; background-color:#0000b9; color:white;">
+	<div style="height:50px; width: 100%; background-color:#1c1c86; color:white;">
 		<div class="container">
 			<div class="col-md-9">
 				<img src="image/logops.jpg" width="40px;" style="float:left; margin-top: 5px; border-radius: 50%;">
-				<span style="font-size:22px; margin-top:10px; float:left; margin-left:10px;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</span>
+				<a style="color:white;" href="index.php"><span style="font-size:22px; margin-top:10px; float:left; margin-left:10px;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</span></a>
 			</div>
 			<div class="col-md-2">
 				<a href="login.php" >  
@@ -30,12 +29,16 @@
 				</a>
 			</div>
 			<div class="col-md-1">
-				<i class="fa fa-bars" id="smenu" style="font-size:30px; margin-top:10px;" aria-hidden="true"></i>
+				<i class="fa fa-bars" id="smenu" style="cursor:pointer; font-size:30px; margin-top:10px;" aria-hidden="true"></i>
 			</div>
-
-			<!-- <div id="subMenu" style="left:60vw; width:20vw; height:20vh; background-color:black; position:absolute;"> -->
 		</div>
 	</div>
+
+	<!-- <div style="height:50px; width: 100%; background-color:#0000b9; color:white;">
+		<div class="container">
+			test
+		</div>
+	</div> -->
 
 	<div class="container" style="padding-top:30px; padding-bottom:30px;">
 		<div class="col-md-3">
@@ -95,14 +98,12 @@
 		</div>
 	</div>
 
+	<script src="js/jquery.js"></script>
 </body>
 </html>
 
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#subMenu").hide();
-		$("#sMenu").click(function(){
-			$("#subMenu").toggle();
-		}
 	}
 </script>
