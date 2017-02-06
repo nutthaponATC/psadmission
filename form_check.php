@@ -1,4 +1,5 @@
 <?php
+error_reporting( error_reporting() & ~E_NOTICE );
 $type = $_POST['type'];
 $sType = $_POST['sType'];
 $radio1 = $_POST['radio1'];
@@ -93,39 +94,66 @@ $input53 = $_POST['input53'];
 
 	if ($type == 1) {
 		$headerType = "English Program (EP)";
-		$subType = "<div class='col-md-2'>
+		$subType .= "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
-		<div class='col-md-5'>
-			<input type='radio' name='sType' class='rdo' value='1' >
-			วิทย์ - คณิต
+		<div class='col-md-5'>";
+			if ($sType == 1) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1'>";
+			}
+			$subType .= "วิทย์ - คณิต
 		</div>
 		<div class='col-md-5'>
-			<input type='radio' name='sType' class='rdo' value='2' >
-			คณิต - ภาษาจีน
+			<input type='radio' name='sType' class='rdo' value='2'";
+			if ($sType == 2) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
+			}
+			$subType .= "คณิต - ภาษาจีน
 		</div>";
 	} elseif ($type == 2) {
 		$headerType = "Intensive English Program (IEP)";
-		$subType = "<div class='col-md-2'>
+		$subType .= "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
 		<div class='col-md-5'>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='1' >
-				ในเขตพื้นที่บริการ สอบคัดเลือก
+			<div class='col-md-12'>";
+			if ($sType == 1) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1'>";
+			}
+				
+				$subType .= "ในเขตพื้นที่บริการ สอบคัดเลือก
 			</div>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='2' style='width:1em; height:1em;'>ในเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ
+			<div class='col-md-12'>";
+			if ($sType == 2) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
+			}
+				$subType .= "ในเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ
 			</div>
 		</div>
 		<div class='col-md-5'>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='3' >
-				นอกเขตพื้นที่บริการ สอบคัดเลือก
+			<div class='col-md-12'>";
+			if ($sType == 3) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3'>";
+			}
+				$subType .= "นอกเขตพื้นที่บริการ สอบคัดเลือก
 			</div>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='4' >
-				นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ
+			<div class='col-md-12'>";
+			if ($sType == 4) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4'>";
+			}
+				$subType .= "นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ
 			</div>
 		</div>";
 	} elseif ($type == 3) {
@@ -134,22 +162,42 @@ $input53 = $_POST['input53'];
 			<p>ประเภทการคัดเลือก
 		</div>
 		<div class='col-md-5'>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='1' >
+			<div class='col-md-12'>";
+			if ($sType == 1) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1'>";
+			}
+				$subType .= "
 				ในเขตพื้นที่บริการ สอบคัดเลือก
 			</div>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='2' >
+			<div class='col-md-12'>";
+			if ($sType == 2) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
+			}
+				$subType .= "
 				ในเขตพื้นที่บริการ ความสามารถพิเศษกีฬา
 			</div>
 		</div>
 		<div class='col-md-5'>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='3' >
+			<div class='col-md-12'>";
+			if ($sType == 3) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3'>";
+			}
+				$subType .= "
 				นอกเขตพื้นที่บริการ สอบคัดเลือก
 			</div>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='4' >
+			<div class='col-md-12'>";
+			if ($sType == 4) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4'>";
+			}
+				$subType .= "
 				นอกเขตพื้นที่บริการ ความสามารถพิเศษกีฬา
 			</div>
 		</div>";
@@ -159,28 +207,53 @@ $input53 = $_POST['input53'];
 			<p>ประเภทการคัดเลือก
 		</div>
 		<div class='col-md-3'>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='1' >
+			<div class='col-md-12'>";
+			if ($sType == 1) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1'>";
+			}
+				$subType .= "
 				วิทย์ - คณิต
 			</div>
-			<div class='col-md-12'><br>
-				<input type='radio' name='sType' class='rdo' value='2' >
+			<div class='col-md-12'><br>";
+			if ($sType == 2) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
+			}
+				$subType .= "
 				คณิต - อังกฤษ
 			</div>
 		</div>
 		<div class='col-md-4'>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='3' >
+			<div class='col-md-12'>";
+			if ($sType == 3) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3'>";
+			}
+				$subType .= "
 				อังกฤษ - ภาษา เลือก ฝรั่งเศษ
 			</div>
-			<div class='col-md-12'><br>
-				<input type='radio' name='sType' class='rdo' value='4' >
+			<div class='col-md-12'><br>";
+			if ($sType == 4) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4'>";
+			}
+				$subType .= "
 				อังกฤษ - ภาษา เลือก ญี่ปุ่น
 			</div>
 		</div>
 		<div class='col-md-3'>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='5' >
+			<div class='col-md-12'>";
+			if ($sType == 5) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='5' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='5'>";
+			}
+				$subType .= "
 				อังกฤษ - ภาษา เลือก จีน
 			</div>
 		</div>";
@@ -190,28 +263,53 @@ $input53 = $_POST['input53'];
 			<p>ประเภทการคัดเลือก
 		</div>
 		<div class='col-md-3'>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='1' >
+			<div class='col-md-12'>";
+			if ($sType == 1) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1'>";
+			}
+				$subType .= "
 				วิทย์ - คณิต
 			</div>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='2' >
+			<div class='col-md-12'>";
+			if ($sType == 2) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
+			}
+				$subType .= "
 				คณิต - อังกฤษ
 			</div>
 		</div>
 		<div class='col-md-4'>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='3' >
+			<div class='col-md-12'>";
+			if ($sType == 3) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3'>";
+			}
+				$subType .= "
 				อังกฤษ - ภาษา เลือก ฝรั่งเศษ
 			</div>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='4' >
+			<div class='col-md-12'>";
+			if ($sType == 4) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4'>";
+			}
+				$subType .= "
 				อังกฤษ - ภาษา เลือก ญี่ปุ่น
 			</div>
 		</div>
 		<div class='col-md-3'>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='5' >
+			<div class='col-md-12'>";
+			if ($sType == 5) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='5' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='5'>";
+			}
+				$subType .= "
 				อังกฤษ - ภาษา เลือก จีน
 			</div>
 		</div>";
@@ -221,28 +319,53 @@ $input53 = $_POST['input53'];
 			<p>ประเภทการคัดเลือก
 		</div>
 		<div class='col-md-3'>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='1' >
+			<div class='col-md-12'>";
+			if ($sType == 1) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1'>";
+			}
+				$subType .= "
 				วิทย์ - คณิต
 			</div>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='2' >
+			<div class='col-md-12'>";
+			if ($sType == 2) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
+			}
+				$subType .= "
 				คณิต - อังกฤษ
 			</div>
 		</div>
 		<div class='col-md-4'>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='3' >
+			<div class='col-md-12'>";
+			if ($sType == 3) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3'>";
+			}
+				$subType .= "
 				อังกฤษ - ภาษา เลือก ฝรั่งเศษ
 			</div>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='4' >
+			<div class='col-md-12'>";
+			if ($sType == 4) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4'>";
+			}
+				$subType .= "
 				อังกฤษ - ภาษา เลือก ญี่ปุ่น
 			</div>
 		</div>
 		<div class='col-md-3'>
-			<div class='col-md-12'>
-				<input type='radio' name='sType' class='rdo' value='5' >
+			<div class='col-md-12'>";
+			if ($sType == 5) {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='5' checked>";
+			} else {
+				$subType .= "<input type='radio' name='sType' class='rdo' value='5'>";
+			}
+				$subType .= "
 				อังกฤษ - ภาษา เลือก จีน
 			</div>
 		</div>";
@@ -314,9 +437,9 @@ $input53 = $_POST['input53'];
 					<h2 style="margin-top:-10px; font-weight:bold;">ข้อมูลนักเรียน</h2>
 					<!-- <h4 style="color:red;">*กรุณากรอกข้อมูลในส่วนนักเรียนให้ครบถ้วน</h4> -->
 				</div>
-				<div class="col-md-6" value="<?php echo $input1; ?>" id="form-line">
+				<div class="col-md-6" id="form-line">
 					รหัสใบสมัคร
-					<input type="text" name="input1" style="width:360px;">
+					<input type="text" name="input1" value="<?php echo $input1; ?>" style="width:360px;">
 				</div>
 				<div class="col-md-6" id="form-line">
 					รหัสประจำตัวประชาชนนักเรียน 
@@ -538,9 +661,23 @@ $input53 = $_POST['input53'];
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-3">
 					ความพิการ
-					<input style="width:1em; height:1em;" type='radio' name='radio1' id="radio1-1" value='1'>
+					<?php 
+					if ($radio1 == 1) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio1' id='radio1-1' value='1' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio1' id='radio1-1' value='1'>";
+					}
+
+					 ?>
 					ไม่พิการ
-					<input style="width:1em; height:1em;" type='radio' name='radio1' id="radio1-2" value='0'>
+					<?php 
+					if ($radio1 == 0) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio1' id='radio1-1' value='0' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio1' id='radio1-1' value='0'>";
+					}
+
+					 ?>
 					พิการ 
 				</div>
 				<div class="col-md-3" id="radio1-type">
@@ -578,18 +715,42 @@ $input53 = $_POST['input53'];
 					<div class="col-md-6" style="margin-bottom:20px;">
 						<?php 
 						if ($type == 1 OR $type == 2 OR $type == 3) {
-							echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='1'>";
+							if ($radio2 == 1) {
+								echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='1' checked>";
+							} else {
+								echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='1'>";
+							}
 							echo " กำลังเรียนชั้น ป.6 ";
-							echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='2'>";
+							if ($radio2 == 2) {
+								echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='2' checked>";
+							} else {
+								echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='2'>";
+							}
 							echo " จบชั้น ป.6 ";
-							echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='3'>";
+							if ($radio2 == 3) {
+								echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='3' checked>";
+							} else {
+								echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='3'>";
+							}
 							echo " จบการศึกษาเทียบเท่าชั้น ป.6";
 						} else {
-							echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='1'>";
+							if ($radio2 == 1) {
+								echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='1' checked>";
+							} else {
+								echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='1'>";
+							}
 							echo " กำลังเรียนชั้น ม.3 ";
-							echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='2'>";
+							if ($radio2 == 2) {
+								echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='2' checked>";
+							} else {
+								echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='2'>";
+							}
 							echo " จบชั้น ม.3 ";
-							echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='3'>";
+							if ($radio2 == 3) {
+								echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='3' checked>";
+							} else {
+								echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='3'>";
+							}
 							echo " จบการศึกษาเทียบเท่าชั้น ม.3";
 						}
 						?>
@@ -597,16 +758,38 @@ $input53 = $_POST['input53'];
 					
 					<div class="col-md-6" style="margin-bottom:20px;">
 						สังกัด
-						<input style="width:1em; height:1em; margin-left:20px;" type='radio' name='radio3' value='1'>
-						สปช.เดิม
-						<input style="width:1em; height:1em;" type='radio' name='radio3' value='2'>
-						สพฐ.
-						<input style="width:1em; height:1em;" type='radio' name='radio3' value='3'>
-						สช.
-						<input style="width:1em; height:1em;" type='radio' name='radio3' value='4'>
-						กทม.
-						<input style="width:1em; height:1em;" type='radio' name='radio3' value='5'>
-						อื่นๆ
+						<?php 
+						if ($radio3 == 1) {
+							echo "<input style='width:1em; height:1em; margin-left:20px;' type='radio' name='radio3' value='1' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em; margin-left:20px;' type='radio' name='radio3' value='1'>";
+						}
+						echo "สปช.เดิม";
+						if ($radio3 == 2) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio3' value='2' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio3' value='2'>";
+						}
+						echo 'สพฐ.';
+						if ($radio3 == 3) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio3' value='3' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio3' value='3'>";
+						}
+						echo 'สช.';
+						if ($radio3 == 4) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio3' value='4' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio3' value='4'>";
+						}
+						echo 'กทม.';
+						if ($radio3 == 5) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio3' value='5' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio3' value='5'>";
+						}
+						echo 'อื่นๆ';
+						?>
 					</div>
 				</div>
 
@@ -616,11 +799,21 @@ $input53 = $_POST['input53'];
 						<input type="text" name="input29" value="<?php echo $input29; ?>">
 					</div>
 					<div class="col-md-8">
-						ร.ร.ตั้งอยู่
-						<input style="width:1em; height:1em;" type='radio' name='radio4' value='1'>
-						ในเขตพื้นที่ (คลองชักพระ/บางระมาด/บางพรม/ฉิมพลี)
-						<input style="width:1em; height:1em;" type='radio' name='radio4' value='0'>
-						นอกเขตพื้นที่	
+						<?php  
+						echo "ร.ร.ตั้งอยู่";
+						if ($radio4 == 1) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio4' value='1' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio4' value='1'>";
+						}
+						echo "ในเขตพื้นที่ (คลองชักพระ/บางระมาด/บางพรม/ฉิมพลี)";
+						if ($radio4 == 0) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio4' value='0' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio4' value='0'>";
+						}
+						echo "นอกเขตพื้นที่";
+						?>
 					</div>
 				</div>
 
@@ -647,11 +840,21 @@ $input53 = $_POST['input53'];
 					<input type="text" name="input33" value="<?php echo $input33; ?>" style="width:300px;">
 				</div>
 				<div class="col-md-4">
-					ความพิการของบิดา 
-					<input type='radio' style="width:1em; height:1em;" name='radio5' id="radio5-1" value='1'>
-					ไม่พิการ
-					<input type='radio' style="width:1em; height:1em;" name='radio5' id="radio5-2" value='0'>
-					พิการ 
+					<?php  
+					echo "ความพิการของบิดา";
+					if ($radio5 == 1) {
+						echo "<input type='radio' style='width:1em; height:1em;' name='radio5' id='radio5-1' value='1' checked>";
+					} else {
+						echo "<input type='radio' style='width:1em; height:1em;' name='radio5' id='radio5-1' value='1'>";
+					}
+					echo "ไม่พิการ";
+					if ($radio5 == 0) {
+						echo "<input type='radio' style='width:1em; height:1em;' name='radio5' id='radio5-2' value='0' checked>";
+					} else {
+						echo "<input type='radio' style='width:1em; height:1em;' name='radio5' id='radio5-2' value='0'>";
+					}
+					echo "พิการ ";
+					?>
 				</div>
 				<div class="col-md-3" id="radio5-type">
 					ด้าน
@@ -669,21 +872,51 @@ $input53 = $_POST['input53'];
 					อาชีพของบิดา
 				</div>
 				<div class="col-md-6">
-					<input style="width:1em; height:1em;" type='radio' name='radio6' value='1'>
-					ค้าขาย
-					<input style="width:1em; height:1em;" type='radio' name='radio6' value='2'>
-					รับจ้าง
-					<input style="width:1em; height:1em;" type='radio' name='radio6' value='3'>
-					รับราชการ
-					<input style="width:1em; height:1em;" type='radio' name='radio6' value='4'>
-					พนักงาน
-					<input style="width:1em; height:1em;" type='radio' name='radio6' value='5'>
-					นักธุรกิจ
-					<br>
-					<input style="width:1em; height:1em;" type='radio' name='radio6' value='6'>
-					อาชีพอิสระ
-					<input style="width:1em; height:1em;" type='radio' name='radio6' value='7'>
-					ไม่ประกอบอาชีพ	
+					<?php 
+					if ($radio6 == 1) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='1' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='1'>";
+					}
+					echo "ค้าขาย";
+					if ($radio6 == 2) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='2' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='2'>";
+					}
+					echo "รับจ้าง";
+					if ($radio6 == 3) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='3' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='3'>";
+					}
+					echo "รับราชการ";
+					if ($radio6 == 4) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='4' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='4'>";
+					}
+					echo "พนักงาน";
+					if ($radio6 == 5) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='5' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='5'>";
+					}
+					echo "นักธุรกิจ";
+					echo "<br>";
+					if ($radio6 == 6) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='6' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='6'>";
+					}
+					echo "อาชีพอิสระ";
+					if ($radio6 == 7) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='7' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio6' value='7'>";
+					}
+					echo "ไม่ประกอบอาชีพ	";
+					 ?>
 				</div>
 			</div>
 			
@@ -704,11 +937,21 @@ $input53 = $_POST['input53'];
 					<input type="text" name="input38" value="<?php echo $input38; ?>" style="width:300px;">
 				</div>
 				<div class="col-md-4">
-					ความพิการของบิดา 
-					<input type='radio' style="width:1em; height:1em;" name='radio7' id="radio7-1" value='1'>
-					ไม่พิการ
-					<input type='radio' style="width:1em; height:1em;" name='radio7' id="radio7-2" value='0'>
-					พิการ 
+					<?php 
+					echo "ความพิการของบิดา";
+					if ($radio7) {
+						echo "<input type='radio' style='width:1em; height:1em;' name='radio7' id='radio7-1' value='1' checked>";
+					} else {
+						echo "<input type='radio' style='width:1em; height:1em;' name='radio7' id='radio7-1' value='1'>";
+					}
+					echo "ไม่พิการ";
+					if ($radio7) {
+						echo "<input type='radio' style='width:1em; height:1em;' name='radio7' id='radio7-2' value='0' checked>";
+					} else {
+						echo "<input type='radio' style='width:1em; height:1em;' name='radio7' id='radio7-2' value='0'>";
+					}
+					echo "พิการ ";
+					 ?>
 				</div>
 				<div class="col-md-3" id="radio7-type">
 					ด้าน
@@ -726,21 +969,51 @@ $input53 = $_POST['input53'];
 					อาชีพของมารดา
 				</div>
 				<div class="col-md-6">
-					<input style="width:1em; height:1em;" type='radio' name='radio8' value='1'>
-					ค้าขาย
-					<input style="width:1em; height:1em;" type='radio' name='radio8' value='2'>
-					รับจ้าง
-					<input style="width:1em; height:1em;" type='radio' name='radio8' value='3'>
-					รับราชการ
-					<input style="width:1em; height:1em;" type='radio' name='radio8' value='4'>
-					พนักงาน
-					<input style="width:1em; height:1em;" type='radio' name='radio8' value='5'>
-					นักธุรกิจ
-					<br>
-					<input style="width:1em; height:1em;" type='radio' name='radio8' value='6'>
-					อาชีพอิสระ
-					<input style="width:1em; height:1em;" type='radio' name='radio8' value='7'>
-					ไม่ประกอบอาชีพ	
+					<?php 
+					if ($radio8 == 1) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='1' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='1'>";
+					}
+					echo "ค้าขาย";
+					if ($radio8 == 2) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='2' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='2'>";
+					}
+					echo "รับจ้าง";
+					if ($radio8 == 3) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='3' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='3'>";
+					}
+					echo "รับราชการ";
+					if ($radio8 == 4) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='4' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='4'>";
+					}
+					echo "พนักงาน";
+					if ($radio8 == 5) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='5' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='5'>";
+					}
+					echo "นักธุรกิจ";
+					echo "<br>";
+					if ($radio8 == 6) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='6' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='6'>";
+					}
+					echo "อาชีพอิสระ";
+					if ($radio8 == 7) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='7' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio8' value='7'>";
+					}
+					echo "ไม่ประกอบอาชีพ	";
+					 ?>
 				</div>
 			</div>
 			
@@ -759,20 +1032,50 @@ $input53 = $_POST['input53'];
 				<div class="col-md-12">
 					สถานภาพของบิดา-มารดา
 					<br>
-					<input style="width:1em; height:1em;" type='radio' name='radio9' value='1'>
-					อยู่ด้วยกัน
-					<input style="width:1em; height:1em;" type='radio' name='radio9' value='2'>
-					แยกกันอยู่
-					<input style="width:1em; height:1em;" type='radio' name='radio9' value='3'>
-					หย่าร้าง
-					<input style="width:1em; height:1em;" type='radio' name='radio9' value='4'>
-					บิดาถึงแก่กรรม
-					<input style="width:1em; height:1em;" type='radio' name='radio9' value='5'>
-					มารดาถึงแก่กรรม
-					<input style="width:1em; height:1em;" type='radio' name='radio9' value='6'>
-					บิดาแต่งงานใหม่
-					<input style="width:1em; height:1em;" type='radio' name='radio9' value='7'>
-					มารดาแต่งงานใหม่
+					<?php 
+					if ($radio9 == 1) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='1' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='1'>";
+					}
+					echo "อยู่ด้วยกัน";
+					if ($radio9 == 2) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='2' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='2'>";
+					}
+					echo "แยกกันอยู่";
+					if ($radio9 == 3) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='3' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='3'>";
+					}
+					echo "หย่าร้าง";
+					if ($radio9 == 4) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='4' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='4'>";
+					}
+					echo "บิดาถึงแก่กรรม";
+					if ($radio9 == 5) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='5' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='5'>";
+					}
+					echo "มารดาถึงแก่กรรม";
+					if ($radio9 == 6) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='6' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='6'>";
+					}
+					echo "บิดาแต่งงานใหม่";
+					if ($radio9 == 7) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='7' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio9' value='7'>";
+					}
+					echo "มารดาแต่งงานใหม่";
+					 ?>
 				</div>
 			</div>
 
@@ -801,12 +1104,26 @@ $input53 = $_POST['input53'];
 					เกี่ยวข้างกับนักเรียนเป็น
 				</div>
 				<div class="col-md-9">
-					<input style="width:1em; height:1em;" type='radio' name='radio10' id="radio10-1" value='0'>
-					บิดา
-					<input style="width:1em; height:1em;" type='radio' name='radio10' id="radio10-2" value='1'>
-					มารดา
-					<input style="width:1em; height:1em;" type='radio' name='radio10' id="radio10-3" value='2'>
-					อื่นๆ (หากไม่ใช่ บิดา มารดา ให้กรอกข้อมูลด้านล่าง)
+					<?php 
+					if ($radio10 == 0) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio10' id='radio10-1' value='0' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio10' id='radio10-1' value='0'>";
+					}
+					echo "บิดา";
+					if ($radio10 == 1) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio10' id='radio10-2' value='1' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio10' id='radio10-2' value='1'>";
+					}
+					echo "มารดา";
+					if ($radio10 == 2) {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio10' id='radio10-3' value='2' checked>";
+					} else {
+						echo "<input style='width:1em; height:1em;' type='radio' name='radio10' id='radio10-3' value='2'>";
+					}
+					echo "อื่นๆ (หากไม่ใช่ บิดา มารดา ให้กรอกข้อมูลด้านล่าง)";
+					 ?>
 				</div>
 			</div>
 
@@ -827,32 +1144,71 @@ $input53 = $_POST['input53'];
 					<div class="col-md-6">
 						ความพิการของผู้ปกครอง 
 						<br>
-						<input style="width:1em; height:1em;" type='radio' name='radio11' id="radio11-1" value='1'>
-						ไม่พิการ
-						<input style="width:1em; height:1em;" type='radio' name='radio11' id="radio11-2" value='0'>
-						พิการ 
+						<?php 
+						if ($radio11 == 1) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio11' id='radio11-1' value='1' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio11' id='radio11-1' value='1'>";
+						}
+						echo "ไม่พิการ";
+						if ($radio11 == 0) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio11' id='radio11-2' value='0' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio11' id='radio11-2' value='0'>";
+						}
+						echo "พิการ ";
+						 ?>
 						<span id="radio11-type">
 							ด้าน
 							<input type="text" name='input47'>
 						</span>
 					</div>
 					<div class="col-md-6">
-						อาชีพของผู้ปกครอง 
-						<input style="width:1em; height:1em;" type='radio' name='radio12' value='1'>
-						ค้าขาย
-						<input style="width:1em; height:1em;" type='radio' name='radio12' value='2'>
-						รับจ้าง
-						<input style="width:1em; height:1em;" type='radio' name='radio12' value='3'>
-						รับราชการ
-						<input style="width:1em; height:1em;" type='radio' name='radio12' value='4'>
-						พนักงาน
-						<br>
-						<input style="width:1em; height:1em;" type='radio' name='radio12' value='5'>
-						นักธุรกิจ
-						<input style="width:1em; height:1em;" type='radio' name='radio12' value='6'>
-						อาชีพอิสระ
-						<input style="width:1em; height:1em;" type='radio' name='radio12' value='7'>
-						ไม่ประกอบอาชีพ
+						<?php 
+						if ($radio12 == 1) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='1' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='1'>";
+						}
+						echo "ค้าขาย";
+						if ($radio12 == 2) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='2' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='2'>";
+						}
+						echo "รับจ้าง";
+						if ($radio12 == 3) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='3' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='3'>";
+						}
+						echo "รับราชการ";
+						if ($radio12 == 4) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='4' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='4'>";
+						}
+						echo "พนักงาน";
+						if ($radio12 == 5) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='5' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='5'>";
+						}
+						echo "นักธุรกิจ";
+						echo "<br>";
+						if ($radio12 == 6) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='6' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='6'>";
+						}
+						echo "อาชีพอิสระ";
+						if ($radio12 == 7) {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='7' checked>";
+						} else {
+							echo "<input style='width:1em; height:1em;' type='radio' name='radio12' value='7'>";
+						}
+						echo "ไม่ประกอบอาชีพ	";
+						 ?>
 					</div>
 				</div>
 
