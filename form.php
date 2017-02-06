@@ -1,3 +1,6 @@
+<?php 
+session_start();
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +20,6 @@
 	
 </head>
 <body style="font-size:17px;">
-	<span style=""></span>
 	<?php 
 	$type = $_GET['type'];
 
@@ -183,25 +185,25 @@
 
 	<form id="form1" name="form1" method="post" action="form_check.php">
 		<input type="hidden" name="type" value="<?php echo $type; ?>">
-		<div style="height:50px; width: 100%; background-color:#0000b9; color:white;">
-			<div class="container">
-				<div class="col-md-8">
-					<img src="image/logops.jpg" width="40px;" style="float:left; margin-top: 5px; border-radius: 50%;">
-					<span style="font-size:22px; margin-top:10px; float:left; margin-left:10px;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</span>
-				</div>
-				<div class="col-md-2">
-					<a href="index.php">
-						<h4 style="margin-top:15px; color:white; float:left; padding-left:5px; padding-left:90px;">หน้าหลัก</h4>
-					</a>
-				</div>
-				<div class="col-md-2">
-					<a href="login.php">
-						<i class="fa fa-user-circle" style="color:white; font-size:18px; float:left; margin-top:17px;" aria-hidden="true"></i>
-						<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">เข้าสู่ระบบ</h4>
-					</a>
-				</div>
+		<div style="height:50px; width: 100%; background-color:#1c1c86; color:white;">
+		<div class="container">
+			<div class="col-md-9">
+				<img src="image/logops.jpg" width="40px;" style="float:left; margin-top: 5px; border-radius: 50%;">
+				<a style="color:white;" href="index.php"><span style="font-size:22px; margin-top:10px; float:left; margin-left:10px;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</span></a>
+			</div>
+			<div class="col-md-1">
+				<a href="index.php">
+					<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">หน้าแรก</h4>
+				</a>
+			</div>
+			<div class="col-md-2">
+				<a href="login.php" >  
+					<i class="fa fa-user-circle" style="color:white; font-size:18px; float:left; margin-top:17px;" aria-hidden="true"></i>
+					<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">เข้าสู่ระบบ</h4>
+				</a>
 			</div>
 		</div>
+	</div>
 
 		<div class="container" style="margin-top:30px; color:white;">
 			<div class="col-md-3"></div>
@@ -244,7 +246,11 @@
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-12">
 					<h2 style="margin-top:-10px; font-weight:bold;">ข้อมูลนักเรียน</h2>
-					<!-- <h4 style="color:red;">*กรุณากรอกข้อมูลในส่วนนักเรียนให้ครบถ้วน</h4> -->
+					<?php 
+					if ($_SESSION['check'] == 1) {
+						echo "<h4 style='color:red;''>*กรุณากรอกข้อมูลในส่วนนักเรียนให้ครบถ้วน</h4>";
+					}
+					 ?>
 				</div>
 				<div class="col-md-6" id="form-line">
 					รหัสใบสมัคร

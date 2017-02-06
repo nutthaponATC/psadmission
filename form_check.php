@@ -1,4 +1,6 @@
 <?php
+echo "<meta charset='UTF-8'>";
+session_start();
 error_reporting( error_reporting() & ~E_NOTICE );
 $type = $_POST['type'];
 $sType = $_POST['sType'];
@@ -70,6 +72,19 @@ $input52 = $_POST['input52'];
 $input53 = $_POST['input53'];
 $input54 = $_POST['input54'];
 $input55 = $_POST['input55'];
+
+
+
+if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empty($input5) || empty($input6) || empty($input7) || empty($input8) || empty($input9) || empty($input10) || empty($input11) || empty($input12) || empty($input13) || empty($input14) || empty($input15) || empty($input16) || empty($input17) || empty($input18) || empty($input19) || empty($input20) || empty($input21) || empty($input22) || empty($input23) || empty($input24) || empty($input26) || empty($input27) || empty($input28)) {
+	
+	$_SESSION['check'] = 1;
+	echo "<script language='javascript'>";
+	echo "alert('กรุณากรอกข้อมูลนักเรียนให้ครบ');";
+	echo "javascript:history.back()";
+	echo "</script>";
+} else {
+	$_SESSION['check'] = 2;
+}
  ?>
 
  <!DOCTYPE html>
@@ -90,7 +105,6 @@ $input55 = $_POST['input55'];
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 <body style="font-size:17px;">
-	<span style=""></span>
 	<?php
 
 	if ($type == 1) {
@@ -374,26 +388,27 @@ $input55 = $_POST['input55'];
 
 	?>
 
-	<form id="form1" name="form1" method="post" action="form-process.php">
-		<div style="height:50px; width: 100%; background-color:#0000b9; color:white;">
-			<div class="container">
-				<div class="col-md-8">
-					<img src="image/logops.jpg" width="40px;" style="float:left; margin-top: 5px; border-radius: 50%;">
-					<span style="font-size:22px; margin-top:10px; float:left; margin-left:10px;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</span>
-				</div>
-				<div class="col-md-2">
-					<a href="index.php">
-						<h4 style="margin-top:15px; color:white; float:left; padding-left:5px; padding-left:90px;">หน้าหลัก</h4>
-					</a>
-				</div>
-				<div class="col-md-2">
-					<a href="login.php">
-						<i class="fa fa-user-circle" style="color:white; font-size:18px; float:left; margin-top:17px;" aria-hidden="true"></i>
-						<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">เข้าสู่ระบบ</h4>
-					</a>
-				</div>
+	<form id="form1" name="form1" method="post" action="form_process.php">
+		<input type="hidden" name="type" value="<?php echo $type; ?>">
+		<div style="height:50px; width: 100%; background-color:#1c1c86; color:white;">
+		<div class="container">
+			<div class="col-md-9">
+				<img src="image/logops.jpg" width="40px;" style="float:left; margin-top: 5px; border-radius: 50%;">
+				<a style="color:white;" href="index.php"><span style="font-size:22px; margin-top:10px; float:left; margin-left:10px;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</span></a>
+			</div>
+			<div class="col-md-1">
+				<a href="index.php">
+					<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">หน้าแรก</h4>
+				</a>
+			</div>
+			<div class="col-md-2">
+				<a href="login.php" >  
+					<i class="fa fa-user-circle" style="color:white; font-size:18px; float:left; margin-top:17px;" aria-hidden="true"></i>
+					<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">เข้าสู่ระบบ</h4>
+				</a>
 			</div>
 		</div>
+	</div>
 
 		<div class="container" style="margin-top:30px; color:white;">
 			<div class="col-md-3"></div>

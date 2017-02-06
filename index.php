@@ -22,23 +22,19 @@
 				<img src="image/logops.jpg" width="40px;" style="float:left; margin-top: 5px; border-radius: 50%;">
 				<a style="color:white;" href="index.php"><span style="font-size:22px; margin-top:10px; float:left; margin-left:10px;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</span></a>
 			</div>
+			<div class="col-md-1">
+				<a href="index.php">
+					<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">หน้าแรก</h4>
+				</a>
+			</div>
 			<div class="col-md-2">
 				<a href="login.php" >  
-					<i class="fa fa-user-circle" style="color:white; font-size:18px; float:left; margin-top:17px; margin-left:60px;" aria-hidden="true"></i>
+					<i class="fa fa-user-circle" style="color:white; font-size:18px; float:left; margin-top:17px;" aria-hidden="true"></i>
 					<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">เข้าสู่ระบบ</h4>
 				</a>
 			</div>
-			<div class="col-md-1">
-				<i class="fa fa-bars" id="smenu" style="cursor:pointer; font-size:30px; margin-top:10px;" aria-hidden="true"></i>
-			</div>
 		</div>
 	</div>
-
-	<!-- <div style="height:50px; width: 100%; background-color:#0000b9; color:white;">
-		<div class="container">
-			test
-		</div>
-	</div> -->
 
 	<div class="container" style="padding-top:30px; padding-bottom:30px;">
 		<div class="col-md-3">
@@ -101,9 +97,3 @@
 	<script src="js/jquery.js"></script>
 </body>
 </html>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("#subMenu").hide();
-	}
-</script>
