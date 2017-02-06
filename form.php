@@ -215,13 +215,13 @@
 				<div style="width:50px; float:left; height:50px; border-radius:50%; background-color:#d1e0e0; padding:21px; margin-right:3px; padding-top:13px;">
 					2
 				</div>
-				<div style="color:black; padding-top:12px;">ยืนยันข้อมูล</div>
+				<div style="color:#d1e0e0; padding-top:12px;">ยืนยันข้อมูล</div>
 			</div>
 			<div class="col-md-3">
 				<div style="width:50px; float:left; height:50px; border-radius:50%; background-color:#d1e0e0; padding:21px; margin-right:3px; padding-top:13px;">
 					3
 				</div>
-				<div style="color:black; padding-top:12px;">พิมพ์ข้อมูลใบสมัคร</div>
+				<div style="color:#d1e0e0; padding-top:12px;">พิมพ์ข้อมูลใบสมัคร</div>
 			</div>
 			<div class="col-md-2"></div>
 		</div>
@@ -361,85 +361,15 @@
 				<div class="col-md-4">
 					จังหวัด
 					<select name="input19" style="width:250px;">
-						<option value="" selected>เลือกจังหวัด</option>
-						<option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
-						<option value="กระบี่">กระบี่ </option>
-						<option value="กาญจนบุรี">กาญจนบุรี </option>
-						<option value="กาฬสินธุ์">กาฬสินธุ์ </option>
-						<option value="กำแพงเพชร">กำแพงเพชร </option>
-						<option value="ขอนแก่น">ขอนแก่น</option>
-						<option value="จันทบุรี">จันทบุรี</option>
-						<option value="ฉะเชิงเทรา">ฉะเชิงเทรา </option>
-						<option value="ชัยนาท">ชัยนาท </option>
-						<option value="ชัยภูมิ">ชัยภูมิ </option>
-						<option value="ชุมพร">ชุมพร </option>
-						<option value="ชลบุรี">ชลบุรี </option>
-						<option value="เชียงใหม่">เชียงใหม่ </option>
-						<option value="เชียงราย">เชียงราย </option>
-						<option value="ตรัง">ตรัง </option>
-						<option value="ตราด">ตราด </option>
-						<option value="ตาก">ตาก </option>
-						<option value="นครนายก">นครนายก </option>
-						<option value="นครปฐม">นครปฐม </option>
-						<option value="นครพนม">นครพนม </option>
-						<option value="นครราชสีมา">นครราชสีมา </option>
-						<option value="นครศรีธรรมราช">นครศรีธรรมราช </option>
-						<option value="นครสวรรค์">นครสวรรค์ </option>
-						<option value="นราธิวาส">นราธิวาส </option>
-						<option value="น่าน">น่าน </option>
-						<option value="นนทบุรี">นนทบุรี </option>
-						<option value="บึงกาฬ">บึงกาฬ</option>
-						<option value="บุรีรัมย์">บุรีรัมย์</option>
-						<option value="ประจวบคีรีขันธ์">ประจวบคีรีขันธ์ </option>
-						<option value="ปทุมธานี">ปทุมธานี </option>
-						<option value="ปราจีนบุรี">ปราจีนบุรี </option>
-						<option value="ปัตตานี">ปัตตานี </option>
-						<option value="พะเยา">พะเยา </option>
-						<option value="พระนครศรีอยุธยา">พระนครศรีอยุธยา </option>
-						<option value="พังงา">พังงา </option>
-						<option value="พิจิตร">พิจิตร </option>
-						<option value="พิษณุโลก">พิษณุโลก </option>
-						<option value="เพชรบุรี">เพชรบุรี </option>
-						<option value="เพชรบูรณ์">เพชรบูรณ์ </option>
-						<option value="แพร่">แพร่ </option>
-						<option value="พัทลุง">พัทลุง </option>
-						<option value="ภูเก็ต">ภูเก็ต </option>
-						<option value="มหาสารคาม">มหาสารคาม </option>
-						<option value="มุกดาหาร">มุกดาหาร </option>
-						<option value="แม่ฮ่องสอน">แม่ฮ่องสอน </option>
-						<option value="ยโสธร">ยโสธร </option>
-						<option value="ยะลา">ยะลา </option>
-						<option value="ร้อยเอ็ด">ร้อยเอ็ด </option>
-						<option value="ระนอง">ระนอง </option>
-						<option value="ระยอง">ระยอง </option>
-						<option value="ราชบุรี">ราชบุรี</option>
-						<option value="ลพบุรี">ลพบุรี </option>
-						<option value="ลำปาง">ลำปาง </option>
-						<option value="ลำพูน">ลำพูน </option>
-						<option value="เลย">เลย </option>
-						<option value="ศรีสะเกษ">ศรีสะเกษ</option>
-						<option value="สกลนคร">สกลนคร</option>
-						<option value="สงขลา">สงขลา </option>
-						<option value="สมุทรสาคร">สมุทรสาคร </option>
-						<option value="สมุทรปราการ">สมุทรปราการ </option>
-						<option value="สมุทรสงคราม">สมุทรสงคราม </option>
-						<option value="สระแก้ว">สระแก้ว </option>
-						<option value="สระบุรี">สระบุรี </option>
-						<option value="สิงห์บุรี">สิงห์บุรี </option>
-						<option value="สุโขทัย">สุโขทัย </option>
-						<option value="สุพรรณบุรี">สุพรรณบุรี </option>
-						<option value="สุราษฎร์ธานี">สุราษฎร์ธานี </option>
-						<option value="สุรินทร์">สุรินทร์ </option>
-						<option value="สตูล">สตูล </option>
-						<option value="หนองคาย">หนองคาย </option>
-						<option value="หนองบัวลำภู">หนองบัวลำภู </option>
-						<option value="อำนาจเจริญ">อำนาจเจริญ </option>
-						<option value="อุดรธานี">อุดรธานี </option>
-						<option value="อุตรดิตถ์">อุตรดิตถ์ </option>
-						<option value="อุทัยธานี">อุทัยธานี </option>
-						<option value="อุบลราชธานี">อุบลราชธานี</option>
-						<option value="อ่างทอง">อ่างทอง </option>
-						<option value="อื่นๆ">อื่นๆ</option>
+						<option value="">เลือกจังหวัด</option>
+						<?php 
+						$province = array('กรุงเทพมหานคร','กระบี่','กาญจนบุรี','กาฬสินธุ์','กำแพงเพชร','ขอนแก่น','จันทบุรี','ฉะเชิงเทรา','ชัยนาท','ชัยภูมิ','ชุมพร','ชลบุรี','เชียงใหม่','เชียงราย','ตรัง','ตราด','ตาก','นครนายก','นครปฐม','นครพนม','นครราชสีมา','นครศรีธรรมราช','นครสวรรค์','นราธิวาส','น่าน','นนทบุรี','บึงกาฬ','บุรีรัมย์','ประจวบคีรีขันธ์','ปทุมธานี','ปราจีนบุรี','ปัตตานี','พะเยา','พระนครศรีอยุธยา','พังงา','พิจิตร','พิษณุโลก','เพชรบุรี','เพชรบูรณ์','แพร่','พัทลุง','ภูเก็ต','มหาสารคาม','มุกดาหาร','แม่ฮ่องสอน','ยโสธร','ยะลา','ร้อยเอ็ด','ระนอง','ระยอง','ราชบุรี','ลพบุรี','ลำปาง','ลำพูน','เลย','ศรีสะเกษ','สกลนคร','สงขลา','สมุทรสาคร','สมุทรปราการ','สมุทรสงคราม','สระแก้ว','สระบุรี','สิงห์บุรี','สุโขทัย','สุพรรณบุรี','สุราษฎร์ธานี','สุรินทร์','สตูล','หนองคาย','หนองบัวลำภู','อำนาจเจริญ','อุดรธานี','อุตรดิตถ์','อุทัยธานี','อุบลราชธานี','อ่างทอง','อื่นๆ');
+						$j = 0;
+						for ($i=1; $i < 79; $i++) { 
+							echo "<option value=".$i.">".$province[$j]."</option>";
+							$j++;
+						}
+						 ?>
 					</select>	
 				</div>
 				<div class="col-md-4">
@@ -472,7 +402,7 @@
 					ความพิการ
 					<input style="width:1em; height:1em;" type='radio' name='radio1' id="radio1-1" value='1'>
 					ไม่พิการ
-					<input style="width:1em; height:1em;" type='radio' name='radio1' id="radio1-2" value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio1' id="radio1-2" value='2'>
 					พิการ 
 				</div>
 				<div class="col-md-3" id="radio1-type">
@@ -551,7 +481,7 @@
 						ร.ร.ตั้งอยู่
 						<input style="width:1em; height:1em;" type='radio' name='radio4' value='1'>
 						ในเขตพื้นที่ (คลองชักพระ/บางระมาด/บางพรม/ฉิมพลี)
-						<input style="width:1em; height:1em;" type='radio' name='radio4' value='0'>
+						<input style="width:1em; height:1em;" type='radio' name='radio4' value='2'>
 						นอกเขตพื้นที่	
 					</div>
 				</div>
@@ -582,7 +512,7 @@
 					ความพิการของบิดา 
 					<input type='radio' style="width:1em; height:1em;" name='radio5' id="radio5-1" value='1'>
 					ไม่พิการ
-					<input type='radio' style="width:1em; height:1em;" name='radio5' id="radio5-2" value='0'>
+					<input type='radio' style="width:1em; height:1em;" name='radio5' id="radio5-2" value='2'>
 					พิการ 
 				</div>
 				<div class="col-md-3" id="radio5-type">
@@ -632,14 +562,14 @@
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-5">
-					ชื่อสกุล บิดา
+					ชื่อสกุล มารดา
 					<input type="text" name="input38" style="width:300px;">
 				</div>
 				<div class="col-md-4">
-					ความพิการของบิดา 
+					ความพิการของมารดา 
 					<input type='radio' style="width:1em; height:1em;" name='radio7' id="radio7-1" value='1'>
 					ไม่พิการ
-					<input type='radio' style="width:1em; height:1em;" name='radio7' id="radio7-2" value='0'>
+					<input type='radio' style="width:1em; height:1em;" name='radio7' id="radio7-2" value='2'>
 					พิการ 
 				</div>
 				<div class="col-md-3" id="radio7-type">
@@ -733,11 +663,11 @@
 					เกี่ยวข้างกับนักเรียนเป็น
 				</div>
 				<div class="col-md-9">
-					<input style="width:1em; height:1em;" type='radio' name='radio10' id="radio10-1" value='0'>
+					<input style="width:1em; height:1em;" type='radio' name='radio10' id="radio10-1" value='1'>
 					บิดา
-					<input style="width:1em; height:1em;" type='radio' name='radio10' id="radio10-2" value='1'>
+					<input style="width:1em; height:1em;" type='radio' name='radio10' id="radio10-2" value='2'>
 					มารดา
-					<input style="width:1em; height:1em;" type='radio' name='radio10' id="radio10-3" value='2'>
+					<input style="width:1em; height:1em;" type='radio' name='radio10' id="radio10-3" value='3'>
 					อื่นๆ (หากไม่ใช่ บิดา มารดา ให้กรอกข้อมูลด้านล่าง)
 				</div>
 			</div>
@@ -761,7 +691,7 @@
 						<br>
 						<input style="width:1em; height:1em;" type='radio' name='radio11' id="radio11-1" value='1'>
 						ไม่พิการ
-						<input style="width:1em; height:1em;" type='radio' name='radio11' id="radio11-2" value='0'>
+						<input style="width:1em; height:1em;" type='radio' name='radio11' id="radio11-2" value='2'>
 						พิการ 
 						<span id="radio11-type">
 							ด้าน
@@ -800,6 +730,50 @@
 				</div>
 			</span>
 		</div>
+
+		<?php 
+		if ($type == 1 OR $type == 4 OR $type == 5 OR $type == 6) {
+			echo "<span id='form-home'>";
+		}
+		 ?>
+		
+		<div class="container" id="form-table" style="padding-top:30px; background-color:rgba(255,255,255,0.6);">
+			<div class="col-md-12">
+				<div class="col-md-8">
+					<h4 style="font-weight:bold; font-size:20px;">
+						ข้อมูลการอาศัยอยู่ในเขตพื้นที่บริการ (คลองชักพระ บางระมาด บางพรม ฉิมพลี)
+					</h4>
+				</div>
+				<div class="col-md-4">
+					<h4 style="font-weight:bold; font-size:15px; border-bottom:1px solid black;">
+						หมายเหตุ อาศัยอยู่นอกเขตพื้นที่บริการไม่ต้องกรอก
+					</h4>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-12" id="form-line">
+					เจ้าบ้าน/เจ้าของบ้านชื่อ
+					<input type="text" name="input54" style="width:320px;">
+					เกี่ยวข้องกับนักเรียนเป็น 
+					<input type="text" name="input55" style="width:320px;">
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-8" id="form-line">
+					นักเรียนอาศัยอยู่ในเขตพื้นที่บริการ (นับจากวันที่ย้ายเข้าอยู่ถึงวันที่ 16 พฤษภาคม พ.ศ. 2560)
+				</div>
+				<div class="col-md-2" id="form-line">
+					<input type='radio' name='radio13' class='rdo' value='1' >
+					ครบ 2 ปี
+				</div>
+				<div class="col-md-2" id="form-line">
+					<input type='radio' name='radio13' class='rdo' value='2' >
+					ไม่ครบ 2 ปี
+				</div>
+			</div>
+		</div>
+		</span>
+
 		<div class="container" id="form-table" style="padding-top:30px; margin-bottom:50px; background-color:rgba(255,255,255,0.6);">
 			<div class="col-md-12">
 				<div class="col-md-12">
@@ -855,6 +829,8 @@
 		$("#radio7-type").hide();
 		$("#radio11-type").hide();
 		$("#parent").hide();
+		$("#form-home").hide();
+
 		$("#radio1-2").click(function(){
 			$("#radio1-type").show();
 		});

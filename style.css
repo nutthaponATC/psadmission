@@ -162,3 +162,7 @@ html body {
   @include animation-delay(2.75s);
   @include animation-fill-mode(forwards);
 }
+
+#readonly {
+  color: #7d7d7d;
+}
