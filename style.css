@@ -13,11 +13,8 @@ html body {
 .type {
 	width:250px; 
 	height:250px; 
-	/*background-color:#0000b9; */
-	/*background-color:#e0e0e0; */
 	background-color:white; 
 	float:left;
-	/*border-radius: 25px;*/
 	border-radius: 50%;
 	color: #0000b9;
 }
@@ -62,12 +59,13 @@ html body {
 
 .login {
 	width:500px; 
-	height:300px; 
-	background-color: #0000b9;
+	height:250px; 
+	background-color:#1c1c86;
 	border-radius: 25px;
 	margin-top:calc(50vh - 150px);
 	margin-left:calc(50vw - 250px);
 	color: white;
+	position: absolute;
 }
 
 .rdo {

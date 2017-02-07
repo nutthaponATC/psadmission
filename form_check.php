@@ -75,7 +75,7 @@ $input55 = $_POST['input55'];
 
 
 
-if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empty($input5) || empty($input6) || empty($input7) || empty($input8) || empty($input9) || empty($input10) || empty($input11) || empty($input12) || empty($input13) || empty($input14) || empty($input15) || empty($input16) || empty($input17) || empty($input18) || empty($input19) || empty($input20) || empty($input21) || empty($input22) || empty($input23) || empty($input24) || empty($input26) || empty($input27) || empty($input28)) {
+if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empty($input5) || empty($input6) || empty($input7) || empty($input8) || empty($input9) || empty($input10) || empty($input11) || empty($input12) || empty($input13) || empty($input14) || empty($input15) || empty($input17) || empty($input18) || empty($input19) || empty($input20) || empty($input21) || empty($input22) || empty($input23) || empty($input24) || empty($input26) || empty($input27) || empty($input28)) {
 	
 	$_SESSION['check'] = 1;
 	echo "<script language='javascript'>";
@@ -105,6 +105,7 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 <body style="font-size:17px;">
+	<form id="form1" name="form1" method="post" action="form_process.php">
 	<?php
 
 	if ($type == 1) {
@@ -114,18 +115,17 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		</div>
 		<div class='col-md-5'>";
 			if ($sType == 1) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='1' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='1'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1'>";
 			}
 			$subType .= "วิทย์ - คณิต
 		</div>
-		<div class='col-md-5'>
-			<input readonly id='readonly' type='radio' name='sType' class='rdo' value='2'";
+		<div class='col-md-5'>";
 			if ($sType == 2) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='2' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='2'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
 			}
 			$subType .= "คณิต - ภาษาจีน
 		</div>";
@@ -137,18 +137,18 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		<div class='col-md-5'>
 			<div class='col-md-12'>";
 			if ($sType == 1) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='1' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='1'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1'>";
 			}
 				
 				$subType .= "ในเขตพื้นที่บริการ สอบคัดเลือก
 			</div>
 			<div class='col-md-12'>";
 			if ($sType == 2) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='2' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='2'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
 			}
 				$subType .= "ในเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ
 			</div>
@@ -156,17 +156,17 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		<div class='col-md-5'>
 			<div class='col-md-12'>";
 			if ($sType == 3) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='3' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='3'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3'>";
 			}
 				$subType .= "นอกเขตพื้นที่บริการ สอบคัดเลือก
 			</div>
 			<div class='col-md-12'>";
 			if ($sType == 4) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='4' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='4'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4'>";
 			}
 				$subType .= "นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ
 			</div>
@@ -179,18 +179,18 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		<div class='col-md-5'>
 			<div class='col-md-12'>";
 			if ($sType == 1) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='1' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='1'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1'>";
 			}
 				$subType .= "
 				ในเขตพื้นที่บริการ สอบคัดเลือก
 			</div>
 			<div class='col-md-12'>";
 			if ($sType == 2) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='2' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='2'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
 			}
 				$subType .= "
 				ในเขตพื้นที่บริการ ความสามารถพิเศษกีฬา
@@ -199,18 +199,18 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		<div class='col-md-5'>
 			<div class='col-md-12'>";
 			if ($sType == 3) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='3' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='3'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3'>";
 			}
 				$subType .= "
 				นอกเขตพื้นที่บริการ สอบคัดเลือก
 			</div>
 			<div class='col-md-12'>";
 			if ($sType == 4) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='4' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='4'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4'>";
 			}
 				$subType .= "
 				นอกเขตพื้นที่บริการ ความสามารถพิเศษกีฬา
@@ -224,18 +224,18 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		<div class='col-md-3'>
 			<div class='col-md-12'>";
 			if ($sType == 1) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='1' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='1'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1'>";
 			}
 				$subType .= "
 				วิทย์ - คณิต
 			</div>
 			<div class='col-md-12'><br>";
 			if ($sType == 2) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='2' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='2'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
 			}
 				$subType .= "
 				คณิต - อังกฤษ
@@ -244,18 +244,18 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		<div class='col-md-4'>
 			<div class='col-md-12'>";
 			if ($sType == 3) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='3' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='3'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3'>";
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก ฝรั่งเศษ
 			</div>
 			<div class='col-md-12'><br>";
 			if ($sType == 4) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='4' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='4'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4'>";
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก ญี่ปุ่น
@@ -264,9 +264,9 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		<div class='col-md-3'>
 			<div class='col-md-12'>";
 			if ($sType == 5) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='5' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='5' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='5'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='5'>";
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก จีน
@@ -280,18 +280,18 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		<div class='col-md-3'>
 			<div class='col-md-12'>";
 			if ($sType == 1) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='1' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='1'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1'>";
 			}
 				$subType .= "
 				วิทย์ - คณิต
 			</div>
 			<div class='col-md-12'>";
 			if ($sType == 2) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='2' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='2'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
 			}
 				$subType .= "
 				คณิต - อังกฤษ
@@ -300,18 +300,18 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		<div class='col-md-4'>
 			<div class='col-md-12'>";
 			if ($sType == 3) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='3' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='3'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3'>";
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก ฝรั่งเศษ
 			</div>
 			<div class='col-md-12'>";
 			if ($sType == 4) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='4' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='4'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4'>";
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก ญี่ปุ่น
@@ -320,9 +320,9 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		<div class='col-md-3'>
 			<div class='col-md-12'>";
 			if ($sType == 5) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='5' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='5' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='5'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='5'>";
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก จีน
@@ -336,18 +336,18 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		<div class='col-md-3'>
 			<div class='col-md-12'>";
 			if ($sType == 1) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='1' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='1'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='1'>";
 			}
 				$subType .= "
 				วิทย์ - คณิต
 			</div>
 			<div class='col-md-12'>";
 			if ($sType == 2) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='2' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='2'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
 			}
 				$subType .= "
 				คณิต - อังกฤษ
@@ -356,18 +356,18 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		<div class='col-md-4'>
 			<div class='col-md-12'>";
 			if ($sType == 3) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='3' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='3'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='3'>";
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก ฝรั่งเศษ
 			</div>
 			<div class='col-md-12'>";
 			if ($sType == 4) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='4' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='4'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='4'>";
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก ญี่ปุ่น
@@ -376,9 +376,9 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 		<div class='col-md-3'>
 			<div class='col-md-12'>";
 			if ($sType == 5) {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='5' checked>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='5' checked>";
 			} else {
-				$subType .= "<input readonly id='readonly' type='radio' name='sType' class='rdo' value='5'>";
+				$subType .= "<input type='radio' name='sType' class='rdo' value='5'>";
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก จีน
@@ -388,7 +388,6 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 
 	?>
 
-	<form id="form1" name="form1" method="post" action="form_process.php">
 		<input type="hidden" name="type" value="<?php echo $type; ?>">
 		<div style="height:50px; width: 100%; background-color:#1c1c86; color:white;">
 		<div class="container">
@@ -1305,16 +1304,14 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 				</div>
 			</div>
 		</div>
-		<div class="container" style="margin-bottom:50px; margin-top:-10px;">
-			<div class="col-md-4"></div>
-			<div class="col-md-2">
-				<input type="submit" name="submit" value="ยืนยันบันทึกข้อมูล" class="form-control">
-			</div>
-			<div class="col-md-2">
-				<a href="javascript:history.back()"><input type="button" name="back" value="แก้ไขข้อมูล" class="form-control"></a>
-			</div>
-			<div class="col-md-4"></div>
+		<div class="col-md-4"></div>
+		<div class="col-md-2">
+			<input type="submit" style="margin-bottom:50px;" name="submit" value="ยืนยันบันทึกข้อมูล" class="form-control">
 		</div>
+		<div class="col-md-2">
+			<a href="javascript:history.back()"><input type="button" style="margin-bottom:50px;" name="back" value="แก้ไขข้อมูล" class="form-control"></a>
+		</div>
+		<div class="col-md-4"></div>
 
 		<script src="js/jquery.js"></script>
 </body>

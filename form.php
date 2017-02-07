@@ -1,5 +1,6 @@
 <?php 
 session_start();
+error_reporting( error_reporting() & ~E_NOTICE );
  ?>
 <!DOCTYPE html>
 <html>
@@ -20,6 +21,7 @@ session_start();
 	
 </head>
 <body style="font-size:17px;">
+	<form id="form1" name="form1" method="post" action="form_check.php">
 	<?php 
 	$type = $_GET['type'];
 
@@ -183,7 +185,6 @@ session_start();
 
 	?>
 
-	<form id="form1" name="form1" method="post" action="form_check.php">
 		<input type="hidden" name="type" value="<?php echo $type; ?>">
 		<div style="height:50px; width: 100%; background-color:#1c1c86; color:white;">
 		<div class="container">

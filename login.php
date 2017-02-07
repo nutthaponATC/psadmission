@@ -15,13 +15,13 @@
 	<!-- fa -->
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
-<body> 
+<body style="height: 100vh; width: 100vw;"> 
 	<form action="login_process.php" method="post" name="form1">
+		<div class="col-md-12" style="margin-top:25vh; color:#1c1c86;">
+			<center><h2 style="font-style: italic;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</h2></center>
+		</div>
 		<div class="login">
-			<div class="col-md-12">
-				<center><h3 style="font-style: italic;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</h3></center>
-			</div>
-			<div class="col-md-12" style="margin-top: 20px;">
+			<div class="col-md-12" style="margin-top: 50px;">
 				<div style="width: 30%; float:left;" style="margin-top: 20px;">
 					<h4 style="padding-left:30px;">ชื่อผู้ใช้งาน</h4>
 				</div>

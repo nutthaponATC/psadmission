@@ -75,14 +75,15 @@ $input53 = $_POST['input53'];
 $input54 = $_POST['input54'];
 $input55 = $_POST['input55'];
 
-$sql = "INSERT INTO `history_ps` (`id_history`, `type`, `stype`, `radio1`, `radio2`, `radio3`, `radio4`, `radio5`, `radio6`, `radio7`, `radio8`, `radio9`, `radio10`, `radio11`, `radio12`, `radio13`, `input1`, `input2`, `input3`, `input4`, `input5`, `input6`, `input7`, `input8`, `input9`, `input10`, `input11`, `input12`, `input13`, `input14`, `input15`, `input16`, `input17`, `input18`, `input19`, `input20`, `input21`, `input22`, `input23`, `input24`, `input25`, `input26`, `input27`, `input28`, `input29`, `input30`, `input31`, `input32`, `input33`, `input34`, `input35`, `input36`, `input37`, `input38`, `input39`, `input40`, `input41`, `input42`, `input43`, `input44`, `input45`, `input46`, `input47`, `input48`, `input49`, `input50`, `input51`, `input52`, `input53`, `input54`, `input55`, `status`) VALUES (null, $type, $stype, $radio1, $radio2, $radio3, $radio4, $radio5, $radio6, $radio7, $radio8, $radio9, $radio10, $radio11, $radio12, $radio13, '$input1', '$input2', '$input3', '$input4', '$input5', '$input6', '$input7', '$input8', '$input9', '$input10', '$input11', '$input12', '$input13', '$input14', '$input15', '$input16', '$input17', '$input18', '$input19', '$input20', '$input21', '$input22', '$input23', '$input24', '$input25', '$input26', '$input27', '$input28', '$input29', '$input30', '$input31', '$input32', '$input33', '$input34', '$input35', '$input36', '$input37', '$input38', '$input39', '$input40', '$input41', '$input42', '$input43', '$input44', '$input45', '$input46', '$input47', '$input48', '$input49', '$input50', '$input51', '$input52', '$input53', '$input54', '$input55', 1)";
+$sql = "INSERT INTO `history_ps` (`id_history`, `type`, `stype`, `radio1`, `radio2`, `radio3`, `radio4`, `radio5`, `radio6`, `radio7`, `radio8`, `radio9`, `radio10`, `radio11`, `radio12`, `radio13`, `input1`, `input2`, `input3`, `input4`, `input5`, `input6`, `input7`, `input8`, `input9`, `input10`, `input11`, `input12`, `input13`, `input14`, `input15`, `input16`, `input17`, `input18`, `input19`, `input20`, `input21`, `input22`, `input23`, `input24`, `input25`, `input26`, `input27`, `input28`, `input29`, `input30`, `input31`, `input32`, `input33`, `input34`, `input35`, `input36`, `input37`, `input38`, `input39`, `input40`, `input41`, `input42`, `input43`, `input44`, `input45`, `input46`, `input47`, `input48`, `input49`, `input50`, `input51`, `input52`, `input53`, `input54`, `input55`, `status`) VALUES (null, '$type', '$sType', '$radio1', '$radio2', '$radio3', '$radio4', '$radio5', '$radio6', '$radio7', '$radio8', '$radio9', '$radio10', '$radio11', '$radio12', '$radio13', '$input1', '$input2', '$input3', '$input4', '$input5', '$input6', '$input7', '$input8', '$input9', '$input10', '$input11', '$input12', '$input13', '$input14', '$input15', '$input16', '$input17', '$input18', '$input19', '$input20', '$input21', '$input22', '$input23', '$input24', '$input25', '$input26', '$input27', '$input28', '$input29', '$input30', '$input31', '$input32', '$input33', '$input34', '$input35', '$input36', '$input37', '$input38', '$input39', '$input40', '$input41', '$input42', '$input43', '$input44', '$input45', '$input46', '$input47', '$input48', '$input49', '$input50', '$input51', '$input52', '$input53', '$input54', '$input55', 1)";
 mysql_query("SET NAMES utf8");
 $query = mysql_query($sql);
-echo $sql;
-exit();
 if ($query) {
-	echo "เพิ่มข้อมูลเรียบร้อย";
+	$alert = "เพิ่มข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร เรียบร้อย";
+} else {
+	$alert = "เพิ่มข้อมูลไม่สำเร็จ กรุณาติดต่อผู้ดูแลระบบ";
 }
+
 
 
  ?>
@@ -122,6 +123,70 @@ if ($query) {
 					<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">เข้าสู่ระบบ</h4>
 				</a>
 			</div>
+		</div>
+	</div>
+
+	<div class="container" style="margin-top:25vh; color:#1c1c86;">
+		<div class="col-md-2"></div>
+		<div class="col-md-8" style="border-bottom:1px solid #1c1c86; font-size:20px;">
+			<center>
+				<?php echo $alert; ?>
+			</center>
+		</div>
+		<div class="col-md-2"></div>
+		<div class="col-md-12" style="margin-top:30px;">
+			<center>
+				นักเรียนสามารถ เข้าสู่ระบบ เพื่อแก้ไขข้อมูลส่วนตัวและดูผลการสอบได้ที่เมนู เข้าสู่ระบบด้านบน
+			</center>
+		</div>
+		<div class="col-md-12" style="margin-top:30px;">
+			<div class="col-md-4"></div>
+			<div class="col-md-2">
+				ชื่อผู้ใช้งาน
+			</div>
+			<div class="col-md-3" style="color:blue;">
+				<?php echo $input2; ?>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="col-md-12" style="margin-top:15px;">
+			<div class="col-md-4"></div>
+			<div class="col-md-2">
+				รหัสผ่าน
+			</div>
+			<div class="col-md-3" style="color:blue;">
+				<?php echo $input11.$input12.$input13; ?>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="col-md-12" style="margin-top:30px;">
+			<div class="col-md-3"></div>
+			<div class="col-md-2">
+				<a href="print.php" >  
+					<i class="fa fa-file-text-o" style="color:#1c1c86; float:left; margin-top:4px;" aria-hidden="true"></i>
+					<span style="color:#1c1c86; float:left; padding-left:5px;">พิมพ์ใบสมัคร</span>
+				</a>
+			</div>
+			<div class="col-md-2">
+				<center>
+				<a href="login.php" >  
+					<i class="fa fa-user-circle" style="color:#1c1c86; float:left; margin-top:4px;" aria-hidden="true"></i>
+					<span style="color:#1c1c86; float:left; padding-left:5px;">เข้าสู่ระบบ</span>
+				</a>
+				</center>
+			</div>
+			<div class="col-md-2">
+				<a href="" >  
+					<i class="fa fa-calendar" style="color:#1c1c86; float:left; margin-top:4px;" aria-hidden="true"></i>
+					<span style="color:#1c1c86; float:left; padding-left:5px;">ปฏิทินการรับสมัคร</span>
+				</a>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+		<div class="col-md-12" style="margin-top:15px; color:blue;">
+			<center>
+				หมายเหตุ ชื่อผู้ใช้งานคือ รหัสประจำตัวประชาชน และรหัสผ่านคือ วันเดือนปีเกิด
+			</center>
 		</div>
 	</div>
 
