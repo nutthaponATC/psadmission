@@ -153,7 +153,7 @@ if ($_SESSION['id_user'] != 1 && $_SESSION['status'] != 1) {
 		<div class="col-md-3" style="margin-top:30px;">
 			<a href="print.php?id_student=<?php echo $_SESSION['id_user']; ?>">
 				<i class="fa fa-file-text-o" style="color:#1c1c86; font-size:50px; float:left; margin-top:17px;" aria-hidden="true">
-				</i><div style="font-size:20px; margin-top:25px;">พิมพ์ใบสมัคร</div>
+				</i><div style="font-size:20px; margin-top:25px;">พิมพ์หลักฐานยืนยันการสมัคร</div>
 			</a>
 		</div>
 		<div class="col-md-4" style="margin-top:30px;">

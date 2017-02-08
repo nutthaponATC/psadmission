@@ -36,8 +36,23 @@
 		</div>
 	</div>
 
+	<div class="container">
+		<div class="col-md-4" style="height: 5px; background: #0000b9; margin-top:35px;"></div>
+		<div class="col-md-4">
+			<center><h1>ขั้นตอนการรับสมัคร</h1></center>
+		</div>
+		<div class="col-md-4" style="height: 5px; background: #0000b9; margin-top:35px;"></div>
+		
+		<div class="col-md-12">
+			<h3>1. เลือก <span style="color:#0000b9; font-weight:bold;">ประเภทการคัดเลือก ตามระดับชั้น</span> ที่นักเรียนต้องการ โดยเตรียมเอกสารสำเนาทะเบียนบ้านและเอกสารแสดงผลการเรียนเพื่อกรอกข้อมูล</h3>
+			<h3>2. กรอกข้อมูลส่วนตัวผู้สมัคร ให้ถูกต้องครบถ้วน</h3>
+			<h3>3. ตรวจสอบความถูกต้องของข้อมูล หากถูกต้องแล้ว กด "ยืนยันบันทึกข้อมูล" และ กด "พิมพ์หลักฐานยืนยันการสมัคร"</h3>
+		</div>
+		
+	</div>
+
 	<div class="container" style="padding-top:30px; padding-bottom:30px;">
-		<div class="col-md-3">
+		<div class="col-md-3" style="color:#0000b9; font-weight:bold;">
 			<h3>ประเภทการคัดเลือก</h3>
 			<h1 style="font-size:45px; margin-top:-5px;">ระดับชั้น ม.1</h1>
 		</div>
@@ -66,7 +81,7 @@
 	</div>
 
 	<div class="container" style="padding-top:30px; padding-bottom:30px;">
-		<div class="col-md-3">
+		<div class="col-md-3" style="color:#0000b9; font-weight:bold;">
 			<h3>ประเภทการคัดเลือก</h3>
 			<h1 style="font-size:45px; margin-top:-5px;">ระดับชั้น ม.4</h1>
 		</div>
