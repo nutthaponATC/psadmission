@@ -17,7 +17,7 @@
 </head>
 <body style="height: 100vh; width: 100vw;"> 
 	<form action="login_process.php" method="post" name="form1">
-		<div class="col-md-12" style="margin-top:25vh; color:#1c1c86;">
+		<div class="col-md-12" style="margin-top:calc(35vh - 150px); color:#1c1c86;">
 			<center><h2 style="font-style: italic;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</h2></center>
 		</div>
 		<div class="login">

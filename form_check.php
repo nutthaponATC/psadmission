@@ -1,5 +1,6 @@
 <?php
 echo "<meta charset='UTF-8'>";
+include('config.php');
 session_start();
 error_reporting( error_reporting() & ~E_NOTICE );
 $type = $_POST['type'];
@@ -73,7 +74,16 @@ $input53 = $_POST['input53'];
 $input54 = $_POST['input54'];
 $input55 = $_POST['input55'];
 
+$sql = "SELECT * FROM history_ps WHERE input2 = $input2";
+$query = mysql_query($sql);
+$num = mysql_num_rows($query);
 
+if ($num == 1) {
+	echo "<script language='javascript'>";
+	echo "alert('รหัสบัตรประชาชนนี้ ถูกใช้งานไปแล้ว กรุณาติดต่อผู้ดูแลระบบ');";
+	echo "javascript:history.back()";
+	echo "</script>";
+}
 
 if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empty($input5) || empty($input6) || empty($input7) || empty($input8) || empty($input9) || empty($input10) || empty($input11) || empty($input12) || empty($input13) || empty($input14) || empty($input15) || empty($input17) || empty($input18) || empty($input19) || empty($input20) || empty($input21) || empty($input22) || empty($input23) || empty($input24) || empty($input26) || empty($input27) || empty($input28)) {
 	
