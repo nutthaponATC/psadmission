@@ -70,7 +70,7 @@ if ($_SESSION['id_user'] != 1 && $_SESSION['status'] != 1) {
 	}
 	 ?>
 
-	<div class="container" style="color:#1c1c86;">
+	<div class="container" style="color:#1c1c86; background-color:rgba(255,255,255,0.3); margin-top:20vh; padding-bottom:30px;">
 		<div class="col-md-12" style="border-bottom:2px solid #1c1c86;">
 			<h2>ยินดีต้อนรับ <?php echo $frontName.$data['input4']." ".$data['input5']; ?></h2>
 		</div>

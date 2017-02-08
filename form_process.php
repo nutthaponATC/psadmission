@@ -136,6 +136,29 @@ if ($query AND $queryUser) {
 		</div>
 	</div>
 
+	<div class="container" style="margin-top:30px; color:white;">
+		<div class="col-md-3"></div>
+		<div class="col-md-2">
+			<div style="width:50px; float:left; height:50px; border-radius:50%; background-color:#d1e0e0; padding:21px; margin-right:3px; padding-top:13px; margin:calc(50vw-400px);">
+				1
+			</div>
+			<div style="color:#d1e0e0; padding-top:12px;">กรอกข้อมูล</div>
+		</div>
+		<div class="col-md-2">
+			<div style="width:50px; float:left; height:50px; border-radius:50%; background-color:#d1e0e0; padding:21px; margin-right:3px; padding-top:13px;">
+				2
+			</div>
+			<div style="color:#d1e0e0; padding-top:12px;">ยืนยันข้อมูล</div>
+		</div>
+		<div class="col-md-3">
+			<div style="width:50px; float:left; height:50px; border-radius:50%; background-color:#6b7dcc; padding:21px; margin-right:3px; padding-top:13px;">
+				3
+			</div>
+			<div style="color:black; padding-top:12px;">พิมพ์ข้อมูลใบสมัคร</div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+
 	<div class="container" style="margin-top:25vh; color:#1c1c86;">
 		<div class="col-md-2"></div>
 		<div class="col-md-8" style="border-bottom:1px solid #1c1c86; font-size:20px;">
