@@ -23,12 +23,24 @@ if (empty($user) || empty($pass)) {
 	$countCheck = mysql_num_rows($query);
 	$fetchData = mysql_fetch_array($query);
 	$id_user = $fetchData['id_user'];
+	$status = $fetchData['status'];
 
 	if ($countCheck == 1) {
 		$_SESSION['id_user'] = $id_user;
-		echo "<script language='javascript'>";
-		echo "location='main_ps.php';";
-		echo "</script>";
+		$_SESSION['status'] = $status;
+		if ($status == 1) {
+			echo "<script language='javascript'>";
+			echo "location='main_ps.php';";
+			echo "</script>";
+		} elseif ($status == 9) {
+			echo "<script language='javascript'>";
+			echo "location='admin_ps.php';";
+			echo "</script>";
+		} else {
+			echo "<script language='javascript'>";
+			echo "location='index.php';";
+			echo "</script>";
+		}
 
 	} else {
 		echo "<script language='javascript'>";

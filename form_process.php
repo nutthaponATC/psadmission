@@ -172,7 +172,7 @@ if ($query AND $queryUser) {
 		<div class="col-md-12" style="margin-top:30px;">
 			<div class="col-md-3"></div>
 			<div class="col-md-2">
-				<a href="print.php" >  
+				<a href="" >  
 					<i class="fa fa-file-text-o" style="color:#1c1c86; float:left; margin-top:4px;" aria-hidden="true"></i>
 					<span style="color:#1c1c86; float:left; padding-left:5px;">พิมพ์ใบสมัคร</span>
 				</a>
