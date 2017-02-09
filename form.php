@@ -254,7 +254,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 					 ?>
 				</div>
 				<div class="col-md-6" id="form-line">
-					รหัสใบสมัคร
+					เลขที่ผู้สมัคร
 					<input type="text" name="input1" style="width:360px;">
 				</div>
 				<div class="col-md-6" id="form-line">
@@ -694,16 +694,8 @@ error_reporting( error_reporting() & ~E_NOTICE );
 
 				<div class="col-md-12" id="form-line">
 					<div class="col-md-6">
-						ความพิการของผู้ปกครอง 
-						<br>
-						<input style="width:1em; height:1em;" type='radio' name='radio11' id="radio11-1" value='1'>
-						ไม่พิการ
-						<input style="width:1em; height:1em;" type='radio' name='radio11' id="radio11-2" value='2'>
-						พิการ 
-						<span id="radio11-type">
-							ด้าน
-							<input type="text" name='input47'>
-						</span>
+						มีความสัมพันธ์กับนักเรียนเป็น 
+						<input type="text" name='input47'>
 					</div>
 					<div class="col-md-6">
 						อาชีพของผู้ปกครอง 

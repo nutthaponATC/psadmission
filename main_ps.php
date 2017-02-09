@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if ($_SESSION['id_user'] != 1 && $_SESSION['status'] != 1) {
+if (empty($_SESSION['id_user']) && $_SESSION['status'] != 1) {
 	echo "<script language='javascript'>";
 	echo "location='login.php';";
 	echo "</script>";
@@ -79,7 +79,7 @@ if ($_SESSION['id_user'] != 1 && $_SESSION['status'] != 1) {
 		</div>
 
 		<div class="col-md-2">
-			<h4>รหัสใบสมัคร <?php echo $data['input1'];?></h4>
+			<h4>เลขที่ผู้สมัคร <?php echo $data['input1'];?></h4>
 		</div>
 		<div class="col-md-4">
 			<h4>รหัสประจำตัวประชาชน <?php echo $data['input2'];?></h4>
@@ -151,9 +151,9 @@ if ($_SESSION['id_user'] != 1 && $_SESSION['status'] != 1) {
 			</a>
 		</div>
 		<div class="col-md-3" style="margin-top:30px;">
-			<a href="print.php?id_student=<?php echo $_SESSION['id_user']; ?>">
+			<a href="report/tcpdf/report/report_student_info.php?id_student=<?php echo $_SESSION['id_user']; ?>">
 				<i class="fa fa-file-text-o" style="color:#1c1c86; font-size:50px; float:left; margin-top:17px;" aria-hidden="true">
-				</i><div style="font-size:20px; margin-top:25px;">พิมพ์หลักฐานยืนยันการสมัคร</div>
+				</i><div style="font-size:20px; margin-top:25px;">พิมพ์หลักฐาน</div>
 			</a>
 		</div>
 		<div class="col-md-4" style="margin-top:30px;">

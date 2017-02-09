@@ -470,7 +470,7 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 					<!-- <h4 style="color:red;">*กรุณากรอกข้อมูลในส่วนนักเรียนให้ครบถ้วน</h4> -->
 				</div>
 				<div class="col-md-6" id="form-line">
-					รหัสใบสมัคร
+					เลขที่ผู้สมัคร
 					<input readonly id='readonly' type="text" name="input1" value="<?php echo $input1; ?>" style="width:360px;">
 				</div>
 				<div class="col-md-6" id="form-line">
@@ -1147,26 +1147,8 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 
 				<div class="col-md-12" id="form-line">
 					<div class="col-md-6">
-						ความพิการของผู้ปกครอง 
-						<br>
-						<?php 
-						if ($radio11 == 1) {
-							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio11' id='radio11-1' value='1' checked>";
-						} else {
-							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio11' id='radio11-1' value='1'>";
-						}
-						echo "ไม่พิการ";
-						if ($radio11 == 2) {
-							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio11' id='radio11-2' value='2' checked>";
-						} else {
-							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio11' id='radio11-2' value='2'>";
-						}
-						echo "พิการ ";
-						 ?>
-						<span id="radio11-type">
-							ด้าน
-							<input readonly id='readonly' type="text" name='input47' value="<?php echo $input47; ?>">
-						</span>
+						มีความสัมพันธ์กับนักเรียนเป็น 
+						<input readonly id='readonly' type="text" name='input47' value="<?php echo $input47; ?>">
 					</div>
 					<div class="col-md-6">
 						<?php 

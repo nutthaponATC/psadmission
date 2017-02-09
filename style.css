@@ -51,6 +51,7 @@ html body {
 
 #form-line {
 	margin-top: 20px;	
+  float: left;
 }
 
 #smenu:hover {

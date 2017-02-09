@@ -92,8 +92,6 @@ $input55 = $data['input55'];
 <html>
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style.css">
   	
 	<title>ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</title>
 
@@ -103,7 +101,12 @@ $input55 = $data['input55'];
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
 	<!-- fa -->
-	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
+	
+
+	<!-- <script>
+    	window.print();
+	</script> -->
+
 </head>
 <body style="font-size:17px;">
 	<form id="form1" name="form1" method="post" action="edit_student_process.php">
@@ -111,32 +114,32 @@ $input55 = $data['input55'];
 
 	if ($type == 1) {
 		$headerType = "English Program (EP)";
-		$subType .= "<div class='col-md-2'>
+		$subType .= "<table><tr><td>
 			<p>ประเภทการคัดเลือก
-		</div>
-		<div class='col-md-5'>";
+		</td></tr>
+		<tr><td>";
 			if ($sType == 1) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
 			} else {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='1'>";
 			}
 			$subType .= "วิทย์ - คณิต
-		</div>
-		<div class='col-md-5'>";
+		</td></tr>
+		<tr><td>";
 			if ($sType == 2) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
 			} else {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
 			}
 			$subType .= "คณิต - ภาษาจีน
-		</div>";
+		</tr></td></table>";
 	} elseif ($type == 2) {
 		$headerType = "Intensive English Program (IEP)";
-		$subType .= "<div class='col-md-2'>
+		$subType .= "<table><tr><td>
 			<p>ประเภทการคัดเลือก
-		</div>
-		<div class='col-md-5'>
-			<div class='col-md-12'>";
+		</td></tr>
+		<tr><td>
+			<table><tr><td>";
 			if ($sType == 1) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
 			} else {
@@ -144,41 +147,41 @@ $input55 = $data['input55'];
 			}
 				
 				$subType .= "ในเขตพื้นที่บริการ สอบคัดเลือก
-			</div>
-			<div class='col-md-12'>";
+			</td></tr>
+			<tr><td>";
 			if ($sType == 2) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
 			} else {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='2'>";
 			}
 				$subType .= "ในเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ
-			</div>
-		</div>
-		<div class='col-md-5'>
-			<div class='col-md-12'>";
+			</tr></td></table>
+		</td></tr>
+		<tr><td>
+			<table><tr><td>";
 			if ($sType == 3) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
 			} else {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='3'>";
 			}
 				$subType .= "นอกเขตพื้นที่บริการ สอบคัดเลือก
-			</div>
-			<div class='col-md-12'>";
+			</td></tr>
+			<tr><td>";
 			if ($sType == 4) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
 			} else {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='4'>";
 			}
 				$subType .= "นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ
-			</div>
-		</div>";
+			</tr></td></table>
+		</tr></td></table>";
 	} elseif ($type == 3) {
 		$headerType = "ภาคปกติ (GP)";
-		$subType = "<div class='col-md-2'>
+		$subType = "<table><tr><td>
 			<p>ประเภทการคัดเลือก
-		</div>
-		<div class='col-md-5'>
-			<div class='col-md-12'>";
+		</td></tr>
+		<tr><td>
+			<table><tr><td>";
 			if ($sType == 1) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
 			} else {
@@ -186,8 +189,8 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				ในเขตพื้นที่บริการ สอบคัดเลือก
-			</div>
-			<div class='col-md-12'>";
+			</td></tr>
+			<tr><td>";
 			if ($sType == 2) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
 			} else {
@@ -195,10 +198,10 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				ในเขตพื้นที่บริการ ความสามารถพิเศษกีฬา
-			</div>
-		</div>
-		<div class='col-md-5'>
-			<div class='col-md-12'>";
+			</tr></td></table>
+		</td></tr>
+		<tr><td>
+			<table><tr><td>";
 			if ($sType == 3) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
 			} else {
@@ -206,8 +209,8 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				นอกเขตพื้นที่บริการ สอบคัดเลือก
-			</div>
-			<div class='col-md-12'>";
+			</td></tr>
+			<tr><td>";
 			if ($sType == 4) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
 			} else {
@@ -215,15 +218,15 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				นอกเขตพื้นที่บริการ ความสามารถพิเศษกีฬา
-			</div>
-		</div>";
+			</tr></td></table>
+		</tr></td></table>";
 	} elseif ($type == 4) {
 		$headerType = "English Program (EP)";
-		$subType = "<div class='col-md-2'>
+		$subType = "<table><tr><td>
 			<p>ประเภทการคัดเลือก
-		</div>
-		<div class='col-md-3'>
-			<div class='col-md-12'>";
+		</td></tr>
+		<tr><td>
+			<table><tr><td>";
 			if ($sType == 1) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
 			} else {
@@ -231,8 +234,8 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				วิทย์ - คณิต
-			</div>
-			<div class='col-md-12'><br>";
+			</td></tr>
+			<tr><td>";
 			if ($sType == 2) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
 			} else {
@@ -240,10 +243,10 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				คณิต - อังกฤษ
-			</div>
-		</div>
-		<div class='col-md-4'>
-			<div class='col-md-12'>";
+			</tr></td></table>
+		</tr></td>
+		<tr><td>
+			<table><tr><td>";
 			if ($sType == 3) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
 			} else {
@@ -251,8 +254,8 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก ฝรั่งเศษ
-			</div>
-			<div class='col-md-12'><br>";
+			</td></tr>
+			<tr><td>";
 			if ($sType == 4) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
 			} else {
@@ -260,10 +263,10 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก ญี่ปุ่น
-			</div>
-		</div>
-		<div class='col-md-3'>
-			<div class='col-md-12'>";
+			</tr></td></table>
+		</tr></td>
+		<tr><td>
+			<table><tr><td>";
 			if ($sType == 5) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='5' checked>";
 			} else {
@@ -271,15 +274,15 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก จีน
-			</div>
-		</div>";
+			</tr></td></table>
+		</tr></td></table>";
 	} elseif ($type == 5) {
 		$headerType = "Intensive English Program (IEP)";
-		$subType = "<div class='col-md-2'>
+		$subType = "<table><tr><td>
 			<p>ประเภทการคัดเลือก
-		</div>
-		<div class='col-md-3'>
-			<div class='col-md-12'>";
+		</td></tr>
+		<tr><td>
+			<table><tr><td>";
 			if ($sType == 1) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
 			} else {
@@ -287,8 +290,8 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				วิทย์ - คณิต
-			</div>
-			<div class='col-md-12'>";
+			</td></tr>
+			<tr><td>";
 			if ($sType == 2) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
 			} else {
@@ -296,10 +299,10 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				คณิต - อังกฤษ
-			</div>
-		</div>
-		<div class='col-md-4'>
-			<div class='col-md-12'>";
+			</tr></td></table>
+		</td></tr>
+		<tr><td>
+			<table><tr><td>";
 			if ($sType == 3) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
 			} else {
@@ -307,8 +310,8 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก ฝรั่งเศษ
-			</div>
-			<div class='col-md-12'>";
+			</td></tr>
+			<tr><td>";
 			if ($sType == 4) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
 			} else {
@@ -316,10 +319,10 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก ญี่ปุ่น
-			</div>
-		</div>
-		<div class='col-md-3'>
-			<div class='col-md-12'>";
+			</tr></td></table>
+		</td></tr>
+		<tr><td>
+			<table><tr><td>";
 			if ($sType == 5) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='5' checked>";
 			} else {
@@ -327,15 +330,15 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก จีน
-			</div>
-		</div>";
+			</tr></td></table>
+		</tr></td></table>";
 	} else {
 		$headerType = "ภาคปกติ (GP)";
-		$subType = "<div class='col-md-2'>
+		$subType = "<table><tr><td>
 			<p>ประเภทการคัดเลือก
-		</div>
-		<div class='col-md-3'>
-			<div class='col-md-12'>";
+		</td></tr>
+		<tr><td>
+			<table><tr><td>";
 			if ($sType == 1) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='1' checked>";
 			} else {
@@ -343,8 +346,8 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				วิทย์ - คณิต
-			</div>
-			<div class='col-md-12'>";
+			</td></tr>
+			<tr><td>";
 			if ($sType == 2) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='2' checked>";
 			} else {
@@ -352,10 +355,10 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				คณิต - อังกฤษ
-			</div>
-		</div>
-		<div class='col-md-4'>
-			<div class='col-md-12'>";
+			</tr></td></table>
+		</td></tr>
+		<tr><td>
+			<table><tr><td>";
 			if ($sType == 3) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='3' checked>";
 			} else {
@@ -363,8 +366,8 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก ฝรั่งเศษ
-			</div>
-			<div class='col-md-12'>";
+			</td></tr>
+			<tr><td>";
 			if ($sType == 4) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='4' checked>";
 			} else {
@@ -372,10 +375,10 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก ญี่ปุ่น
-			</div>
-		</div>
-		<div class='col-md-3'>
-			<div class='col-md-12'>";
+			</tr></td></table>
+		</td></tr>
+		<tr><td>
+			<table><tr><td>";
 			if ($sType == 5) {
 				$subType .= "<input type='radio' name='sType' class='rdo' value='5' checked>";
 			} else {
@@ -383,72 +386,42 @@ $input55 = $data['input55'];
 			}
 				$subType .= "
 				อังกฤษ - ภาษา เลือก จีน
-			</div>
-		</div>";
+			</tr></td></table>
+		</tr></td></table>";
 	}
 
 	?>
+	<div class="container">
 
-		<input type="hidden" name="type" value="<?php echo $type; ?>">
-		<div style="height:50px; width: 100%; background-color:#1c1c86; color:white;">
-		<div class="container">
-			<div class="col-md-9">
-				<img src="image/logops.jpg" width="40px;" style="float:left; margin-top: 5px; border-radius: 50%;">
-				<a style="color:white;" href="index.php"><span style="font-size:22px; margin-top:10px; float:left; margin-left:10px;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</span></a>
-			</div>
-			<div class="col-md-1">
-				<a href="index.php">
-					<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">หน้าแรก</h4>
-				</a>
-			</div>
-			<div class="col-md-2">
-				<a href="login.php" >  
-					<i class="fa fa-user-circle" style="color:white; font-size:18px; float:left; margin-top:17px;" aria-hidden="true"></i>
-					<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">เข้าสู่ระบบ</h4>
-				</a>
-			</div>
-		</div>
-	</div>
-
-		<div class="container" style="margin-top:30px; color:#1c1c86;">
-			<div class="col-md-3"></div>
-			<div class="col-md-6" style="border-bottom:2px solid #1c1c86;">
-				<center><h2>แก้ไขข้อมูลนักเรียน</h2></center>
-			</div>
-			<div class="col-md-3"></div>
-		</div>
-
-		<div class="container" id="form-table" style="margin-top:30px; background-color:rgba(255,255,255,0.6);">
-			<div class="col-md-12">
-				<div class="col-md-12" style="padding-bottom:20px;">
-					<center>
-						<h2 style="font-weight:bold;">
-						<?php echo $headerType; ?>	
-						</h2>
-					</center>
-				</div>
-				<h4 style="font-weight:bold;">
+		<table>
+			<tr>
+				<td>
+					<?php echo $headerType; ?>	
+				</td>
+				<td>
 					<?php echo $subType; ?>	
-				</h4>
-			</div>
-		</div>
-		<div class="container" id="form-table" style="background-color:rgba(255,255,255,0.6);">
-			<div class="col-md-12" id="form-line">
-				<div class="col-md-12">
-					<h2 style="margin-top:-10px; font-weight:bold;">ข้อมูลนักเรียน</h2>
-				</div>
-				<div class="col-md-6" id="form-line">
-					เลขที่ผู้สมัคร
-					<input  type="text" name="input1" value="<?php echo $input1; ?>" style="width:360px;">
-				</div>
-				<div class="col-md-6" id="form-line">
-					รหัสประจำตัวประชาชนนักเรียน 
-					<input  name="input2" value="<?php echo $input2; ?>" type="text" id="data" maxlength="13" style="width:280px;">
-				</div>
-			</div>
+				</td>
+			</tr>
+		</table>
 
-			<div class="col-md-12" id="form-line">
-				<div class="col-md-6">
+		<table>
+			<tr>
+				<td width="20%">
+					ข้อมูลนักเรียน
+				</td>
+				<td width="40%">
+					เลขที่ผู้สมัคร
+					<input  type="text" name="input1" value="<?php echo $input1; ?>">
+				</td>
+				<td width="40%">
+					รหัสประจำตัวประชาชนนักเรียน 
+					<input  name="input2" value="<?php echo $input2; ?>" type="text" id="data" maxlength="13">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td width="20%">
 					<select name="input3" value="<?php echo $input3; ?>">
 						<?php 
 						if ($input3 == 0) {
@@ -479,38 +452,40 @@ $input55 = $data['input55'];
 
 						 ?>
 					</select>
+				</td>
+				<td width="40%">
 					ชื่อ
-					<input  type="text" name="input4" value="<?php echo $input4; ?>" style="width:300px;">
-				</div>
-				<div class="col-md-6">
+					<input  type="text" name="input4" value="<?php echo $input4; ?>">
+				</td>
+				<td width="40%">
 					นามสกุล
-					<input  type="text" name="input5" value="<?php echo $input5; ?>" style="margin-left:35px; width:390px;">
-				</div>
-			</div>
+					<input  type="text" name="input5" value="<?php echo $input5; ?>">
+				</td>
+			</tr>
 
-			<div class="col-md-12" id="form-line">
-				<div class="col-md-1">
-				</div>
-				<div class="col-md-5" style="margin-left:-38px;">
+			<tr>
+				<td width="20%">
+				</dt>
+				<td  width="40%">
 					FIRST NAME
-					<input  type="text" name="input6" value="<?php echo $input6; ?>" style="width:300px;">
-				</div>
-				<div class="col-md-6" style="margin-left:38px;">
+					<input  type="text" name="input6" value="<?php echo $input6; ?>">
+				</td>
+				<td  width="40%">
 					LAST NAME
-					<input  type="text" name="input7" value="<?php echo $input7; ?>" style="width:390px;">
-				</div>
-			</div>
+					<input  type="text" name="input7" value="<?php echo $input7; ?>">
+				</td>
+			</tr>
 
-			<div class="col-md-12" id="form-line">
-				<div class="col-md-7">
+			<tr>
+				<td>
 					ศาสนา
-					<input  type="text" name="input8" value="<?php echo $input8; ?>" style="width:100px;">
+					<input  type="text" name="input8" value="<?php echo $input8; ?>">
 					สัญชาติ
-					<input  type="text" name="input9" value="<?php echo $input9; ?>" style="width:100px;">
+					<input  type="text" name="input9" value="<?php echo $input9; ?>">
 					เชื้อชาติ
-					<input  type="text" name="input10" value="<?php echo $input10; ?>" style="width:100px;">
-				</div>
-				<div class="col-md-5">
+					<input  type="text" name="input10" value="<?php echo $input10; ?>">
+				</td>
+				<td>
 					วันเดือนปีเกิด 
 					<select name="input11" value="<?php echo $input11; ?>">
 						<?php 
@@ -552,37 +527,37 @@ $input55 = $data['input55'];
 						}
 						 ?>
 					</select>
-				</div>
-			</div>
+				</td>
+			</tr>
 
-			<div class="col-md-12" id="form-line">
-				<div class="col-md-7">
+			<tr>
+				<td>
 					รหัสประจำบ้าน
-					<input  type="text" name="input14" value="<?php echo $input14; ?>" style="width:380px;">
-					<p style="margin-left: 110px; font-size:14px;">(ดูจากทะเบียนบ้านที่นักเรียนอาศัยอยู่)</p>
-				</div>
-				<div class="col-md-5">
+					<input  type="text" name="input14" value="<?php echo $input14; ?>">
+					<p>(ดูจากทะเบียนบ้านที่นักเรียนอาศัยอยู่)</p>
+				</td>
+				<td>
 					ที่อยู่ตามทะเบียนบ้าน เลขที่ 
-					<input  type="text" style="width:70px;" name="input15" value="<?php echo $input15; ?>">
+					<input  type="text"  name="input15" value="<?php echo $input15; ?>">
 					หมู่ที่ 
-					<input  type="text" style="width:70px;" name="input16" value="<?php echo $input16; ?>">
-				</div>
-			</div>
+					<input  type="text"  name="input16" value="<?php echo $input16; ?>">
+				</td>
+			</tr>
 
-			<div class="col-md-12" id="form-line" style="margin-top:0px;">
-				<div class="col-md-6">
+			<tr>
+				<td>
 					ถนน
-					<input  type="text" name="input17" value="<?php echo $input17; ?>" style="width:450px;">
-				</div>
-				<div class="col-md-6">
+					<input  type="text" name="input17" value="<?php echo $input17; ?>" >
+				</td>
+				<td>
 					ซอย
-					<input  type="text" name="input18" value="<?php echo $input18; ?>" style="width:450px;">
-				</div>
-			</div>
-			<div class="col-md-12" id="form-line">
-				<div class="col-md-4">
+					<input  type="text" name="input18" value="<?php echo $input18; ?>" >
+				</td>
+			</tr>
+			<tr>
+				<td>
 					จังหวัด
-					<select name="input19" value="<?php echo $input19; ?>" style="width:250px;">
+					<select name="input19" value="<?php echo $input19; ?>" >
 						<option value="">เลือกจังหวัด</option>
 						<?php 
 						$province = array('กรุงเทพมหานคร','กระบี่','กาญจนบุรี','กาฬสินธุ์','กำแพงเพชร','ขอนแก่น','จันทบุรี','ฉะเชิงเทรา','ชัยนาท','ชัยภูมิ','ชุมพร','ชลบุรี','เชียงใหม่','เชียงราย','ตรัง','ตราด','ตาก','นครนายก','นครปฐม','นครพนม','นครราชสีมา','นครศรีธรรมราช','นครสวรรค์','นราธิวาส','น่าน','นนทบุรี','บึงกาฬ','บุรีรัมย์','ประจวบคีรีขันธ์','ปทุมธานี','ปราจีนบุรี','ปัตตานี','พะเยา','พระนครศรีอยุธยา','พังงา','พิจิตร','พิษณุโลก','เพชรบุรี','เพชรบูรณ์','แพร่','พัทลุง','ภูเก็ต','มหาสารคาม','มุกดาหาร','แม่ฮ่องสอน','ยโสธร','ยะลา','ร้อยเอ็ด','ระนอง','ระยอง','ราชบุรี','ลพบุรี','ลำปาง','ลำพูน','เลย','ศรีสะเกษ','สกลนคร','สงขลา','สมุทรสาคร','สมุทรปราการ','สมุทรสงคราม','สระแก้ว','สระบุรี','สิงห์บุรี','สุโขทัย','สุพรรณบุรี','สุราษฎร์ธานี','สุรินทร์','สตูล','หนองคาย','หนองบัวลำภู','อำนาจเจริญ','อุดรธานี','อุตรดิตถ์','อุทัยธานี','อุบลราชธานี','อ่างทอง','อื่นๆ');
@@ -597,34 +572,34 @@ $input55 = $data['input55'];
 						}
 						 ?>
 					</select>	
-				</div>
-				<div class="col-md-4">
+				</td>
+				<td>
 					อำเภอ/เขต
-					<input  type="text" name="input20" value="<?php echo $input20; ?>" style="width:200px;">
-				</div>
-				<div class="col-md-4">
+					<input  type="text" name="input20" value="<?php echo $input20; ?>" >
+				</td>
+				<td>
 					ตำบล/แขวง
-					<input  type="text" name="input21" value="<?php echo $input21; ?>" style="width:200px;">
-				</div>
-			</div>
+					<input  type="text" name="input21" value="<?php echo $input21; ?>" >
+				</td>
+			</tr>
 
-			<div class="col-md-12" id="form-line">
-				<div class="col-md-4">
+			<tr>
+				<td>
 					รหัสไปรษณีย์
 					<input  type="text" name="input22" value="<?php echo $input22; ?>">
-				</div>
-				<div class="col-md-4">
+				</td>
+				<td>
 					เบอร์โทรศัพท์บ้าน
-					<input  type="text" name="input23" value="<?php echo $input23; ?>" style="width:200px;">
-				</div>
-				<div class="col-md-4">
+					<input  type="text" name="input23" value="<?php echo $input23; ?>">
+				</td>
+				<td>
 					เบอร์มือถือ
 					<input  type="text" name="input24" value="<?php echo $input24; ?>">
-				</div>
-			</div>
+				</td>
+			</tr>
 
-			<div class="col-md-12" id="form-line">
-				<div class="col-md-3">
+			<tr>
+				<td>
 					ความพิการ
 					<?php 
 					if ($radio1 == 1) {
@@ -644,17 +619,17 @@ $input55 = $data['input55'];
 
 					 ?>
 					พิการ 
-				</div>
-				<div class="col-md-3" id="radio1-type">
+				</td>
+				<td>
 					ด้าน
-					<input  type="text" name="input25" value="<?php echo $input25; ?>"  style="margin-right:40px; width:150px;">
-				</div>
-				<div class="col-md-6">
+					<input  type="text" name="input25" value="<?php echo $input25; ?>">
+				</td>
+				<td>
 					น้ำหนัก
-					<input  type="text" name="input26" value="<?php echo $input26; ?>" style="width:50px;">
+					<input  type="text" name="input26" value="<?php echo $input26; ?>">
 					กิโลกรัม
 					&nbspส่วนสูง
-					<input  type="text" name="input27" value="<?php echo $input27; ?>" style="width:50px;">
+					<input  type="text" name="input27" value="<?php echo $input27; ?>">
 					เซนติเมตร
 					&nbspหมู่เลือด
 					<select name="input28" value="<?php echo $input28; ?>">
@@ -671,21 +646,20 @@ $input55 = $data['input55'];
 						}
 						 ?>
 					</select>
-				</div>
-			</div>
-		</div>
+				</td>
+			</tr>
+		</table>
 
-		<div class="container" id="form-table" style="padding-top:30px; background-color:rgba(255,255,255,0.6);">
+		<table>
+			<tr>
+				<td>
+					ข้อมูลการศึกษา (โรงเรียนเดิม)
+				</td>
+			</tr>
 
-			<div class="col-md-12" id="form-line" style="margin-bottom:-15px;">
-				<div class="col-md-12">
-					<h2 style="margin-right:20px; margin-top:-10px; font-weight:bold;">ข้อมูลการศึกษา (โรงเรียนเดิม)</h2>
-				</div>
-			</div>
-
-			<div class="col-md-12" id="form-line">
-				<div id="form-line">
-					<div class="col-md-6" style="margin-bottom:20px;">
+			<tr>
+				<td>
+					<table><tr><td>
 						<?php 
 						if ($type == 1 OR $type == 2 OR $type == 3) {
 							if ($radio2 == 1) {
@@ -727,9 +701,9 @@ $input55 = $data['input55'];
 							echo " จบการศึกษาเทียบเท่าชั้น ม.3";
 						}
 						?>
-					</div>
+					</td></tr>
 					
-					<div class="col-md-6" style="margin-bottom:20px;">
+					<tr><td>
 						สังกัด
 						<?php 
 						if ($radio3 == 1) {
@@ -763,15 +737,18 @@ $input55 = $data['input55'];
 						}
 						echo 'อื่นๆ';
 						?>
-					</div>
-				</div>
+					</td></tr>
+				</table>
 
-				<div style="width:100%; padding-top:20px;" id="form-line">
-					<div class="col-md-4">
+				<table>
+					<tr>
+						<td>
 						จากโรงเรียน
 						<input  type="text" name="input29" value="<?php echo $input29; ?>">
-					</div>
-					<div class="col-md-8">
+						</td>
+					</tr>
+					<tr>
+						<td>
 						<?php  
 						echo "ร.ร.ตั้งอยู่";
 						if ($radio4 == 1) {
@@ -787,8 +764,9 @@ $input55 = $data['input55'];
 						}
 						echo "นอกเขตพื้นที่";
 						?>
-					</div>
-				</div>
+						</td>
+					</tr>
+				</table>
 
 				<div class="col-md-12" id="form-line">
 					ที่อยู่ ตำบล/แขวง 
@@ -800,7 +778,7 @@ $input55 = $data['input55'];
 				</div>	
 			</div>					
 		</div>						
-		<div class="container" id="form-table" style="padding-top:30px; background-color:rgba(255,255,255,0.6);">
+		<table>
 			<div class="col-md-12">
 				<div class="col-md-12">
 					<h2 style="margin-bottom:10px; font-weight:bold;">ข้อมูล บิดา - มารดา</h2>
@@ -1065,7 +1043,7 @@ $input55 = $data['input55'];
 				</div>
 			</div>
 		</div>
-		<div class="container" id="form-table" style="padding-top:30px; background-color:rgba(255,255,255,0.6);">
+		<table>
 			<div class="col-md-12">
 				<div class="col-md-12">
 					<h2 style="font-weight:bold;">ข้อมูลผู้ปกครอง</h2>
@@ -1115,8 +1093,26 @@ $input55 = $data['input55'];
 
 				<div class="col-md-12" id="form-line">
 					<div class="col-md-6">
-						มีความสัมพันธ์กับนักเรียนเป็น 
-						<input  type="text" name='input47' value="<?php echo $input47; ?>">
+						ความพิการของผู้ปกครอง 
+						<br>
+						<?php 
+						if ($radio11 == 1) {
+							echo "<input  style='width:1em; height:1em;' type='radio' name='radio11' id='radio11-1' value='1' checked>";
+						} else {
+							echo "<input  style='width:1em; height:1em;' type='radio' name='radio11' id='radio11-1' value='1'>";
+						}
+						echo "ไม่พิการ";
+						if ($radio11 == 2) {
+							echo "<input  style='width:1em; height:1em;' type='radio' name='radio11' id='radio11-2' value='2' checked>";
+						} else {
+							echo "<input  style='width:1em; height:1em;' type='radio' name='radio11' id='radio11-2' value='2'>";
+						}
+						echo "พิการ ";
+						 ?>
+						<span id="radio11-type">
+							ด้าน
+							<input  type="text" name='input47' value="<?php echo $input47; ?>">
+						</span>
 					</div>
 					<div class="col-md-6">
 						<?php 
@@ -1186,7 +1182,7 @@ $input55 = $data['input55'];
 		}
 		 ?>
 		
-		<div class="container" id="form-table" style="padding-top:30px; background-color:rgba(255,255,255,0.6);">
+		<table>
 			<div class="col-md-12">
 				<div class="col-md-8">
 					<h4 style="font-weight:bold; font-size:20px;">
@@ -1271,14 +1267,7 @@ $input55 = $data['input55'];
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4"></div>
-		<div class="col-md-2">
-			<input type="submit" style="margin-bottom:50px;" name="submit" value="แก้ไขข้อมูล" class="form-control">
-		</div>
-		<div class="col-md-2">
-			<a href="javascript:history.back()"><input type="button" style="margin-bottom:50px;" name="back" value="ย้อนกลับ" class="form-control"></a>
-		</div>
-		<div class="col-md-4"></div>
+	</div>
 
 		<script src="js/jquery.js"></script>
 </body>
