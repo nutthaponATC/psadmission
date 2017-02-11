@@ -48,7 +48,127 @@
 			<h3>2. กรอกข้อมูลส่วนตัวผู้สมัคร <span style="color:#0000b9; font-weight:bold;">ให้ถูกต้องครบถ้วน</span></h3>
 			<h3>3. ตรวจสอบความถูกต้องของข้อมูล หากถูกต้องแล้ว กด <span style="color:#0000b9; font-weight:bold;">"ยืนยันบันทึกข้อมูล"</span> และ กด <span style="color:#0000b9; font-weight:bold;">"พิมพ์หลักฐาน"</span></h3>
 		</div>
-		
+	</div>
+
+	<div class="container" id="calendar" style="margin-top:30px;">
+		<div class="col-md-4">
+			<h1 style="color:#0000b9;">ปฏิทินการรับสมัคร</h1>
+		</div>
+		<div class="col-md-12">
+			<!-- <img src="image/2560.jpg" width="100%"> -->
+			<table class="table table-bordered table-inverse">
+				<thead>
+					<tr class="bg-danger">
+						<th width="25%">ระดับชั้น มัธยมศึกษาปีที่ 1 (490)</th>
+						<th width="11.5%">รับสมัคร</th>
+						<th width="11.5%">สอบ/คัดเลือก</th>
+						<th width="11.5%">สอบสัมภาษณ์</th>
+						<th width="11.5%">ประกาศผล</th>
+						<th width="11.5%">รายงานตัว</th>
+						<th width="11.5%">มอบตัว</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="bg-warning">
+						<th width="25%">
+						โครงการ EP (90คน)
+						</th>
+						<th width="11.5%">20-24 ก.พ. 2560</th>
+						<th width="11.5%">4 มี.ค. 2560</th>
+						<th width="11.5%">7 มี.ค. 2560</th>
+						<th width="11.5%">9 มี.ค. 2560</th>
+						<th width="11.5%">9 มี.ค. 2560</th>
+						<th width="11.5%">18 มี.ค. 2560</th>
+					</tr>
+					<tr class="bg-warning">
+						<th width="25%">ความสามารถพิเศษ</th>
+						<th width="11.5%">27-28 มี.ค. 2560</th>
+						<th width="11.5%">30 มี.ค. 2560</th>
+						<th width="11.5%">-</th>
+						<th width="11.5%">31 มี.ค. 2560</th>
+						<th width="11.5%">31 มี.ค. 2560</th>
+						<th width="11.5%">19 เม.ย. 2560</th>
+					</tr>
+					<tr class="bg-warning">
+						<th width="25%">ทั่วไป (ใน+นอกพื้นที่) สอบคัดเลือก (192 คน)</th>
+						<th width="11.5%">27-30 มี.ค. 2560</th>
+						<th width="11.5%">1 เม.ย. 2560</th>
+						<th width="11.5%">-</th>
+						<th width="11.5%">5 เม.ย. 2560</th>
+						<th width="11.5%">5 เม.ย. 2560</th>
+						<th width="11.5%">19 เม.ย. 2560</th>
+					</tr>
+					<tr class="bg-warning">
+						<th width="25%">ในเขตพื้นที่ (สอบ 128 คน)</th>
+						<th width="11.5%">27-30 มี.ค. 2560</th>
+						<th width="11.5%">1 เม.ย. 2560</th>
+						<th width="11.5%">-</th>
+						<th width="11.5%">5 เม.ย. 2560</th>
+						<th width="11.5%">5 เม.ย. 2560</th>
+						<th width="11.5%">19 เม.ย. 2560</th>
+					</tr>
+					<tr class="bg-warning">
+						<th width="25%">เงื่อนไขพิเศษ (70คน)</th>
+						<th width="11.5%">27-30 มี.ค. 2560</th>
+						<th width="11.5%">1 เม.ย. 2560</th>
+						<th width="11.5%">-</th>
+						<th width="11.5%">5 เม.ย. 2560</th>
+						<th width="11.5%">5 เม.ย. 2560</th>
+						<th width="11.5%">19 เม.ย. 2560</th>
+					</tr>
+					<tr class="bg-danger">
+						<th width="25%">ระดับชั้น มัธยมศึกษาปีที่ 4 (420)</th>
+						<th width="11.5%">รับสมัคร</th>
+						<th width="11.5%">สอบ/คัดเลือก</th>
+						<th width="11.5%">สอบสัมภาษณ์</th>
+						<th width="11.5%">ประกาศผล</th>
+						<th width="11.5%">รายงานตัว</th>
+						<th width="11.5%">มอบตัว</th>
+					</tr>
+					<tr class="bg-warning">
+						<th width="25%">
+						โครงการ EP (30คน),IEP (30คน)
+						</th>
+						<th width="11.5%">20-24 ก.พ. 2560</th>
+						<th width="11.5%">5 มี.ค. 2560</th>
+						<th width="11.5%">8 มี.ค. 2560</th>
+						<th width="11.5%">10 มี.ค. 2560</th>
+						<th width="11.5%">10 มี.ค. 2560</th>
+						<th width="11.5%">18 มี.ค. 2560</th>
+					</tr>
+					<tr class="bg-warning">
+						<th width="25%">นักเรียนที่จบ ม.3
+						<br>
+						โรงเรียนโพธิสารพิทยากร (290คน)
+						</th>
+						<th width="11.5%">1-30 ธ.ค. 2559</th>
+						<th width="11.5%">19 ม.ค. 2560</th>
+						<th width="11.5%">-</th>
+						<th width="11.5%">20 ก.พ. 2560</th>
+						<th width="11.5%">4 เม.ย. 2560</th>
+						<th width="11.5%">20 เม.ย. 2560</th>
+					</tr>
+					<tr class="bg-warning">
+						<th width="25%">นักเรียนที่จบ ม.3 จาก ร.ร.อื่น (30คน)</th>
+						<th width="11.5%">27-30 มี.ค. 2560</th>
+						<th width="11.5%">2 เม.ย. 2560</th>
+						<th width="11.5%">-</th>
+						<th width="11.5%">6 เม.ย. 2560</th>
+						<th width="11.5%">6 เม.ย. 2560</th>
+						<th width="11.5%">20 เม.ย. 2560</th>
+					</tr>
+					<tr class="bg-warning">
+						<th width="25%">เงื่อนไขพิเศษ (40คน)</th>
+						<th width="11.5%">27-30 มี.ค. 2560</th>
+						<th width="11.5%">2 เม.ย. 2560</th>
+						<th width="11.5%">-</th>
+						<th width="11.5%">6 เม.ย. 2560</th>
+						<th width="11.5%">6 เม.ย. 2560</th>
+						<th width="11.5%">20 เม.ย. 2560</th>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 
 	<div class="container" style="padding-top:30px; padding-bottom:30px;">

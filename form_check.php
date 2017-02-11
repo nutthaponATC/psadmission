@@ -1,7 +1,7 @@
 <?php
+session_start();
 echo "<meta charset='UTF-8'>";
 include('config.php');
-session_start();
 error_reporting( error_reporting() & ~E_NOTICE );
 $type = $_POST['type'];
 $sType = $_POST['sType'];
@@ -73,6 +73,7 @@ $input52 = $_POST['input52'];
 $input53 = $_POST['input53'];
 $input54 = $_POST['input54'];
 $input55 = $_POST['input55'];
+$input56 = $_POST['input56'];
 
 if ($sType == 0) {
 	echo "<script language='javascript'>";
@@ -92,7 +93,7 @@ if ($num == 1) {
 	echo "</script>";
 }
 
-if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empty($input5) || empty($input6) || empty($input7) || empty($input8) || empty($input9) || empty($input10) || empty($input11) || empty($input12) || empty($input13) || empty($input14) || empty($input15) || empty($input17) || empty($input18) || empty($input19) || empty($input20) || empty($input21) || empty($input22) || empty($input23) || empty($input24) || empty($input26) || empty($input27) || empty($input28)) {
+if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empty($input5) || empty($input6) || empty($input7) || empty($input8) || empty($input9) || empty($input10) || empty($input11) || empty($input12) || empty($input13) || empty($input14) || empty($input15) || empty($input17) || empty($input18) || empty($input19) || empty($input20) || empty($input21) || empty($input22) || empty($input23) || empty($input24) || empty($input26) || empty($input27) || empty($input28) || empty($input29) || empty($input30)  || empty($input31) || empty($input32) || empty($input33) || empty($input35) || empty($input36) || empty($input37) || empty($input38) || empty($input40) || empty($input41) || empty($input42) || empty($input43) || empty($input44) || $radio2 == 0 || $radio3 == 0 || $radio4 == 0 || $radio6 == 0 || $radio8 == 0 || $radio9 == 0 || $radio10 == 0) {
 	
 	$_SESSION['check'] = 1;
 	echo "<script language='javascript'>";
@@ -406,7 +407,7 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 	?>
 
 		<input type="hidden" name="type" value="<?php echo $type; ?>">
-		<div style="height:50px; width: 100%; background-color:#1c1c86; color:white;">
+		<div style="height:50px; width: 100%; margin-top:-25px; background-color:#1c1c86; color:white;">
 		<div class="container">
 			<div class="col-md-9">
 				<img src="image/logops.jpg" width="40px;" style="float:left; margin-top: 5px; border-radius: 50%;">
@@ -469,12 +470,21 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 					<h2 style="margin-top:-10px; font-weight:bold;">ข้อมูลนักเรียน</h2>
 					<!-- <h4 style="color:red;">*กรุณากรอกข้อมูลในส่วนนักเรียนให้ครบถ้วน</h4> -->
 				</div>
+				<?php 
+				if ($type == 4 || $type == 5 || $type == 6) {
+					echo "<div class='col-md-12'>";
+						echo "*ถ้าเป็นนักเรียนที่จบ ม.3 จากโรงเรียนโพธิสารพิทยากร ให้ใส่เลขประจำตัวเดิม
+					<input readonly id='readonly' type='text' name='input56' value='$input56' style='width:360px;'>";
+					echo "</div>";
+				}
+				 ?>
 				<div class="col-md-6" id="form-line">
 					เลขที่ผู้สมัคร
-					<input readonly id='readonly' type="text" name="input1" value="<?php echo $input1; ?>" style="width:360px;">
+					<input readonly id='readonly' type="text" name="input1" value="<?php echo $input1; ?>">
+					ดูจากใบสมัคร
 				</div>
 				<div class="col-md-6" id="form-line">
-					รหัสประจำตัวประชาชนนักเรียน 
+					รหัสประจำตัวประชาชน 
 					<input readonly id='readonly' name="input2" value="<?php echo $input2; ?>" type="text" id="data" maxlength="13" style="width:280px;">
 				</div>
 			</div>
@@ -613,6 +623,14 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 			</div>
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
+					ตำบล/แขวง
+					<input readonly id='readonly' type="text" name="input21" value="<?php echo $input21; ?>" style="width:200px;">
+				</div>
+				<div class="col-md-4">
+					อำเภอ/เขต
+					<input readonly id='readonly' type="text" name="input20" value="<?php echo $input20; ?>" style="width:200px;">
+				</div>
+				<div class="col-md-4">
 					จังหวัด
 					<select name="input19" value="<?php echo $input19; ?>" style="width:250px;">
 						<option value="">เลือกจังหวัด</option>
@@ -630,28 +648,20 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 						 ?>
 					</select>	
 				</div>
-				<div class="col-md-4">
-					อำเภอ/เขต
-					<input readonly id='readonly' type="text" name="input20" value="<?php echo $input20; ?>" style="width:200px;">
-				</div>
-				<div class="col-md-4">
-					ตำบล/แขวง
-					<input readonly id='readonly' type="text" name="input21" value="<?php echo $input21; ?>" style="width:200px;">
-				</div>
 			</div>
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
 					รหัสไปรษณีย์
-					<input readonly id='readonly' type="text" name="input22" value="<?php echo $input22; ?>">
+					<input readonly id='readonly' type="text" name="input22" value="<?php echo $input22; ?>" maxlength="5">
 				</div>
 				<div class="col-md-4">
 					เบอร์โทรศัพท์บ้าน
-					<input readonly id='readonly' type="text" name="input23" value="<?php echo $input23; ?>" style="width:200px;">
+					<input readonly id='readonly' type="text" name="input23" value="<?php echo $input23; ?>" style="width:200px;" maxlength="10">
 				</div>
 				<div class="col-md-4">
 					เบอร์มือถือ
-					<input readonly id='readonly' type="text" name="input24" value="<?php echo $input24; ?>">
+					<input readonly id='readonly' type="text" name="input24" value="<?php echo $input24; ?>" maxlength="10">
 				</div>
 			</div>
 
@@ -717,7 +727,8 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 
 			<div class="col-md-12" id="form-line">
 				<div id="form-line">
-					<div class="col-md-6" style="margin-bottom:20px;">
+					<div class="col-md-12" style="margin-bottom:20px;">
+						ระดับการศึกษา : 
 						<?php 
 						if ($type == 1 OR $type == 2 OR $type == 3) {
 							if ($radio2 == 1) {
@@ -761,8 +772,8 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 						?>
 					</div>
 					
-					<div class="col-md-6" style="margin-bottom:20px;">
-						สังกัด
+					<div class="col-md-12">
+						สังกัด : 
 						<?php 
 						if ($radio3 == 1) {
 							echo "<input readonly id='readonly' style='width:1em; height:1em; margin-left:20px;' type='radio' name='radio3' value='1' checked>";
@@ -798,7 +809,7 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 					</div>
 				</div>
 
-				<div style="width:100%; padding-top:20px;" id="form-line">
+				<div style="width:100%;" id="form-line">
 					<div class="col-md-4">
 						จากโรงเรียน
 						<input readonly id='readonly' type="text" name="input29" value="<?php echo $input29; ?>">
@@ -828,7 +839,21 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 					อำเภอ/เขต
 					<input readonly id='readonly' type="text" name="input31" value="<?php echo $input31; ?>">
 					จังหวัด
-					<input readonly id='readonly' type="text" name="input32" value="<?php echo $input32; ?>">
+					<select name="input32" value="<?php echo $input32; ?>" style="width:250px;">
+						<option value="">เลือกจังหวัด</option>
+						<?php 
+						$province = array('กรุงเทพมหานคร','กระบี่','กาญจนบุรี','กาฬสินธุ์','กำแพงเพชร','ขอนแก่น','จันทบุรี','ฉะเชิงเทรา','ชัยนาท','ชัยภูมิ','ชุมพร','ชลบุรี','เชียงใหม่','เชียงราย','ตรัง','ตราด','ตาก','นครนายก','นครปฐม','นครพนม','นครราชสีมา','นครศรีธรรมราช','นครสวรรค์','นราธิวาส','น่าน','นนทบุรี','บึงกาฬ','บุรีรัมย์','ประจวบคีรีขันธ์','ปทุมธานี','ปราจีนบุรี','ปัตตานี','พะเยา','พระนครศรีอยุธยา','พังงา','พิจิตร','พิษณุโลก','เพชรบุรี','เพชรบูรณ์','แพร่','พัทลุง','ภูเก็ต','มหาสารคาม','มุกดาหาร','แม่ฮ่องสอน','ยโสธร','ยะลา','ร้อยเอ็ด','ระนอง','ระยอง','ราชบุรี','ลพบุรี','ลำปาง','ลำพูน','เลย','ศรีสะเกษ','สกลนคร','สงขลา','สมุทรสาคร','สมุทรปราการ','สมุทรสงคราม','สระแก้ว','สระบุรี','สิงห์บุรี','สุโขทัย','สุพรรณบุรี','สุราษฎร์ธานี','สุรินทร์','สตูล','หนองคาย','หนองบัวลำภู','อำนาจเจริญ','อุดรธานี','อุตรดิตถ์','อุทัยธานี','อุบลราชธานี','อ่างทอง','อื่นๆ');
+						$j = 0;
+						for ($i=1; $i < 79; $i++) { 
+							if ($input32 == $i) {
+								echo "<option value=".$i." selected>".$province[$j]."</option>";
+							} else {
+								echo "<option value=".$i.">".$province[$j]."</option>";
+							}
+							$j++;
+						}
+						 ?>
+					</select>	
 				</div>	
 			</div>					
 		</div>						
@@ -927,12 +952,12 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 			
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
-					รหัสประจำตัวประชาชนบิดา 
+					รหัสประจำตัวประชาชน 
 					<input readonly id='readonly' type="text" name="input36" value="<?php echo $input36; ?>" maxlength="13">	
 				</div>
 				<div class="col-md-6">
 					โทรศัพท์ที่สามารถติดต่อได้
-					<input readonly id='readonly' type="text" name="input37" value="<?php echo $input37; ?>">
+					<input readonly id='readonly' type="text" name="input37" value="<?php echo $input37; ?>"  maxlength="10">
 				</div>
 			</div>
 
@@ -1024,12 +1049,12 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 			
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
-					รหัสประจำตัวประชาชนมารดา 
+					รหัสประจำตัวประชาชน 
 					<input readonly id='readonly' type="text" name="input41" value="<?php echo $input41; ?>" maxlength="13">	
 				</div>
 				<div class="col-md-6">
 					โทรศัพท์ที่สามารถติดต่อได้
-					<input readonly id='readonly' type="text" name="input42" value="<?php echo $input42; ?>">
+					<input readonly id='readonly' type="text" name="input42" value="<?php echo $input42; ?>"  maxlength="10">
 				</div>
 			</div>
 
@@ -1132,84 +1157,246 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 				</div>
 			</div>
 
-			<span id="parent">
-				<div class="col-md-12" id="form-line">
-					<div class="col-md-6">
+
+			<?php 
+			if ($radio10 == 1) {
+				$text71 = "บิดา";
+				echo "
+				<div class='col-md-12' id='form-line'>
+					<div class='col-md-6'>
 						ชื่อสกุล ผู้ปกครอง
-						<input readonly id='readonly' type="text" name="input45" value="<?php echo $input45; ?>">
+						<input readonly id='readonly' type='text' name='input45' value='$input33'>
 					</div>
-					<div class="col-md-6">
+					<div class='col-md-6'>
 						รายได้ของผู้ปกครอง 
-						<input readonly id='readonly' type="text" name="input46" value="<?php echo $input46; ?>">
+						<input readonly id='readonly' type='text' name='input46' value=".$input35.">
 						บาท/ปี
 					</div>
 				</div>
 
-				<div class="col-md-12" id="form-line">
-					<div class="col-md-6">
+				<div class='col-md-12' id='form-line'>
+					<div class='col-md-6'>
 						มีความสัมพันธ์กับนักเรียนเป็น 
-						<input readonly id='readonly' type="text" name='input47' value="<?php echo $input47; ?>">
+						<input readonly id='readonly' type='text' name='input47' value=".$text71.">
 					</div>
-					<div class="col-md-6">
-						<?php 
+					<div class='col-md-6'>";
+						
+						if ($radio6 == 1) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='1' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='1'>";
+						}
+						echo 'ค้าขาย';
+						if ($radio6 == 2) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='2' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='2'>";
+						}
+						echo 'รับจ้าง';
+						if ($radio6 == 3) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='3' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='3'>";
+						}
+						echo 'รับราชการ';
+						if ($radio6 == 4) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='4' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='4'>";
+						}
+						echo 'พนักงาน';
+						if ($radio6 == 5) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='5' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='5'>";
+						}
+						echo 'นักธุรกิจ';
+						echo '<br>';
+						if ($radio6 == 6) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='6' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='6'>";
+						}
+						echo 'อาชีพอิสระ';
+						if ($radio6 == 7) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='7' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='7'>";
+						}
+						echo "ไม่ประกอบอาชีพ
+					</div>
+				</div>
+
+				<div class='col-md-12' id='form-line'>
+					<div class='col-md-6'>
+						รหัสประจำตัวประชาชน 
+						<input readonly id='readonly' type='text' name='input48' value=".$input36." maxlength='13'>
+					</div>
+					<div class='col-md-6'>
+						โทรศัพท์ที่สามารถติดต่อได้
+						<input readonly id='readonly' type='text' name='input49' value=".$input37."  maxlength='10'>
+					</div>
+				</div>";
+			} elseif ($radio10 == 2) {
+				$text72 = "มารดา";
+				echo "
+				<div class='col-md-12' id='form-line'>
+					<div class='col-md-6'>
+						ชื่อสกุล ผู้ปกครอง
+						<input readonly id='readonly' type='text' name='input45' value='$input38'>
+					</div>
+					<div class='col-md-6'>
+						รายได้ของผู้ปกครอง 
+						<input readonly id='readonly' type='text' name='input46' value=".$input40.">
+						บาท/ปี
+					</div>
+				</div>
+
+				<div class='col-md-12' id='form-line'>
+					<div class='col-md-6'>
+						มีความสัมพันธ์กับนักเรียนเป็น 
+						<input readonly id='readonly' type='text' name='input47' value=".$text72.">
+					</div>
+					<div class='col-md-6'>";
+						
+						if ($radio8 == 1) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='1' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='1'>";
+						}
+						echo 'ค้าขาย';
+						if ($radio8 == 2) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='2' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='2'>";
+						}
+						echo 'รับจ้าง';
+						if ($radio8 == 3) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='3' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='3'>";
+						}
+						echo 'รับราชการ';
+						if ($radio8 == 4) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='4' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='4'>";
+						}
+						echo 'พนักงาน';
+						if ($radio8 == 5) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='5' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='5'>";
+						}
+						echo 'นักธุรกิจ';
+						echo '<br>';
+						if ($radio8 == 6) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='6' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='6'>";
+						}
+						echo 'อาชีพอิสระ';
+						if ($radio8 == 7) {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='7' checked>";
+						} else {
+							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='7'>";
+						}
+						echo "ไม่ประกอบอาชีพ
+					</div>
+				</div>
+
+				<div class='col-md-12' id='form-line'>
+					<div class='col-md-6'>
+						รหัสประจำตัวประชาชน 
+						<input readonly id='readonly' type='text' name='input48' value=".$input41." maxlength='13'>
+					</div>
+					<div class='col-md-6'>
+						โทรศัพท์ที่สามารถติดต่อได้
+						<input readonly id='readonly' type='text' name='input49' value=".$input42." maxlength='10'>
+					</div>
+				</div>";
+			} else {
+				echo "
+				<div class='col-md-12' id='form-line'>
+					<div class='col-md-6'>
+						ชื่อสกุล ผู้ปกครอง
+						<input readonly id='readonly' type='text' name='input45' value='$input45'>
+					</div>
+					<div class='col-md-6'>
+						รายได้ของผู้ปกครอง 
+						<input readonly id='readonly' type='text' name='input46' value=".$input46.">
+						บาท/ปี
+					</div>
+				</div>
+
+				<div class='col-md-12' id='form-line'>
+					<div class='col-md-6'>
+						มีความสัมพันธ์กับนักเรียนเป็น 
+						<input readonly id='readonly' type='text' name='input47' value=".$input47.">
+					</div>
+					<div class='col-md-6'>";
+						
 						if ($radio12 == 1) {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='1' checked>";
 						} else {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='1'>";
 						}
-						echo "ค้าขาย";
+						echo 'ค้าขาย';
 						if ($radio12 == 2) {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='2' checked>";
 						} else {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='2'>";
 						}
-						echo "รับจ้าง";
+						echo 'รับจ้าง';
 						if ($radio12 == 3) {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='3' checked>";
 						} else {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='3'>";
 						}
-						echo "รับราชการ";
+						echo 'รับราชการ';
 						if ($radio12 == 4) {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='4' checked>";
 						} else {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='4'>";
 						}
-						echo "พนักงาน";
+						echo 'พนักงาน';
 						if ($radio12 == 5) {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='5' checked>";
 						} else {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='5'>";
 						}
-						echo "นักธุรกิจ";
-						echo "<br>";
+						echo 'นักธุรกิจ';
+						echo '<br>';
 						if ($radio12 == 6) {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='6' checked>";
 						} else {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='6'>";
 						}
-						echo "อาชีพอิสระ";
+						echo 'อาชีพอิสระ';
 						if ($radio12 == 7) {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='7' checked>";
 						} else {
 							echo "<input readonly id='readonly' style='width:1em; height:1em;' type='radio' name='radio12' value='7'>";
 						}
-						echo "ไม่ประกอบอาชีพ	";
-						 ?>
+						echo "ไม่ประกอบอาชีพ
 					</div>
 				</div>
 
-				<div class="col-md-12" id="form-line">
-					<div class="col-md-6">
-						รหัสประจำตัวประชาชนผู้ปกครอง 
-						<input readonly id='readonly' type="text" name="input48" value="<?php echo $input48; ?>" maxlength="13">
+				<div class='col-md-12' id='form-line'>
+					<div class='col-md-6'>
+						รหัสประจำตัวประชาชน 
+						<input readonly id='readonly' type='text' name='input48'  maxlength='13' value=".$input48.">
 					</div>
-					<div class="col-md-6">
+					<div class='col-md-6'>
 						โทรศัพท์ที่สามารถติดต่อได้
-						<input readonly id='readonly' type="text" name="input49" value="<?php echo $input49; ?>">
+						<input readonly id='readonly' type='text' name='input49' value=".$input49." maxlength='10'>
 					</div>
 				</div>
-			</span>
+			";
+			}
+
+			 ?>
+			
 		</div>
 
 		<?php 

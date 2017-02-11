@@ -249,16 +249,27 @@ error_reporting( error_reporting() & ~E_NOTICE );
 					<h2 style="margin-top:-10px; font-weight:bold;">ข้อมูลนักเรียน</h2>
 					<?php 
 					if ($_SESSION['check'] == 1) {
-						echo "<h4 style='color:red;''>*กรุณากรอกข้อมูลในส่วนนักเรียนให้ครบถ้วน</h4>";
+						echo "<h4 style='color:red;''>*กรุณากรอกข้อมูลให้ครบถ้วน</h4>";
 					}
 					 ?>
+					<h4 style='color:red;''>ถ้าไม่มีข้อมูลในส่วนนั้นให้ใส่ "-"</h4>
 				</div>
+				<?php 
+				if ($type == 4 || $type == 5 || $type == 6) {
+					echo "<div class='col-md-12'>";
+						echo "*ถ้าเป็นนักเรียนที่จบ ม.3 จากโรงเรียนโพธิสารพิทยากร ให้ใส่เลขประจำตัวเดิม
+					<input type='text' name='input56' style='width:360px;'>";
+					echo "</div>";
+				}
+
+				 ?>
 				<div class="col-md-6" id="form-line">
 					เลขที่ผู้สมัคร
-					<input type="text" name="input1" style="width:360px;">
+					<input type="text" name="input1">
+					ดูจากใบสมัคร
 				</div>
 				<div class="col-md-6" id="form-line">
-					รหัสประจำตัวประชาชนนักเรียน 
+					รหัสประจำตัวประชาชน 
 					<input name="input2" type="text" id="data" maxlength="13" style="width:280px;">
 				</div>
 			</div>
@@ -366,6 +377,14 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			</div>
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
+					ตำบล/แขวง
+					<input type="text" name="input21" style="width:200px;">
+				</div>
+				<div class="col-md-4">
+					อำเภอ/เขต
+					<input type="text" name="input20" style="width:200px;">
+				</div>
+				<div class="col-md-4">
 					จังหวัด
 					<select name="input19" style="width:250px;">
 						<option value="">เลือกจังหวัด</option>
@@ -379,28 +398,20 @@ error_reporting( error_reporting() & ~E_NOTICE );
 						 ?>
 					</select>	
 				</div>
-				<div class="col-md-4">
-					อำเภอ/เขต
-					<input type="text" name="input20" style="width:200px;">
-				</div>
-				<div class="col-md-4">
-					ตำบล/แขวง
-					<input type="text" name="input21" style="width:200px;">
-				</div>
 			</div>
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
 					รหัสไปรษณีย์
-					<input type="text" name="input22">
+					<input type="text" name="input22" maxlength="5">
 				</div>
 				<div class="col-md-4">
 					เบอร์โทรศัพท์บ้าน
-					<input type="text" name="input23" style="width:200px;">
+					<input type="text" name="input23" style="width:200px;" maxlength="10">
 				</div>
 				<div class="col-md-4">
 					เบอร์มือถือ
-					<input type="text" name="input24">
+					<input type="text" name="input24" maxlength="10">
 				</div>
 			</div>
 
@@ -444,7 +455,8 @@ error_reporting( error_reporting() & ~E_NOTICE );
 
 			<div class="col-md-12" id="form-line">
 				<div id="form-line">
-					<div class="col-md-6" style="margin-bottom:20px;">
+					<div class="col-md-12" style="margin-bottom:20px;">
+						ระดับการศึกษา : 
 						<?php 
 						if ($type == 1 OR $type == 2 OR $type == 3) {
 							echo "<input style='width:1em; height:1em;' type='radio' name='radio2' value='1'>";
@@ -463,10 +475,10 @@ error_reporting( error_reporting() & ~E_NOTICE );
 						}
 						?>
 					</div>
-					
-					<div class="col-md-6" style="margin-bottom:20px;">
-						สังกัด
-						<input style="width:1em; height:1em; margin-left:20px;" type='radio' name='radio3' value='1'>
+
+					<div class="col-md-12">
+						สังกัด :
+						<input style="width:1em; height:1em;" type='radio' name='radio3' value='1'>
 						สปช.เดิม
 						<input style="width:1em; height:1em;" type='radio' name='radio3' value='2'>
 						สพฐ.
@@ -479,7 +491,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 					</div>
 				</div>
 
-				<div style="width:100%; padding-top:20px;" id="form-line">
+				<div style="width:100%;" id="form-line">
 					<div class="col-md-4">
 						จากโรงเรียน
 						<input type="text" name="input29">
@@ -499,7 +511,17 @@ error_reporting( error_reporting() & ~E_NOTICE );
 					อำเภอ/เขต
 					<input type="text" name="input31">
 					จังหวัด
-					<input type="text" name="input32">
+					<select name="input32" style="width:250px;">
+						<option value="">เลือกจังหวัด</option>
+						<?php 
+						$province = array('กรุงเทพมหานคร','กระบี่','กาญจนบุรี','กาฬสินธุ์','กำแพงเพชร','ขอนแก่น','จันทบุรี','ฉะเชิงเทรา','ชัยนาท','ชัยภูมิ','ชุมพร','ชลบุรี','เชียงใหม่','เชียงราย','ตรัง','ตราด','ตาก','นครนายก','นครปฐม','นครพนม','นครราชสีมา','นครศรีธรรมราช','นครสวรรค์','นราธิวาส','น่าน','นนทบุรี','บึงกาฬ','บุรีรัมย์','ประจวบคีรีขันธ์','ปทุมธานี','ปราจีนบุรี','ปัตตานี','พะเยา','พระนครศรีอยุธยา','พังงา','พิจิตร','พิษณุโลก','เพชรบุรี','เพชรบูรณ์','แพร่','พัทลุง','ภูเก็ต','มหาสารคาม','มุกดาหาร','แม่ฮ่องสอน','ยโสธร','ยะลา','ร้อยเอ็ด','ระนอง','ระยอง','ราชบุรี','ลพบุรี','ลำปาง','ลำพูน','เลย','ศรีสะเกษ','สกลนคร','สงขลา','สมุทรสาคร','สมุทรปราการ','สมุทรสงคราม','สระแก้ว','สระบุรี','สิงห์บุรี','สุโขทัย','สุพรรณบุรี','สุราษฎร์ธานี','สุรินทร์','สตูล','หนองคาย','หนองบัวลำภู','อำนาจเจริญ','อุดรธานี','อุตรดิตถ์','อุทัยธานี','อุบลราชธานี','อ่างทอง','อื่นๆ');
+						$j = 0;
+						for ($i=1; $i < 79; $i++) { 
+							echo "<option value=".$i.">".$province[$j]."</option>";
+							$j++;
+						}
+						 ?>
+					</select>
 				</div>	
 			</div>					
 		</div>						
@@ -558,12 +580,12 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
-					รหัสประจำตัวประชาชนบิดา 
+					รหัสประจำตัวประชาชน 
 					<input type="text" name="input36" maxlength="13">	
 				</div>
 				<div class="col-md-6">
 					โทรศัพท์ที่สามารถติดต่อได้
-					<input type="text" name="input37">
+					<input type="text" name="input37" maxlength="10">
 				</div>
 			</div>
 
@@ -615,12 +637,12 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
-					รหัสประจำตัวประชาชนมารดา 
+					รหัสประจำตัวประชาชน 
 					<input type="text" name="input41" maxlength="13">	
 				</div>
 				<div class="col-md-6">
 					โทรศัพท์ที่สามารถติดต่อได้
-					<input type="text" name="input42">
+					<input type="text" name="input42" maxlength="10">
 				</div>
 			</div>
 
@@ -719,12 +741,12 @@ error_reporting( error_reporting() & ~E_NOTICE );
 
 				<div class="col-md-12" id="form-line">
 					<div class="col-md-6">
-						รหัสประจำตัวประชาชนผู้ปกครอง 
+						รหัสประจำตัวประชาชน 
 						<input type="text" name="input48" maxlength="13">
 					</div>
 					<div class="col-md-6">
 						โทรศัพท์ที่สามารถติดต่อได้
-						<input type="text" name="input49">
+						<input type="text" name="input49" maxlength="10">
 					</div>
 				</div>
 			</span>

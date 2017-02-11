@@ -151,13 +151,13 @@ if (empty($_SESSION['id_user']) && $_SESSION['status'] != 1) {
 			</a>
 		</div>
 		<div class="col-md-3" style="margin-top:30px;">
-			<a href="report/tcpdf/report/report_student_info.php?id_student=<?php echo $_SESSION['id_user']; ?>">
+			<a href="report/tcpdf/report/report_student_info.php?id_student=<?php echo $_SESSION['id_user']; ?>" target="_blank">
 				<i class="fa fa-file-text-o" style="color:#1c1c86; font-size:50px; float:left; margin-top:17px;" aria-hidden="true">
 				</i><div style="font-size:20px; margin-top:25px;">พิมพ์หลักฐาน</div>
 			</a>
 		</div>
 		<div class="col-md-4" style="margin-top:30px;">
-			<a href="">
+			<a href="index.php#calender">
 				<i class="fa fa-calendar" style="color:#1c1c86; font-size:50px; float:left; margin-top:17px;" aria-hidden="true">
 				</i><div style="font-size:20px; margin-top:25px;">ปฏิทินการรับสมัคร</div>
 			</a>

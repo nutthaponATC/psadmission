@@ -85,6 +85,7 @@ $input52 = $data['input52'];
 $input53 = $data['input53'];
 $input54 = $data['input54'];
 $input55 = $data['input55'];
+$input56 = $data['num_old'];
 
  ?>
 
@@ -437,12 +438,21 @@ $input55 = $data['input55'];
 				<div class="col-md-12">
 					<h2 style="margin-top:-10px; font-weight:bold;">ข้อมูลนักเรียน</h2>
 				</div>
+				<?php 
+				if ($type == 4 || $type == 5 || $type == 6) {
+					echo "<div class='col-md-12'>";
+						echo "*ถ้าเป็นนักเรียนที่จบ ม.3 จากโรงเรียนโพธิสารพิทยากร ให้ใส่เลขประจำตัวเดิม
+					<input readonly id='readonly' type='text' name='input56' value='$input56' style='width:360px;'>";
+					echo "</div>";
+				}
+				 ?>
 				<div class="col-md-6" id="form-line">
 					เลขที่ผู้สมัคร
-					<input  type="text" name="input1" value="<?php echo $input1; ?>" style="width:360px;">
+					<input  type="text" name="input1" value="<?php echo $input1; ?>">
+					ดูจากใบสมัคร
 				</div>
 				<div class="col-md-6" id="form-line">
-					รหัสประจำตัวประชาชนนักเรียน 
+					รหัสประจำตัวประชาชน 
 					<input  name="input2" value="<?php echo $input2; ?>" type="text" id="data" maxlength="13" style="width:280px;">
 				</div>
 			</div>
@@ -581,6 +591,14 @@ $input55 = $data['input55'];
 			</div>
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
+					ตำบล/แขวง
+					<input  type="text" name="input21" value="<?php echo $input21; ?>" style="width:200px;">
+				</div>
+				<div class="col-md-4">
+					อำเภอ/เขต
+					<input  type="text" name="input20" value="<?php echo $input20; ?>" style="width:200px;">
+				</div>
+				<div class="col-md-4">
 					จังหวัด
 					<select name="input19" value="<?php echo $input19; ?>" style="width:250px;">
 						<option value="">เลือกจังหวัด</option>
@@ -598,28 +616,20 @@ $input55 = $data['input55'];
 						 ?>
 					</select>	
 				</div>
-				<div class="col-md-4">
-					อำเภอ/เขต
-					<input  type="text" name="input20" value="<?php echo $input20; ?>" style="width:200px;">
-				</div>
-				<div class="col-md-4">
-					ตำบล/แขวง
-					<input  type="text" name="input21" value="<?php echo $input21; ?>" style="width:200px;">
-				</div>
 			</div>
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
 					รหัสไปรษณีย์
-					<input  type="text" name="input22" value="<?php echo $input22; ?>">
+					<input  type="text" name="input22" value="<?php echo $input22; ?>" maxlength="5">
 				</div>
 				<div class="col-md-4">
 					เบอร์โทรศัพท์บ้าน
-					<input  type="text" name="input23" value="<?php echo $input23; ?>" style="width:200px;">
+					<input  type="text" name="input23" value="<?php echo $input23; ?>" style="width:200px;" maxlength="10">
 				</div>
 				<div class="col-md-4">
 					เบอร์มือถือ
-					<input  type="text" name="input24" value="<?php echo $input24; ?>">
+					<input  type="text" name="input24" value="<?php echo $input24; ?>" maxlength="10">
 				</div>
 			</div>
 
@@ -685,7 +695,8 @@ $input55 = $data['input55'];
 
 			<div class="col-md-12" id="form-line">
 				<div id="form-line">
-					<div class="col-md-6" style="margin-bottom:20px;">
+					<div class="col-md-12" style="margin-bottom:20px;">
+					ระดับการศึกษา : 
 						<?php 
 						if ($type == 1 OR $type == 2 OR $type == 3) {
 							if ($radio2 == 1) {
@@ -729,8 +740,8 @@ $input55 = $data['input55'];
 						?>
 					</div>
 					
-					<div class="col-md-6" style="margin-bottom:20px;">
-						สังกัด
+					<div class="col-md-12">
+						สังกัด : 
 						<?php 
 						if ($radio3 == 1) {
 							echo "<input  style='width:1em; height:1em; margin-left:20px;' type='radio' name='radio3' value='1' checked>";
@@ -766,7 +777,7 @@ $input55 = $data['input55'];
 					</div>
 				</div>
 
-				<div style="width:100%; padding-top:20px;" id="form-line">
+				<div style="width:100%;" id="form-line">
 					<div class="col-md-4">
 						จากโรงเรียน
 						<input  type="text" name="input29" value="<?php echo $input29; ?>">
@@ -796,7 +807,21 @@ $input55 = $data['input55'];
 					อำเภอ/เขต
 					<input  type="text" name="input31" value="<?php echo $input31; ?>">
 					จังหวัด
-					<input  type="text" name="input32" value="<?php echo $input32; ?>">
+					<select name="input32" value="<?php echo $input32; ?>" style="width:250px;">
+						<option value="">เลือกจังหวัด</option>
+						<?php 
+						$province = array('กรุงเทพมหานคร','กระบี่','กาญจนบุรี','กาฬสินธุ์','กำแพงเพชร','ขอนแก่น','จันทบุรี','ฉะเชิงเทรา','ชัยนาท','ชัยภูมิ','ชุมพร','ชลบุรี','เชียงใหม่','เชียงราย','ตรัง','ตราด','ตาก','นครนายก','นครปฐม','นครพนม','นครราชสีมา','นครศรีธรรมราช','นครสวรรค์','นราธิวาส','น่าน','นนทบุรี','บึงกาฬ','บุรีรัมย์','ประจวบคีรีขันธ์','ปทุมธานี','ปราจีนบุรี','ปัตตานี','พะเยา','พระนครศรีอยุธยา','พังงา','พิจิตร','พิษณุโลก','เพชรบุรี','เพชรบูรณ์','แพร่','พัทลุง','ภูเก็ต','มหาสารคาม','มุกดาหาร','แม่ฮ่องสอน','ยโสธร','ยะลา','ร้อยเอ็ด','ระนอง','ระยอง','ราชบุรี','ลพบุรี','ลำปาง','ลำพูน','เลย','ศรีสะเกษ','สกลนคร','สงขลา','สมุทรสาคร','สมุทรปราการ','สมุทรสงคราม','สระแก้ว','สระบุรี','สิงห์บุรี','สุโขทัย','สุพรรณบุรี','สุราษฎร์ธานี','สุรินทร์','สตูล','หนองคาย','หนองบัวลำภู','อำนาจเจริญ','อุดรธานี','อุตรดิตถ์','อุทัยธานี','อุบลราชธานี','อ่างทอง','อื่นๆ');
+						$j = 0;
+						for ($i=1; $i < 79; $i++) { 
+							if ($input32 == $i) {
+								echo "<option value=".$i." selected>".$province[$j]."</option>";
+							} else {
+								echo "<option value=".$i.">".$province[$j]."</option>";
+							}
+							$j++;
+						}
+						 ?>
+					</select>
 				</div>	
 			</div>					
 		</div>						
@@ -895,12 +920,12 @@ $input55 = $data['input55'];
 			
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
-					รหัสประจำตัวประชาชนบิดา 
+					รหัสประจำตัวประชาชน 
 					<input  type="text" name="input36" value="<?php echo $input36; ?>" maxlength="13">	
 				</div>
 				<div class="col-md-6">
 					โทรศัพท์ที่สามารถติดต่อได้
-					<input  type="text" name="input37" value="<?php echo $input37; ?>">
+					<input  type="text" name="input37" value="<?php echo $input37; ?>"  maxlength="10">
 				</div>
 			</div>
 
@@ -992,12 +1017,12 @@ $input55 = $data['input55'];
 			
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
-					รหัสประจำตัวประชาชนมารดา 
+					รหัสประจำตัวประชาชน 
 					<input  type="text" name="input41" value="<?php echo $input41; ?>" maxlength="13">	
 				</div>
 				<div class="col-md-6">
 					โทรศัพท์ที่สามารถติดต่อได้
-					<input  type="text" name="input42" value="<?php echo $input42; ?>">
+					<input  type="text" name="input42" value="<?php echo $input42; ?>"  maxlength="10">
 				</div>
 			</div>
 
@@ -1169,12 +1194,12 @@ $input55 = $data['input55'];
 
 				<div class="col-md-12" id="form-line">
 					<div class="col-md-6">
-						รหัสประจำตัวประชาชนผู้ปกครอง 
+						รหัสประจำตัวประชาชน 
 						<input  type="text" name="input48" value="<?php echo $input48; ?>" maxlength="13">
 					</div>
 					<div class="col-md-6">
 						โทรศัพท์ที่สามารถติดต่อได้
-						<input  type="text" name="input49" value="<?php echo $input49; ?>">
+						<input  type="text" name="input49" value="<?php echo $input49; ?>"  maxlength="10">
 					</div>
 				</div>
 			</span>

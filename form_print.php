@@ -185,7 +185,7 @@ if ($type == 1) {
 				ข้อมูลนักเรียน
 			</div>
 			<div class="col-md-8" style="text-align:right;">
-				รหัสประจำตัวประชาชนนักเรียน 
+				รหัสประจำตัวประชาชน 
 				<input class="identity" type="text" name="identity">-<input class="identity" type="text" name="identity"><input class="identity" type="text" name="identity"><input class="identity" type="text" name="identity"><input class="identity" type="text" name="identity">-<input class="identity" type="text" name="identity"><input class="identity" type="text" name="identity"><input class="identity" type="text" name="identity"><input class="identity" type="text" name="identity"><input class="identity" type="text" name="identity">-<input class="identity" type="text" name="identity"><input class="identity" type="text" name="identity">-<input class="identity" type="text" name="identity">
 			</div>
 		</div>
@@ -540,7 +540,7 @@ if ($type == 1) {
 		
 		<div class="col-md-12" id="form-line">
 			<div class="col-md-6">
-				รหัสประจำตัวประชาชนบิดา 
+				รหัสประจำตัวประชาชน 
 				<input type="text" name="">	
 			</div>
 			<div class="col-md-6">
@@ -590,7 +590,7 @@ if ($type == 1) {
 		
 		<div class="col-md-12" id="form-line">
 			<div class="col-md-6">
-				รหัสประจำตัวประชาชนมารดา 
+				รหัสประจำตัวประชาชน 
 				<input type="text" name="">	
 			</div>
 			<div class="col-md-6">
@@ -689,7 +689,7 @@ if ($type == 1) {
 
 		<div class="col-md-12" id="form-line">
 			<div class="col-md-6">
-				รหัสประจำตัวประชาชนผู้ปกครอง 
+				รหัสประจำตัวประชาชน 
 				<input type="text" name="">
 			</div>
 			<div class="col-md-6">

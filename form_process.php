@@ -1,4 +1,5 @@
 <?php
+session_start();
 echo "<meta charset='UTF-8'>";
 error_reporting( error_reporting() & ~E_NOTICE );
 
@@ -74,9 +75,10 @@ $input52 = $_POST['input52'];
 $input53 = $_POST['input53'];
 $input54 = $_POST['input54'];
 $input55 = $_POST['input55'];
+$input56 = $_POST['input56'];
 $date = date("Y/m/d");
 
-$sql = "INSERT INTO `history_ps` (`id_history`, `type`, `stype`, `radio1`, `radio2`, `radio3`, `radio4`, `radio5`, `radio6`, `radio7`, `radio8`, `radio9`, `radio10`, `radio11`, `radio12`, `radio13`, `input1`, `input2`, `input3`, `input4`, `input5`, `input6`, `input7`, `input8`, `input9`, `input10`, `input11`, `input12`, `input13`, `input14`, `input15`, `input16`, `input17`, `input18`, `input19`, `input20`, `input21`, `input22`, `input23`, `input24`, `input25`, `input26`, `input27`, `input28`, `input29`, `input30`, `input31`, `input32`, `input33`, `input34`, `input35`, `input36`, `input37`, `input38`, `input39`, `input40`, `input41`, `input42`, `input43`, `input44`, `input45`, `input46`, `input47`, `input48`, `input49`, `input50`, `input51`, `input52`, `input53`, `input54`, `input55`, `date`, `status`) VALUES (null, '$type', '$sType', '$radio1', '$radio2', '$radio3', '$radio4', '$radio5', '$radio6', '$radio7', '$radio8', '$radio9', '$radio10', '$radio11', '$radio12', '$radio13', '$input1', '$input2', '$input3', '$input4', '$input5', '$input6', '$input7', '$input8', '$input9', '$input10', '$input11', '$input12', '$input13', '$input14', '$input15', '$input16', '$input17', '$input18', '$input19', '$input20', '$input21', '$input22', '$input23', '$input24', '$input25', '$input26', '$input27', '$input28', '$input29', '$input30', '$input31', '$input32', '$input33', '$input34', '$input35', '$input36', '$input37', '$input38', '$input39', '$input40', '$input41', '$input42', '$input43', '$input44', '$input45', '$input46', '$input47', '$input48', '$input49', '$input50', '$input51', '$input52', '$input53', '$input54', '$input55', '$date', 1)";
+$sql = "INSERT INTO `history_ps` (`id_history`, `type`, `stype`, `radio1`, `radio2`, `radio3`, `radio4`, `radio5`, `radio6`, `radio7`, `radio8`, `radio9`, `radio10`, `radio11`, `radio12`, `radio13`, `input1`, `input2`, `input3`, `input4`, `input5`, `input6`, `input7`, `input8`, `input9`, `input10`, `input11`, `input12`, `input13`, `input14`, `input15`, `input16`, `input17`, `input18`, `input19`, `input20`, `input21`, `input22`, `input23`, `input24`, `input25`, `input26`, `input27`, `input28`, `input29`, `input30`, `input31`, `input32`, `input33`, `input34`, `input35`, `input36`, `input37`, `input38`, `input39`, `input40`, `input41`, `input42`, `input43`, `input44`, `input45`, `input46`, `input47`, `input48`, `input49`, `input50`, `input51`, `input52`, `input53`, `input54`, `input55`, `num_old`, `date`, `status`) VALUES (null, '$type', '$sType', '$radio1', '$radio2', '$radio3', '$radio4', '$radio5', '$radio6', '$radio7', '$radio8', '$radio9', '$radio10', '$radio11', '$radio12', '$radio13', '$input1', '$input2', '$input3', '$input4', '$input5', '$input6', '$input7', '$input8', '$input9', '$input10', '$input11', '$input12', '$input13', '$input14', '$input15', '$input16', '$input17', '$input18', '$input19', '$input20', '$input21', '$input22', '$input23', '$input24', '$input25', '$input26', '$input27', '$input28', '$input29', '$input30', '$input31', '$input32', '$input33', '$input34', '$input35', '$input36', '$input37', '$input38', '$input39', '$input40', '$input41', '$input42', '$input43', '$input44', '$input45', '$input46', '$input47', '$input48', '$input49', '$input50', '$input51', '$input52', '$input53', '$input54', '$input55', '$input56', '$date', 1)";
 mysql_query("SET NAMES utf8");
 $query = mysql_query($sql);
 
@@ -85,6 +87,8 @@ $querySearch = mysql_query($sqlSearch);
 $dataID = mysql_fetch_array($querySearch);
 $dataIDps = $dataID['id_history'];
 $passPS = $input11.$input12.$input13;
+
+$_SESSION['id_user'] = $dataIDps;
 
 $sqlUser = "INSERT INTO user_ps VALUES($dataIDps,'$input2','$passPS',1);";
 $queryUser = mysql_query($sqlUser);
@@ -195,14 +199,14 @@ if ($query AND $queryUser) {
 		<div class="col-md-12" style="margin-top:30px;">
 			<div class="col-md-3"></div>
 			<div class="col-md-2">
-				<a href="" >  
+				<a href="report/tcpdf/report/report_student_info.php?id_student=<?php echo $_SESSION['id_user']; ?>" target="_blank">  
 					<i class="fa fa-file-text-o" style="color:#1c1c86; float:left; margin-top:4px;" aria-hidden="true"></i>
 					<span style="color:#1c1c86; float:left; padding-left:5px;">พิมพ์หลักฐาน</span>
 				</a>
 			</div>
 			<div class="col-md-2">
 				<center>
-				<a href="login.php" >  
+				<a href="login.php" target="_blank">  
 					<i class="fa fa-user-circle" style="color:#1c1c86; float:left; margin-top:4px;" aria-hidden="true"></i>
 					<span style="color:#1c1c86; float:left; padding-left:5px;">เข้าสู่ระบบ</span>
 				</a>

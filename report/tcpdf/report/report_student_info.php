@@ -108,6 +108,7 @@ $input52 = $data['input52'];
 $input53 = $data['input53'];
 $input54 = $data['input54'];
 $input55 = $data['input55'];
+$input56 = $data['num_old'];
 $date = $data['date'];
 
 if ($type == 1) {
@@ -182,8 +183,15 @@ if ($type == 1) {
 
 if ($type == 1 || $type == 2 || $type == 3) {
 	$text1 = "1";
+	$text17 ='';
 } else {
-	$text1 = "4";
+	if (empty($input56)) {
+		$text1 = "4";
+		$text17 = '*ถ้าเป็นนักเรียนที่จบ ม.3 จากโรงเรียนโพธิสารพิทยากร ให้ใส่เลขประจำตัวเดิม <table border="1" width="85"><tr><td></td></tr></table>';
+	} else	{
+		$text1 = "4";
+		$text17 = 'เลขประจำตัวเดิม'.$input56	;
+	}
 }
  
 if ($data['input3'] == 1) {
@@ -354,13 +362,81 @@ if ($radio12 == 1) {
 	$text13 = '<input type="radio" name="radio12" value="7"> ค้าขาย <input type="radio" name="radio12" value="7"> รับจ้าง <input type="radio" name="radio12" value="7"> รับราชการ <input type="radio" name="radio12" value="7"> พนักงาน <input type="radio" name="radio12" value="7"> นักธุรกิจ <input type="radio" name="radio12" value="7"> อาชีพอิสระ <input type="radio" name="radio12" value="7"> ไม่ประกอบอาชีพ';
 }
 
+if ($input50 == "") {
+	$text14 = "...............";
+} elseif ($input51 == "") {
+	$text14 = "...............";
+} elseif ($input52 == "") {
+	$text14 = "...............";
+} else {
+	$text14 = "...............";
+}
+
+if ($type == 1 OR $type == 4 OR $type == 5 OR $type == 6) {
+	$text15 = "";
+} else {
+	if ($radio13 == 1) {
+		$text16 = "ครบ 2 ปี";
+	} else {
+		$text16 = "ไม่ครบ 2 ปี";
+	}
+	$text15 = '
+	<table width="710" border="1"><tr><td>
+		<table width="710">
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td width="700">
+								<font size="16"> ข้อมูลการอาศัยอยู่ในเขตพื้นที่บริการ (คลองชักพระ บางระมาด บางพรม ฉิมพลี)</font>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table width="710">
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td>
+								 เจ้าบ้าน/เจ้าของบ้านชื่อ '.$input54.'
+							</td>
+							<td>
+								 เกี่ยวข้องกับนักเรียนเป็น '.$input55.'
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table width="710">
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td width="500">
+								 นักเรียนอาศัยอยู่ในเขตพื้นที่บริการ (นับจากวันที่ย้ายเข้าอยู่ถึงวันที่ 16 พฤษภาคม พ.ศ. 2560)
+							</td>
+							<td width="200">
+								 '.$text16.'
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</td></tr></table>
+	';
+}
 
 if ($query) {
 $html = '
 	<table>
 		<tr>
 			<td width="120">
-				<img src="logo.jpg" width="80">
+				<img src="logo.jpg" width="60">
 			</td>
 			<td width="470">
 				<h1 align="center">โรงเรียนโพธิสารพิทยากร สำนักงานเขตพื้นที่การศึกษามัธยม เขต 1 <br>ใบสมัครเข้าเรียนต่อมัธยมศึกษาปีที่ '.$text1.'</h1>
@@ -375,10 +451,10 @@ $html = '
 				<td width="450px">
 					<font size="16"> '.$headerType.' ประเภทการคัดเลือก'.$subType.'</font>
 					<br>
-					 *ถ้าเป็นนักเรียนที่จบ ม.3 จากโรงเรียนโพธิสารพิทยากร ให้ใส่เลขประจำตัวเดิม <table border="1" width="85"><tr><td></td></tr></table>
+					 '.$text17.'
 				</td>
 				<td width="260px">
-					<font size="16"> เลขที่ผู้สมัคร '.$input1.' ห้องสอบคัดเลือก</font>
+					 เลขที่ผู้สมัคร '.$input1.' ห้องสอบคัดเลือก
 					<table border="1" width="50"><tr><td></td></tr></table>
 					<br>
 					 วันที่สมัคร 		
@@ -416,7 +492,7 @@ $html = '
 								นามสกุล '.$input5.'
 							</td>
 							<td width="400">
-								รหัสประจำตัวประชาชนนักเรียน '.$id_pcc.'
+								รหัสประจำตัวประชาชน '.$id_pcc.'
 							</td>
 						</tr>
 					</table>
@@ -478,10 +554,10 @@ $html = '
 					<table>
 						<tr>
 							<td>
-								 ตำบล/แขวง '.$input20.'
+								 ตำบล/แขวง '.$input21.'
 							</td>
 							<td>
-								 อำเภอ '.$input21.'
+								 อำเภอ/เขต '.$input20.'
 							</td>
 						</tr>
 					</table>
@@ -575,7 +651,7 @@ $html = '
 								 อำเภอ/เขต'.$input31.'
 							</td>
 							<td>
-								 อำเภอ/เขต'.$input32.'
+								 จังหวัด'.$input32.'
 							</td>
 						</tr>
 					</table>
@@ -635,7 +711,7 @@ $html = '
 					<table>
 						<tr>
 							<td>
-								 รหัสประจำตัวประชาชนบิดา '.$input36.'
+								 รหัสประจำตัวประชาชน '.$input36.'
 							</td>
 							<td>
 								 โทรศัพท์ที่สามารถติดต่อได้ '.$input37.'
@@ -683,7 +759,7 @@ $html = '
 					<table>
 						<tr>
 							<td>
-								 รหัสประจำตัวประชาชนมารดา '.$input41.'
+								 รหัสประจำตัวประชาชน '.$input41.'
 							</td>
 							<td>
 								 โทรศัพท์ที่สามารถติดต่อได้ '.$input42.'
@@ -761,10 +837,10 @@ $html = '
 				<td>
 					<table>
 						<tr>
-							<td width="200">
+							<td width="250">
 								 รายได้ของผู้ปกครอง '.$input46.' บาท/ปี
 							</td>
-							<td width="500">
+							<td width="450">
 								 อาชีพของผู้ปกครอง '.$text13.'
 							</td>
 						</tr>
@@ -778,7 +854,7 @@ $html = '
 					<table>
 						<tr>
 							<td>
-								 รหัสประจำตัวประชาชนผู้ปกครอง '.$input48.'
+								 รหัสประจำตัวประชาชน '.$input48.'
 							</td>
 							<td>
 								 โทรศัพท์ที่สามารถติดต่อได้ '.$input49.'
@@ -789,6 +865,7 @@ $html = '
 			</tr>
 		</table>
 	</td></tr></table>
+	'.$text15.'
 	<table width="710" border="1"><tr><td>
 		<table width="710">
 			<tr>
@@ -812,7 +889,7 @@ $html = '
 			</tr>
 			<tr>
 				<td>
-					 ได้คะแนนเฉลี่ย O-NET '.$input50.' คะแนน คิดเป็นร้อยละ '.$input51.'
+					 ได้คะแนนเฉลี่ย O-NET '.$input52.' คะแนน คิดเป็นร้อยละ '.$input53.'
 				</td>
 			</tr>
 		</table>
@@ -926,6 +1003,7 @@ $html = '
 		</tr>
 	</table>
 	';
+	ob_clean();
 }
 
 //create pdf

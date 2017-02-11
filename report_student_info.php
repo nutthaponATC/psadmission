@@ -414,7 +414,7 @@ $input55 = $data['input55'];
 					<input  type="text" name="input1" value="<?php echo $input1; ?>">
 				</td>
 				<td width="40%">
-					รหัสประจำตัวประชาชนนักเรียน 
+					รหัสประจำตัวประชาชน 
 					<input  name="input2" value="<?php echo $input2; ?>" type="text" id="data" maxlength="13">
 				</td>
 			</tr>
@@ -873,7 +873,7 @@ $input55 = $data['input55'];
 			
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
-					รหัสประจำตัวประชาชนบิดา 
+					รหัสประจำตัวประชาชน 
 					<input  type="text" name="input36" value="<?php echo $input36; ?>" maxlength="13">	
 				</div>
 				<div class="col-md-6">
@@ -970,7 +970,7 @@ $input55 = $data['input55'];
 			
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
-					รหัสประจำตัวประชาชนมารดา 
+					รหัสประจำตัวประชาชน 
 					<input  type="text" name="input41" value="<?php echo $input41; ?>" maxlength="13">	
 				</div>
 				<div class="col-md-6">
@@ -1165,7 +1165,7 @@ $input55 = $data['input55'];
 
 				<div class="col-md-12" id="form-line">
 					<div class="col-md-6">
-						รหัสประจำตัวประชาชนผู้ปกครอง 
+						รหัสประจำตัวประชาชน 
 						<input  type="text" name="input48" value="<?php echo $input48; ?>" maxlength="13">
 					</div>
 					<div class="col-md-6">
