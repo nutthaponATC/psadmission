@@ -78,27 +78,32 @@ $input55 = $_POST['input55'];
 $input56 = $_POST['input56'];
 $date = date("Y/m/d");
 
-$sql = "INSERT INTO `history_ps` (`id_history`, `type`, `stype`, `radio1`, `radio2`, `radio3`, `radio4`, `radio5`, `radio6`, `radio7`, `radio8`, `radio9`, `radio10`, `radio11`, `radio12`, `radio13`, `input1`, `input2`, `input3`, `input4`, `input5`, `input6`, `input7`, `input8`, `input9`, `input10`, `input11`, `input12`, `input13`, `input14`, `input15`, `input16`, `input17`, `input18`, `input19`, `input20`, `input21`, `input22`, `input23`, `input24`, `input25`, `input26`, `input27`, `input28`, `input29`, `input30`, `input31`, `input32`, `input33`, `input34`, `input35`, `input36`, `input37`, `input38`, `input39`, `input40`, `input41`, `input42`, `input43`, `input44`, `input45`, `input46`, `input47`, `input48`, `input49`, `input50`, `input51`, `input52`, `input53`, `input54`, `input55`, `num_old`, `date`, `status`) VALUES (null, '$type', '$sType', '$radio1', '$radio2', '$radio3', '$radio4', '$radio5', '$radio6', '$radio7', '$radio8', '$radio9', '$radio10', '$radio11', '$radio12', '$radio13', '$input1', '$input2', '$input3', '$input4', '$input5', '$input6', '$input7', '$input8', '$input9', '$input10', '$input11', '$input12', '$input13', '$input14', '$input15', '$input16', '$input17', '$input18', '$input19', '$input20', '$input21', '$input22', '$input23', '$input24', '$input25', '$input26', '$input27', '$input28', '$input29', '$input30', '$input31', '$input32', '$input33', '$input34', '$input35', '$input36', '$input37', '$input38', '$input39', '$input40', '$input41', '$input42', '$input43', '$input44', '$input45', '$input46', '$input47', '$input48', '$input49', '$input50', '$input51', '$input52', '$input53', '$input54', '$input55', '$input56', '$date', 1)";
-mysql_query("SET NAMES utf8");
-$query = mysql_query($sql);
+if (isset($_POST['type'])) {
+	$sql = "INSERT INTO `history_ps` (`id_history`, `type`, `stype`, `radio1`, `radio2`, `radio3`, `radio4`, `radio5`, `radio6`, `radio7`, `radio8`, `radio9`, `radio10`, `radio11`, `radio12`, `radio13`, `input1`, `input2`, `input3`, `input4`, `input5`, `input6`, `input7`, `input8`, `input9`, `input10`, `input11`, `input12`, `input13`, `input14`, `input15`, `input16`, `input17`, `input18`, `input19`, `input20`, `input21`, `input22`, `input23`, `input24`, `input25`, `input26`, `input27`, `input28`, `input29`, `input30`, `input31`, `input32`, `input33`, `input34`, `input35`, `input36`, `input37`, `input38`, `input39`, `input40`, `input41`, `input42`, `input43`, `input44`, `input45`, `input46`, `input47`, `input48`, `input49`, `input50`, `input51`, `input52`, `input53`, `input54`, `input55`, `num_old`, `date`, `status`) VALUES (null, '$type', '$sType', '$radio1', '$radio2', '$radio3', '$radio4', '$radio5', '$radio6', '$radio7', '$radio8', '$radio9', '$radio10', '$radio11', '$radio12', '$radio13', '$input1', '$input2', '$input3', '$input4', '$input5', '$input6', '$input7', '$input8', '$input9', '$input10', '$input11', '$input12', '$input13', '$input14', '$input15', '$input16', '$input17', '$input18', '$input19', '$input20', '$input21', '$input22', '$input23', '$input24', '$input25', '$input26', '$input27', '$input28', '$input29', '$input30', '$input31', '$input32', '$input33', '$input34', '$input35', '$input36', '$input37', '$input38', '$input39', '$input40', '$input41', '$input42', '$input43', '$input44', '$input45', '$input46', '$input47', '$input48', '$input49', '$input50', '$input51', '$input52', '$input53', '$input54', '$input55', '$input56', '$date', 1)";
+	mysql_query("SET NAMES utf8");
+	$query = mysql_query($sql);
 
-$sqlSearch = "SELECT * FROM history_ps WHERE input2 = $input2";
-$querySearch = mysql_query($sqlSearch);
-$dataID = mysql_fetch_array($querySearch);
-$dataIDps = $dataID['id_history'];
-$passPS = $input11.$input12.$input13;
+	$sqlSearch = "SELECT * FROM history_ps WHERE input2 = $input2";
+	$querySearch = mysql_query($sqlSearch);
+	$dataID = mysql_fetch_array($querySearch);
+	$dataIDps = $dataID['id_history'];
+	$passPS = $input11.$input12.$input13;
 
-$_SESSION['id_user'] = $dataIDps;
+	$_SESSION['id_user'] = $dataIDps;
 
-$sqlUser = "INSERT INTO user_ps VALUES($dataIDps,'$input2','$passPS',1);";
-$queryUser = mysql_query($sqlUser);
+	$sqlUser = "INSERT INTO user_ps VALUES($dataIDps,'$input2','$passPS',1);";
+	$queryUser = mysql_query($sqlUser);
 
-if ($query AND $queryUser) {
-	$alert = "เพิ่มข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร เรียบร้อย";
+	if ($query AND $queryUser) {
+		$alert = "เพิ่มข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร เรียบร้อย";
+	} else {
+		$alert = "เพิ่มข้อมูลไม่สำเร็จ กรุณาติดต่อผู้ดูแลระบบ";
+	}
 } else {
-	$alert = "เพิ่มข้อมูลไม่สำเร็จ กรุณาติดต่อผู้ดูแลระบบ";
+	echo "<script language='javascript'>";
+	echo "location='index.php';";
+	echo "</script>";
 }
-
 
  ?>
 
@@ -213,7 +218,7 @@ if ($query AND $queryUser) {
 				</center>
 			</div>
 			<div class="col-md-2">
-				<a href="" >  
+				<a href="index.php#calender">
 					<i class="fa fa-calendar" style="color:#1c1c86; float:left; margin-top:4px;" aria-hidden="true"></i>
 					<span style="color:#1c1c86; float:left; padding-left:5px;">ปฏิทินการรับสมัคร</span>
 				</a>

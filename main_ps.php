@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if (empty($_SESSION['id_user']) && $_SESSION['status'] != 1) {
+if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 1) {
 	echo "<script language='javascript'>";
 	echo "location='login.php';";
 	echo "</script>";

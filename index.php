@@ -44,9 +44,11 @@
 		<div class="col-md-4" style="height: 5px; background: #0000b9; margin-top:35px;"></div>
 		
 		<div class="col-md-12">
-			<h3>1. เลือก <span style="color:#0000b9; font-weight:bold;">ประเภทการคัดเลือก ตามระดับชั้น</span> ที่นักเรียนต้องการ โดยเตรียมเอกสารสำเนาทะเบียนบ้านและเอกสารแสดงผลการเรียนเพื่อกรอกข้อมูล</h3>
+			<h3>1. เลือก <a href="#typeStudent" style="color:#0000b9; font-weight:bold;">ประเภทการคัดเลือก ตามระดับชั้น</a> ที่นักเรียนต้องการ โดยเตรียมเอกสารสำเนาทะเบียนบ้านและเอกสารแสดงผลการเรียนเพื่อกรอกข้อมูล</h3>
 			<h3>2. กรอกข้อมูลส่วนตัวผู้สมัคร <span style="color:#0000b9; font-weight:bold;">ให้ถูกต้องครบถ้วน</span></h3>
 			<h3>3. ตรวจสอบความถูกต้องของข้อมูล หากถูกต้องแล้ว กด <span style="color:#0000b9; font-weight:bold;">"ยืนยันบันทึกข้อมูล"</span> และ กด <span style="color:#0000b9; font-weight:bold;">"พิมพ์หลักฐาน"</span></h3>
+			<h3>4. หากมีปัญหาการใช้งานระบบรับสมัคร <span style="color:#0000b9; font-weight:bold;">สามารถสอบถามผู้ดูแลระบบได้ที่</span> <img src="image/admin.jpg" width="200px"></h3>
+			<h3 style="margin-top:-110px;"> หรือโทร 080-607-4810 และ 089-131-4523</h3>
 		</div>
 	</div>
 
@@ -55,7 +57,6 @@
 			<h1 style="color:#0000b9;">ปฏิทินการรับสมัคร</h1>
 		</div>
 		<div class="col-md-12">
-			<!-- <img src="image/2560.jpg" width="100%"> -->
 			<table class="table table-bordered table-inverse">
 				<thead>
 					<tr class="bg-danger">
@@ -71,7 +72,7 @@
 				<tbody>
 					<tr class="bg-warning">
 						<th width="25%">
-						โครงการ EP (90คน)
+						โครงการ EP (90 คน)
 						</th>
 						<th width="11.5%">20-24 ก.พ. 2560</th>
 						<th width="11.5%">4 มี.ค. 2560</th>
@@ -108,7 +109,7 @@
 						<th width="11.5%">19 เม.ย. 2560</th>
 					</tr>
 					<tr class="bg-warning">
-						<th width="25%">เงื่อนไขพิเศษ (70คน)</th>
+						<th width="25%">เงื่อนไขพิเศษ (70 คน)</th>
 						<th width="11.5%">27-30 มี.ค. 2560</th>
 						<th width="11.5%">1 เม.ย. 2560</th>
 						<th width="11.5%">-</th>
@@ -127,7 +128,7 @@
 					</tr>
 					<tr class="bg-warning">
 						<th width="25%">
-						โครงการ EP (30คน),IEP (30คน)
+						โครงการ EP (30 คน),IEP (30 คน)
 						</th>
 						<th width="11.5%">20-24 ก.พ. 2560</th>
 						<th width="11.5%">5 มี.ค. 2560</th>
@@ -139,7 +140,7 @@
 					<tr class="bg-warning">
 						<th width="25%">นักเรียนที่จบ ม.3
 						<br>
-						โรงเรียนโพธิสารพิทยากร (290คน)
+						โรงเรียนโพธิสารพิทยากร (290 คน)
 						</th>
 						<th width="11.5%">1-30 ธ.ค. 2559</th>
 						<th width="11.5%">19 ม.ค. 2560</th>
@@ -149,7 +150,7 @@
 						<th width="11.5%">20 เม.ย. 2560</th>
 					</tr>
 					<tr class="bg-warning">
-						<th width="25%">นักเรียนที่จบ ม.3 จาก ร.ร.อื่น (30คน)</th>
+						<th width="25%">นักเรียนที่จบ ม.3 จาก ร.ร.อื่น (30 คน)</th>
 						<th width="11.5%">27-30 มี.ค. 2560</th>
 						<th width="11.5%">2 เม.ย. 2560</th>
 						<th width="11.5%">-</th>
@@ -158,7 +159,7 @@
 						<th width="11.5%">20 เม.ย. 2560</th>
 					</tr>
 					<tr class="bg-warning">
-						<th width="25%">เงื่อนไขพิเศษ (40คน)</th>
+						<th width="25%">เงื่อนไขพิเศษ (40 คน)</th>
 						<th width="11.5%">27-30 มี.ค. 2560</th>
 						<th width="11.5%">2 เม.ย. 2560</th>
 						<th width="11.5%">-</th>
@@ -171,7 +172,7 @@
 		</div>
 	</div>
 
-	<div class="container" style="padding-top:30px; padding-bottom:30px;">
+	<div class="container" id="typeStudent" style="padding-top:30px; padding-bottom:30px;">
 		<div class="col-md-3" style="color:#0000b9; font-weight:bold;">
 			<h3>ประเภทการคัดเลือก</h3>
 			<h1 style="font-size:45px; margin-top:-5px;">ระดับชั้น ม.1</h1>
@@ -227,6 +228,245 @@
 				</div>
 			</a>
 		</div>
+	</div>
+
+	<?php 
+	include('config.php');
+	$sql = "SELECT * FROM history_ps WHERE `type` = 1 AND `stype` = 1";
+	$count1 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 1 AND `stype` = 2";
+	$count2 = mysql_num_rows(mysql_query($sql));
+
+	$sql = "SELECT * FROM history_ps WHERE `type` = 2 AND `stype` = 1";
+	$count3 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 2 AND `stype` = 2";
+	$count4 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 2 AND `stype` = 3";
+	$count5 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 2 AND `stype` = 4";
+	$count6 = mysql_num_rows(mysql_query($sql));
+
+	$sql = "SELECT * FROM history_ps WHERE `type` = 3 AND `stype` = 1";
+	$count7 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 3 AND `stype` = 2";
+	$count8 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 3 AND `stype` = 3";
+	$count9 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 3 AND `stype` = 4";
+	$count10 = mysql_num_rows(mysql_query($sql));
+
+	$sql = "SELECT * FROM history_ps WHERE `type` = 4 AND `stype` = 1";
+	$count11 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 4 AND `stype` = 2";
+	$count12 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 4 AND `stype` = 3";
+	$count13 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 4 AND `stype` = 4";
+	$count14 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 4 AND `stype` = 5";
+	$count15 = mysql_num_rows(mysql_query($sql));
+
+	$sql = "SELECT * FROM history_ps WHERE `type` = 5 AND `stype` = 1";
+	$count16 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 5 AND `stype` = 2";
+	$count17 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 5 AND `stype` = 3";
+	$count18 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 5 AND `stype` = 4";
+	$count19 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 5 AND `stype` = 5";
+	$count20 = mysql_num_rows(mysql_query($sql));
+
+	$sql = "SELECT * FROM history_ps WHERE `type` = 6 AND `stype` = 1";
+	$count21 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 6 AND `stype` = 2";
+	$count22 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 6 AND `stype` = 3";
+	$count23 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 6 AND `stype` = 4";
+	$count24 = mysql_num_rows(mysql_query($sql));
+	$sql = "SELECT * FROM history_ps WHERE `type` = 6 AND `stype` = 5";
+	$count25 = mysql_num_rows(mysql_query($sql));
+	 ?>
+
+	<div class="container" id="calendar" style="margin-top:30px; margin-bottom:50px;">
+		<div class="col-md-12">
+			<i class="fa fa-bar-chart" style="color:#1c1c86; font-size:50px; float:left; margin-top:17px;" aria-hidden="true"></i><h1 style="color:#0000b9;"> สถิติการรับสมัคร</h1>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3 style="border-bottom:3px solid #1c1c86; width:220px;"> ประเภทการคัดเลือก</h3>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3 style="border-bottom:3px solid #1c1c86; width:150px;"> แผนการเรียน</h3>
+		</div>
+		<div class="col-md-2">
+			<h3 style="border-bottom:3px solid #1c1c86; width:150px;"> จำนวนที่สมัคร</h3>
+		</div>
+
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>ม.1 English Program (EP)</h3>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>วิทย์ - คณิต</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count1; ?></h3></div>
+		<div class="col-md-5" style="color:#e100e1;">
+			<h2>รวม <?php echo $count1+$count2; ?> คน</h2>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>คณิต - ภาษาจีน</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count2; ?></h3></div>
+
+		<div class="col-md-12" style="border-bottom:3px solid #1c1c86;"></div>
+
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>ม.1 Intensive English Program (IEP)</h3>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>ในเขตพื้นที่บริการ สอบคัดเลือก</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count3; ?></h3></div>
+		<div class="col-md-5" style="color:#e100e1;">
+			<h2>รวม <?php echo $count3+$count4+$count5+$count6; ?> คน</h2>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>นอกเขตพื้นที่บริการ สอบคัดเลือก</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count4; ?></h3></div>
+		<div class="col-md-5" style="color:#1c1c86;"></div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>ในเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count5; ?></h3></div>
+		<div class="col-md-5" style="color:#1c1c86;"></div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count6; ?></h3></div>
+
+		<div class="col-md-12" style="border-bottom:3px solid #1c1c86;"></div>
+
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>ม.1 ภาคปกติ (GP)</h3>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>ในเขตพื้นที่บริการ สอบคัดเลือก</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count7; ?></h3></div>
+		<div class="col-md-5" style="color:#e100e1;">
+			<h2>รวม <?php echo $count7+$count8+$count9+$count10; ?> คน</h2>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>นอกเขตพื้นที่บริการ สอบคัดเลือก</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count8; ?></h3></div>
+		<div class="col-md-5" style="color:#1c1c86;"></div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>ในเขตพื้นที่บริการ ความสามารถพิเศษกีฬา</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count9; ?></h3></div>
+		<div class="col-md-5" style="color:#1c1c86;"></div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>นอกเขตพื้นที่บริการ ความสามารถพิเศษกีฬา</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count10; ?></h3></div>
+
+		<div class="col-md-12" style="border-bottom:3px solid #1c1c86;"></div>
+
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>ม.4 English Program (EP)</h3>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>วิทย์ - คณิต</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count11; ?></h3></div>
+		<div class="col-md-5" style="color:#e100e1;">
+			<h2>รวม <?php echo $count11+$count12+$count13+$count14+$count15; ?> คน</h2>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>คณิต - อังกฤษ</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count12; ?></h3></div>
+		<div class="col-md-5" style="color:#1c1c86;"></div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>อังกฤษ - ภาษาเลือกฝรั่งเศษ</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count13; ?></h3></div>
+		<div class="col-md-5" style="color:#1c1c86;"></div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>อังกฤษ - ภาษาเลือกญี่ปุ่น</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count14; ?></h3></div>
+		<div class="col-md-5" style="color:#1c1c86;"></div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>อังกฤษ - ภาษาเลือกจีน</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count15; ?></h3></div>
+
+		<div class="col-md-12" style="border-bottom:3px solid #1c1c86;"></div>
+
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>ม.4 Intensive English Program (IEP)</h3>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>วิทย์ - คณิต</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count16; ?></h3></div>
+		<div class="col-md-5" style="color:#e100e1;">
+			<h2>รวม <?php echo $count16+$count17+$count18+$count19+$count20; ?> คน</h2>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>คณิต - อังกฤษ</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count17; ?></h3></div>
+		<div class="col-md-5" style="color:#1c1c86;"></div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>อังกฤษ - ภาษาเลือกฝรั่งเศษ</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count18; ?></h3></div>
+		<div class="col-md-5" style="color:#1c1c86;"></div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>อังกฤษ - ภาษาเลือกญี่ปุ่น</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count19; ?></h3></div>
+		<div class="col-md-5" style="color:#1c1c86;"></div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>อังกฤษ - ภาษาเลือกจีน</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count20; ?></h3></div>
+
+		<div class="col-md-12" style="border-bottom:3px solid #1c1c86;"></div>
+
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>ม.4 ภาคปกติ (GP)</h3>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>วิทย์ - คณิต</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count21; ?></h3></div>
+		<div class="col-md-5" style="color:#e100e1;">
+			<h2>รวม <?php echo $count21+$count22+$count23+$count24+$count25; ?> คน</h2>
+		</div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>คณิต - อังกฤษ</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count22; ?></h3></div>
+		<div class="col-md-5" style="color:#1c1c86;"></div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>อังกฤษ - ภาษาเลือกฝรั่งเศษ</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count23; ?></h3></div>
+		<div class="col-md-5" style="color:#1c1c86;"></div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>อังกฤษ - ภาษาเลือกญี่ปุ่น</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count24; ?></h3></div>
+		<div class="col-md-5" style="color:#1c1c86;"></div>
+		<div class="col-md-5" style="color:#1c1c86;">
+			<h3>อังกฤษ - ภาษาเลือกจีน</h3>
+		</div>
+		<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count25; ?></h3></div>
 	</div>
 
 	<script src="js/jquery.js"></script>
