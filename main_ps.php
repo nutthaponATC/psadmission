@@ -79,7 +79,7 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 1) {
 		</div>
 
 		<div class="col-md-2">
-			<h4>เลขที่ผู้สมัคร <?php echo $data['input1'];?></h4>
+			<h4>ใบสมัครเลขที <?php echo $data['input1'];?></h4>
 		</div>
 		<div class="col-md-4">
 			<h4>รหัสประจำตัวประชาชน <?php echo $data['input2'];?></h4>

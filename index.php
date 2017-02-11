@@ -1,3 +1,6 @@
+<?php 
+include('config.php');
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -180,24 +183,62 @@
 		<div class="col-md-8" style="height: 5px; background: #0000b9; margin-top:85px; margin-bottom:80px;"></div>
 
 		<div class="col-md-12">
-			<a href="form.php?type=1">
-				<div class="type" style="margin-left:160px;">
-					<center><p class="head-type">EP</p><br></center>
-					<center><p class="text-type">English Program</p></center>
-				</div>
-			</a>
-			<a href="form.php?type=2">
-				<div class="type" style="margin-left:20px;">
-					<center><p class="head-type">IEP</p><br></center>
-					<center><p class="text-type">Intensive English Program</p></center>
-				</div>
-			</a>
-			<a href="form.php?type=3">
-				<div class="type" style="margin-left:20px;">
-					<center><p class="head-type">GP</p><br></center>
-					<center><p class="text-type">ภาคทั่วไป</p></center>
-				</div>
-			</a>
+			<?php 
+			$sql = "SELECT * FROM setting_open WHERE id_setting = 1";
+			$query = mysql_query($sql);
+			$set1 = mysql_fetch_array($query);
+			if ($set1['status'] == 1) {
+				echo '<a href="form.php?type=1">
+					<div class="type" style="margin-left:160px;">
+						<center><p class="head-type">EP</p><br></center>
+						<center><p class="text-type">English Program</p></center>
+					</div>
+				</a>';
+			} else {
+				echo '<a href="#">
+					<div class="type2" style="margin-left:160px;">
+						<center><p class="head-type">EP</p><br></center>
+						<center><p class="text-type2">English Program</p></center>
+					</div>
+				</a>';
+			}
+			$sql = "SELECT * FROM setting_open WHERE id_setting = 2";
+			$query = mysql_query($sql);
+			$set2 = mysql_fetch_array($query);
+			if ($set2['status'] == 1) {
+				echo '<a href="form.php?type=2">
+					<div class="type" style="margin-left:20px;">
+						<center><p class="head-type">IEP</p><br></center>
+						<center><p class="text-type">Intensive English Program</p></center>
+					</div>
+				</a>';
+			} else {
+				echo '<a href="#">
+					<div class="type2" style="margin-left:20px;">
+						<center><p class="head-type">IEP</p><br></center>
+						<center><p class="text-type2">Intensive English Program</p></center>
+					</div>
+				</a>';
+			}
+			$sql = "SELECT * FROM setting_open WHERE id_setting = 3";
+			$query = mysql_query($sql);
+			$set3 = mysql_fetch_array($query);
+			if ($set3['status'] == 1) {
+				echo '<a href="form.php?type=3">
+					<div class="type" style="margin-left:20px;">
+						<center><p class="head-type">GP</p><br></center>
+						<center><p class="text-type">ภาคทั่วไป</p></center>
+					</div>
+				</a>';
+			} else {
+				echo '<a href="#">
+					<div class="type2" style="margin-left:20px;">
+						<center><p class="head-type">GP</p><br></center>
+						<center><p class="text-type2">ภาคทั่วไป</p></center>
+					</div>
+				</a>';
+			}
+			?>
 		</div>
 	</div>
 
@@ -209,29 +250,66 @@
 		<div class="col-md-8" style="height: 5px; background: #0000b9; margin-top:85px; margin-bottom:80px;"></div>
 
 		<div class="col-md-12">
-			<a href="form.php?type=4">
-				<div class="type" style="margin-left:160px;">
-					<center><p class="head-type">EP</p><br></center>
-					<center><p class="text-type">English Program</p></center>
-				</div>
-			</a>
-			<a href="form.php?type=5">
-				<div class="type" style="margin-left:20px;">
-					<center><p class="head-type">IEP</p><br></center>
-					<center><p class="text-type">Intensive English Program</p></center>
-				</div>
-			</a>
-			<a href="form.php?type=6">
-				<div class="type" style="margin-left:20px;">
-					<center><p class="head-type">GP</p><br></center>
-					<center><p class="text-type">ภาคทั่วไป</p></center>
-				</div>
-			</a>
+			<?php 
+			$sql = "SELECT * FROM setting_open WHERE id_setting = 4";
+			$query = mysql_query($sql);
+			$set4 = mysql_fetch_array($query);
+			if ($set4['status'] == 1) {
+				echo '<a href="form.php?type=4">
+					<div class="type" style="margin-left:160px;">
+						<center><p class="head-type">EP</p><br></center>
+						<center><p class="text-type">English Program</p></center>
+					</div>
+				</a>';
+			} else {
+				echo '<a href="#">
+					<div class="type2" style="margin-left:160px;">
+						<center><p class="head-type">EP</p><br></center>
+						<center><p class="text-type2">English Program</p></center>
+					</div>
+				</a>';
+			}
+			$sql = "SELECT * FROM setting_open WHERE id_setting = 5";
+			$query = mysql_query($sql);
+			$set5 = mysql_fetch_array($query);
+			if ($set5['status'] == 1) {
+				echo '<a href="form.php?type=5">
+					<div class="type" style="margin-left:20px;">
+						<center><p class="head-type">IEP</p><br></center>
+						<center><p class="text-type">Intensive English Program</p></center>
+					</div>
+				</a>';
+			} else {
+				echo '<a href="#">
+					<div class="type2" style="margin-left:20px;">
+						<center><p class="head-type">IEP</p><br></center>
+						<center><p class="text-type2">Intensive English Program</p></center>
+					</div>
+				</a>';
+			}
+			$sql = "SELECT * FROM setting_open WHERE id_setting = 6";
+			$query = mysql_query($sql);
+			$set6 = mysql_fetch_array($query);
+			if ($set6['status'] == 1) {
+				echo '<a href="form.php?type=6">
+					<div class="type" style="margin-left:20px;">
+						<center><p class="head-type">GP</p><br></center>
+						<center><p class="text-type">ภาคทั่วไป</p></center>
+					</div>
+				</a>';
+			} else {
+				echo '<a href="#">
+					<div class="type2" style="margin-left:20px;">
+						<center><p class="head-type">GP</p><br></center>
+						<center><p class="text-type2">ภาคทั่วไป</p></center>
+					</div>
+				</a>';
+			}
+			 ?>
 		</div>
 	</div>
 
 	<?php 
-	include('config.php');
 	$sql = "SELECT * FROM history_ps WHERE `type` = 1 AND `stype` = 1";
 	$count1 = mysql_num_rows(mysql_query($sql));
 	$sql = "SELECT * FROM history_ps WHERE `type` = 1 AND `stype` = 2";

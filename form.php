@@ -1,6 +1,19 @@
 <?php 
 session_start();
 error_reporting( error_reporting() & ~E_NOTICE );
+
+include('config.php');
+$sql = "SELECT * FROM setting_open WHERE status = 0";
+$query = mysql_query($sql);
+
+while ($dataCheck = mysql_fetch_array($query)) {
+	if ($_GET['type'] == $dataCheck['id_setting']) {
+			echo "<script language='javascript'>";
+			echo "location='index.php';";
+			echo "</script>";
+	}
+}
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -19,14 +32,27 @@ error_reporting( error_reporting() & ~E_NOTICE );
 	<!-- fa -->
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
 	
+	<script type="text/javascript">
+	function checkID(id)
+		{
+		if(id.length != 13) return false;
+		for(i=0, sum=0; i < 12; i++)
+		sum += parseFloat(id.charAt(i))*(13-i); if((11-sum%11)%10!=parseFloat(id.charAt(12)))
+		return false; return true;}
+
+	function checkForm()
+		{ if(!checkID(document.form2.txtID.value))
+			alert('รหัสประชาชนไม่ถูกต้อง');
+	}
+	</script>
 </head>
 <body style="font-size:17px;">
-	<form id="form1" name="form1" method="post" action="form_check.php">
+	<form id="form1" name="form1" method="post" action="form_check.php" onsubmit="checkForm(); return false;">
 	<?php 
 	$type = $_GET['type'];
 
 	if ($type == 1) {
-		$headerType = "English Program (EP)";
+		$headerType = "ระดับชั้น ม.1 โครงการ English Program (EP)";
 		$subType = "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
@@ -39,7 +65,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			คณิต - ภาษาจีน
 		</div>";
 	} elseif ($type == 2) {
-		$headerType = "Intensive English Program (IEP)";
+		$headerType = "ระดับชั้น ม.1 โครงการ Intensive English Program (IEP)";
 		$subType = "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
@@ -63,7 +89,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			</div>
 		</div>";
 	} elseif ($type == 3) {
-		$headerType = "ภาคปกติ (GP)";
+		$headerType = "ระดับชั้น ม.1 โครงการ ภาคปกติ (GP)";
 		$subType = "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
@@ -88,7 +114,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			</div>
 		</div>";
 	} elseif ($type == 4) {
-		$headerType = "English Program (EP)";
+		$headerType = "ระดับชั้น ม.4 โครงการ English Program (EP)";
 		$subType = "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
@@ -119,7 +145,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			</div>
 		</div>";
 	} elseif ($type == 5) {
-		$headerType = "Intensive English Program (IEP)";
+		$headerType = "ระดับชั้น ม.4 โครงการ Intensive English Program (IEP)";
 		$subType = "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
@@ -150,7 +176,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			</div>
 		</div>";
 	} else {
-		$headerType = "ภาคปกติ (GP)";
+		$headerType = "ระดับชั้น ม.4 โครงการ ภาคปกติ (GP)";
 		$subType = "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
@@ -252,7 +278,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 						echo "<h4 style='color:red;''>*กรุณากรอกข้อมูลให้ครบถ้วน</h4>";
 					}
 					 ?>
-					<h4 style='color:red;''>ถ้าไม่มีข้อมูลในส่วนนั้นให้ใส่ "-"</h4>
+					<h4 style='color:red;'>ถ้าไม่มีข้อมูลในส่วนนั้นให้ใส่ "-" (ขีดกลาง)</h4>
 				</div>
 				<?php 
 				if ($type == 4 || $type == 5 || $type == 6) {
@@ -264,13 +290,19 @@ error_reporting( error_reporting() & ~E_NOTICE );
 
 				 ?>
 				<div class="col-md-6" id="form-line">
-					เลขที่ผู้สมัคร
-					<input type="text" name="input1">
+					ใบสมัครเลขที
+					<input type="text" name="input1" maxlength="13" onKeyUp="javascript:inputDigits(this);">
 					ดูจากใบสมัคร
 				</div>
 				<div class="col-md-6" id="form-line">
-					รหัสประจำตัวประชาชน 
-					<input name="input2" type="text" id="data" maxlength="13" style="width:280px;">
+					<!-- รหัสประจำตัวประชาชน 
+					<input name="input2" type="text" id="data" maxlength="13" style="width:280px;" onKeyUp="javascript:inputDigits(this);"> -->
+					<!-- รหัสประจำตัวประชาชน : <input type="text" name="txtID" maxlength="13" onKeyUp="javascript:inputDigits(this);"/>
+					<input type="button" value="ตรวจสอบ" onclick="checkID"/> -->
+					<form name="form2" onsubmit="checkForm(); return false;">
+					รหัสประจำตัวประชาชน : <input type="text" name="txtID" />
+					<input type="submit" value="ตรวจสอบ" />
+					</form>
 				</div>
 			</div>
 
@@ -354,12 +386,12 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-7">
 					รหัสประจำบ้าน
-					<input type="text" name="input14" style="width:380px;">
+					<input type="text" name="input14" style="width:380px;" maxlength="11" onKeyUp="javascript:inputDigits(this);">
 					<p style="margin-left: 110px; font-size:14px;">(ดูจากทะเบียนบ้านที่นักเรียนอาศัยอยู่)</p>
 				</div>
 				<div class="col-md-5">
 					ที่อยู่ตามทะเบียนบ้าน เลขที่ 
-					<input type="text" style="width:70px;" name="input15">
+					<input type="text" style="width:70px;" name="input15" onKeyUp="javascript:inputDigits(this);">
 					หมู่ที่ 
 					<input type="text" style="width:70px;" name="input16">
 				</div>
@@ -403,15 +435,15 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
 					รหัสไปรษณีย์
-					<input type="text" name="input22" maxlength="5">
+					<input type="text" name="input22" maxlength="5" onKeyUp="javascript:inputDigits(this);">
 				</div>
 				<div class="col-md-4">
 					เบอร์โทรศัพท์บ้าน
-					<input type="text" name="input23" style="width:200px;" maxlength="10">
+					<input type="text" name="input23" style="width:200px;" maxlength="10" onKeyUp="javascript:inputDigits(this);">
 				</div>
 				<div class="col-md-4">
 					เบอร์มือถือ
-					<input type="text" name="input24" maxlength="10">
+					<input type="text" name="input24" maxlength="10" onKeyUp="javascript:inputDigits(this);">
 				</div>
 			</div>
 
@@ -429,10 +461,10 @@ error_reporting( error_reporting() & ~E_NOTICE );
 				</div>
 				<div class="col-md-6">
 					น้ำหนัก
-					<input type="text" name="input26" style="width:50px;">
+					<input type="text" name="input26" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
 					กิโลกรัม
 					&nbspส่วนสูง
-					<input type="text" name="input27" style="width:50px;">
+					<input type="text" name="input27" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
 					เซนติเมตร
 					&nbspหมู่เลือด
 					<select name="input28">
@@ -553,7 +585,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
 					รายได้ของบิดา 
-					<input type="text" name="input35" style="width:150px;">
+					<input type="text" name="input35" style="width:150px;" onKeyUp="javascript:inputDigits(this);">
 					บาท/ปี
 				</div>
 				<div class="col-md-2" style="text-align:right;">
@@ -581,11 +613,11 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
 					รหัสประจำตัวประชาชน 
-					<input type="text" name="input36" maxlength="13">	
+					<input type="text" name="input36" maxlength="13" onKeyUp="javascript:inputDigits(this);">	
 				</div>
 				<div class="col-md-6">
 					โทรศัพท์ที่สามารถติดต่อได้
-					<input type="text" name="input37" maxlength="10">
+					<input type="text" name="input37" maxlength="10" onKeyUp="javascript:inputDigits(this);">
 				</div>
 			</div>
 
@@ -610,7 +642,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
 					รายได้ของมารดา 
-					<input type="text" name="input40" style="width:150px;">
+					<input type="text" name="input40" style="width:150px;" onKeyUp="javascript:inputDigits(this);">
 					บาท/ปี
 				</div>
 				<div class="col-md-2" style="text-align:right;">
@@ -638,11 +670,11 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
 					รหัสประจำตัวประชาชน 
-					<input type="text" name="input41" maxlength="13">	
+					<input type="text" name="input41" maxlength="13" onKeyUp="javascript:inputDigits(this);">	
 				</div>
 				<div class="col-md-6">
 					โทรศัพท์ที่สามารถติดต่อได้
-					<input type="text" name="input42" maxlength="10">
+					<input type="text" name="input42" maxlength="10" onKeyUp="javascript:inputDigits(this);">
 				</div>
 			</div>
 
@@ -670,12 +702,12 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
 					จำนวนพี่น้องทั้งหมด (รวมตัวเอง) 
-					<input type="text" name="input43" style="width:50px;">
+					<input type="text" name="input43" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
 					คน
 				</div>
 				<div class="col-md-6">
 					กำลังศึกษาอยู่ จำนวน
-					<input type="text" name="input44" style="width:50px;">
+					<input type="text" name="input44" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
 					คน
 				</div>
 			</div>
@@ -806,9 +838,9 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			<div class="col-md-12">
 				<div class="col-md-12" id="form-line">
 					ผลการเรียนเฉลี่ย
-					<input type="text" name="input50" style="width:50px;">
+					<input type="text" name="input50" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
 					หรือ ร้อยละ
-					<input type="text" name="input51" style="width:50px;">
+					<input type="text" name="input51" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
 				</div>
 			</div>
 			<div class="col-md-12">
@@ -821,12 +853,12 @@ error_reporting( error_reporting() & ~E_NOTICE );
 			<div class="col-md-12">
 				<div class="col-md-12" id="form-line">
 					ได้คะแนนเฉลี่ย O-NET
-					<input type="text" name="input52" style="width:50px;">
+					<input type="text" name="input52" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
 					คะแนน
 				
 					<span style="margin-left:20px;">
 					คิดเป็นร้อยละ
-					<input type="text" name="input53" style="width:50px;">
+					<input type="text" name="input53" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
 					</span>
 				</div>
 			</div>
@@ -844,6 +876,14 @@ error_reporting( error_reporting() & ~E_NOTICE );
 </html>
 
 <script type="text/javascript">
+	function inputDigits(sensor){
+		var regExp = /[0-9]$/;
+		if(!regExp.test(sensor.value)){
+		alert("กรุณากรอกตัวเลขเท่านั้น");
+		sensor.value = sensor.value.substring(0, sensor.value.length -1);
+		}
+	}
+
 	$(document).ready(function(){
 		$("#radio1-type").hide();
 		$("#radio5-type").hide();

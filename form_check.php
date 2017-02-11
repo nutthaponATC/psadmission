@@ -137,7 +137,7 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 	<?php
 
 	if ($type == 1) {
-		$headerType = "English Program (EP)";
+		$headerType = "ระดับชั้น ม.1 โครงการ English Program (EP)";
 		$subType .= "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
@@ -158,7 +158,7 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 			$subType .= "คณิต - ภาษาจีน
 		</div>";
 	} elseif ($type == 2) {
-		$headerType = "Intensive English Program (IEP)";
+		$headerType = "ระดับชั้น ม.1 โครงการ Intensive English Program (IEP)";
 		$subType .= "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
@@ -200,7 +200,7 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 			</div>
 		</div>";
 	} elseif ($type == 3) {
-		$headerType = "ภาคปกติ (GP)";
+		$headerType = "ระดับชั้น ม.1 โครงการ ภาคปกติ (GP)";
 		$subType = "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
@@ -245,7 +245,7 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 			</div>
 		</div>";
 	} elseif ($type == 4) {
-		$headerType = "English Program (EP)";
+		$headerType = "ระดับชั้น ม.4 โครงการ English Program (EP)";
 		$subType = "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
@@ -301,7 +301,7 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 			</div>
 		</div>";
 	} elseif ($type == 5) {
-		$headerType = "Intensive English Program (IEP)";
+		$headerType = "ระดับชั้น ม.4 โครงการ Intensive English Program (IEP)";
 		$subType = "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
@@ -357,7 +357,7 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 			</div>
 		</div>";
 	} else {
-		$headerType = "ภาคปกติ (GP)";
+		$headerType = "ระดับชั้น ม.4 โครงการ ภาคปกติ (GP)";
 		$subType = "<div class='col-md-2'>
 			<p>ประเภทการคัดเลือก
 		</div>
@@ -489,7 +489,7 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 				}
 				 ?>
 				<div class="col-md-6" id="form-line">
-					เลขที่ผู้สมัคร
+					ใบสมัครเลขที
 					<input readonly id='readonly' type="text" name="input1" value="<?php echo $input1; ?>">
 					ดูจากใบสมัคร
 				</div>
@@ -610,7 +610,7 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-7">
 					รหัสประจำบ้าน
-					<input readonly id='readonly' type="text" name="input14" value="<?php echo $input14; ?>" style="width:380px;">
+					<input readonly id='readonly' maxlength="11" type="text" name="input14" value="<?php echo $input14; ?>" style="width:380px;">
 					<p style="margin-left: 110px; font-size:14px;">(ดูจากทะเบียนบ้านที่นักเรียนอาศัยอยู่)</p>
 				</div>
 				<div class="col-md-5">

@@ -410,7 +410,7 @@ $input55 = $data['input55'];
 					ข้อมูลนักเรียน
 				</td>
 				<td width="40%">
-					เลขที่ผู้สมัคร
+					ใบสมัครเลขที
 					<input  type="text" name="input1" value="<?php echo $input1; ?>">
 				</td>
 				<td width="40%">

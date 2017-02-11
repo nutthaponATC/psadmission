@@ -447,7 +447,7 @@ $input56 = $data['num_old'];
 				}
 				 ?>
 				<div class="col-md-6" id="form-line">
-					เลขที่ผู้สมัคร
+					ใบสมัครเลขที
 					<input  type="text" name="input1" value="<?php echo $input1; ?>">
 					ดูจากใบสมัคร
 				</div>
