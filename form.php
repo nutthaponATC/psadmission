@@ -814,7 +814,14 @@ while ($dataCheck = mysql_fetch_array($query)) {
 			<div class="col-md-12">
 				<div class="col-md-12">
 					<h2 style="font-weight:bold;">
-						ข้อมูลผลการเรียน (ผลการเรียนเฉลี่ย ม.1 - ม.3 รวม 5 ภาคเรียน)
+						<?php 
+						if ($type == 1 || $type == 2 || $type == 3) {
+							echo "ข้อมูลผลการเรียน";
+						} else {
+							echo "ข้อมูลผลการเรียน (ผลการเรียนเฉลี่ย ม.1 - ม.3 รวม 5 ภาคเรียน)";
+						}
+						
+						 ?>
 					</h2>
 				</div>
 			</div>
@@ -829,13 +836,28 @@ while ($dataCheck = mysql_fetch_array($query)) {
 			<div class="col-md-12">
 				<div class="col-md-12">
 					<h2 style="font-weight:bold;">
-						ข้อมูลคะแนน O-NET
+						<?php 
+						if ($type == 1 OR $type == 4) {
+							echo "ผลการเรียนเฉลี่ยภาษาอังกฤษ";
+						} else {
+							echo "ข้อมูลคะแนน O-NET";
+						}
+
+						 ?>
 					</h2>
 				</div>
 			</div>
 			<div class="col-md-12">
 				<div class="col-md-12" id="form-line">
-					ได้คะแนนเฉลี่ย O-NET
+					<?php 
+					if ($type == 1 OR $type == 4) {
+						echo "ได้คะแนนเฉลี่ยภาษาอังกฤษ";
+					} else {
+						echo "ได้คะแนนเฉลี่ย O-NET";
+					}
+
+					 ?>
+					
 					<input type="text" name="input52" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
 					คะแนน
 				
