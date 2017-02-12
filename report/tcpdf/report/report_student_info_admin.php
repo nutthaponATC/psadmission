@@ -17,8 +17,8 @@ $pdf->SetCreator(PDF_CREATOR);
 $pdf->setPrintHeader(false);
 $pdf->setPrintFooter(false);
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
-$pdf->SetMargins(5, 5, 5);
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+$pdf->SetMargins(5, 5, 5 , 5);
+$pdf->SetAutoPageBreak(TRUE, 0);
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
@@ -26,7 +26,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
     $pdf->setLanguageArray($l);
 }
 
-$pdf->SetFont('thsarabun', '', 14);
+$pdf->SetFont('thsarabun', '', 15);
 
 //gen pdf
 $pdf->AddPage();
@@ -110,6 +110,21 @@ $input54 = $data['input54'];
 $input55 = $data['input55'];
 $input56 = $data['num_old'];
 $date = $data['date'];
+
+$nameFA = explode($input33, " ");
+
+$sql2 = 'SELECT * FROM group_type WHERE id_group_type = '.$id_student.'';
+$query2 = mysql_query($sql2);
+$data2 = mysql_fetch_array($query2);
+$id_group_type = $data2['id_student_group'];
+$class_exam = $data2['class_exam'];
+
+$arrayMount = array('มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม');
+for ($i=1; $i < 13; $i++) { 
+	if ($input12 = $i) {
+		$mount = $arrayMount[$i-1];
+	}
+}
 
 if ($type == 1) {
 	$headerType = "English Program (EP)";
@@ -196,12 +211,16 @@ if ($type == 1 || $type == 2 || $type == 3) {
  
 if ($data['input3'] == 1) {
 	$frontName = "ด.ช.";
+	$gender = "ชาย";
 } elseif ($data['input3'] == 2) {
 	$frontName = "ด.ญ.";
+	$gender = "หญิง";
 } elseif ($data['input3'] == 3) {
 	$frontName = "นาย";
+	$gender = "ชาย";
 } else{
 	$frontName = "น.ส.";
+	$gender = "หญิง";
 }
 
 $blood = array('A','B','AB','O');
@@ -387,6 +406,31 @@ if (empty($input53)) {
 	$text34 = $input53;
 }
 
+if ($type == 1 || $type == 4) {
+	$text88 = '<td>
+		 ผลการเรียนเฉลี่ยภาษาอังกฤษ (EP) '.$text33.'
+	</td>';
+} else {
+	$text88 = '<td>
+		 ผลการเรียนเฉลี่ย O-NET (ปกติ/IEP) '.$text33.'
+	</td>';
+}
+
+function DateThai($strDate)
+{
+$strYear = date("Y",strtotime($strDate))+543;
+$strMonth= date("n",strtotime($strDate));
+$strDay= date("j",strtotime($strDate));
+$strHour= date("H",strtotime($strDate));
+$strMinute= date("i",strtotime($strDate));
+$strSeconds= date("s",strtotime($strDate));
+$strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+$strMonthThai=$strMonthCut[$strMonth];
+return "$strDay $strMonthThai $strYear";
+
+}
+$strDate = date("Y/m/d");
+
 if ($type == 1 OR $type == 4 OR $type == 5 OR $type == 6) {
 	$text15 = "";
 } else {
@@ -450,574 +494,453 @@ if ($query) {
 $html = '
 	<table>
 		<tr>
-			<td width="120">
-				<img src="logo.jpg" width="60">
+			<td width="600">
+				<table>
+					<tr>
+						<td align="center">
+							<img src="logo.jpg" width="60">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h2 align="center">ใบสมัครเข้าเรียนต่อมัธยมศึกษาปีที่ '.$text1.'<br> โรงเรียนโพธิสารพิทยากร สำนักงานเขตพื้นที่การศึกษามัธยม เขต 1 </h2>
+						</td>
+					</tr>
+				</table>				
 			</td>
-			<td width="470">
-				<h1 align="center">โรงเรียนโพธิสารพิทยากร สำนักงานเขตพื้นที่การศึกษามัธยม เขต 1 <br>ใบสมัครเข้าเรียนต่อมัธยมศึกษาปีที่ '.$text1.'</h1>
+			<td width="110">
+				<table border="1">
+					<tr width="110">
+						<td align="center">
+							<br><br><br>
+							ติดรูป 1 นิ้ว
+							<br><br><br>
+						</td>
+					</tr>
+				</table>
 			</td>
-			<td width="120"></td>
 		</tr>
 	</table>
 	
-	<table width="710" border="1"><tr><td>
-		<table width="710" border="1">
-			<tr>
-				<td width="450px">
-					<font size="16" align="center"> '.$headerType.' ประเภทการคัดเลือก'.$subType.'</font>
-					<br>
-					 '.$text17.' ใบสมัครเลขที '.$input1.'
-				</td>
-				<td width="260px">
-					<table><tr><td>
-					 รหัสผู้สมัคร <table border="1" width="65"><tr><td></td></tr></table>
-					 </td><td>
-					  ห้องสอบ <table border="1" width="70"><tr><td></td></tr></table>
-					</td></tr></table>
-					<br>
-					 วันที่สมัคร 		
-					 ............................................
-					 <br>
-					 <input type="checkbox" name="checkbox3" value="1"> 08.30-11.00 น. <input type="checkbox" name="checkbox3" value="1"> 13.00-15.00 น.
-				</td>
-			</tr>
-		</table>
-	</td></tr></table>
-	<table width="710" border="1"><tr><td>
-		<table>
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td width="400">
-								<font size="16"> ข้อมูลนักเรียน</font>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td width="100">
-								 คำนำหน้า '.$frontName.'
-							</td>
-							<td width="100">
-								ชื่อ '.$input4.'
-							</td>
-							<td width="160">
-								นามสกุล '.$input5.'
-							</td>
-							<td width="400">
-								รหัสประจำตัวประชาชน '.$id_pcc.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 ศาสนา '.$input8.'
-							</td>
-							<td>
-								 สัญชาติ '.$input9.'
-							</td>
-							<td>
-								 เชื้อชาติ '.$input10.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 วันเดือนปีเกิด '.$input11.'/'.$input12.'/'.$input13.'
-							</td>
-							<td>
-								 รหัสประจำบ้าน '.$input14.' (ดูจากทะเบียนบ้านที่นักเรียนอาศัยอยู่)
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td width="200">
-								 ที่อยู่ตามทะเบียนบ้าน เลขที่ '.$input15.'
-							</td>
-							<td width="100">
-								 หมู่ที่ '.$input16.'
-							</td>
-							<td>
-								 ถนน '.$input17.'
-							</td>
-							<td>
-								 ซอย '.$input18.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 ตำบล/แขวง '.$input21.'
-							</td>
-							<td>
-								 อำเภอ/เขต '.$input20.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 จังหวัด '.$provinceData.'
-							</td>
-							<td>
-								 รหัสไปรษณีย์ '.$input22.'
-							</td>
-							<td>
-								 เบอร์โทรศัพท์บ้าน '.$input23.'
-							</td>
-							<td>
-								 เบอร์มือถือ '.$input24.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td>	
-					<table>
-						<tr>
-							<td>
-								 '.$text3.'
-							</td>
-							<td>
-								 น้ำหนัก '.$input26.' กิโลกรัม
-							</td>
-							<td>
-								 ส่วนสูง '.$input27.' เซนติเมตร
-							</td>
-							<td>
-								 หมู่เลือด'.$textBlood.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-	</td></tr></table>
+	<table width="710">
+		<tr>
+			<td>
+				ประเภทการคัดเลือก '.$headerType.'
+			</td>
+			<td align="center">
+				แผนการเรียน '.$subType.'
+			</td>
+		</tr>
+	</table>
 
 	<table width="710" border="1"><tr><td>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td width="300">
-								<font size="16"> ข้อมูลการศึกษา (โรงเรียนเดิม)</font>
-							</td>
-							<td>
-								'.$text4.' สังกัด '.$text5.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td  width="250">
-								 จากโรงเรียน '.$input29.' 
-							</td>
-							<td  width="450">
-								 ร.ร. ตั้งอยู่ '.$text6.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 ที่อยู่ ตำบล/แขวง '.$input30.'
-							</td>
-							<td>
-								 อำเภอ/เขต'.$input31.'
-							</td>
-							<td>
-								 จังหวัด'.$provinceData2.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-	</td></tr></table>
-	<table width="710" border="1"><tr><td>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								<font size="16"> ข้อมูล บิดา - มารดา</font>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 ชื่อสกุล บิดา '.$input33.'
-							</td>
-							<td  width="250">
-								 รายได้ของบิดา '.$input35.' บาท/ปี
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 อาชีพของบิดา '.$text8.'
-							</td>
-							<td>
-								 '.$text7.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 รหัสประจำตัวประชาชน '.$input36.'
-							</td>
-							<td>
-								 โทรศัพท์ที่สามารถติดต่อได้ '.$input37.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<br>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 ชื่อสกุล มารดา '.$input38.'
-							</td>
-							<td>
-								 รายได้ของมารดา '.$input40.' บาท/ปี
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 อาชีพของมารดา '.$text9.'
-							</td>
-							<td>
-								 '.$text10.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 รหัสประจำตัวประชาชน '.$input41.'
-							</td>
-							<td>
-								 โทรศัพท์ที่สามารถติดต่อได้ '.$input42.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 <font size="12">สถานะภาพของบิดา-มารดา '.$text11.'</font>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 จำนวนพี่น้องทั้งหมด (รวมตัวเอง) '.$input43.' คน
-							</td>
-							<td>
-								 กำลังศึกษาอยู่ จำนวน '.$input44.' คน
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-	</td></tr></table>
-	<table width="710" border="1"><tr><td>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								<font size="16"> ข้อมูลผู้ปกครอง</font>
-							</td>
-							<td>
-								เกี่ยวข้องกับนักเรียนเป็น '.$text12.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 ชื่อสกุล ผู้ปกครอง '.$input45.'
-							</td>
-							<td>
-								 มีความสัมพันธ์กับนักเรียนเป็น '.$input47.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 รายได้ของผู้ปกครอง '.$input46.' บาท/ปี
-							</td>
-							<td>
-								 อาชีพของผู้ปกครอง '.$text13.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<table width="710">
-			<tr>
-				<td>
-					<table>
-						<tr>
-							<td>
-								 รหัสประจำตัวประชาชน '.$input48.'
-							</td>
-							<td>
-								 โทรศัพท์ที่สามารถติดต่อได้ '.$input49.'
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-	</td></tr></table>
-	'.$text15.'
-	<table width="710" border="1"><tr><td>
-		<table width="710">
-			<tr>
-				<td>
-					<font size="16"> ข้อมูลผลการเรียน (ผลการเรียนเฉลี่ย ม.1 - ม.3 รวม 5 ภาคเรียน)</font>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					 ผลการเรียนเฉลี่ย '.$text31.' หรือ ร้อยละ '.$text32.'
-				</td>
-			</tr>
-		</table>
-	</td>
-	<td>
-		<table width="710">
-			<tr>
-				<td>
-					<font size="16"> ข้อมูลคะแนน O-NET</font>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					 ได้คะแนนเฉลี่ย O-NET '.$text33.' คะแนน คิดเป็นร้อยละ '.$text34.'
-				</td>
-			</tr>
-		</table>
-	</td></tr></table>
-	<table width="710" border="1">
+	<table width="710">
 		<tr>
-			<td width="410">
+			<td width="300">
+				 เลขประจำตัวประชาชน '.$id_pcc.'
+			</td>
+			<td>
+				 เลขประจำตัวผู้สมัคร '.$id_group_type.'
+			</td>
+			<td>
+				 เลขที่ห้องสอบ '.$class_exam.'
+			</td>
+		</tr>
+	</table>
+	</td></tr></table>
+
+	<table width="710">
+		<tr>
+			<td>
+				<strong> ข้อมูลผู้สมัคร</strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
 				<table>
 					<tr>
-						<td>
-							<font size="16"> หลักฐานการสมัคร</font>
+						<td width="100">
+							 คำนำหน้า '.$frontName.'
 						</td>
-					</tr>
-					<tr>
 						<td>
-							 <input type="checkbox" name="checkbox" value="1"> ปพ.1 (ช่วงชั้นที่ 3) 
-							 <input type="checkbox" name="checkbox" value="1"> สำเนาสมุดประจำตัว
-							 <input type="checkbox" name="checkbox" value="1"> สำเนาทะเบียนบ้าน
-							 <br>
-							 <input type="checkbox" name="checkbox" value="1"> สำเนาผล O-NET
-							 <input type="checkbox" name="checkbox" value="1"> ใบรับรองการเป็นนักเรียน
-							 <input type="checkbox" name="checkbox" value="1"> อื่นๆ...................
+							 ชื่อ '.$input4.'
 						</td>
-					</tr>
-					<tr>
 						<td>
-							<font size="16"> ตรวจสอบหลักฐาน</font>
-							 <input type="checkbox" name="checkbox2" value="1"> ถูกต้อง
-							 <input type="checkbox" name="checkbox2" value="1"> ไม่ถูกต้อง
-							 ขาด..........................................
+							 นามสกุล '.$input5.'
 						</td>
-					</tr>
-					<tr>
-						<td>
-							<table>
-								<tr>
-									<td></td>
-									<td width="50">
-										ลงชื่อ
-									</td>
-									<td></td>
-									<td>
-									ผู้ตรวจหลักฐาน</td>
-								</tr>
-								<tr>
-									<td></td>
-									<td width="5">
-										(
-									</td>
-									<td width="160" style="border-bottom: 1px solid black;"></td>
-									<td>
-									)</td>
-								</tr>
-							</table>
+						<td width="100">
+							 เพศ '.$gender.'
 						</td>
 					</tr>
 				</table>
 			</td>
-			<td width="300">
+		</tr>
+		<tr>
+			<td>
 				<table>
-					<tr><td></td></tr>
+					<tr>
+						<td>
+							 เกิดวันที่ '.$input11.'
+						</td>
+						<td>
+							 เดือน '.$mount.'
+						</td>
+						<td>
+							 พ.ศ. '.$input13.'
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							 เชื้อชาติ '.$input10.'
+						</td>
+						<td>
+							 สัญชาติ '.$input9.'
+						</td>
+						<td>
+							 ศาสนา '.$input8.'
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							 อยู่บ้านเลขที่ '.$input15.'
+						</td>
+						<td>
+							 หมู่ที่ '.$input16.'
+						</td>
+						<td>
+							 ซอย '.$input17.'
+						</td>
+						<td>
+							 ถนน '.$input18.'
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							 ตำบล/แขวง '.$input21.'
+						</td>
+						<td>
+							 อำเภอ/เขต '.$input20.'
+						</td>
+						<td>
+							 จังหวัด '.$provinceData.'
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							 รหัสไปรษณีย์ '.$input22.'
+						</td>
+						<td>
+							 โทรศัพท์บ้าน '.$input23.'
+						</td>
+						<td>
+							 โทรศัพท์มือถือ '.$input24.'
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							<strong> ข้อมูลบิดา</strong> 
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							 ชื่อ นามสกุล '.$input33.'
+						</td>
+						<td>
+							 อาชีพ '.$text8.'
+						</td>
+						<td>
+							 โทรศัพท์ '.$input37.'
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							<strong> ข้อมูลมารดา</strong>
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							 ชื่อ  นามสกุล '.$input38.'
+						</td>
+						<td>
+							 อาชีพ '.$text9.'
+						</td>
+						<td>
+							 โทรศัพท์ '.$input42.'
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							 <strong>ข้อมูลผู้ปกครอง</strong> 
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							 ชื่อ นามสกุล '.$input45.'
+						</td>
+						<td>
+							 อาชีพ '.$text13.'
+						</td>
+						<td>
+							 โทรศัพท์ '.$input49.'
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							<strong> สภาพความเป็นนักเรียน</strong> 
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							 สำเร็จการศึกษาจากโรงเรียน '.$input29.'
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							 ตำบล/แขวง '.$input30.'
+						</td>
+						<td>
+							 อำเภอ/เขต '.$input31.'
+						</td>
+						<td>
+							 จังหวัด '.$provinceData2.'
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							 ข้อมูลผลการเรียน
+						</td>
+						<td>
+							 ผลการเรียนเฉลี่ย '.$text31.'
+						</td>
+						'.$text88.'
+					</tr>
+				</table>
+				<table><tr><td></td></tr></table>
+				<table>
+					<tr>
+						<td width="30" align="right">ลงชื่อ</td>
+						<td width="5"></td>
+						<td width="200"></td>
+						<td width="80">ผู้สมัคร</td>
+						
+						<td width="70" align="right">ลงชื่อ</td>
+						<td width="5"></td>
+						<td width="200"></td>
+						<td width="90">เจ้าหน้าที่ออกบัตร</td>
+					</tr>
+					<tr>
+						<td width="30"></td>
+						<td width="5">
+							(
+						</td>
+						<td width="200" style="border-bottom: 1px solid black;"></td>
+						<td>
+						)</td>
+						
+						<td width="70"></td>
+						<td width="5">
+							(
+						</td>
+						<td width="200" style="border-bottom: 1px solid black;"></td>
+						<td>
+						)</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							<strong> วันที่ออกบัตร '.DateThai($strDate).'</strong> 
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	
+	<table width="710">
+		<tr>
+			<td>	
+				------------------------------------------------------------------------------------------------------------------------------------------------------------------
+			</td>
+		</tr>
+	</table>
+
+	<table width="710"><tr><td></td></tr></table>
+
+	<table>
+		<tr>
+			<td width="120">
+				<table><tr><td></td></tr></table>
+				<table><tr><td></td></tr></table>
+				<table><tr><td></td></tr></table>
+				<table border="1">
+					<tr width="110">
+						<td align="center">
+							<br><br><br>
+							ติดรูป 1 นิ้ว
+							<br><br><br>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td width="450">
+				<table>
 					<tr>
 						<td>
 							<table>
 								<tr>
-									<td width="50"></td>
-									<td width="50">
-										ลงชื่อ
+									<td>	
+										<h2 align="center">บัตรประจำตัวผู้สมัครสอบเข้าเรียนต่อมัธยมศึกษาปีที่ '.$text1.'<br> โรงเรียนโพธิสารพิทยากร สำนักงานเขตพื้นที่การศึกษามัธยม เขต 1 </h2>			
 									</td>
-									<td width="120"></td>
-									<td>
-									นักเรียนผู้สมัคร</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table>
+								<tr>
+									<td align="center"> ...................................................................................................
+									</td>
+								</tr>
+							</table>
+							<table>
+								<tr>
+									<td align="center">
+									</td>
+								</tr>
+							</table>
+							<table>
+								<tr>
+									<td width="10"></td>
+									<td width="270">	
+										ผู้สมัคร ชื่อ - สกุล : '.$frontName.$input4." ".$input5.'
+									</td>
+									<td width="500">
+										เลขประจำตัวประชาชน : '.$id_pcc.'
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table>
+								<tr>
+									<td width="10"></td>
+									<td width="270">	
+										ประเภทการคัดเลือก : '.$headerType.'
+									</td>
+									<td width="500">	
+										แผนการเรียน : '.$subType.'
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table>
+								<tr>
+									<td width="35" align="right"> ลงชื่อ</td>
+									<td width="5"></td>
+									<td width="170"></td>
+									<td width="80">ผู้สมัคร</td>
+									
+									<td width="35" align="right">ลงชื่อ</td>
+									<td width="5"></td>
+									<td width="170"></td>
+									<td width="90">เจ้าหน้าที่ออกบัตร</td>
 								</tr>
 								<tr>
-									<td width="50"></td>
+									<td width="35"></td>
 									<td width="5">
 										(
 									</td>
-									<td width="160" style="border-bottom: 1px solid black;"></td>
+									<td width="170" style="border-bottom: 1px solid black;"></td>
 									<td>
 									)</td>
-								</tr>
-								<tr>
-									<td width="50"></td>
-									<td width="50">
-										ลงชื่อ
-									</td>
-									<td width="120"></td>
-									<td>
-									ผู้ปกครอง</td>
-								</tr>
-								<tr>
-									<td width="50"></td>
+									
+									<td width="35"></td>
 									<td width="5">
 										(
 									</td>
-									<td width="160" style="border-bottom: 1px solid black;"></td>
+									<td width="170" style="border-bottom: 1px solid black;"></td>
 									<td>
 									)</td>
 								</tr>
 							</table>
 						</td>
 					</tr>
+				</table>				
+			</td>
+			<td>
+				<table>
 					<tr>
-						<td align="center">
-							สมัครวันที่.........เดือน................พ.ศ.2560
+						<td>
+						 <strong>เลขประจำตัวผู้สมัคร '.$id_group_type.'</strong> 
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<strong> เลขที่ห้องสอบ '.$class_exam.'</strong> 
 						</td>
 					</tr>
 				</table>
+			</td>
+		</tr>
+	<table>
+	<table>
+		<tr>
+			<td>
+			</td>
+		</tr>
+	</table>
+	<table>
+		<tr>
+			<td>
+				<strong> ยื่นสมัครวันที่ '.DateThai($strDate).'</strong> 
+			</td>
+			<td>
+				<strong> วันที่ออกบัตร '.DateThai($strDate).'</strong> 
 			</td>
 		</tr>
 	</table>

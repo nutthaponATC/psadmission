@@ -53,33 +53,56 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 9) {
 	</div>
 
 	<div class="container" style="margin-top:20px; color:#1c1c86;">
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<a href="admin_ps.php"><h1>admin system</h1></a>
-		</div>
-		<div class="col-md-6">
 		</div>
 	</div>
 
-	<div class="container">
-	 	<div class="col-md-12" style="border-bottom:3px solid #1c1c86; margin-top:10px; color:#1c1c86;"><h2>ระบบควบคุมการเปิดปิดระบบ</h2></div>
+	<div class="container" style="margin-top:20px;">
+		<div class="col-md-12">
+			<a href="add_student_admin.php"><h1>ระบบเพิ่มข้อมูลนักเรียน</h1></a>
+		</div>
+	</div>
 
-			<?php 
-			include('config.php');
-
-			$arrayString = array('ม.1 EP ','ม.1 IEP ','ม.1 GP ','ม.4 EP ','ม.4 IEP ','ม.4 GP ');
-			for ($i=1; $i < 7; $i++) { 
-				$sql = "SELECT * FROM setting_open WHERE id_setting = $i";
-				$query = mysql_query($sql);
-				$dataCheck = mysql_fetch_array($query);
-				if ($dataCheck['status'] == 1) {
-					$j = $i+6;
-					echo "<div class='col-md-4'><a href='open_system_process.php?type=$j'><h3>".$arrayString[$i-1]." <span style='color:green;'>สถานะเปิดรับสมัคร</span></h3></a></div>";
-				} else {
-					echo "<div class='col-md-4'><a href='open_system_process.php?type=$i'><h3>".$arrayString[$i-1]." <span style='color:red;'>สถานะปิดรับสมัคร</span></h3></a></div>";
-				}
-			}
-
-			 ?>
+	<div class="container" style="margin-top:20px;">
+		<a href="form_add_student_admin.php?type=1">
+			<div class="type" style="margin-left:160px;">
+				<center><p class="head-type">EP</p><br></center>
+				<center><p class="text-type">English Program</p></center>
+			</div>
+		</a>
+		<a href="form_add_student_admin.php?type=2">
+			<div class="type" style="margin-left:20px;">
+				<center><p class="head-type">IEP</p><br></center>
+				<center><p class="text-type">Intensive English Program</p></center>
+			</div>
+		</a>
+		<a href="form_add_student_admin.php?type=3">
+			<div class="type" style="margin-left:20px;">
+				<center><p class="head-type">GP</p><br></center>
+				<center><p class="text-type">ภาคทั่วไป</p></center>
+			</div>
+		</a>
+	</div>
+	<div class="container" style="margin-top:20px;">
+		<a href="form_add_student_admin.php?type=4">
+			<div class="type" style="margin-left:160px;">
+				<center><p class="head-type">EP</p><br></center>
+				<center><p class="text-type">English Program</p></center>
+			</div>
+		</a>
+		<a href="form_add_student_admin.php?type=5">
+			<div class="type" style="margin-left:20px;">
+				<center><p class="head-type">IEP</p><br></center>
+				<center><p class="text-type">Intensive English Program</p></center>
+			</div>
+		</a>
+		<a href="form_add_student_admin.php?type=6">
+			<div class="type" style="margin-left:20px;">
+				<center><p class="head-type">GP</p><br></center>
+				<center><p class="text-type">ภาคทั่วไป</p></center>
+			</div>
+		</a>
 	</div>
 
 </body>

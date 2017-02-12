@@ -53,15 +53,21 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 9) {
 	</div>
 
 	<div class="container" style="margin-top:20px; color:#1c1c86;">
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<a href="admin_ps.php"><h1>admin system</h1></a>
-		</div>
-		<div class="col-md-6">
-			<a href="open_system.php"><h3>เปิดระบบลงทะเบียน</h3></a>
 		</div>
 	</div>
 
 	<div class="container">
+	 	<div class="col-md-4"><a href="open_system.php"><h2>ระบบควบคุมการเปิดปิดระบบ</h2></a>
+	 	</div>
+	 	<div class="col-md-4"><a href="groupType.php"><h2>ระบบบันทึกรหัสคุม</h2></a>
+	 	</div>
+	 	<div class="col-md-4"><a href="add_student_admin.php"><h2>ระบบเพิ่มข้อมูลนักเรียน</h2></a>
+	 	</div>
+	 </div>
+
+	<div class="container" style="margin-top:20px;">
 	 <table id="example" class="display" style="font-size: 20px;" cellspacing="0" width="100%">
 		<thead>
 			<tr>

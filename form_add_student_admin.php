@@ -3,18 +3,13 @@ session_start();
 error_reporting( error_reporting() & ~E_NOTICE );
 
 include('config.php');
-$sql = "SELECT * FROM setting_open WHERE status = 0";
-$query = mysql_query($sql);
 
-while ($dataCheck = mysql_fetch_array($query)) {
-	if ($_GET['type'] == $dataCheck['id_setting']) {
-			echo "<script language='javascript'>";
-			echo "location='index.php';";
-			echo "</script>";
-	}
+if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 9) {
+	echo "<script language='javascript'>";
+	echo "location='login.php';";
+	echo "</script>";
 }
-
- ?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +29,7 @@ while ($dataCheck = mysql_fetch_array($query)) {
 	
 </head>
 <body style="font-size:17px;">
-	<form id="form1" name="form1" method="post" action="form_check.php" onsubmit="checkForm(); return false;">
+	<form id="form1" name="form1" method="post" action="form_check_student_admin.php" onsubmit="checkForm(); return false;">
 	<?php 
 	$type = $_GET['type'];
 

@@ -53,34 +53,61 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 9) {
 	</div>
 
 	<div class="container" style="margin-top:20px; color:#1c1c86;">
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<a href="admin_ps.php"><h1>admin system</h1></a>
-		</div>
-		<div class="col-md-6">
 		</div>
 	</div>
 
 	<div class="container">
-	 	<div class="col-md-12" style="border-bottom:3px solid #1c1c86; margin-top:10px; color:#1c1c86;"><h2>ระบบควบคุมการเปิดปิดระบบ</h2></div>
+	 	<div class="col-md-12"><a href="groupType.php"><h2>ระบบบันทึกรหัสคุม</h2></a>
+	 	</div>
+	 </div>
 
-			<?php 
-			include('config.php');
+	<div class="container">
+	 <table id="example" class="display" style="font-size: 20px;" cellspacing="0" width="100%">
+		<thead>
+			<tr>
+				<th><center>ใบสมัครเลขที</center></th>
+				<th><center>รหัสประชาชน</center></th>
+				<th><center>ชื่อ</center></th>
+				<th><center>นามสกุล</center></th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php 
+		include('config.php');
 
-			$arrayString = array('ม.1 EP ','ม.1 IEP ','ม.1 GP ','ม.4 EP ','ม.4 IEP ','ม.4 GP ');
-			for ($i=1; $i < 7; $i++) { 
-				$sql = "SELECT * FROM setting_open WHERE id_setting = $i";
-				$query = mysql_query($sql);
-				$dataCheck = mysql_fetch_array($query);
-				if ($dataCheck['status'] == 1) {
-					$j = $i+6;
-					echo "<div class='col-md-4'><a href='open_system_process.php?type=$j'><h3>".$arrayString[$i-1]." <span style='color:green;'>สถานะเปิดรับสมัคร</span></h3></a></div>";
-				} else {
-					echo "<div class='col-md-4'><a href='open_system_process.php?type=$i'><h3>".$arrayString[$i-1]." <span style='color:red;'>สถานะปิดรับสมัคร</span></h3></a></div>";
-				}
-			}
+		$sql = "SELECT * FROM history_ps";
+		$query = mysql_query($sql);	
 
-			 ?>
+		while ($data = mysql_fetch_array($query)) {
+		echo "
+		<tr style='cursor:pointer;' data-href='groupType_process.php?id_history=".$data['id_history']."'>
+		    <td>".$data['input1']."</td>
+		    <td>".$data['input2']."</td>
+		    <td><center>".$data['input4']."</center></td>
+		    <td><center>".$data['input5']."</center></td>		   
+		</tr>";
+		}
+		?>
+
+		</tbody>
+	</table>
 	</div>
 
 </body>
-</html>
+</html> <script language='javascript'>
+
+// datatable
+$(document).ready(function() {
+	//Filter Postion
+	$('#example').DataTable( {
+        "sDom": '<"top"f>rt<"bottom"p><"clear">'
+    } );
+} );
+jQuery(document).ready(function($) {
+    $('#example').on( 'click', 'tbody tr', function () {
+        window.document.location = $(this).data("href");
+    });
+});
+</script>
