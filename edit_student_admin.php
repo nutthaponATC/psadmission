@@ -442,7 +442,7 @@ $input56 = $data['num_old'];
 				if ($type == 4 || $type == 5 || $type == 6) {
 					echo "<div class='col-md-12'>";
 						echo "*ถ้าเป็นนักเรียนที่จบ ม.3 จากโรงเรียนโพธิสารพิทยากร ให้ใส่เลขประจำตัวเดิม
-					<input readonly id='readonly' type='text' name='input56' value='$input56' style='width:360px;'>";
+					<input type='text' name='input56' value='$input56' style='width:360px;'>";
 					echo "</div>";
 				}
 				 ?>
