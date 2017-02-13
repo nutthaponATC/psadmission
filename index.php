@@ -51,7 +51,7 @@ include('config.php');
 			<h3>2. กรอกข้อมูลส่วนตัวผู้สมัคร <span style="color:#0000b9; font-weight:bold;">ให้ถูกต้องครบถ้วน</span></h3>
 			<h3>3. ตรวจสอบความถูกต้องของข้อมูล หากถูกต้องแล้ว กด <span style="color:#0000b9; font-weight:bold;">"ยืนยันบันทึกข้อมูล"</span> และ กด <span style="color:#0000b9; font-weight:bold;">"พิมพ์หลักฐาน"</span></h3>
 			<h3>4. หากมีปัญหาการใช้งานระบบรับสมัคร <span style="color:#0000b9; font-weight:bold;">สามารถสอบถามผู้ดูแลระบบได้ที่</span> <img src="image/admin.jpg" width="200px"></h3>
-			<h3 style="margin-top:-110px;"> หรือโทร 080-607-4810 และ 089-131-4523</h3>
+			<!-- <h3 style="margin-top:-110px;"> หรือโทร 080-607-4810 และ 089-131-4523</h3> -->
 		</div>
 	</div>
 

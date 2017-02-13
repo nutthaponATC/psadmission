@@ -418,15 +418,15 @@ while ($dataCheck = mysql_fetch_array($query)) {
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
 					รหัสไปรษณีย์
-					<input type="text" name="input22" maxlength="5" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input22" maxlength="5">
 				</div>
 				<div class="col-md-4">
 					เบอร์โทรศัพท์บ้าน
-					<input type="text" name="input23" style="width:200px;" maxlength="10" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input23" style="width:200px;" maxlength="10">
 				</div>
 				<div class="col-md-4">
 					เบอร์มือถือ
-					<input type="text" name="input24" maxlength="10" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input24" maxlength="10">
 				</div>
 			</div>
 
@@ -444,10 +444,10 @@ while ($dataCheck = mysql_fetch_array($query)) {
 				</div>
 				<div class="col-md-6">
 					น้ำหนัก
-					<input type="text" name="input26" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input26" style="width:50px;">
 					กิโลกรัม
 					&nbspส่วนสูง
-					<input type="text" name="input27" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input27" style="width:50px;">
 					เซนติเมตร
 					&nbspหมู่เลือด
 					<select name="input28">
@@ -568,7 +568,7 @@ while ($dataCheck = mysql_fetch_array($query)) {
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
 					รายได้ของบิดา 
-					<input type="text" name="input35" style="width:150px;" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input35" style="width:150px;">
 					บาท/ปี
 				</div>
 				<div class="col-md-2" style="text-align:right;">
@@ -600,7 +600,7 @@ while ($dataCheck = mysql_fetch_array($query)) {
 				</div>
 				<div class="col-md-6">
 					โทรศัพท์ที่สามารถติดต่อได้
-					<input type="text" name="input37" maxlength="10" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input37" maxlength="10">
 				</div>
 			</div>
 
@@ -625,7 +625,7 @@ while ($dataCheck = mysql_fetch_array($query)) {
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
 					รายได้ของมารดา 
-					<input type="text" name="input40" style="width:150px;" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input40" style="width:150px;">
 					บาท/ปี
 				</div>
 				<div class="col-md-2" style="text-align:right;">
@@ -657,7 +657,7 @@ while ($dataCheck = mysql_fetch_array($query)) {
 				</div>
 				<div class="col-md-6">
 					โทรศัพท์ที่สามารถติดต่อได้
-					<input type="text" name="input42" maxlength="10" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input42" maxlength="10">
 				</div>
 			</div>
 
@@ -685,12 +685,12 @@ while ($dataCheck = mysql_fetch_array($query)) {
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
 					จำนวนพี่น้องทั้งหมด (รวมตัวเอง) 
-					<input type="text" name="input43" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input43" style="width:50px;">
 					คน
 				</div>
 				<div class="col-md-6">
 					กำลังศึกษาอยู่ จำนวน
-					<input type="text" name="input44" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input44" style="width:50px;">
 					คน
 				</div>
 			</div>

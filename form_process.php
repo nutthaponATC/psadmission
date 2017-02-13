@@ -137,7 +137,7 @@ if (isset($_POST['type'])) {
 				</a>
 			</div>
 			<div class="col-md-2">
-				<a href="login.php" >  
+				<a href="login.php" target="_blank">  
 					<i class="fa fa-user-circle" style="color:white; font-size:18px; float:left; margin-top:17px;" aria-hidden="true"></i>
 					<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">เข้าสู่ระบบ</h4>
 				</a>
