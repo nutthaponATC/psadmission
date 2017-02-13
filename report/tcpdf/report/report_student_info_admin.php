@@ -525,10 +525,10 @@ $html = '
 	<table width="710">
 		<tr>
 			<td>
-				ประเภทการคัดเลือก '.$headerType.'
+				ประเภทการคัดเลือก <strong>'.$headerType.'</strong>
 			</td>
 			<td align="center">
-				แผนการเรียน '.$subType.'
+				แผนการเรียน <strong>'.$subType.'</strong>
 			</td>
 		</tr>
 	</table>
@@ -537,13 +537,13 @@ $html = '
 	<table width="710">
 		<tr>
 			<td width="300">
-				 เลขประจำตัวประชาชน '.$id_pcc.'
+				 เลขประจำตัวประชาชน <strong>'.$id_pcc.'</strong>
 			</td>
 			<td>
-				 เลขประจำตัวผู้สมัคร '.$id_group_type.'
+				 เลขประจำตัวผู้สมัคร <strong>'.$id_group_type.'</strong>
 			</td>
 			<td>
-				 เลขที่ห้องสอบ '.$class_exam.'
+				 เลขที่ห้องสอบ <strong>'.$class_exam.'</strong>
 			</td>
 		</tr>
 	</table>
@@ -560,16 +560,16 @@ $html = '
 				<table>
 					<tr>
 						<td width="100">
-							 คำนำหน้า '.$frontName.'
+							 คำนำหน้า <strong>'.$frontName.'</strong>
 						</td>
 						<td>
-							 ชื่อ '.$input4.'
+							 ชื่อ <strong>'.$input4.'</strong>
 						</td>
 						<td>
-							 นามสกุล '.$input5.'
+							 นามสกุล <strong>'.$input5.'</strong>
 						</td>
 						<td width="100">
-							 เพศ '.$gender.'
+							 เพศ <strong>'.$gender.'</strong>
 						</td>
 					</tr>
 				</table>
@@ -580,68 +580,68 @@ $html = '
 				<table>
 					<tr>
 						<td>
-							 เกิดวันที่ '.$input11.'
+							 เกิดวันที่ <strong>'.$input11.'</strong>
 						</td>
 						<td>
-							 เดือน '.$mount.'
+							 เดือน <strong>'.$mount.'</strong>
 						</td>
 						<td>
-							 พ.ศ. '.$input13.'
-						</td>
-					</tr>
-				</table>
-				<table>
-					<tr>
-						<td>
-							 เชื้อชาติ '.$input10.'
-						</td>
-						<td>
-							 สัญชาติ '.$input9.'
-						</td>
-						<td>
-							 ศาสนา '.$input8.'
+							 พ.ศ. <strong>'.$input13.'</strong>
 						</td>
 					</tr>
 				</table>
 				<table>
 					<tr>
 						<td>
-							 อยู่บ้านเลขที่ '.$input15.'
+							 เชื้อชาติ <strong>'.$input10.'</strong>
 						</td>
 						<td>
-							 หมู่ที่ '.$input16.'
+							 สัญชาติ <strong>'.$input9.'</strong>
 						</td>
 						<td>
-							 ซอย '.$input17.'
-						</td>
-						<td>
-							 ถนน '.$input18.'
+							 ศาสนา <strong>'.$input8.'</strong>
 						</td>
 					</tr>
 				</table>
 				<table>
 					<tr>
 						<td>
-							 ตำบล/แขวง '.$input21.'
+							 อยู่บ้านเลขที่ <strong>'.$input15.'</strong>
 						</td>
 						<td>
-							 อำเภอ/เขต '.$input20.'
+							 หมู่ที่ <strong>'.$input16.'</strong>
 						</td>
 						<td>
-							 จังหวัด '.$provinceData.'
+							 ซอย <strong>'.$input17.'</strong>
+						</td>
+						<td>
+							 ถนน <strong>'.$input18.'</strong>
 						</td>
 					</tr>
 				</table>
 				<table>
 					<tr>
 						<td>
-							 รหัสไปรษณีย์ '.$input22.'
+							 ตำบล/แขวง <strong>'.$input21.'</strong>
 						</td>
 						<td>
-							 โทรศัพท์บ้าน '.$input23.'
+							 อำเภอ/เขต <strong>'.$input20.'</strong>
 						</td>
 						<td>
-							 โทรศัพท์มือถือ '.$input24.'
+							 จังหวัด <strong>'.$provinceData.'</strong>
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							 รหัสไปรษณีย์ <strong>'.$input22.'</strong>
+						</td>
+						<td>
+							 โทรศัพท์บ้าน <strong>'.$input23.'</strong>
+						</td>
+						<td>
+							 โทรศัพท์มือถือ <strong>'.$input24.'</strong>
 						</td>
 					</tr>
 				</table>
@@ -655,13 +655,13 @@ $html = '
 				<table>
 					<tr>
 						<td>
-							 ชื่อ นามสกุล '.$input33.'
+							 ชื่อ นามสกุล <strong>'.$input33.'</strong>
 						</td>
 						<td>
-							 อาชีพ '.$text8.'
+							 อาชีพ <strong>'.$text8.'</strong>
 						</td>
 						<td>
-							 โทรศัพท์ '.$input37.'
+							 โทรศัพท์ <strong>'.$input37.'</strong>
 						</td>
 					</tr>
 				</table>
@@ -675,13 +675,13 @@ $html = '
 				<table>
 					<tr>
 						<td>
-							 ชื่อ  นามสกุล '.$input38.'
+							 ชื่อ  นามสกุล <strong>'.$input38.'</strong>
 						</td>
 						<td>
-							 อาชีพ '.$text9.'
+							 อาชีพ <strong>'.$text9.'</strong>
 						</td>
 						<td>
-							 โทรศัพท์ '.$input42.'
+							 โทรศัพท์ <strong>'.$input42.'</strong>
 						</td>
 					</tr>
 				</table>
@@ -695,13 +695,13 @@ $html = '
 				<table>
 					<tr>
 						<td>
-							 ชื่อ นามสกุล '.$input45.'
+							 ชื่อ นามสกุล <strong>'.$input45.'</strong>
 						</td>
 						<td>
-							 อาชีพ '.$text13.'
+							 อาชีพ <strong>'.$text13.'</strong>
 						</td>
 						<td>
-							 โทรศัพท์ '.$input49.'
+							 โทรศัพท์ <strong>'.$input49.'</strong>
 						</td>
 					</tr>
 				</table>
@@ -715,20 +715,20 @@ $html = '
 				<table>
 					<tr>
 						<td>
-							 สำเร็จการศึกษาจากโรงเรียน '.$input29.'
+							 สำเร็จการศึกษาจากโรงเรียน <strong>'.$input29.'</strong>
 						</td>
 					</tr>
 				</table>
 				<table>
 					<tr>
 						<td>
-							 ตำบล/แขวง '.$input30.'
+							 ตำบล/แขวง <strong>'.$input30.'</strong>
 						</td>
 						<td>
-							 อำเภอ/เขต '.$input31.'
+							 อำเภอ/เขต <strong>'.$input31.'</strong>
 						</td>
 						<td>
-							 จังหวัด '.$provinceData2.'
+							 จังหวัด <strong>'.$provinceData2.'</strong>
 						</td>
 					</tr>
 				</table>
@@ -738,7 +738,7 @@ $html = '
 							 ข้อมูลผลการเรียน
 						</td>
 						<td>
-							 ผลการเรียนเฉลี่ย '.$text31.'
+							 ผลการเรียนเฉลี่ย <strong>'.$text31.'</strong>
 						</td>
 						'.$text88.'
 					</tr>

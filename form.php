@@ -277,7 +277,7 @@ while ($dataCheck = mysql_fetch_array($query)) {
 				 ?>
 				<div class="col-md-6" id="form-line">
 					ใบสมัครเลขที
-					<input type="text" name="input1" maxlength="13" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input1" maxlength="5" onKeyUp="javascript:inputDigits(this);">
 					ดูจากใบสมัคร
 				</div>
 				<div class="col-md-6" id="form-line">
@@ -828,9 +828,9 @@ while ($dataCheck = mysql_fetch_array($query)) {
 			<div class="col-md-12">
 				<div class="col-md-12" id="form-line">
 					ผลการเรียนเฉลี่ย
-					<input type="text" name="input50" style="width:50px;">
+					<input type="text" name="input50" style="width:50px;" maxlength="4" onKeyUp="javascript:inputDigits(this);">
 					หรือ ร้อยละ
-					<input type="text" name="input51" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input51" style="width:50px;" maxlength="3" onKeyUp="javascript:inputDigits(this);">
 				</div>
 			</div>
 			<div class="col-md-12">
@@ -858,12 +858,12 @@ while ($dataCheck = mysql_fetch_array($query)) {
 
 					 ?>
 					
-					<input type="text" name="input52" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input52" style="width:50px;" onKeyUp="javascript:inputDigits(this);" maxlength="4">
 					คะแนน
 				
 					<span style="margin-left:20px;">
 					คิดเป็นร้อยละ
-					<input type="text" name="input53" style="width:50px;" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input53" style="width:50px;" onKeyUp="javascript:inputDigits(this);" maxlength="3">
 					</span>
 				</div>
 			</div>
@@ -882,7 +882,7 @@ while ($dataCheck = mysql_fetch_array($query)) {
 
 <script type="text/javascript">
 	function inputDigits(sensor){
-		var regExp = /[0-9]$/;
+		var regExp = /[0-9,.]$/;
 		if(!regExp.test(sensor.value)){
 		alert("กรุณากรอกตัวเลขเท่านั้น");
 		sensor.value = sensor.value.substring(0, sensor.value.length -1);
