@@ -18,7 +18,7 @@ $pdf->setPrintHeader(false);
 $pdf->setPrintFooter(false);
 $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 $pdf->SetMargins(5, 5, 5);
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+$pdf->SetAutoPageBreak(TRUE, 0);
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
@@ -187,7 +187,7 @@ if ($type == 1 || $type == 2 || $type == 3) {
 } else {
 	if (empty($input56)) {
 		$text1 = "4";
-		$text17 = '*ถ้าเป็นนักเรียนที่จบ ม.3 จากโรงเรียนโพธิสารพิทยากร ให้ใส่เลขประจำตัวเดิม <table border="1" width="85"><tr><td></td></tr></table>';
+		$text17 = '*ถ้าเป็นนักเรียนที่จบ ม.3 จากโรงเรียนโพธิสารพิทยากร ให้ใส่เลขประจำตัวเดิม <table border="1" width="50"><tr><td></td></tr></table>';
 	} else	{
 		$text1 = "4";
 		$text17 = 'เลขประจำตัวเดิม'.$input56	;
@@ -387,6 +387,23 @@ if (empty($input53)) {
 	$text34 = $input53;
 }
 
+if ($type == 1 || $type == 2 || $type == 3) {
+	$text71 = "ข้อมูลผลการเรียน";
+} else {
+	$text71 = "ข้อมูลผลการเรียน (ผลการเรียนเฉลี่ย ม.1 - ม.3 รวม 5 ภาคเรียน)";
+}
+
+
+if ($type == 1 OR $type == 4) {
+	$text72 = "ผลการเรียนเฉลี่ยภาษาอังกฤษ";
+} else {
+	if ($type == 5 OR $type == 6) {
+		$text72 = "ผลการเรียนเฉลี่ยคณิตศาสตร์ วิทยาศาสตร์ และภาษาอังกฤษ";
+	} else {
+		$text72 = "ข้อมูลคะแนน O-NET";	
+	}
+}
+
 if ($type == 1 OR $type == 4 OR $type == 5 OR $type == 6) {
 	$text15 = "";
 } else {
@@ -464,9 +481,10 @@ $html = '
 		<table width="710" border="1">
 			<tr>
 				<td width="450px">
-					<font size="16" align="center"> <strong>'.$headerType.'</strong> ประเภทการคัดเลือก<strong>'.$subType.'</strong></font>
+					<font size="15" align="center"> <strong>'.$headerType.'</strong> ประเภทการคัดเลือก<strong>'.$subType.'</strong></font>
 					<br>
-					 <strong>'.$text17.'</strong> ใบสมัครเลขที <strong>'.$input1.'</strong>
+					 <strong>'.$text17.'</strong>
+					 <br> ใบสมัครเลขที <strong>'.$input1.'</strong>
 				</td>
 				<td width="260px">
 					<table><tr><td>
@@ -889,7 +907,7 @@ $html = '
 		<table width="710">
 			<tr>
 				<td>
-					<font size="16"> ข้อมูลผลการเรียน (ผลการเรียนเฉลี่ย ม.1 - ม.3 รวม 5 ภาคเรียน)</font>
+					<font size="16"> '.$text71.'</font>
 				</td>
 			</tr>
 			<tr>
@@ -903,12 +921,12 @@ $html = '
 		<table width="710">
 			<tr>
 				<td>
-					<font size="16"> ข้อมูลคะแนน O-NET</font>
+					<font size="16"> '.$text72.'</font>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					 ได้คะแนนเฉลี่ย O-NET <strong>'.$text33.'</strong> คะแนน คิดเป็นร้อยละ <strong>'.$text34.'</strong>
+					 ได้คะแนนเฉลี่ย <strong>'.$text33.'</strong> คะแนน คิดเป็นร้อยละ <strong>'.$text34.'</strong>
 				</td>
 			</tr>
 		</table>
