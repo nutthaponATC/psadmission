@@ -1,7 +1,8 @@
 <?php 
 session_start();
+include('config.php');
 
-if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 9) {
+if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 8) {
 	echo "<script language='javascript'>";
 	echo "location='login.php';";
 	echo "</script>";
@@ -39,7 +40,7 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 9) {
 				<a style="color:white;" href="index.php"><span style="font-size:22px; margin-top:10px; float:left; margin-left:10px;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</span></a>
 			</div>
 			<div class="col-md-1">
-				<a href="index.php">
+				<a href="sup_admin_ps.php">
 					<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">หน้าแรก</h4>
 				</a>
 			</div>
@@ -52,58 +53,147 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 9) {
 		</div>
 	</div>
 
-	<div class="container" style="margin-top:20px; color:#1c1c86;">
-		<div class="col-md-12">
-			<a href="admin_ps.php"><h1>admin system</h1></a>
-		</div>
-	</div>
-
 	<div class="container" style="margin-top:20px;">
 		<div class="col-md-12">
 			<a href="add_student_admin.php"><h1>ระบบเพิ่มข้อมูลนักเรียน</h1></a>
 		</div>
 	</div>
 
-	<div class="container" style="margin-top:20px;">
-		<a href="form_add_student_admin.php?type=1">
-			<div class="type" style="margin-left:160px;">
-				<center><p class="head-type">EP</p><br></center>
-				<center><p class="text-type">English Program</p></center>
-			</div>
-		</a>
-		<a href="form_add_student_admin.php?type=2">
-			<div class="type" style="margin-left:20px;">
-				<center><p class="head-type">IEP</p><br></center>
-				<center><p class="text-type">Intensive English Program</p></center>
-			</div>
-		</a>
-		<a href="form_add_student_admin.php?type=3">
-			<div class="type" style="margin-left:20px;">
-				<center><p class="head-type">GP</p><br></center>
-				<center><p class="text-type">ภาคทั่วไป</p></center>
-			</div>
-		</a>
+	<div class="container" id="typeStudent" style="padding-top:10px; padding-bottom:10px;">
+		<div class="col-md-3" style="color:#0000b9; font-weight:bold;">
+			<h3>ประเภทการคัดเลือก</h3>
+			<h1 style="font-size:45px; margin-top:-5px;">ระดับชั้น ม.1</h1>
+		</div>
+		<div class="col-md-8" style="height: 5px; background: #0000b9; margin-top:85px; margin-bottom:80px;"></div>
+
+		<div class="col-md-12">
+			<?php 
+			$sql = "SELECT * FROM setting_open WHERE id_setting = 1";
+			$query = mysql_query($sql);
+			$set1 = mysql_fetch_array($query);
+			if ($set1['status'] == 1) {
+				echo '<a href="form_add_student_admin.php?type=1">
+					<div class="type" style="margin-left:160px;">
+						<center><p class="head-type">EP</p><br></center>
+						<center><p class="text-type">English Program</p></center>
+					</div>
+				</a>';
+			} else {
+				echo '<a href="#">
+					<div class="type2" style="margin-left:160px;">
+						<center><p class="head-type">EP</p><br></center>
+						<center><p class="text-type2">English Program</p></center>
+					</div>
+				</a>';
+			}
+			$sql = "SELECT * FROM setting_open WHERE id_setting = 2";
+			$query = mysql_query($sql);
+			$set2 = mysql_fetch_array($query);
+			if ($set2['status'] == 1) {
+				echo '<a href="form_add_student_admin.php?type=2">
+					<div class="type" style="margin-left:20px;">
+						<center><p class="head-type">IEP</p><br></center>
+						<center><p class="text-type">Intensive English Program</p></center>
+					</div>
+				</a>';
+			} else {
+				echo '<a href="#">
+					<div class="type2" style="margin-left:20px;">
+						<center><p class="head-type">IEP</p><br></center>
+						<center><p class="text-type2">Intensive English Program</p></center>
+					</div>
+				</a>';
+			}
+			$sql = "SELECT * FROM setting_open WHERE id_setting = 3";
+			$query = mysql_query($sql);
+			$set3 = mysql_fetch_array($query);
+			if ($set3['status'] == 1) {
+				echo '<a href="form_add_student_admin.php?type=3">
+					<div class="type" style="margin-left:20px;">
+						<center><p class="head-type">GP</p><br></center>
+						<center><p class="text-type">ภาคทั่วไป</p></center>
+					</div>
+				</a>';
+			} else {
+				echo '<a href="#">
+					<div class="type2" style="margin-left:20px;">
+						<center><p class="head-type">GP</p><br></center>
+						<center><p class="text-type2">ภาคทั่วไป</p></center>
+					</div>
+				</a>';
+			}
+			?>
+		</div>
 	</div>
-	<div class="container" style="margin-top:20px;">
-		<a href="form_add_student_admin.php?type=4">
-			<div class="type" style="margin-left:160px;">
-				<center><p class="head-type">EP</p><br></center>
-				<center><p class="text-type">English Program</p></center>
-			</div>
-		</a>
-		<a href="form_add_student_admin.php?type=5">
-			<div class="type" style="margin-left:20px;">
-				<center><p class="head-type">IEP</p><br></center>
-				<center><p class="text-type">Intensive English Program</p></center>
-			</div>
-		</a>
-		<a href="form_add_student_admin.php?type=6">
-			<div class="type" style="margin-left:20px;">
-				<center><p class="head-type">GP</p><br></center>
-				<center><p class="text-type">ภาคทั่วไป</p></center>
-			</div>
-		</a>
+
+	<div class="container" style="padding-top:10px; padding-bottom:10px;">
+		<div class="col-md-3" style="color:#0000b9; font-weight:bold;">
+			<h3>ประเภทการคัดเลือก</h3>
+			<h1 style="font-size:45px; margin-top:-5px;">ระดับชั้น ม.4</h1>
+		</div>
+		<div class="col-md-8" style="height: 5px; background: #0000b9; margin-top:85px; margin-bottom:80px;"></div>
+
+		<div class="col-md-12">
+			<?php 
+			$sql = "SELECT * FROM setting_open WHERE id_setting = 4";
+			$query = mysql_query($sql);
+			$set4 = mysql_fetch_array($query);
+			if ($set4['status'] == 1) {
+				echo '<a href="form_add_student_admin.php?type=4">
+					<div class="type" style="margin-left:160px;">
+						<center><p class="head-type">EP</p><br></center>
+						<center><p class="text-type">English Program</p></center>
+					</div>
+				</a>';
+			} else {
+				echo '<a href="#">
+					<div class="type2" style="margin-left:160px;">
+						<center><p class="head-type">EP</p><br></center>
+						<center><p class="text-type2">English Program</p></center>
+					</div>
+				</a>';
+			}
+			$sql = "SELECT * FROM setting_open WHERE id_setting = 5";
+			$query = mysql_query($sql);
+			$set5 = mysql_fetch_array($query);
+			if ($set5['status'] == 1) {
+				echo '<a href="form_add_student_admin.php?type=5">
+					<div class="type" style="margin-left:20px;">
+						<center><p class="head-type">IEP</p><br></center>
+						<center><p class="text-type">Intensive English Program</p></center>
+					</div>
+				</a>';
+			} else {
+				echo '<a href="#">
+					<div class="type2" style="margin-left:20px;">
+						<center><p class="head-type">IEP</p><br></center>
+						<center><p class="text-type2">Intensive English Program</p></center>
+					</div>
+				</a>';
+			}
+			$sql = "SELECT * FROM setting_open WHERE id_setting = 6";
+			$query = mysql_query($sql);
+			$set6 = mysql_fetch_array($query);
+			if ($set6['status'] == 1) {
+				echo '<a href="form_add_student_admin.php?type=6">
+					<div class="type" style="margin-left:20px;">
+						<center><p class="head-type">GP</p><br></center>
+						<center><p class="text-type">ภาคทั่วไป</p></center>
+					</div>
+				</a>';
+			} else {
+				echo '<a href="#">
+					<div class="type2" style="margin-left:20px;">
+						<center><p class="head-type">GP</p><br></center>
+						<center><p class="text-type2">ภาคทั่วไป</p></center>
+					</div>
+				</a>';
+			}
+			 ?>
+		</div>
 	</div>
+
+	<div class="col-md-12"></div>
 
 </body>
 </html>

@@ -5,6 +5,9 @@ error_reporting( error_reporting() & ~E_NOTICE );
 
 include('config.php');
 
+$groupType = $_POST['groupType'];
+$class_exam = $_POST['class_exam'];
+
 $type = $_POST['type'];
 $sType = $_POST['sType'];
 $radio1 = $_POST['radio1'];
@@ -79,7 +82,7 @@ $input56 = $_POST['input56'];
 $date = date("Y/m/d");
 
 if (isset($_POST['type'])) {
-	$sql = "INSERT INTO `history_ps` (`id_history`, `type`, `stype`, `radio1`, `radio2`, `radio3`, `radio4`, `radio5`, `radio6`, `radio7`, `radio8`, `radio9`, `radio10`, `radio11`, `radio12`, `radio13`, `input1`, `input2`, `input3`, `input4`, `input5`, `input6`, `input7`, `input8`, `input9`, `input10`, `input11`, `input12`, `input13`, `input14`, `input15`, `input16`, `input17`, `input18`, `input19`, `input20`, `input21`, `input22`, `input23`, `input24`, `input25`, `input26`, `input27`, `input28`, `input29`, `input30`, `input31`, `input32`, `input33`, `input34`, `input35`, `input36`, `input37`, `input38`, `input39`, `input40`, `input41`, `input42`, `input43`, `input44`, `input45`, `input46`, `input47`, `input48`, `input49`, `input50`, `input51`, `input52`, `input53`, `input54`, `input55`, `num_old`, `date`, `status`) VALUES (null, '$type', '$sType', '$radio1', '$radio2', '$radio3', '$radio4', '$radio5', '$radio6', '$radio7', '$radio8', '$radio9', '$radio10', '$radio11', '$radio12', '$radio13', '$input1', '$input2', '$input3', '$input4', '$input5', '$input6', '$input7', '$input8', '$input9', '$input10', '$input11', '$input12', '$input13', '$input14', '$input15', '$input16', '$input17', '$input18', '$input19', '$input20', '$input21', '$input22', '$input23', '$input24', '$input25', '$input26', '$input27', '$input28', '$input29', '$input30', '$input31', '$input32', '$input33', '$input34', '$input35', '$input36', '$input37', '$input38', '$input39', '$input40', '$input41', '$input42', '$input43', '$input44', '$input45', '$input46', '$input47', '$input48', '$input49', '$input50', '$input51', '$input52', '$input53', '$input54', '$input55', '$input56', '$date', 1)";
+	$sql = "INSERT INTO `history_ps` (`id_history`, `type`, `stype`, `radio1`, `radio2`, `radio3`, `radio4`, `radio5`, `radio6`, `radio7`, `radio8`, `radio9`, `radio10`, `radio11`, `radio12`, `radio13`, `input1`, `input2`, `input3`, `input4`, `input5`, `input6`, `input7`, `input8`, `input9`, `input10`, `input11`, `input12`, `input13`, `input14`, `input15`, `input16`, `input17`, `input18`, `input19`, `input20`, `input21`, `input22`, `input23`, `input24`, `input25`, `input26`, `input27`, `input28`, `input29`, `input30`, `input31`, `input32`, `input33`, `input34`, `input35`, `input36`, `input37`, `input38`, `input39`, `input40`, `input41`, `input42`, `input43`, `input44`, `input45`, `input46`, `input47`, `input48`, `input49`, `input50`, `input51`, `input52`, `input53`, `input54`, `input55`, `num_old`, `date`, `status`) VALUES (null, '$type', '$sType', '$radio1', '$radio2', '$radio3', '$radio4', '$radio5', '$radio6', '$radio7', '$radio8', '$radio9', '$radio10', '$radio11', '$radio12', '$radio13', '$input1', '$input2', '$input3', '$input4', '$input5', '$input6', '$input7', '$input8', '$input9', '$input10', '$input11', '$input12', '$input13', '$input14', '$input15', '$input16', '$input17', '$input18', '$input19', '$input20', '$input21', '$input22', '$input23', '$input24', '$input25', '$input26', '$input27', '$input28', '$input29', '$input30', '$input31', '$input32', '$input33', '$input34', '$input35', '$input36', '$input37', '$input38', '$input39', '$input40', '$input41', '$input42', '$input43', '$input44', '$input45', '$input46', '$input47', '$input48', '$input49', '$input50', '$input51', '$input52', '$input53', '$input54', '$input55', '$input56', '$date', 2)";
 	mysql_query("SET NAMES utf8");
 	$query = mysql_query($sql);
 
@@ -89,19 +92,20 @@ if (isset($_POST['type'])) {
 	$dataIDps = $dataID['id_history'];
 	$passPS = $input11.$input12.$input13;
 
-	$_SESSION['id_user'] = $dataIDps;
-
 	$sqlUser = "INSERT INTO user_ps VALUES($dataIDps,'$input2','$passPS',1);";
 	$queryUser = mysql_query($sqlUser);
 
-	if ($query AND $queryUser) {
+	$sql2 = "INSERT INTO `group_type` (`id_group_type`, `id_student_group`,`class_exam`, `score`, `status`) VALUES ('$dataIDps', '$groupType', '$class_exam', NULL, 1);";
+	$query2 = mysql_query($sql2);
+
+	if ($query AND $queryUser AND $query2) {
 		$alert = "เพิ่มข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร เรียบร้อย";
 	} else {
 		$alert = "เพิ่มข้อมูลไม่สำเร็จ กรุณาติดต่อผู้ดูแลระบบ";
 	}
 } else {
 	echo "<script language='javascript'>";
-	echo "location='index.php';";
+	echo "location='sup_admin_ps.php';";
 	echo "</script>";
 }
 
@@ -132,7 +136,7 @@ if (isset($_POST['type'])) {
 				<a style="color:white;" href="index.php"><span style="font-size:22px; margin-top:10px; float:left; margin-left:10px;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</span></a>
 			</div>
 			<div class="col-md-1">
-				<a href="index.php">
+				<a href="sup_admin_ps.php">
 					<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">หน้าแรก</h4>
 				</a>
 			</div>
@@ -204,12 +208,12 @@ if (isset($_POST['type'])) {
 		<div class="col-md-12" style="margin-top:30px;">
 			<div class="col-md-3"></div>
 			<div class="col-md-3">
-				<a href="report/tcpdf/report/report_student_info_admin.php?id_student=<?php echo $_SESSION['id_user']; ?>" target="_blank">  
+				<a href="report/tcpdf/report/report_student_info_admin.php?id_student=<?php echo $dataIDps; ?>" target="_blank">  
 					<h2 style="color:red;">พิมพ์หลักฐาน</h2>
 				</a>
 			</div>
 			<div class="col-md-3">
-				<a href="admin_ps.php"><h2 style="color:red;">กลับหน้าแอดมิน</h2></a>
+				<a href="sup_admin_ps.php"><h2 style="color:red;">กลับหน้าแอดมิน</h2></a>
 			</div>
 			<div class="col-md-3"></div>
 		</div>

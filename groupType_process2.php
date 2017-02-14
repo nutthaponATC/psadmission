@@ -114,7 +114,7 @@ $input56 = $data['num_old'];
 	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
 </head>
 <body style="font-size:17px;">
-	<form id="form1" name="form1" method="post" action="groupType_process_2.php">
+	<form id="form1" name="form1" method="post" action="groupType_process_22.php">
 	<?php
 
 	if ($type == 1) {

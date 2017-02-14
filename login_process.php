@@ -36,6 +36,10 @@ if (empty($user) || empty($pass)) {
 			echo "<script language='javascript'>";
 			echo "location='admin_ps.php';";
 			echo "</script>";
+		} elseif ($status == 8) {
+			echo "<script language='javascript'>";
+			echo "location='sup_admin_ps.php';";
+			echo "</script>";
 		} else {
 			echo "<script language='javascript'>";
 			echo "location='index.php';";

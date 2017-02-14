@@ -3,6 +3,9 @@ session_start();
 echo "<meta charset='UTF-8'>";
 include('config.php');
 error_reporting( error_reporting() & ~E_NOTICE );
+$groupType = $_POST['groupType'];
+$class_exam = $_POST['class_exam'];
+
 $type = $_POST['type'];
 $sType = $_POST['sType'];
 $radio1 = $_POST['radio1'];
@@ -74,6 +77,16 @@ $input53 = $_POST['input53'];
 $input54 = $_POST['input54'];
 $input55 = $_POST['input55'];
 $input56 = $_POST['input56'];
+
+$sql = "SELECT * FROM `group_type` WHERE `id_student_group` = $groupType;";
+$query = mysql_query($sql);
+$num = mysql_num_rows($query);
+if ($num == 1) {
+	echo "<script language='javascript'>";
+	echo "alert('เลขประจำตัวผู้สมัครซ้ำ');";
+	echo "javascript:history.back()";
+	echo "</script>";
+}
 
 if ($sType == 0) {
 	echo "<script language='javascript'>";
@@ -458,6 +471,17 @@ if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empt
 				<div style="color:#d1e0e0; padding-top:12px;">พิมพ์ข้อมูลใบสมัคร</div>
 			</div>
 			<div class="col-md-2"></div>
+		</div>
+
+		<div class="container" style="margin-top:30px;">
+			<div class="col-md-6">
+				เลขประจำตัวผู้สมัคร
+				<input  type="text" name="groupType" value="<?php echo $groupType; ?>" maxlength="5">
+			</div>
+			<div class="col-md-6">
+				เลขห้องสอบ
+				<input  type="text" name="class_exam" value="<?php echo $class_exam; ?>" maxlength="5">
+			</div>
 		</div>
 
 		<div class="container" id="form-table" style="margin-top:30px; background-color:rgba(255,255,255,0.6);">

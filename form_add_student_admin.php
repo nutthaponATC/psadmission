@@ -4,7 +4,7 @@ error_reporting( error_reporting() & ~E_NOTICE );
 
 include('config.php');
 
-if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 9) {
+if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 8) {
 	echo "<script language='javascript'>";
 	echo "location='login.php';";
 	echo "</script>";
@@ -234,6 +234,17 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 9) {
 				<div style="color:#d1e0e0; padding-top:12px;">พิมพ์ข้อมูลใบสมัคร</div>
 			</div>
 			<div class="col-md-2"></div>
+		</div>
+
+		<div class="container" style="margin-top:30px;">
+			<div class="col-md-6">
+				เลขประจำตัวผู้สมัคร
+				<input  type="text" name="groupType" maxlength="5">
+			</div>
+			<div class="col-md-6">
+				เลขห้องสอบ
+				<input  type="text" name="class_exam"  maxlength="5">
+			</div>
 		</div>
 
 		<div class="container" id="form-table" style="margin-top:30px; background-color:rgba(255,255,255,0.6);">

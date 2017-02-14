@@ -799,8 +799,6 @@ $html = '
 		</tr>
 	</table>
 
-	<table width="710"><tr><td></td></tr></table>
-
 	<table>
 		<tr>
 			<td width="120">
@@ -835,12 +833,6 @@ $html = '
 							<table>
 								<tr>
 									<td align="center"> ...................................................................................................
-									</td>
-								</tr>
-							</table>
-							<table>
-								<tr>
-									<td align="center">
 									</td>
 								</tr>
 							</table>
