@@ -76,29 +76,41 @@ $input53 = $_POST['input53'];
 $input54 = $_POST['input54'];
 $input55 = $_POST['input55'];
 
-$id_user = $_SESSION['id_user'];
-
-$sql ="UPDATE `history_ps` SET `stype` = '$sType', `radio1` = '$radio1', `radio2` = '$radio2', `radio3` = '$radio3', `radio4` = '$radio4', `radio5` = '$radio5', `radio6` = '$radio6', `radio7` = '$radio7', `radio8` = '$radio8', `radio9` = '$radio9', `radio10` = '$radio10', `radio11` = '$radio11', `radio12` = '$radio12', `radio13` = '$radio13', `input1` = '$input1', `input2` = '$input2', `input3` = '$input3', `input4` = '$input4', `input5` = '$input5 ', `input6` = '$input6', `input7` = '$input7', `input8` = '$input8', `input9` = '$input9', `input10` = '$input10', `input11` = '$input11', `input12` = '$input12', `input13` = '$input13', `input14` = '$input14', `input15` = '$input15', `input16` = '$input16', `input17` = '$input17', `input18` = '$input18', `input19` = '$input19', `input20` = '$input20', `input21` = '$input21', `input22` = '$input22', `input23` = '$input23', `input24` = '$input24', `input25` = '$input25', `input26` = '$input26', `input27` = '$input27', `input28` = '$input28', `input29` = '$input29', `input30` = '$input30', `input31` = '$input31', `input32` = '$input32', `input33` = '$input33', `input34` = '$input34', `input35` = '$input35', `input36` = '$input36', `input37` = '$input37', `input38` = '$input38', `input39` = '$input39', `input40` = '$input40', `input41` = '$input41', `input42` = '$input42', `input43` = '$input43', `input44` = '$input44', `input45` = '$input45', `input46` = '$input46', `input47` = '$input47', `input48` = '$input48', `input49` = '$input49', `input50` = '$input50', `input51` = '$input51', `input52` = '$input52', `input53` = '$input53', `input54` = '$input54', `input55` = '$input55' WHERE `history_ps`.`id_history` = $id_user;";
-
-mysql_query("SET NAMES utf8");
-$query1 = mysql_query($sql);
-
-$passPS = $input11.$input12.$input13;
-
-$sql ="UPDATE `user_ps` SET `username` = '$input2', `password` = '$passPS' WHERE `user_ps`.`id_user` = $id_user;";
-mysql_query("SET NAMES utf8");
-$query2 = mysql_query($sql);
-
-if ($query1 AND $query2) {
+if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empty($input5) || empty($input6) || empty($input7) || empty($input8) || empty($input9) || empty($input10) || empty($input11) || empty($input12) || empty($input13) || empty($input14) || empty($input15) || empty($input17) || empty($input18) || empty($input19) || empty($input20) || empty($input21) || empty($input22) || empty($input23) || empty($input24) || empty($input26) || empty($input27) || empty($input28) || empty($input29) || empty($input30)  || empty($input31) || empty($input32) || empty($input33) || empty($input35) || empty($input36) || empty($input37) || empty($input38) || empty($input40) || empty($input41) || empty($input42) || empty($input43) || empty($input44) || $radio1 == 0 || $radio2 == 0 || $radio3 == 0 || $radio4 == 0 || $radio5 == 0 || $radio6 == 0 || $radio7 == 0 || $radio8 == 0 || $radio9 == 0 || $radio10 == 0) {
+	
+	$_SESSION['check'] = 1;
 	echo "<script language='javascript'>";
-	echo "alert('แก้ไขข้อมูลเรียบร้อย เรียบร้อย');";
-	echo "location='main_ps.php';";
+	echo "alert('กรุณากรอกข้อมูลนักเรียนให้ครบ');";
+	echo "javascript:history.back()";
 	echo "</script>";
+	exit();
 } else {
-	echo "<script language='javascript'>";
-	echo "alert('ไม่สามารถแก้ไขข้อมูลได้ กรุณาติดต่อผู้ดูแลระบบ');";
-	echo "location='main_ps.php';";
-	echo "</script>";
-}
+	$_SESSION['check'] = 2;
 
+
+	$id_user = $_SESSION['id_user'];
+
+	$sql ="UPDATE `history_ps` SET `stype` = '$sType', `radio1` = '$radio1', `radio2` = '$radio2', `radio3` = '$radio3', `radio4` = '$radio4', `radio5` = '$radio5', `radio6` = '$radio6', `radio7` = '$radio7', `radio8` = '$radio8', `radio9` = '$radio9', `radio10` = '$radio10', `radio11` = '$radio11', `radio12` = '$radio12', `radio13` = '$radio13', `input1` = '$input1', `input2` = '$input2', `input3` = '$input3', `input4` = '$input4', `input5` = '$input5 ', `input6` = '$input6', `input7` = '$input7', `input8` = '$input8', `input9` = '$input9', `input10` = '$input10', `input11` = '$input11', `input12` = '$input12', `input13` = '$input13', `input14` = '$input14', `input15` = '$input15', `input16` = '$input16', `input17` = '$input17', `input18` = '$input18', `input19` = '$input19', `input20` = '$input20', `input21` = '$input21', `input22` = '$input22', `input23` = '$input23', `input24` = '$input24', `input25` = '$input25', `input26` = '$input26', `input27` = '$input27', `input28` = '$input28', `input29` = '$input29', `input30` = '$input30', `input31` = '$input31', `input32` = '$input32', `input33` = '$input33', `input34` = '$input34', `input35` = '$input35', `input36` = '$input36', `input37` = '$input37', `input38` = '$input38', `input39` = '$input39', `input40` = '$input40', `input41` = '$input41', `input42` = '$input42', `input43` = '$input43', `input44` = '$input44', `input45` = '$input45', `input46` = '$input46', `input47` = '$input47', `input48` = '$input48', `input49` = '$input49', `input50` = '$input50', `input51` = '$input51', `input52` = '$input52', `input53` = '$input53', `input54` = '$input54', `input55` = '$input55' WHERE `history_ps`.`id_history` = $id_user;";
+
+	mysql_query("SET NAMES utf8");
+	$query1 = mysql_query($sql);
+
+	$passPS = $input11.$input12.$input13;
+
+	$sql ="UPDATE `user_ps` SET `username` = '$input2', `password` = '$passPS' WHERE `user_ps`.`id_user` = $id_user;";
+	mysql_query("SET NAMES utf8");
+	$query2 = mysql_query($sql);
+
+	if ($query1 AND $query2) {
+		echo "<script language='javascript'>";
+		echo "alert('แก้ไขข้อมูลเรียบร้อย เรียบร้อย');";
+		echo "location='main_ps.php';";
+		echo "</script>";
+	} else {
+		echo "<script language='javascript'>";
+		echo "alert('ไม่สามารถแก้ไขข้อมูลได้ กรุณาติดต่อผู้ดูแลระบบ');";
+		echo "location='main_ps.php';";
+		echo "</script>";
+	}
+}
  ?>
