@@ -243,7 +243,7 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 8) {
 			</div>
 			<div class="col-md-6">
 				เลขห้องสอบ
-				<input  type="text" name="class_exam"  maxlength="5">
+				<input  type="text" name="class_exam"  maxlength="10">
 			</div>
 		</div>
 
@@ -461,6 +461,7 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 8) {
 						<option value="2">B</option>
 						<option value="3">AB</option>
 						<option value="4">O</option>
+						<option value="5">ไม่มี</option>
 					</select>
 				</div>
 			</div>
@@ -865,13 +866,13 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 8) {
 </html>
 
 <script type="text/javascript">
-	function inputDigits(sensor){
-		var regExp = /[0-9]$/;
-		if(!regExp.test(sensor.value)){
-		alert("กรุณากรอกตัวเลขเท่านั้น");
-		sensor.value = sensor.value.substring(0, sensor.value.length -1);
-		}
-	}
+	// function inputDigits(sensor){
+	// 	var regExp = /[0-9]$/;
+	// 	if(!regExp.test(sensor.value)){
+	// 	alert("กรุณากรอกตัวเลขเท่านั้น");
+	// 	sensor.value = sensor.value.substring(0, sensor.value.length -1);
+	// 	}
+	// }
 
 	// function checkID(id)
 	// 	{

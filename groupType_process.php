@@ -425,7 +425,7 @@ $input56 = $data['num_old'];
 		</div>
 		<div class="col-md-5">
 			เลขห้องสอบ
-			<input  type="text" name="class_exam" value="<?php echo $room; ?>" maxlength="5">
+			<input  type="text" name="class_exam" value="<?php echo $room; ?>" maxlength="10">
 		</div>
 		<div class="col-md-1">
 			<input type="submit" style="margin-bottom:50px;" name="submit" value="บันทึก" class="form-control">
