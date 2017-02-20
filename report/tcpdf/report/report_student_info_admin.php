@@ -121,7 +121,7 @@ $class_exam = $data2['class_exam'];
 
 $arrayMount = array('มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม');
 for ($i=1; $i < 13; $i++) { 
-	if ($input12 = $i) {
+	if ($input12 == $i) {
 		$mount = $arrayMount[$i-1];
 	}
 }
@@ -315,7 +315,8 @@ if ($radio6 == 1) {
 } elseif ($radio6 == 7) {
 	$text8 = 'ไม่ประกอบอาชีพ';
 } else {
-	$text8 = '<input type="radio" name="radio6" value="7"> ค้าขาย <input type="radio" name="radio6" value="7"> รับจ้าง <input type="radio" name="radio6" value="7"> รับราชการ <input type="radio" name="radio6" value="7"> พนักงาน <input type="radio" name="radio6" value="7"> นักธุรกิจ <input type="radio" name="radio6" value="7"> อาชีพอิสระ <input type="radio" name="radio6" value="7"> ไม่ประกอบอาชีพ';
+	// $text8 = '<input type="radio" name="radio6" value="7"> ค้าขาย <input type="radio" name="radio6" value="7"> รับจ้าง <input type="radio" name="radio6" value="7"> รับราชการ <input type="radio" name="radio6" value="7"> พนักงาน <input type="radio" name="radio6" value="7"> นักธุรกิจ <input type="radio" name="radio6" value="7"> อาชีพอิสระ <input type="radio" name="radio6" value="7"> ไม่ประกอบอาชีพ';
+	$text8 = '';
 }
 
 if ($radio8 == 1) {
@@ -333,7 +334,8 @@ if ($radio8 == 1) {
 } elseif ($radio8 == 7) {
 	$text9 = 'ไม่ประกอบอาชีพ';
 } else {
-	$text9 = '<input type="radio" name="radio8" value="7"> ค้าขาย <input type="radio" name="radio8" value="7"> รับจ้าง <input type="radio" name="radio8" value="7"> รับราชการ <input type="radio" name="radio8" value="7"> พนักงาน <input type="radio" name="radio8" value="7"> นักธุรกิจ <input type="radio" name="radio8" value="7"> อาชีพอิสระ <input type="radio" name="radio8" value="7"> ไม่ประกอบอาชีพ';
+	// $text9 = '<input type="radio" name="radio8" value="7"> ค้าขาย <input type="radio" name="radio8" value="7"> รับจ้าง <input type="radio" name="radio8" value="7"> รับราชการ <input type="radio" name="radio8" value="7"> พนักงาน <input type="radio" name="radio8" value="7"> นักธุรกิจ <input type="radio" name="radio8" value="7"> อาชีพอิสระ <input type="radio" name="radio8" value="7"> ไม่ประกอบอาชีพ';
+	$text9 = '';
 }
 
 if ($radio9 == 1) {
@@ -379,7 +381,8 @@ if ($radio12 == 1) {
 } elseif ($radio12 == 7) {
 	$text13 = 'ไม่ประกอบอาชีพ';
 } else {
-	$text13 = '<input type="radio" name="radio12" value="7"> ค้าขาย <input type="radio" name="radio12" value="7"> รับจ้าง <input type="radio" name="radio12" value="7"> รับราชการ <input type="radio" name="radio12" value="7"> พนักงาน <input type="radio" name="radio12" value="7"> นักธุรกิจ <input type="radio" name="radio12" value="7"> อาชีพอิสระ <input type="radio" name="radio12" value="7"> ไม่ประกอบอาชีพ';
+	// $text13 = '<input type="radio" name="radio12" value="7"> ค้าขาย <input type="radio" name="radio12" value="7"> รับจ้าง <input type="radio" name="radio12" value="7"> รับราชการ <input type="radio" name="radio12" value="7"> พนักงาน <input type="radio" name="radio12" value="7"> นักธุรกิจ <input type="radio" name="radio12" value="7"> อาชีพอิสระ <input type="radio" name="radio12" value="7"> ไม่ประกอบอาชีพ';
+	$text13 = '';
 }
 
 if (empty($input50)) {
