@@ -615,10 +615,10 @@ $html = '
 							 หมู่ที่ <strong>'.$input16.'</strong>
 						</td>
 						<td>
-							 ซอย <strong>'.$input17.'</strong>
+							 ซอย <strong>'.$input18.'</strong>
 						</td>
 						<td>
-							 ถนน <strong>'.$input18.'</strong>
+							 ถนน <strong>'.$input17.'</strong>
 						</td>
 					</tr>
 				</table>
@@ -764,7 +764,9 @@ $html = '
 						<td width="5">
 							(
 						</td>
-						<td width="200" style="border-bottom: 1px solid black;"></td>
+						<td width="200" align="center">
+							'.$frontName.$input4.' '.$input5.'
+						</td>
 						<td>
 						)</td>
 						
@@ -772,7 +774,9 @@ $html = '
 						<td width="5">
 							(
 						</td>
-						<td width="200" style="border-bottom: 1px solid black;"></td>
+						<td width="200" align="center">
+							
+						</td>
 						<td>
 						)</td>
 					</tr>
@@ -890,7 +894,9 @@ $html = '
 									<td width="5">
 										(
 									</td>
-									<td width="170" style="border-bottom: 1px solid black;"></td>
+									<td width="170" align="center">
+									'.$frontName.$input4.' '.$input5.'
+									</td>
 									<td>
 									)</td>
 									
@@ -898,7 +904,9 @@ $html = '
 									<td width="5">
 										(
 									</td>
-									<td width="170" style="border-bottom: 1px solid black;"></td>
+									<td width="170" align="center">
+										
+									</td>
 									<td>
 									)</td>
 								</tr>
