@@ -14,6 +14,16 @@ while ($dataCheck = mysql_fetch_array($query)) {
 	}
 }
 
+$text = array('ใบสมัครเลขที่','รหัสประจำตัวประชาชน','เลือกคำนำหน้า','ชื่อ','นามสกุล','FIRST NAME','LAST NAME','ศาสนา','สัญชาติ','เชื้อชาติ','วันเดือนปีเกิด','เลือกเดือน','เลือกปี','รหัสประจำบ้าน','ที่อยู่ตามทะเบียนบ้าน เลขที่','ถนน','ซอย','จังหวัด','อำเภอ/เขต','ตำบล/แขวง','รหัสไปรษณีย์','เบอร์โทรศัพท์บ้าน','เบอร์มือถือ','น้ำหนัก','ส่วนสูง','หมู่เลือด','จากโรงเรียน','ที่อยู่ ตำบล/แขวง','อำเภอ/เขต','จังหวัด','ชื่อสกุล บิดา','รายได้ของบิดา','รหัสประจำตัวประชาชน','โทรศัพท์ที่สามารถติดต่อได้','ชื่อสกุล มารดา','รายได้ของมารดา','รหัสประจำตัวประชาชน','โทรศัพท์ที่สามารถติดต่อได้','จำนวนพี่น้องทั้งหมด (รวมตัวเอง)','กำลังศึกษาอยู่ จำนวน');
+
+for ($i=1; $i < 51; $i++) { 
+	if ($_SESSION['check'] == $i) {
+		$checkEmpty[] = "<span style='color:red;'>".$text[$i-1]."</span>";
+	} else {
+		$checkEmpty[] = "<span>".$text[$i-1]."</span>";
+	}
+}
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -259,38 +269,31 @@ while ($dataCheck = mysql_fetch_array($query)) {
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-12">
 					<h2 style="margin-top:-10px; font-weight:bold;">ข้อมูลนักเรียน</h2>
-					<?php 
-					if ($_SESSION['check'] == 1) {
-						echo "<h4 style='color:red;''>*กรุณากรอกข้อมูลให้ครบถ้วน</h4>";
-					}
-					 ?>
 					<h4 style='color:red;'>ถ้าไม่มีข้อมูลในส่วนนั้นให้ใส่ "-" (ขีดกลาง)</h4>
 				</div>
 				<?php 
 				if ($type == 4 || $type == 5 || $type == 6) {
 					echo "<div class='col-md-12'>";
 						echo "*ถ้าเป็นนักเรียนที่จบ ม.3 จากโรงเรียนโพธิสารพิทยากร ให้ใส่เลขประจำตัวเดิม
-					<input type='text' name='input56' style='width:360px;' maxlength=ง13ง onKeyUp=งjavascript:inputDigits(this);ง>";
+					<input type='text' name='input56' style='width:360px;' maxlength='5' onKeyUp='javascript:inputDigits(this);'>";
 					echo "</div>";
 				}
 
 				 ?>
 				<div class="col-md-6" id="form-line">
-					ใบสมัครเลขที
+					<?php echo $checkEmpty[0]; ?>
 					<input type="text" name="input1" maxlength="5" onKeyUp="javascript:inputDigits(this);">
 					ดูจากใบสมัคร
 				</div>
 				<div class="col-md-6" id="form-line">
-					รหัสประจำตัวประชาชน 
+					<?php echo $checkEmpty[1]; ?> 
 					<input name="input2" type="text" id="data" maxlength="13" style="width:280px;" onKeyUp="javascript:inputDigits(this);">
-					<!-- รหัสประจำตัวประชาชน : <input type="text" name="txtID" maxlength="13" onKeyUp="javascript:inputDigits(this);"/>
-					<input type="button" value="ตรวจสอบ" onclick="checkID"/> -->
-					<!-- รหัสประจำตัวประชาชน : <input type="text" name="txtID" onKeyUp="javascript:checkID(this);"/> -->
 				</div>
 			</div>
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
+					<?php echo $checkEmpty[2]; ?> 
 					<select name="input3">
 						<option value="0" selected>เลือกคำนำหน้า</option>
 						<option value="1">ด.ช.</option>
@@ -298,11 +301,11 @@ while ($dataCheck = mysql_fetch_array($query)) {
 						<option value="3">นาย</option>
 						<option value="4">น.ส.</option>
 					</select>
-					ชื่อ
-					<input type="text" name="input4" style="width:300px;">
+					<?php echo $checkEmpty[3]; ?>
+					<input type="text" name="input4" style="width:200px;">
 				</div>
 				<div class="col-md-6">
-					นามสกุล
+					<?php echo $checkEmpty[4]; ?>
 					<input type="text" name="input5" style="margin-left:35px; width:390px;">
 				</div>
 			</div>
@@ -311,26 +314,26 @@ while ($dataCheck = mysql_fetch_array($query)) {
 				<div class="col-md-1">
 				</div>
 				<div class="col-md-5" style="margin-left:-38px;">
-					FIRST NAME
+					<?php echo $checkEmpty[5]; ?>
 					<input type="text" name="input6" style="width:300px;">
 				</div>
 				<div class="col-md-6" style="margin-left:38px;">
-					LAST NAME
+					<?php echo $checkEmpty[6]; ?>
 					<input type="text" name="input7" style="width:390px;">
 				</div>
 			</div>
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-7">
-					ศาสนา
+					<?php echo $checkEmpty[7]; ?>
 					<input type="text" name="input8" style="width:100px;">
-					สัญชาติ
+					<?php echo $checkEmpty[8]; ?>
 					<input type="text" name="input9" style="width:100px;">
-					เชื้อชาติ
+					<?php echo $checkEmpty[9]; ?>
 					<input type="text" name="input10" style="width:100px;">
 				</div>
 				<div class="col-md-5">
-					วันเดือนปีเกิด 
+					<?php echo $checkEmpty[10]; ?>
 					<select name="input11">
 						<?php 
 						for ($i=1; $i < 32; $i++) { 
@@ -368,12 +371,12 @@ while ($dataCheck = mysql_fetch_array($query)) {
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-7">
-					รหัสประจำบ้าน
+					<?php echo $checkEmpty[13]; ?>
 					<input type="text" name="input14" style="width:380px;" maxlength="11" onKeyUp="javascript:inputDigits(this);">
 					<p style="margin-left: 110px; font-size:14px;">(ดูจากทะเบียนบ้านที่นักเรียนอาศัยอยู่)</p>
 				</div>
 				<div class="col-md-5">
-					ที่อยู่ตามทะเบียนบ้าน เลขที่ 
+					<?php echo $checkEmpty[14]; ?>
 					<input type="text" style="width:70px;" name="input15">
 					หมู่ที่ 
 					<input type="text" style="width:70px;" name="input16">
@@ -382,25 +385,25 @@ while ($dataCheck = mysql_fetch_array($query)) {
 
 			<div class="col-md-12" id="form-line" style="margin-top:0px;">
 				<div class="col-md-6">
-					ถนน
+					<?php echo $checkEmpty[15]; ?>
 					<input type="text" name="input17" style="width:450px;">
 				</div>
 				<div class="col-md-6">
-					ซอย
+					<?php echo $checkEmpty[16]; ?>
 					<input type="text" name="input18" style="width:450px;">
 				</div>
 			</div>
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
-					ตำบล/แขวง
+					<?php echo $checkEmpty[19]; ?>
 					<input type="text" name="input21" style="width:200px;">
 				</div>
 				<div class="col-md-4">
-					อำเภอ/เขต
+					<?php echo $checkEmpty[18]; ?>
 					<input type="text" name="input20" style="width:200px;">
 				</div>
 				<div class="col-md-4">
-					จังหวัด
+					<?php echo $checkEmpty[17]; ?>
 					<select name="input19" style="width:250px;">
 						<option value="">เลือกจังหวัด</option>
 						<?php 
@@ -417,15 +420,15 @@ while ($dataCheck = mysql_fetch_array($query)) {
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
-					รหัสไปรษณีย์
+					<?php echo $checkEmpty[20]; ?>
 					<input type="text" name="input22" maxlength="5">
 				</div>
 				<div class="col-md-4">
-					เบอร์โทรศัพท์บ้าน
+					<?php echo $checkEmpty[21]; ?>
 					<input type="text" name="input23" style="width:200px;" maxlength="10">
 				</div>
 				<div class="col-md-4">
-					เบอร์มือถือ
+					<?php echo $checkEmpty[22]; ?>
 					<input type="text" name="input24" maxlength="10">
 				</div>
 			</div>
@@ -438,23 +441,24 @@ while ($dataCheck = mysql_fetch_array($query)) {
 					<input style="width:1em; height:1em;" type='radio' name='radio1' id="radio1-2" value='2'>
 					พิการ 
 				</div>
-				<div class="col-md-3" id="radio1-type">
+				<div class="col-md-2" id="radio1-type">
 					ด้าน
 					<input type="text" name="input25"  style="margin-right:40px; width:150px;">
 				</div>
-				<div class="col-md-6">
-					น้ำหนัก
-					<input type="text" name="input26" style="width:50px;">
+				<div class="col-md-7">
+					<?php echo $checkEmpty[23]; ?>
+					<input type="text" name="input26" style="width:50px;" maxlength="3">
 					กิโลกรัม
-					&nbspส่วนสูง
-					<input type="text" name="input27" style="width:50px;">
+					&nbsp<?php echo $checkEmpty[24]; ?>
+					<input type="text" name="input27" style="width:50px;" maxlength="3">
 					เซนติเมตร
-					&nbspหมู่เลือด
+					&nbsp<?php echo $checkEmpty[25]; ?>
 					<select name="input28">
 						<option value="1">A</option>
 						<option value="2">B</option>
 						<option value="3">AB</option>
 						<option value="4">O</option>
+						<option value="5">ไม่ระบุ</option>
 					</select>
 				</div>
 			</div>
@@ -508,7 +512,7 @@ while ($dataCheck = mysql_fetch_array($query)) {
 
 				<div style="width:100%;" id="form-line">
 					<div class="col-md-4">
-						จากโรงเรียน
+						<?php echo $checkEmpty[26]; ?>
 						<input type="text" name="input29">
 					</div>
 					<div class="col-md-8">
@@ -521,11 +525,11 @@ while ($dataCheck = mysql_fetch_array($query)) {
 				</div>
 
 				<div class="col-md-12" id="form-line">
-					ที่อยู่ ตำบล/แขวง 
+					<?php echo $checkEmpty[27]; ?>
 					<input type="text" name="input30">
-					อำเภอ/เขต
+					<?php echo $checkEmpty[28]; ?>
 					<input type="text" name="input31">
-					จังหวัด
+					<?php echo $checkEmpty[29]; ?>
 					<select name="input32" style="width:250px;">
 						<option value="">เลือกจังหวัด</option>
 						<?php 
@@ -549,7 +553,7 @@ while ($dataCheck = mysql_fetch_array($query)) {
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-5">
-					ชื่อสกุล บิดา
+					<?php echo $checkEmpty[30]; ?>
 					<input type="text" name="input33" style="width:300px;">
 				</div>
 				<div class="col-md-4">
@@ -567,7 +571,7 @@ while ($dataCheck = mysql_fetch_array($query)) {
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
-					รายได้ของบิดา 
+					<?php echo $checkEmpty[31]; ?>
 					<input type="text" name="input35" style="width:150px;">
 					บาท/ปี
 				</div>
@@ -595,18 +599,18 @@ while ($dataCheck = mysql_fetch_array($query)) {
 			
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
-					รหัสประจำตัวประชาชน 
+					<?php echo $checkEmpty[32]; ?>
 					<input type="text" name="input36" maxlength="13" onKeyUp="javascript:inputDigits(this);">	
 				</div>
 				<div class="col-md-6">
-					โทรศัพท์ที่สามารถติดต่อได้
+					<?php echo $checkEmpty[33]; ?>
 					<input type="text" name="input37" maxlength="10">
 				</div>
 			</div>
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-5">
-					ชื่อสกุล มารดา
+					<?php echo $checkEmpty[34]; ?>
 					<input type="text" name="input38" style="width:300px;">
 				</div>
 				<div class="col-md-4">
@@ -624,7 +628,7 @@ while ($dataCheck = mysql_fetch_array($query)) {
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-4">
-					รายได้ของมารดา 
+					<?php echo $checkEmpty[35]; ?>
 					<input type="text" name="input40" style="width:150px;">
 					บาท/ปี
 				</div>
@@ -652,11 +656,11 @@ while ($dataCheck = mysql_fetch_array($query)) {
 			
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
-					รหัสประจำตัวประชาชน 
+					<?php echo $checkEmpty[36]; ?>
 					<input type="text" name="input41" maxlength="13" onKeyUp="javascript:inputDigits(this);">	
 				</div>
 				<div class="col-md-6">
-					โทรศัพท์ที่สามารถติดต่อได้
+					<?php echo $checkEmpty[37]; ?>
 					<input type="text" name="input42" maxlength="10">
 				</div>
 			</div>
@@ -684,12 +688,12 @@ while ($dataCheck = mysql_fetch_array($query)) {
 
 			<div class="col-md-12" id="form-line">
 				<div class="col-md-6">
-					จำนวนพี่น้องทั้งหมด (รวมตัวเอง) 
+					<?php echo $checkEmpty[38]; ?> 
 					<input type="text" name="input43" style="width:50px;">
 					คน
 				</div>
 				<div class="col-md-6">
-					กำลังศึกษาอยู่ จำนวน
+					<?php echo $checkEmpty[39]; ?>
 					<input type="text" name="input44" style="width:50px;">
 					คน
 				</div>
@@ -828,9 +832,9 @@ while ($dataCheck = mysql_fetch_array($query)) {
 			<div class="col-md-12">
 				<div class="col-md-12" id="form-line">
 					ผลการเรียนเฉลี่ย
-					<input type="text" name="input50" style="width:50px;" maxlength="4" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input50" style="width:50px;" maxlength="5" onKeyUp="javascript:inputDigits(this);">
 					หรือ ร้อยละ
-					<input type="text" name="input51" style="width:50px;" maxlength="3" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" name="input51" style="width:50px;" maxlength="5" onKeyUp="javascript:inputDigits(this);">
 				</div>
 			</div>
 			<div class="col-md-12">
@@ -858,12 +862,12 @@ while ($dataCheck = mysql_fetch_array($query)) {
 
 					 ?>
 					
-					<input type="text" name="input52" style="width:50px;" onKeyUp="javascript:inputDigits(this);" maxlength="4">
+					<input type="text" name="input52" style="width:50px;" onKeyUp="javascript:inputDigits(this);" maxlength="5">
 					คะแนน
 				
 					<span style="margin-left:20px;">
 					คิดเป็นร้อยละ
-					<input type="text" name="input53" style="width:50px;" onKeyUp="javascript:inputDigits(this);" maxlength="3">
+					<input type="text" name="input53" style="width:50px;" onKeyUp="javascript:inputDigits(this);" maxlength="5">
 					</span>
 				</div>
 			</div>
@@ -883,23 +887,11 @@ while ($dataCheck = mysql_fetch_array($query)) {
 <script type="text/javascript">
 	function inputDigits(sensor){
 		var regExp = /[0-9,.]$/;
-		if(!regExp.test(sensor.value)){
+		if(!regExp.test(sensor.value) && event.keyCode != 8 && event.keyCode != 9){
 		alert("กรุณากรอกตัวเลขเท่านั้น");
 		sensor.value = sensor.value.substring(0, sensor.value.length -1);
 		}
 	}
-
-	// function checkID(id)
-	// 	{
-	// 	if(id.length != 13) return false;
-	// 	for(i=0, sum=0; i < 12; i++)
-	// 	sum += parseFloat(id.charAt(i))*(13-i); if((11-sum%11)%10!=parseFloat(id.charAt(12)))
-	// 	return false; return true;}
-
-	// function checkForm()
-	// 	{ if(!checkID(document.form2.txtID.value))
-	// 		alert('รหัสประชาชนไม่ถูกต้อง');
-	// }
 
 	$(document).ready(function(){
 		$("#radio1-type").hide();
