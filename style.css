@@ -40,6 +40,47 @@ html body {
   color: white;
 }
 
+.type-phone {
+  width:22vw; 
+  height:22vw; 
+  background-color:white; 
+  float:left;
+  border-radius: 50%;
+  color: #0000b9;
+}
+
+.type-phone:hover {
+  background-color:#0000b9; 
+  transition: 0.2s;
+  color: white;
+}
+
+.type-phone2 {
+  width:22vw; 
+  height:22vw; 
+  background-color:#ebebe0; 
+  float:left;
+  border-radius: 50%;
+  color: white;
+}
+
+.head-type-phone {
+  margin-top: 2vh;
+  font-size: 5vw;    
+}
+
+.text-type-phone {
+  margin-top: -30px;
+  font-size: 2.5vw;  
+  color: #e100e1;
+}
+
+.text-type-phone2 {
+  margin-top: -30px;
+  font-size: 2.5vw;  
+  color: white;
+}
+
 .head-type {
 	margin-top: 40px;
 	font-size: 60px;		

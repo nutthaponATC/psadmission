@@ -556,13 +556,13 @@ include('config.php');
 	<div class="hidden-lg" style="width:100vw; height:100vh; positon:relative;">
 		<div style="height:8vh; width: 100%; background-color:#1c1c86; color:white;">
 			<div class="container">
-				<img src="image/logops.jpg" width="40px;" style="float:left; margin-top: 5px; border-radius: 50%;">
+				<img src="image/logops.jpg" style="width:5vh;  float:left; margin-top: 1.5vh; border-radius: 50%;">
 				<span style="font-size:4vw; float:left; margin-top:15px; color:white; padding-left:5px;">โรงเรียนโพธิสารพิทยากร</span>
 			</div>
 		</div>
 		<div class="container">
-			<form action="login_process.php" method="post" name="form1">
-				<div class="col-xs-12" style="margin-top:calc(35vh - 150px); color:#1c1c86;">
+			<form action="login_process_2.php" method="post" name="form1">
+				<div class="col-xs-12" style="margin-top:5vh; color:#1c1c86;">
 					<center><h3>ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</h3></center>
 				</div>
 				<div class="login-phone">
@@ -590,9 +590,12 @@ include('config.php');
 					</div>	
 				</div>
 			</form>
-			<div class="col-xs-12" style="margin-top:calc(70vh - 150px); positon:relative; color:#1c1c86;">
-				<center><h4>ตัวอย่าง ชื่อผู้ใช้งาน (รหัสประชาชน 13 หลัก) : 1234567890123</h4>
-				<h4>รหัสผ่าน (วันเดือนปีเกิด เช่น 2 กรกฎาคม 2544) : 272544</h4></center>
+			<div class="col-xs-12" style="top: 60vh; positon:relative; color:#1c1c86;">
+				<center>
+				<span style="font-size:4vw;">
+				ชื่อผูัใช้งานและรหัสผ่านสามารถดูได้จากเล่มคู่มือ
+				<span>
+				</center>
 			</div>	
 		</div>
 
