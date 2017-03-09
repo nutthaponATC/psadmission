@@ -34,6 +34,20 @@ $pdf->AddPage();
 //Input
 $id_student = $_GET['id_student'];
 
+$sqld = 'SELECT * FROM day WHERE id_day = '.$id_student.'';
+$queryd = mysql_query($sqld);
+$datad = mysql_fetch_array($queryd);
+
+if ($datad['day'] == 1) {
+	$day = "27 มีนาคม 2560";
+} elseif ($datad['day'] == 2) {
+	$day = "28 มีนาคม 2560";
+} elseif ($datad['day'] == 3) {
+	$day = "29 มีนาคม 2560";
+} else {
+	$day = "30 มีนาคม 2560";
+}
+
 $sql = 'SELECT * FROM history_ps WHERE id_history = '.$id_student.'';
 $query = mysql_query($sql);
 $data = mysql_fetch_array($query);
@@ -494,7 +508,7 @@ $html = '
 					</td></tr></table>
 					<br>
 					 วันที่สมัคร 		
-					 ............................................
+					 '.$day.'
 					 <br>
 					 <input type="checkbox" name="checkbox3" value="1"> 08.30-11.00 น. <input type="checkbox" name="checkbox3" value="1"> 13.00-15.00 น.
 				</td>

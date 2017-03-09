@@ -1,3 +1,7 @@
+<?php 
+error_reporting( error_reporting() & ~E_NOTICE );
+$type = $_GET['type'];
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +21,7 @@
 </head>
 <body style="height: 100vh; width: 100vw;"> 
 	<form action="login_process.php" method="post" name="form1">
+		<input type="hidden" name="type" value="<?php echo $type; ?>">	
 		<div class="col-md-12" style="margin-top:calc(35vh - 150px); color:#1c1c86;">
 			<center><h2 style="font-style: italic;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</h2></center>
 		</div>

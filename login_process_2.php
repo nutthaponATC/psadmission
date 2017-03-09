@@ -25,7 +25,30 @@ if (empty($user) || empty($pass)) {
 	$id_user = $fetchData['id_user'];
 	$status = $fetchData['status'];
 
-	if ($countCheck == 1) {
+	$sql = "SELECT * FROM day WHERE id_day = '$user'";
+	$query = mysql_query($sql);
+	$dataday = mysql_fetch_array($query);
+	$id_history = $dataday['id_day'];
+	$sql = "SELECT * FROM history_ps WHERE id_history = $id_history";
+	$query = mysql_query($sql);
+	$countCheckOld = mysql_num_rows($query);
+	$fetchData2 = mysql_fetch_array($query);
+	$id_user2 = $fetchData2['id_history'];
+	$status2 = $fetchData2['status'];
+
+	if ($countCheckOld == 1) {
+		$_SESSION['id_user'] = $id_user2;
+		$_SESSION['status'] = $status2;
+		if ($status == 1) {
+			echo "<script language='javascript'>";
+			echo "location='form_phone_edit.php';";
+			echo "</script>";
+		} else {
+			echo "<script language='javascript'>";
+			echo "location='index.php';";
+			echo "</script>";
+		}
+	} elseif ($countCheck == 1) {
 		$_SESSION['id_user'] = $id_user;
 		$_SESSION['status'] = $status;
 		if ($status == 1) {
@@ -37,7 +60,6 @@ if (empty($user) || empty($pass)) {
 			echo "location='index.php';";
 			echo "</script>";
 		}
-
 	} else {
 		echo "<script language='javascript'>";
 		echo "alert('ชื้อผู้ใช้หรือรหัสผ่านผิด กรุณาลองใหม่อีกครั้ง');";

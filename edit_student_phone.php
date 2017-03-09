@@ -3,407 +3,84 @@ session_start();
 echo "<meta charset='UTF-8'>";
 include('config.php');
 error_reporting( error_reporting() & ~E_NOTICE );
-$type = $_POST['type'];
-$sType = $_POST['sType'];
-$radio1 = $_POST['radio1'];
-$radio2 = $_POST['radio2'];
-$radio3 = $_POST['radio3'];
-$radio4 = $_POST['radio4'];
-$radio5 = $_POST['radio5'];
-$radio6 = $_POST['radio6'];
-$radio7 = $_POST['radio7'];
-$radio8 = $_POST['radio8'];
-$radio9 = $_POST['radio9'];
-$radio10 = $_POST['radio10'];
-$radio11 = $_POST['radio11'];
-$radio12 = $_POST['radio12'];
-$radio13 = $_POST['radio13'];
-$input1 = $_POST['input1'];
-$input2 = $_POST['input2'];
-$input3 = $_POST['input3'];
-$input4 = $_POST['input4'];
-$input5 = $_POST['input5'];
-$input6 = $_POST['input6'];
-$input7 = $_POST['input7'];
-$input8 = $_POST['input8'];
-$input9 = $_POST['input9'];
-$input10 = $_POST['input10'];
-$input11 = $_POST['input11'];
-$input12 = $_POST['input12'];
-$input13 = $_POST['input13'];
-$input14 = $_POST['input14'];
-$input15 = $_POST['input15'];
-$input16 = $_POST['input16'];
-$input17 = $_POST['input17'];
-$input18 = $_POST['input18'];
-$input19 = $_POST['input19'];
-$input20 = $_POST['input20'];
-$input21 = $_POST['input21'];
-$input22 = $_POST['input22'];
-$input23 = $_POST['input23'];
-$input24 = $_POST['input24'];
-$input25 = $_POST['input25'];
-$input26 = $_POST['input26'];
-$input27 = $_POST['input27'];
-$input28 = $_POST['input28'];
-$input29 = $_POST['input29'];
-$input30 = $_POST['input30'];
-$input31 = $_POST['input31'];
-$input32 = $_POST['input32'];
-$input33 = $_POST['input33'];
-$input34 = $_POST['input34'];
-$input35 = $_POST['input35'];
-$input36 = $_POST['input36'];
-$input37 = $_POST['input37'];
-$input38 = $_POST['input38'];
-$input39 = $_POST['input39'];
-$input40 = $_POST['input40'];
-$input41 = $_POST['input41'];
-$input42 = $_POST['input42'];
-$input43 = $_POST['input43'];
-$input44 = $_POST['input44'];
-$input45 = $_POST['input45'];
-$input46 = $_POST['input46'];
-$input47 = $_POST['input47'];
-$input48 = $_POST['input48'];
-$input49 = $_POST['input49'];
-$input50 = $_POST['input50'];
-$input51 = $_POST['input51'];
-$input52 = $_POST['input52'];
-$input53 = $_POST['input53'];
-$input54 = $_POST['input54'];
-$input55 = $_POST['input55'];
-$input56 = $_POST['input56'];
 
-if ($sType == 0) {
-	echo "<script language='javascript'>";
-	echo "alert('กรุณาเลือกแผนการเรียน');";
-	echo "javascript:history.back()";
-	echo "</script>";
-} else {
-	if (empty($input1)) {
-		$_SESSION['check'] = 1;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกใบสมัครเลขที่');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input2)) {
-		$_SESSION['check'] = 2;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกรหัสประจำตัวประชาชน');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input3)) {
-		$_SESSION['check'] = 3;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกเลือกคำนำหน้า');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input4)) {
-		$_SESSION['check'] = 4;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกชื่อ');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input5)) {
-		$_SESSION['check'] = 5;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกนามสกุล');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input6)) {
-		$_SESSION['check'] = 6;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอก FIRST NAME');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input7)) {
-		$_SESSION['check'] = 7;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอก LAST NAME');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input8)) {
-		$_SESSION['check'] = 8;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกศาสนา');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input9)) {
-		$_SESSION['check'] = 9;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกสัญชาติ');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input10)) {
-		$_SESSION['check'] = 10;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกเชื้อชาติ');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input11)) {
-		$_SESSION['check'] = 11;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกวันเดือนปีเกิด');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input12)) {
-		$_SESSION['check'] = 11;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกเลือกเดือน');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input13)) {
-		$_SESSION['check'] = 11;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกเลือกปี');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input14)) {
-		$_SESSION['check'] = 14;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกรหัสประจำบ้าน');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input15)) {
-		$_SESSION['check'] = 15;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกที่อยู่ตามทะเบียนบ้าน');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input17)) {
-		$_SESSION['check'] = 16;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกถนน');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input18)) {
-		$_SESSION['check'] = 17;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกซอย');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input19)) {
-		$_SESSION['check'] = 18;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกจังหวัด');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input20)) {
-		$_SESSION['check'] = 19;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกอำเภอ/เขต');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input21)) {
-		$_SESSION['check'] = 20;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกตำบล/แขวง');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input22)) {
-		$_SESSION['check'] = 21;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกรหัสไปรษณีย์');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input23)) {
-		$_SESSION['check'] = 22;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกเบอร์โทรศัพท์บ้าน');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input24)) {
-		$_SESSION['check'] = 23;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกเบอร์มือถือ');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input26)) {
-		$_SESSION['check'] = 24;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกน้ำหนัก');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input27)) {
-		$_SESSION['check'] = 25;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกส่วนสูง');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input28)) {
-		$_SESSION['check'] = 26;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกหมู่เลือด');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input29)) {
-		$_SESSION['check'] = 27;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกจากโรงเรียน');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input30)) {
-		$_SESSION['check'] = 28;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกที่อยู่ ตำบล/แขวง');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input31)) {
-		$_SESSION['check'] = 29;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกอำเภอ/เขต');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input32)) {
-		$_SESSION['check'] = 30;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกจังหวัด');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input33)) {
-		$_SESSION['check'] = 31;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกชื่อสกุล บิดา');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input35)) {
-		$_SESSION['check'] = 32;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกรายได้ของบิดา');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input36)) {
-		$_SESSION['check'] = 33;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกรหัสประจำตัวประชาชน');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input37)) {
-		$_SESSION['check'] = 34;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกโทรศัพท์ที่สามารถติดต่อได้ ของบิดา');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input38)) {
-		$_SESSION['check'] = 35;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกชื่อสกุล มารดา');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input40)) {
-		$_SESSION['check'] = 36;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกรายได้ของมารดา');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input41)) {
-		$_SESSION['check'] = 37;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกรหัสประจำตัวประชาชน ของมารดา');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input42)) {
-		$_SESSION['check'] = 38;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกโทรศัพท์ที่สามารถติดต่อได้ ของมารดา');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input43)) {
-		$_SESSION['check'] = 39;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกจำนวนพี่น้องทั้งหมด');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif (empty($input44)) {
-		$_SESSION['check'] = 40;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณากรอกกำลังศึกษาอยู่');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif ($radio1 == 0) {
-		$_SESSION['check'] = 0;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณาเลือกความพิการ');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif ($radio2 == 0) {
-		$_SESSION['check'] = 0;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณาเลือกระดับการศึกษา');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif ($radio3 == 0) {
-		$_SESSION['check'] = 0;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณาเลือกสังกัด');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif ($radio4 == 0) {
-		$_SESSION['check'] = 0;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณาเลือกที่ตั้งโรงเรียน');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif ($radio5 == 0) {
-		$_SESSION['check'] = 0;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณาเลือกความพิการของบิดา');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif ($radio6 == 0) {
-		$_SESSION['check'] = 0;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณาเลือกอาชีพของบิดา');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif ($radio7 == 0) {
-		$_SESSION['check'] = 0;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณาเลือกความพิการของมารดา');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif ($radio8 == 0) {
-		$_SESSION['check'] = 0;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณาเลือกอาชีพของมารดา');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} elseif ($radio9 == 0) {
-		$_SESSION['check'] = 0;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณาเลือกสถานภาพของบิดา-มารดา');";
-		echo "javascript:history.back()";
-		echo "</script>";	
-	} elseif ($radio10 == 0) {
-		$_SESSION['check'] = 0;
-		echo "<script language='javascript'>";
-		echo "alert('กรุณาเลือกเกี่ยวข้างกับนักเรียนเป็น');";
-		echo "javascript:history.back()";
-		echo "</script>";
-	} else {
-		$sql = "SELECT * FROM history_ps WHERE input2 = $input2";
-		$query = mysql_query($sql);
-		$num = mysql_num_rows($query);
+$id_history = $_SESSION['id_user'];
+$sql = "SELECT * FROM history_ps WHERE id_history = $id_history";
+$query = mysql_query($sql);
+$data = mysql_fetch_array($query);
 
-		if ($queryString) {
-			echo "<script language='javascript'>";
-			echo "alert('ชื่อและนามสกุลถูกใช้ไปแล้ว กรุณาติดต่อผู้ดูแลระบบ');";
-			echo "javascript:history.back()";
-			echo "</script>";
-		}
+$type = $data['type'];
+$sType = $data['stype'];
+$radio1 = $data['radio1'];
+$radio2 = $data['radio2'];
+$radio3 = $data['radio3'];
+$radio4 = $data['radio4'];
+$radio5 = $data['radio5'];
+$radio6 = $data['radio6'];
+$radio7 = $data['radio7'];
+$radio8 = $data['radio8'];
+$radio9 = $data['radio9'];
+$radio10 = $data['radio10'];
+$radio11 = $data['radio11'];
+$radio12 = $data['radio12'];
+$radio13 = $data['radio13'];
+$input1 = $data['input1'];
+$input2 = $data['input2'];
+$input3 = $data['input3'];
+$input4 = $data['input4'];
+$input5 = $data['input5'];
+$input6 = $data['input6'];
+$input7 = $data['input7'];
+$input8 = $data['input8'];
+$input9 = $data['input9'];
+$input10 = $data['input10'];
+$input11 = $data['input11'];
+$input12 = $data['input12'];
+$input13 = $data['input13'];
+$input14 = $data['input14'];
+$input15 = $data['input15'];
+$input16 = $data['input16'];
+$input17 = $data['input17'];
+$input18 = $data['input18'];
+$input19 = $data['input19'];
+$input20 = $data['input20'];
+$input21 = $data['input21'];
+$input22 = $data['input22'];
+$input23 = $data['input23'];
+$input24 = $data['input24'];
+$input25 = $data['input25'];
+$input26 = $data['input26'];
+$input27 = $data['input27'];
+$input28 = $data['input28'];
+$input29 = $data['input29'];
+$input30 = $data['input30'];
+$input31 = $data['input31'];
+$input32 = $data['input32'];
+$input33 = $data['input33'];
+$input34 = $data['input34'];
+$input35 = $data['input35'];
+$input36 = $data['input36'];
+$input37 = $data['input37'];
+$input38 = $data['input38'];
+$input39 = $data['input39'];
+$input40 = $data['input40'];
+$input41 = $data['input41'];
+$input42 = $data['input42'];
+$input43 = $data['input43'];
+$input44 = $data['input44'];
+$input45 = $data['input45'];
+$input46 = $data['input46'];
+$input47 = $data['input47'];
+$input48 = $data['input48'];
+$input49 = $data['input49'];
+$input50 = $data['input50'];
+$input51 = $data['input51'];
+$input52 = $data['input52'];
+$input53 = $data['input53'];
+$input54 = $data['input54'];
+$input55 = $data['input55'];
+$input56 = $data['input56'];
 
-		$sqlString = "SELECT * FROM history_ps WHERE input4 = '$input4' AND input5 = '$input5'";
-		$queryString = mysql_query($sqlString);
-
-		if ($num == 1) {
-			echo "<script language='javascript'>";
-			echo "alert('รหัสบัตรประชาชนนี้ ถูกใช้งานไปแล้ว กรุณาติดต่อผู้ดูแลระบบ');";
-			echo "javascript:history.back()";
-			echo "</script>";
-		}
-	}
-}
 
 $text = array('ใบสมัครเลขที่','รหัสประจำตัวประชาชน','เลือกคำนำหน้า','ชื่อ','นามสกุล','FIRST NAME','LAST NAME','ศาสนา','สัญชาติ','เชื้อชาติ','วันเดือนปีเกิด','เลือกเดือน','เลือกปี','รหัสประจำบ้าน','ที่อยู่ตามทะเบียนบ้าน เลขที่','ถนน','ซอย','จังหวัด','อำเภอ/เขต','ตำบล/แขวง','รหัสไปรษณีย์','เบอร์โทรศัพท์บ้าน','เบอร์มือถือ','น้ำหนัก','ส่วนสูง','หมู่เลือด','จากโรงเรียน','ที่อยู่ ตำบล/แขวง','อำเภอ/เขต','จังหวัด','ชื่อสกุล บิดา','รายได้ของบิดา','รหัสประจำตัวประชาชน','โทรศัพท์ที่สามารถติดต่อได้','ชื่อสกุล มารดา','รายได้ของมารดา','รหัสประจำตัวประชาชน','โทรศัพท์ที่สามารถติดต่อได้','จำนวนพี่น้องทั้งหมด (รวมตัวเอง)','กำลังศึกษาอยู่ จำนวน');
 
@@ -661,7 +338,7 @@ if ($type == 1) {
 <body style="font-size:17px;">
 	<!-- phone -->
 	<div class="hidden-lg" style="width:100vw; height:100vh; font-size:4vw;">
-	<form id="form2" name="form2" method="post" action="form_process_phone.php">
+	<form id="form2" name="form2" method="post" action="edit_process_phone.php">
 		<input type="hidden" name="type" value="<?php echo $type; ?>">
 		<div class="container" style="height:8vh; width: 100%; background-color:#1c1c86; color:white;">
 			<img src="image/logops.jpg" style="width:5vh;  float:left; margin-top: 1.5vh; border-radius: 50%;">
@@ -690,7 +367,7 @@ if ($type == 1) {
 					echo "
 					<center>*ถ้าเป็นนักเรียนที่จบ ม.3 จากโรงเรียนโพธิสารพิทยากร ให้ใส่เลขประจำตัวเดิม
 					</center>
-				<input type='text' class='form-control' name='input56' value=".$input56." maxlength='5' onKeyUp='javascript:inputDigits(this);'>";
+				<input type='text' class='form-control' name='input56' onKeyUp='javascript:inputDigits(this);' maxlength='5' value=".$input56.">";
 			}
 
 			 ?>
@@ -1779,10 +1456,7 @@ if ($type == 1) {
 				<input type="text" value="<?php echo $input53; ?>" class="form-control" name="input53" style="width:50px;" onKeyUp="javascript:inputDigits(this);" maxlength="5">
 			</div>
 			<div style="width:100%; float:left; margin-top:3vh; padding-bottom:3vh;">
-				<a href="javascript:history.back()"><input type="button" class="form-control" name="back" value="แก้ไขข้อมูล" class="form-control"></a>
-			</div>
-			<div style="width:100%; float:left; margin-top:3vh; padding-bottom:3vh;">
-				<input type="submit" name="submit" value="ยืนยันบันทึกข้อมูล" class="form-control">
+				<input type="submit" name="submit" value="ยืนยันการแก้ไขข้อมูล" class="form-control">
 			</div>
 		</div>
 	</div>

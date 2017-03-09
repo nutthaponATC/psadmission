@@ -192,7 +192,7 @@ include('config.php');
 				$query = mysql_query($sql);
 				$set1 = mysql_fetch_array($query);
 				if ($set1['status'] == 1) {
-					echo '<a href="form.php?type=1">
+					echo '<a href="login.php?type=1">
 						<div class="type" style="margin-left:160px;">
 							<center><p class="head-type">EP</p><br></center>
 							<center><p class="text-type">English Program</p></center>
@@ -210,7 +210,7 @@ include('config.php');
 				$query = mysql_query($sql);
 				$set2 = mysql_fetch_array($query);
 				if ($set2['status'] == 1) {
-					echo '<a href="form.php?type=2">
+					echo '<a href="login.php?type=2">
 						<div class="type" style="margin-left:20px;">
 							<center><p class="head-type">IEP</p><br></center>
 							<center><p class="text-type">Intensive English Program</p></center>
@@ -228,7 +228,7 @@ include('config.php');
 				$query = mysql_query($sql);
 				$set3 = mysql_fetch_array($query);
 				if ($set3['status'] == 1) {
-					echo '<a href="form.php?type=3">
+					echo '<a href="login.php?type=3">
 						<div class="type" style="margin-left:20px;">
 							<center><p class="head-type">GP</p><br></center>
 							<center><p class="text-type">ภาคทั่วไป</p></center>
@@ -259,7 +259,7 @@ include('config.php');
 				$query = mysql_query($sql);
 				$set4 = mysql_fetch_array($query);
 				if ($set4['status'] == 1) {
-					echo '<a href="form.php?type=4">
+					echo '<a href="login.php?type=4">
 						<div class="type" style="margin-left:160px;">
 							<center><p class="head-type">EP</p><br></center>
 							<center><p class="text-type">English Program</p></center>
@@ -277,7 +277,7 @@ include('config.php');
 				$query = mysql_query($sql);
 				$set5 = mysql_fetch_array($query);
 				if ($set5['status'] == 1) {
-					echo '<a href="form.php?type=5">
+					echo '<a href="login.php?type=5">
 						<div class="type" style="margin-left:20px;">
 							<center><p class="head-type">IEP</p><br></center>
 							<center><p class="text-type">Intensive English Program</p></center>
@@ -295,7 +295,7 @@ include('config.php');
 				$query = mysql_query($sql);
 				$set6 = mysql_fetch_array($query);
 				if ($set6['status'] == 1) {
-					echo '<a href="form.php?type=6">
+					echo '<a href="login.php?type=6">
 						<div class="type" style="margin-left:20px;">
 							<center><p class="head-type">GP</p><br></center>
 							<center><p class="text-type">ภาคทั่วไป</p></center>
