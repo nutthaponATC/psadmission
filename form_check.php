@@ -402,17 +402,6 @@ if ($sType == 0) {
 			echo "javascript:history.back()";
 			echo "</script>";
 		}
-
-		// if (empty($input1) || empty($input2) || empty($input3) || empty($input4) || empty($input5) || empty($input6) || empty($input7) || empty($input8) || empty($input9) || empty($input10) || empty($input11) || empty($input12) || empty($input13) || empty($input14) || empty($input15) || empty($input17) || empty($input18) || empty($input19) || empty($input20) || empty($input21) || empty($input22) || empty($input23) || empty($input24) || empty($input26) || empty($input27) || empty($input28) || empty($input29) || empty($input30)  || empty($input31) || empty($input32) || empty($input33) || empty($input35) || empty($input36) || empty($input37) || empty($input38) || empty($input40) || empty($input41) || empty($input42) || empty($input43) || empty($input44) || $radio1 == 0 || $radio2 == 0 || $radio3 == 0 || $radio4 == 0 || $radio5 == 0 || $radio6 == 0 || $radio7 == 0 || $radio8 == 0 || $radio9 == 0 || $radio10 == 0) {
-			
-		// 	$_SESSION['check'] = 1;
-		// 	echo "<script language='javascript'>";
-		// 	echo "alert('กรุณากรอกข้อมูลนักเรียนให้ครบ');";
-		// 	echo "javascript:history.back()";
-		// 	echo "</script>";
-		// } else {
-		// 	$_SESSION['check'] = 0;
-		// }
 	}
 }
  ?>

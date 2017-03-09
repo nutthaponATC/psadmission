@@ -632,6 +632,7 @@ for ($i=1; $i < 51; $i++) {
 							ร.ร.ตั้งอยู่
 							<input style="width:1em; height:1em;" type='radio' name='radio4' value='1'>
 							ในเขตพื้นที่ (คลองชักพระ/บางระมาด/บางพรม/ฉิมพลี)
+							<br>
 							<input style="width:1em; height:1em;" type='radio' name='radio4' value='2'>
 							นอกเขตพื้นที่	
 						</div>
@@ -994,8 +995,12 @@ for ($i=1; $i < 51; $i++) {
 			</div>
 		</div>
 
+		</form>
+
 		<!-- phone -->
 		<div class="hidden-lg" style="width:100vw; height:100vh; font-size:4vw;">
+		<form id="form2" name="form2" method="post" action="form_check_phone.php" onsubmit="checkForm(); return false;">
+			<input type="hidden" name="type" value="<?php echo $type; ?>">
 			<div class="container" style="height:8vh; width: 100%; background-color:#1c1c86; color:white;">
 				<img src="image/logops.jpg" style="width:5vh;  float:left; margin-top: 1.5vh; border-radius: 50%;">
 				<span style="font-size:4vw; float:left; margin-top:15px; color:white; padding-left:5px;">โรงเรียนโพธิสารพิทยากร</span>
@@ -1381,9 +1386,10 @@ for ($i=1; $i < 51; $i++) {
 				<div style="margin-top:3vh;">
 					ร.ร.ตั้งอยู่
 				</div>
-				<div style="font-size:3.5vw;">
+				<div style="font-size:3.2vw;">
 					<input id="s6-1" style="width:1.2em; height:1.2em;" type='radio' name='radio4' value='1'>
 					<label for="s6-1">ในเขตพื้นที่ (คลองชักพระ/บางระมาด/บางพรม/ฉิมพลี)</label>
+					<br>
 					<input id="s6-2" style="width:1.2em; height:1.2em;" type='radio' name='radio4' value='2'>
 					<label for="s6-2">นอกเขตพื้นที่	</label>
 				</div>
@@ -1413,7 +1419,7 @@ for ($i=1; $i < 51; $i++) {
 				</div>			
 			</div>		
 
-			<div class="container" style="margin-top:5vh; border-bottom:2px solid #1c1c86; padding-bottom:5vh;">
+			<div class="container" style="margin-top:5vh;">
 				<div>
 					<span style="font-size:6vw; font-weight:bold; color:#1c1c86">ข้อมูล บิดา - มารดา</span>
 				</div>
@@ -1429,7 +1435,8 @@ for ($i=1; $i < 51; $i++) {
 					<input id="s7-2" type='radio' style="width:1em; height:1em;" name='radio5' id="radio5-2" value='2'>
 					<label for="s7-2">พิการ </label>
 				</div>
-			
+			</div>
+			<div class="container">
 				<div style="float:left; margin-top: 3vh; width:34%; margin-right:1%;">
 					<?php echo $checkEmpty[31]; ?>
 				</div>
@@ -1439,7 +1446,8 @@ for ($i=1; $i < 51; $i++) {
 				<div style="float:left; margin-top: 3vh; width:15">
 					บาท/ปี
 				</div>
-				
+			</div>
+			<div class="container">
 				<div style="float:left;">
 					อาชีพของบิดา
 				</div>
@@ -1461,7 +1469,8 @@ for ($i=1; $i < 51; $i++) {
 					<input id="s8-7" style="width:1em; height:1em;" type='radio' name='radio6' value='7'>
 					<label for="s8-7">ไม่ประกอบอาชีพ	</label>
 				</div>
-				
+			</div>
+			<div class="container">
 				<div>
 					<?php echo $checkEmpty[32]; ?>
 					<input type="text" class="form-control" name="input36" maxlength="13" onKeyUp="javascript:inputDigits(this);">
@@ -1516,7 +1525,8 @@ for ($i=1; $i < 51; $i++) {
 					<input id="s10-7" style="width:1em; height:1em;" type='radio' name='radio8' value='7'>
 					<label for="s10-7">ไม่ประกอบอาชีพ	</label>
 				</div>
-				
+			</div>
+			<div class="container">
 				<div>
 					<?php echo $checkEmpty[36]; ?>
 					<input type="text" class="form-control" name="input41" maxlength="13" onKeyUp="javascript:inputDigits(this);">
@@ -1571,7 +1581,7 @@ for ($i=1; $i < 51; $i++) {
 				</div>
 			</div>
 
-			<div class="container" style="margin-top:5vh; border-bottom:2px solid #1c1c86; padding-bottom:5vh;">
+			<div class="container" style="margin-top:5vh; padding-bottom:5vh;">
 				<span style="font-size:6vw; font-weight:bold; color:#1c1c86">ข้อมูลผู้ปกครอง</span>
 
 				<div style="margin-top:3vh;">
@@ -1601,8 +1611,8 @@ for ($i=1; $i < 51; $i++) {
 						บาท/ปี
 					</div>
 				</div>
-
-			
+			</div>
+			<div class="container">
 				<div>
 					มีความสัมพันธ์กับนักเรียนเป็น 
 					<input type="text" class="form-control" name='input47'>
@@ -1629,7 +1639,8 @@ for ($i=1; $i < 51; $i++) {
 					<input id="s13-7" style="width:1em; height:1em;" type='radio' name='radio12' value='7'>
 					<label for="s13-7">ไม่ประกอบอาชีพ</label>
 				</div>
-
+			</div>
+			<div class="container">
 				<div style="margin-top:3vh;">
 					รหัสประจำตัวประชาชน 
 					<input type="text" class="form-control" name="input48" maxlength="13">
@@ -1740,8 +1751,8 @@ for ($i=1; $i < 51; $i++) {
 				</div>
 			</div>
 		</div>
+		</form>
 	</div>
-	</form>
 
 	<script src="js/jquery.js"></script>
 </body>
