@@ -44,6 +44,14 @@ include('config.php');
 		</div>
 
 		<div class="container">
+			<div class="container">
+				<div class="col-md-12" style="margin-top:2vh;">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<center><img src="image/logoC.png" width="100px" style="float: left;"><h2 style="float: left;">ระบบสนับสนุนให้ใช้ Google Chrome</h2></center>
+					</div>
+				</div>
+			</div>
 			<div class="col-md-4" style="height: 5px; background: #0000b9; margin-top:35px;"></div>
 			<div class="col-md-4">
 				<center><h1>ขั้นตอนการรับสมัคร</h1></center>
@@ -561,6 +569,7 @@ include('config.php');
 			</div>
 		</div>
 		<div class="container">
+			<center><img src="image/logoC.png" style="margin-top: 2vh; width:10vw;"><div style="margin-top: 2vh; font-size:5vw; color:#1c1c86;">ระบบสนับสนุนให้ใช้ Google Chrome</div></center>
 			<form action="login_process_2.php" method="post" name="form1">
 				<div class="col-xs-12" style="margin-top:5vh; color:#1c1c86;">
 					<center><h3>ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</h3></center>
@@ -590,10 +599,10 @@ include('config.php');
 					</div>	
 				</div>
 			</form>
-			<div class="col-xs-12" style="top: 60vh; positon:relative; color:#1c1c86;">
+			<div class="col-xs-12" style="top: 45vh; position:relative; color:#1c1c86;">
 				<center>
 				<span style="font-size:4vw;">
-				ชื่อผูัใช้งานและรหัสผ่านสามารถดูได้จากเล่มคู่มือ
+				ใช้ชื่อผูัใช้งาน (username) และรหัสผ่าน (password) ที่โรงเรียนให้ไปพร้อมกับคู่มือการสมัคร
 				<span>
 				</center>
 			</div>	

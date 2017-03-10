@@ -100,7 +100,7 @@ $date = date("Y/m/d");
 		if ($query) {
 			$alert = "เพิ่มข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร เรียบร้อย";
 		} else {
-			$alert = "เพิ่มข้อมูลไม่สำเร็จ กรุณาติดต่อผู้ดูแลระบบ";
+			$alert = "เพิ่มข้อมูลไม่สำเร็จ กรุณาติดต่อผู้ดูแลระบบ <img src='image/admin.jpg' width='200px'>";
 		}
 
 		$_SESSION['checkAdd'] = 1;
@@ -174,7 +174,7 @@ $date = date("Y/m/d");
 		<div class="col-md-2"></div>
 	</div>
 
-	<div class="container" style="margin-top:10vh;">
+	<div class="container" style="margin-top:5vh;">
 		<center><h2>เลือกวันที่ต้องการมาสมัคร</h2></center>
 		<div class="col-md-12">
 			<center>
@@ -185,7 +185,7 @@ $date = date("Y/m/d");
 					$query = mysql_query($sql);	
 					$number1 = mysql_num_rows($query);
 					if ($number1 < 201) {
-						echo "<a href='add_day_pc.php?day=1&type=1'><input type='button' name='back' class='btn btn-default' value='27 มีนาคม 2560'></a>";
+						echo "<a href='add_day_pc.php?day=1&type=1' target='_blank'><input type='button' name='back' class='btn btn-default' value='27 มีนาคม 2560'></a>";
 					} else {
 						echo "<input type='button' name='back' class='btn btn-default' value='27 มีนาคม 2560 (เต็ม)'>";
 					}
@@ -194,7 +194,7 @@ $date = date("Y/m/d");
 					$query = mysql_query($sql);	
 					$number1 = mysql_num_rows($query);
 					if ($number1 < 64) {
-						echo "<a href='add_day_pc.php?day=1&type=2'><input type='button' name='back' class='btn btn-default' value='27 มีนาคม 2560'></a>";
+						echo "<a href='add_day_pc.php?day=1&type=2' target='_blank'><input type='button' name='back' class='btn btn-default' value='27 มีนาคม 2560'></a>";
 					} else {
 						echo "<input type='button' name='back' class='btn btn-default' value='27 มีนาคม 2560 (เต็ม)'>";
 					}
@@ -228,7 +228,7 @@ $date = date("Y/m/d");
 					$query = mysql_query($sql);	
 					$number1 = mysql_num_rows($query);
 					if ($number1 < 201) {
-						echo "<a href='add_day_pc.php?day=2&type=1'><input type='button' name='back' class='btn btn-default' value='28 มีนาคม 2560'></a>";
+						echo "<a href='add_day_pc.php?day=2&type=1' target='_blank'><input type='button' name='back' class='btn btn-default' value='28 มีนาคม 2560'></a>";
 					} else {
 						echo "<input type='button' name='back' class='btn btn-default' value='28 มีนาคม 2560 (เต็ม)'>";
 					}
@@ -237,7 +237,7 @@ $date = date("Y/m/d");
 					$query = mysql_query($sql);	
 					$number1 = mysql_num_rows($query);
 					if ($number1 < 64) {
-						echo "<a href='add_day_pc.php?day=2&type=2'><input type='button' name='back' class='btn btn-default' value='28 มีนาคม 2560'></a>";
+						echo "<a href='add_day_pc.php?day=2&type=2' target='_blank'><input type='button' name='back' class='btn btn-default' value='28 มีนาคม 2560'></a>";
 					} else {
 						echo "<input type='button' name='back' class='btn btn-default' value='28 มีนาคม 2560 (เต็ม)'>";
 					}
@@ -270,7 +270,7 @@ $date = date("Y/m/d");
 					$query = mysql_query($sql);	
 					$number1 = mysql_num_rows($query);
 					if ($number1 < 201) {
-						echo "<a href='add_day_pc.php?day=3&type=1'><input type='button' name='back' class='btn btn-default' value='29 มีนาคม 2560'></a>";
+						echo "<a href='add_day_pc.php?day=3&type=1' target='_blank'><input type='button' name='back' class='btn btn-default' value='29 มีนาคม 2560'></a>";
 					} else {
 						echo "<input type='button' name='back' class='btn btn-default' value='29 มีนาคม 2560 (เต็ม)'>";
 					}
@@ -279,7 +279,7 @@ $date = date("Y/m/d");
 					$query = mysql_query($sql);	
 					$number1 = mysql_num_rows($query);
 					if ($number1 < 64) {
-						echo "<a href='add_day_pc.php?day=3&type=2'><input type='button' name='back' class='btn btn-default' value='29 มีนาคม 2560'></a>";
+						echo "<a href='add_day_pc.php?day=3&type=2' target='_blank'><input type='button' name='back' class='btn btn-default' value='29 มีนาคม 2560'></a>";
 					} else {
 						echo "<input type='button' name='back' class='btn btn-default' value='29 มีนาคม 2560 (เต็ม)'>";
 					}
@@ -312,7 +312,7 @@ $date = date("Y/m/d");
 					$query = mysql_query($sql);	
 					$number1 = mysql_num_rows($query);
 					if ($number1 < 201) {
-						echo "<a href='add_day_pc.php?day=4&type=1'><input type='button' name='back' class='btn btn-default' value='30 มีนาคม 2560'></a>";
+						echo "<a href='add_day_pc.php?day=4&type=1' target='_blank'><input type='button' name='back' class='btn btn-default' value='30 มีนาคม 2560'></a>";
 					} else {
 						echo "<input type='button' name='back' class='btn btn-default' value='30 มีนาคม 2560 (เต็ม)'>";
 					}
@@ -321,7 +321,7 @@ $date = date("Y/m/d");
 					$query = mysql_query($sql);	
 					$number1 = mysql_num_rows($query);
 					if ($number1 < 64) {
-						echo "<a href='add_day_pc.php?day=4&type=2'><input type='button' name='back' class='btn btn-default' value='30 มีนาคม 2560'></a>";
+						echo "<a href='add_day_pc.php?day=4&type=2' target='_blank'><input type='button' name='back' class='btn btn-default' value='30 มีนาคม 2560'></a>";
 					} else {
 						echo "<input type='button' name='back' class='btn btn-default' value='30 มีนาคม 2560 (เต็ม)'>";
 					}
@@ -366,7 +366,6 @@ $date = date("Y/m/d");
 				ชื่อผู้ใช้งาน
 			</div>
 			<div class="col-md-3" style="color:blue;">
-				<!-- <?php echo $input2; ?> -->
 				<?php echo $id_history; ?>
 			</div>
 			<div class="col-md-3"></div>
@@ -412,7 +411,7 @@ $date = date("Y/m/d");
 		</div>
 		<div class="col-md-12" style="margin-top:15px; color:blue;">
 			<center>
-				หมายเหตุ ชื่อผู้ใช้งานคือ รหัสประจำตัวประชาชน และรหัสผ่านคือ วันเดือนปีเกิด
+				ใช้ชื่อผูัใช้งาน (username) และรหัสผ่าน (password) ที่โรงเรียนให้ไปพร้อมกับคู่มือการสมัคร
 			</center>
 		</div>
 	</div>

@@ -50,8 +50,7 @@ $type = $_GET['type'];
 		</div>
 	</form>
 	<div class="col-md-12" style="margin-top:calc(70vh - 150px); positon:relative; color:#1c1c86;">
-		<center><h4>ตัวอย่าง ชื่อผู้ใช้งาน (รหัสประชาชน 13 หลัก) : 1234567890123</h4>
-		<h4>รหัสผ่าน (วันเดือนปีเกิด เช่น 2 กรกฎาคม 2544) : 272544</h4></center>
+		<center><h2>ใช้ชื่อผูัใช้งาน (username) และรหัสผ่าน (password) ที่โรงเรียนให้ไปพร้อมกับคู่มือการสมัคร</h2></center>
 	</div>	
 </body>
 </html>
