@@ -132,7 +132,7 @@ for ($i=1; $i < 51; $i++) {
 				</div>
 				<div class='col-md-12'>
 					<input id='abj' type='radio' name='sType' class='rdo' value='2' >
-					<label for='abj'>ในเขตพื้นที่บริการ ความสามารถพิเศษกีฬา</label>
+					<label for='abj'>ในเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ</label>
 				</div>
 			</div>
 			<div class='col-md-5'>
@@ -142,7 +142,7 @@ for ($i=1; $i < 51; $i++) {
 				</div>
 				<div class='col-md-12'>
 					<input id='abl' type='radio' name='sType' class='rdo' value='4' >
-					<label for='abl'>นอกเขตพื้นที่บริการ ความสามารถพิเศษกีฬา</label>
+					<label for='abl'>นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ</label>
 				</div>
 			</div>
 		</div>
@@ -152,13 +152,13 @@ for ($i=1; $i < 51; $i++) {
 			<label for='abq'>ในเขตพื้นที่บริการ สอบคัดเลือก</label>
 			<br>
 			<input id='abw' type='radio' name='sType' class='rdo' value='2' >
-			<label for='abw'>ในเขตพื้นที่บริการ ความสามารถพิเศษกีฬา</label>
+			<label for='abw'>ในเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ</label>
 			<br>
 			<input id='abe' type='radio' name='sType' class='rdo' value='3' >
 			<label for='abe'>นอกเขตพื้นที่บริการ สอบคัดเลือก</label>
 			<br>
 			<input id='abr' type='radio' name='sType' class='rdo' value='4' >
-			<label for='abr'>นอกเขตพื้นที่บริการ ความสามารถพิเศษกีฬา</label>
+			<label for='abr'>นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ</label>
 		</div>";
 	} elseif ($type == 4) {
 		$headerType = "ระดับชั้น ม.4 โครงการ English Program (EP)";
@@ -1049,13 +1049,13 @@ for ($i=1; $i < 51; $i++) {
 						<label for='129'>ในเขตพื้นที่บริการ สอบคัดเลือก</label>
 						<br>
 						<input id='130' type='radio' name='sType' class='rdo' value='2' >
-						<label for='130'>ในเขตพื้นที่บริการ ความสามารถพิเศษกีฬา</label>
+						<label for='130'>ในเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ</label>
 						<br>
 						<input id='131' type='radio' name='sType' class='rdo' value='3' >
 						<label for='131'>นอกเขตพื้นที่บริการ สอบคัดเลือก</label>
 						<br>
 						<input id='132' type='radio' name='sType' class='rdo' value='4' >
-						<label for='132'>นอกเขตพื้นที่บริการ ความสามารถพิเศษกีฬา</label>
+						<label for='132'>นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ</label>
 					</div>";
 				} elseif ($type == 4) {
 					echo "
