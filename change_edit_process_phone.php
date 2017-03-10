@@ -75,8 +75,33 @@ $input52 = $_POST['input52'];
 $input53 = $_POST['input53'];
 $input54 = $_POST['input54'];
 $input55 = $_POST['input55'];
+$input98 = $_POST['input98'];
+$input99 = $_POST['input99'];
 
-if (empty($input1)){
+$sql = "SELECT * FROM user_ps WHERE username = '$input98' AND password = '$input99'";
+$query = mysql_query($sql);
+$queryZ1 = mysql_num_rows($query);
+
+$sql = "SELECT * FROM user_ps WHERE username = '$input98' AND password = '$input99' AND status = 0";
+$query = mysql_query($sql);
+$queryZ2 = mysql_num_rows($query);
+
+if (empty($input98) || empty($input99)) {
+	echo "<script language='javascript'>";
+	echo "alert('กรุณาป้อนชื้อผู้ใช้และรหัส');";
+	echo "javascript:history.back()";
+	echo "</script>";
+}elseif ($queryZ1 == 0) {
+	echo "<script language='javascript'>";
+	echo "alert('ชื้อผู้ใช้และรหัสผิด');";
+	echo "javascript:history.back()";
+	echo "</script>";
+}elseif ($queryZ2 == 1) {
+	echo "<script language='javascript'>";
+	echo "alert('ชื้อผู้ใช้และรหัสนี้ถูกใช้ไปแล้ว');";
+	echo "javascript:history.back()";
+	echo "</script>";
+}elseif (empty($input1)){
 	echo "<script language='javascript'>";
 	echo "alert('กรุณากรอกเลขใบสมัครใหม่');";
 	echo "javascript:history.back()";
@@ -98,6 +123,9 @@ if (empty($input1)){
 
 	mysql_query("SET NAMES utf8");
 	$query1 = mysql_query($sql);
+
+	$sql = "UPDATE user_ps SET status = 0 WHERE id_user = '$input98'";
+	$query = mysql_query($sql);
 
 	if ($query1) {
 		echo "<script language='javascript'>";

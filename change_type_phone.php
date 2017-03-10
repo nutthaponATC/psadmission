@@ -351,22 +351,22 @@ if ($type == 1) {
 					echo "
 					<div class='col-md-4'>
 						<input id='t13' type='radio' class='rdo' name='type' value='3'>
-						<label for='t13'>GP</label>
+						<label for='t13'>ภาคปกติ (GP)</label>
 					</div>";
 				} else {
 					echo "
 					<div style='width:50%; float:left;'>
 						<input id='t15' type='radio' class='rdo' name='type' value='5'>
-						<label for='t15'>IEP</label>
+						<label for='t15'>Intensive English Program (IEP)</label>
 					</div>
 					<div style='width:50%; float:left;'>
 						<input id='t16' type='radio' class='rdo' name='type' value='6'>
-						<label for='t16'>GP</label>
+						<label for='t16'>ภาคปกติ (GP)</label>
 					</div>";
 				}
 				?>
 		
-			<div style="font-weight:bold;">
+			<div style="font-weight:bold; margin-top: 2vh;">
 				<div id="wt11"  class="col-md-12">
 					<input id='abc' type='radio' name='sType' class='rdo' value='1' >
 					<label for='abc'>วิทย์ - คณิต</label>
@@ -452,6 +452,17 @@ if ($type == 1) {
 			</div>
 		</div>
 		<div class="container" style="margin-top:5vh; border-bottom:2px solid #1c1c86; padding-bottom:5vh;">
+			<div style="color:red;">
+				ชื่อผู้ใช้
+				<input  type="text" class="form-control" name="input98" value="" maxlength="5">
+				ตามที่ระบุใว้ในคู่มือ
+			</div>
+			<div style="color:red; margin-top: 2vh;">
+				รหัสผ่าน
+				<input  type="text" class="form-control" name="input99" value="" maxlength="6">
+				ตามที่ระบุใว้ในคู่มือ
+			</div>
+
 			<span style="font-size:6vw; font-weight:bold; color:#1c1c86">ข้อมูลนักเรียน</span>
 
 			<h4 style='color:red;'>ถ้าไม่มีข้อมูลในส่วนนั้นให้ใส่ "-" (ขีดกลาง)</h4>

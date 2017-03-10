@@ -402,23 +402,25 @@ $input56 = $data['num_old'];
 
 		<div class="container" id="form-table" style="margin-top:30px; background-color:rgba(255,255,255,0.6);">
 			<div class="col-md-3" style="padding-bottom:20px;"></div>
-			<div class="col-md-6" style="padding-bottom:20px; font-size:2vw;">
+			<div class="col-md-6" style="padding-bottom:20px; font-size:1.5vw;">
 				<?php 
 				if ($type == 1 || $type == 2 || $type == 3) {
 					echo "
-					<div class='col-md-4'>
+					<div class='col-md-1'>
 						<input id='t13' type='radio' class='rdo' name='type' value='3'>
-						<label for='t13'>GP</label>
+					</div>
+					<div class='col-md-5'>
+						<label for='t13'>ภาคปกติ (GP)</label>
 					</div>";
 				} else {
 					echo "
-					<div class='col-md-4'>
+					<div class='col-md-6'>
 						<input id='t15' type='radio' class='rdo' name='type' value='5'>
-						<label for='t15'>IEP</label>
+						<label for='t15'>Intensive English Program (IEP)</label>
 					</div>
-					<div class='col-md-4'>
+					<div class='col-md-6'>
 						<input id='t16' type='radio' class='rdo' name='type' value='6'>
-						<label for='t16'>GP</label>
+						<label for='t16'>ภาคปกติ (GP)</label>
 					</div>";
 				}
 				
@@ -510,7 +512,7 @@ $input56 = $data['num_old'];
 		</div>
 		<div class="container" id="form-table" style="background-color:rgba(255,255,255,0.6);">
 			<div class="col-md-12" id="form-line">
-				<div class="col-md-12">
+				<div class="col-md-6">
 					<h2 style="margin-top:-10px; font-weight:bold;">ข้อมูลนักเรียน</h2>
 				</div>
 				<?php 
@@ -519,11 +521,24 @@ $input56 = $data['num_old'];
 						echo "*ถ้าเป็นนักเรียนที่จบ ม.3 จากโรงเรียนโพธิสารพิทยากร ให้ใส่เลขประจำตัวเดิม
 					<input type='text' name='input56' value='$input56' style='width:360px;'>";
 					echo "</div>";
+				} else {
+					echo "<div class='col-md-12'></div>";
 				}
 				 ?>
+
+				<div class="col-md-6" id="form-line" style="color:red;">
+					ชื่อผู้ใช้
+					<input  type="text" name="input98" value="" maxlength="5">
+					ตามที่ระบุใว้ในคู่มือ
+				</div>
+				<div class="col-md-6" id="form-line" style="color:red;">
+					รหัสผ่าน
+					<input  type="text" name="input99" value="" maxlength="6">
+					ตามที่ระบุใว้ในคู่มือ
+				</div>
 				<div class="col-md-6" id="form-line" style="color:red;">
 					ใบสมัครเลขที
-					<input  type="text" name="input1" value="">
+					<input  type="text" name="input1" value="" maxlength="5">
 					ดูจากใบสมัคร
 				</div>
 				<div class="col-md-6" id="form-line">

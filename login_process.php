@@ -39,7 +39,7 @@ if (empty($user) || empty($pass)) {
 	if ($countCheckOld == 1) {
 		$_SESSION['id_user'] = $id_user2;
 		$_SESSION['status'] = $status2;
-		if ($status == 1) {
+		if ($status2 != 0) {
 			echo "<script language='javascript'>";
 			echo "location='main_ps.php';";
 			echo "</script>";
