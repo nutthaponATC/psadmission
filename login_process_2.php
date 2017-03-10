@@ -25,10 +25,10 @@ if (empty($user) || empty($pass)) {
 	$id_user = $fetchData['id_user'];
 	$status = $fetchData['status'];
 
-	$sql = "SELECT * FROM day WHERE id_day = '$user'";
+	$sql = "SELECT * FROM user_ps WHERE username = '$user'";
 	$query = mysql_query($sql);
 	$dataday = mysql_fetch_array($query);
-	$id_history = $dataday['id_day'];
+	$id_history = $dataday['id_user'];
 	$sql = "SELECT * FROM history_ps WHERE id_history = $id_history";
 	$query = mysql_query($sql);
 	$countCheckOld = mysql_num_rows($query);

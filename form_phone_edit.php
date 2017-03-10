@@ -63,9 +63,14 @@ $data = mysql_fetch_array($query);
 						<center>รหัสคู่มือ : <?php echo $id_history; ?></center>
 						<center>รหัสใบสมัคร : <?php echo $data['input1']; ?></center>
 						<center>รหัสประชาชน : <?php echo $data['input2']; ?></center>
-						<center><a href='edit_student_phone.php'><input type='button' name='back' class='btn btn-default' value='แก้ไขข้อมูลผู้สมัคร'></a></center>
+						<div style="width:50%; float:left; margin-top:3vh;">
+							<center><a href='edit_student_phone.php'><input type='button' name='back' class='btn btn-default' value='แก้ไขข้อมูลผู้สมัคร'></a></center>
+						</div>
+						<div style="width:50%; float:left; margin-top:3vh;">
+							<center><a href='change_type_phone.php'><input type='button' name='back' class='btn btn-default' value='เปลี่ยนแผนการเรียน'></a></center>
+						</div>
 					</div>
-					<div style="font-size:4.5vw; color:red; margin-top:8vh;">
+					<div style="font-size:4.5vw; color:red; margin-top:15vh;">
 						<center>กรุณาถ่ายหน้าจอนี้ (capture) <br> เพื่อความสะดวกในวันสมัครจริง</center>
 						<center>สามารถเข้าสู่ระบบ โดยใช้เครื่องคอมพิวเตอร์ เพื่อพิมพ์ใบสมัคร</center>
 					</div>

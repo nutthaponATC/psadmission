@@ -71,8 +71,15 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 1) {
 	 ?>
 
 	<div class="container" style="color:#1c1c86; background-color:rgba(255,255,255,0.3); margin-top:20vh; padding-bottom:30px;">
-		<div class="col-md-12" style="border-bottom:2px solid #1c1c86;">
+		<div class="col-md-7" style="border-bottom:2px solid #1c1c86;">
 			<h2>ยินดีต้อนรับ <?php echo $frontName.$data['input4']." ".$data['input5']; ?></h2>
+		</div>
+		<div class="col-md-5" style="border-bottom:2px solid #1c1c86; ">
+			<a href="change_type.php?id_student=<?php echo $_SESSION['id_user']; ?>">
+				<i class="fa fa-pencil-square-o" style="color:red; font-size:46px; margin-left: 50px; float:left; margin-top:17px;" aria-hidden="true">
+				</i><div style="font-size:20px; margin-top:25px;">เปลี่ยนแผนการเรียน 
+				<span style="color:red; font-size:1vw;">(สำหรับผู้ที่เคยสมัครแล้ว)</span></div>
+			</a>
 		</div>
 		<div class="col-md-12">
 			<h3>ข้อมูลพื้นฐาน</h3>

@@ -22,8 +22,10 @@ $type = $_GET['type'];
 <body style="height: 100vh; width: 100vw;"> 
 	<form action="login_process.php" method="post" name="form1">
 		<input type="hidden" name="type" value="<?php echo $type; ?>">	
-		<div class="col-md-12" style="margin-top:calc(35vh - 150px); color:#1c1c86;">
+		<div class="col-md-12" style="margin-top:calc(30vh - 150px); color:#1c1c86;">
 			<center><h2 style="font-style: italic;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</h2></center>
+			<center><h2 style="font-style: italic; color:red;">สำหรับผู้ที่เคยสมัครเรียนแล้ว ในรอบที่ผ่านมา มีความประสงค์สมัครเรียนใหม่ <br> ให้ทำการเข้าสู่ระบบ (Login) <br> โดยใช้ชื่อผู้ใช้งานคือเลขประชาชน และรหัสผ่านคือวันเดือนปีเกิด</h2></center>
+
 		</div>
 		<div class="login">
 			<div class="col-md-12" style="margin-top: 50px;">

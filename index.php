@@ -51,10 +51,24 @@ include('config.php');
 						<center><img src="image/logoC.png" width="100px" style="float: left;"><h2 style="float: left;">ระบบสนับสนุนให้ใช้ Google Chrome</h2></center>
 					</div>
 				</div>
+				<div class="col-md-12" style="margin-top:2vh; color:red;">
+					<center><h2>สำหรับผู้ที่เคยสมัครเรียนแล้ว ในรอบที่ผ่านมา มีความประสงค์สมัครเรียนใหม่ <br> ให้ทำการเข้าสู่ระบบ (Login) <br> โดยใช้ชื่อผู้ใช้งานคือเลขประชาชน และรหัสผ่านคือวันเดือนปีเกิด </h2></center>
+				</div>
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+					<a href="login.php">  
+						<input class="form-control" style="background-color:blue; color:white;" type="button" name="button" value="เข้าสู่ระบบ">
+					</a>
+				</div>
+				<div class="col-md-4"> 
+				</div>
 			</div>
+		</div>
+		<div class="container" style="margin-top:3vh;">
 			<div class="col-md-4" style="height: 5px; background: #0000b9; margin-top:35px;"></div>
 			<div class="col-md-4">
-				<center><h1>ขั้นตอนการรับสมัคร</h1></center>
+				<center><h1>สมัครเรียนใหม่</h1></center>
 			</div>
 			<div class="col-md-4" style="height: 5px; background: #0000b9; margin-top:35px;"></div>
 			
@@ -569,9 +583,10 @@ include('config.php');
 			</div>
 		</div>
 		<div class="container">
-			<center><img src="image/logoC.png" style="margin-top: 2vh; width:10vw;"><div style="margin-top: 2vh; font-size:5vw; color:#1c1c86;">ระบบสนับสนุนให้ใช้ Google Chrome</div></center>
+			<!-- <center><img src="image/logoC.png" style="margin-top: 2vh; width:10vw;"><div style="margin-top: 2vh; font-size:5vw; color:#1c1c86;">ระบบสนับสนุนให้ใช้ Google Chrome</div></center> -->
+			<center><span style="font-size:5vw; color:red;">สำหรับผู้ที่เคยสมัครเรียนแล้ว ในรอบที่ผ่านมา มีความประสงค์สมัครเรียนใหม่ <br> ให้ทำการเข้าสู่ระบบ (Login) <br> โดยใช้ชื่อผู้ใช้งานคือเลขประชาชน และรหัสผ่านคือวันเดือนปีเกิด</span></center>
 			<form action="login_process_2.php" method="post" name="form1">
-				<div class="col-xs-12" style="margin-top:5vh; color:#1c1c86;">
+				<div class="col-xs-12" style="margin-top:2vh; color:#1c1c86;">
 					<center><h3>ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</h3></center>
 				</div>
 				<div class="login-phone">
