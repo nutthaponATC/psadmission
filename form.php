@@ -1134,11 +1134,11 @@ for ($i=1; $i < 51; $i++) {
 				 ?>
 				<br>
 				<?php echo $checkEmpty[0]; ?> ดูจากใบสมัคร
-				<input type="text" class="form-control" name="input1" maxlength="5" onKeyUp="javascript:inputDigits(this);">
+				<input type="text" class="form-control" name="input1" maxlength="5">
 				<br>
 				
 				<?php echo $checkEmpty[1]; ?> 
-				<input name="input2" type="text" id="data" maxlength="13" class="form-control" onKeyUp="javascript:inputDigits(this);">
+				<input name="input2" type="text" id="data" maxlength="13" class="form-control">
 
 				<br>
 				<div style="width:50%; float:left;">
@@ -1236,7 +1236,7 @@ for ($i=1; $i < 51; $i++) {
 
 				<div>
 					<?php echo $checkEmpty[13]; ?>
-					<input type="text" class="form-control" name="input14"  maxlength="11" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" class="form-control" name="input14"  maxlength="11">
 					<span style="font-size:14px;">
 						(ดูจากทะเบียนบ้านที่นักเรียนอาศัยอยู่)
 					</span>
@@ -1473,7 +1473,7 @@ for ($i=1; $i < 51; $i++) {
 			<div class="container">
 				<div>
 					<?php echo $checkEmpty[32]; ?>
-					<input type="text" class="form-control" name="input36" maxlength="13" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" class="form-control" name="input36" maxlength="13">
 				</div>
 				<div>
 					<?php echo $checkEmpty[33]; ?>
@@ -1529,7 +1529,7 @@ for ($i=1; $i < 51; $i++) {
 			<div class="container">
 				<div>
 					<?php echo $checkEmpty[36]; ?>
-					<input type="text" class="form-control" name="input41" maxlength="13" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" class="form-control" name="input41" maxlength="13">
 				</div>
 				<div>
 					<?php echo $checkEmpty[37]; ?>
@@ -1703,13 +1703,13 @@ for ($i=1; $i < 51; $i++) {
 					ผลการเรียนเฉลี่ย
 				</div>
 				<div style="width:15%; float:left; margin-top:3vh; margin-bottom:3vh;">
-					<input type="text" class="form-control" name="input50" style="width:50px;" maxlength="5" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" class="form-control" name="input50" style="width:50px;" maxlength="5">
 				</div>
 				<div style="width:25%; float:left; margin-top:3vh; margin-bottom:3vh;">
 					หรือ ร้อยละ
 				</div>
 				<div style="width:15%; float:left; margin-top:3vh; margin-bottom:3vh;">
-					<input type="text" class="form-control" name="input51" style="width:50px;" maxlength="5" onKeyUp="javascript:inputDigits(this);">
+					<input type="text" class="form-control" name="input51" style="width:50px;" maxlength="5">
 				</div>
 			</div>
 			<div class="container">	
@@ -1733,7 +1733,7 @@ for ($i=1; $i < 51; $i++) {
 
 				 ?>
 				<div style='margin-top:3vh; width:20%; float:left;'>
-					<input type="text" name="input52" class="form-control" onKeyUp="javascript:inputDigits(this);" maxlength="5">
+					<input type="text" name="input52" class="form-control" maxlength="5">
 				</div>
 				<div style='margin-top:3vh; width:20%; float:left;'>
 					คะแนน
@@ -1744,7 +1744,7 @@ for ($i=1; $i < 51; $i++) {
 					คิดเป็นร้อยละ
 				</div>
 				<div style="width:70%; float:left;">
-					<input type="text" class="form-control" name="input53" style="width:50px;" onKeyUp="javascript:inputDigits(this);" maxlength="5">
+					<input type="text" class="form-control" name="input53" style="width:50px;" maxlength="5">
 				</div>
 				<div style="width:100%; float:left; margin-top:3vh; padding-bottom:3vh;">
 					<input type="submit" name="submit" value="บันทึกข้อมูล" class="form-control">
@@ -1760,7 +1760,7 @@ for ($i=1; $i < 51; $i++) {
 
 <script type="text/javascript">
 	function inputDigits(sensor){
-		var regExp = /[0-9,.]$/;
+		var regExp = /[0-9,.,-]$/;
 		if(!regExp.test(sensor.value) && event.keyCode != 8 && event.keyCode != 9){
 		alert("กรุณากรอกตัวเลขเท่านั้น");
 		sensor.value = sensor.value.substring(0, sensor.value.length -1);

@@ -78,24 +78,26 @@ $input55 = $_POST['input55'];
 $input56 = $_POST['input56'];
 $date = date("Y/m/d");
 
-if (isset($_POST['type'])) {
+// if (isset($_POST['type'])) {
 	if ($_SESSION['checkAdd'] != 1) {
-		$sql = "INSERT INTO `history_ps` (`id_history`, `type`, `stype`, `radio1`, `radio2`, `radio3`, `radio4`, `radio5`, `radio6`, `radio7`, `radio8`, `radio9`, `radio10`, `radio11`, `radio12`, `radio13`, `input1`, `input2`, `input3`, `input4`, `input5`, `input6`, `input7`, `input8`, `input9`, `input10`, `input11`, `input12`, `input13`, `input14`, `input15`, `input16`, `input17`, `input18`, `input19`, `input20`, `input21`, `input22`, `input23`, `input24`, `input25`, `input26`, `input27`, `input28`, `input29`, `input30`, `input31`, `input32`, `input33`, `input34`, `input35`, `input36`, `input37`, `input38`, `input39`, `input40`, `input41`, `input42`, `input43`, `input44`, `input45`, `input46`, `input47`, `input48`, `input49`, `input50`, `input51`, `input52`, `input53`, `input54`, `input55`, `num_old`, `date`, `status`) VALUES (null, '$type', '$sType', '$radio1', '$radio2', '$radio3', '$radio4', '$radio5', '$radio6', '$radio7', '$radio8', '$radio9', '$radio10', '$radio11', '$radio12', '$radio13', '$input1', '$input2', '$input3', '$input4', '$input5', '$input6', '$input7', '$input8', '$input9', '$input10', '$input11', '$input12', '$input13', '$input14', '$input15', '$input16', '$input17', '$input18', '$input19', '$input20', '$input21', '$input22', '$input23', '$input24', '$input25', '$input26', '$input27', '$input28', '$input29', '$input30', '$input31', '$input32', '$input33', '$input34', '$input35', '$input36', '$input37', '$input38', '$input39', '$input40', '$input41', '$input42', '$input43', '$input44', '$input45', '$input46', '$input47', '$input48', '$input49', '$input50', '$input51', '$input52', '$input53', '$input54', '$input55', '$input56', '$date', 1)";
+		$id_history = $_SESSION['id_user'];
+		$sql = "INSERT INTO `history_ps` (`id_history`, `type`, `stype`, `radio1`, `radio2`, `radio3`, `radio4`, `radio5`, `radio6`, `radio7`, `radio8`, `radio9`, `radio10`, `radio11`, `radio12`, `radio13`, `input1`, `input2`, `input3`, `input4`, `input5`, `input6`, `input7`, `input8`, `input9`, `input10`, `input11`, `input12`, `input13`, `input14`, `input15`, `input16`, `input17`, `input18`, `input19`, `input20`, `input21`, `input22`, `input23`, `input24`, `input25`, `input26`, `input27`, `input28`, `input29`, `input30`, `input31`, `input32`, `input33`, `input34`, `input35`, `input36`, `input37`, `input38`, `input39`, `input40`, `input41`, `input42`, `input43`, `input44`, `input45`, `input46`, `input47`, `input48`, `input49`, `input50`, `input51`, `input52`, `input53`, `input54`, `input55`, `num_old`, `date`, `status`) VALUES ($id_history, '$type', '$sType', '$radio1', '$radio2', '$radio3', '$radio4', '$radio5', '$radio6', '$radio7', '$radio8', '$radio9', '$radio10', '$radio11', '$radio12', '$radio13', '$input1', '$input2', '$input3', '$input4', '$input5', '$input6', '$input7', '$input8', '$input9', '$input10', '$input11', '$input12', '$input13', '$input14', '$input15', '$input16', '$input17', '$input18', '$input19', '$input20', '$input21', '$input22', '$input23', '$input24', '$input25', '$input26', '$input27', '$input28', '$input29', '$input30', '$input31', '$input32', '$input33', '$input34', '$input35', '$input36', '$input37', '$input38', '$input39', '$input40', '$input41', '$input42', '$input43', '$input44', '$input45', '$input46', '$input47', '$input48', '$input49', '$input50', '$input51', '$input52', '$input53', '$input54', '$input55', '$input56', '$date', 1)";
+
 		mysql_query("SET NAMES utf8");
 		$query = mysql_query($sql);
 
-		$sqlSearch = "SELECT * FROM history_ps WHERE input2 = $input2";
-		$querySearch = mysql_query($sqlSearch);
-		$dataID = mysql_fetch_array($querySearch);
-		$dataIDps = $dataID['id_history'];
-		$passPS = $input11.$input12.$input13;
+		// $sqlSearch = "SELECT * FROM history_ps WHERE input2 = $input2";
+		// $querySearch = mysql_query($sqlSearch);
+		// $dataID = mysql_fetch_array($querySearch);
+		// $dataIDps = $dataID['id_history'];
+		// $passPS = $input11.$input12.$input13;
 
-		$_SESSION['id_user'] = $dataIDps;
+		// $_SESSION['id_user'] = $dataIDps;
 
-		$sqlUser = "INSERT INTO user_ps VALUES($dataIDps,'$input2','$passPS',1);";
-		$queryUser = mysql_query($sqlUser);
+		// $sqlUser = "INSERT INTO user_ps VALUES($dataIDps,'$input2','$passPS',1);";
+		// $queryUser = mysql_query($sqlUser);
 
-		if ($query AND $queryUser) {
+		if ($query) {
 			$alert = "เพิ่มข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร เรียบร้อย";
 		} else {
 			$alert = "เพิ่มข้อมูลไม่สำเร็จ กรุณาติดต่อผู้ดูแลระบบ";
@@ -103,11 +105,11 @@ if (isset($_POST['type'])) {
 
 		$_SESSION['checkAdd'] = 1;
 	}
-} else {
-	echo "<script language='javascript'>";
-	echo "location='index.php';";
-	echo "</script>";
-}
+// } else {
+// 	echo "<script language='javascript'>";
+// 	echo "location='index.php';";
+// 	echo "</script>";
+// }
 
  ?>
 
@@ -172,7 +174,180 @@ if (isset($_POST['type'])) {
 		<div class="col-md-2"></div>
 	</div>
 
-	<div class="container" style="margin-top:25vh; color:#1c1c86;">
+	<div class="container" style="margin-top:10vh;">
+		<center><h2>เลือกวันที่ต้องการมาสมัคร</h2></center>
+		<div class="col-md-12">
+			<center>
+			<div style="width: 50%; float:left;">
+				<?php 
+				if ($type == 1 || $type == 2 || $type == 3) {
+					$sql = "SELECT * FROM day WHERE day = 1 AND type = 1";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					if ($number1 < 201) {
+						echo "<a href='add_day_pc.php?day=1&type=1'><input type='button' name='back' class='btn btn-default' value='27 มีนาคม 2560'></a>";
+					} else {
+						echo "<input type='button' name='back' class='btn btn-default' value='27 มีนาคม 2560 (เต็ม)'>";
+					}
+				} else {
+					$sql = "SELECT * FROM day WHERE day = 1 AND type = 2";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					if ($number1 < 64) {
+						echo "<a href='add_day_pc.php?day=1&type=2'><input type='button' name='back' class='btn btn-default' value='27 มีนาคม 2560'></a>";
+					} else {
+						echo "<input type='button' name='back' class='btn btn-default' value='27 มีนาคม 2560 (เต็ม)'>";
+					}
+				}	
+
+				 ?>
+			</div>
+			<div style="width: 50%; float:left;">
+				<?php 
+				if ($type == 1 || $type == 2 || $type == 3) {
+					$sql = "SELECT * FROM day WHERE day = 1 AND type = 1";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					echo $number1."/200";
+				} else {
+					$sql = "SELECT * FROM day WHERE day = 1 AND type = 2";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					echo $number1."/63";
+				}	
+				
+				 ?>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<center>
+			<div style="width: 50%; float:left;">
+				<?php 
+				if ($type == 1 || $type == 2 || $type == 3) {
+					$sql = "SELECT * FROM day WHERE day = 2 AND type = 1";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					if ($number1 < 201) {
+						echo "<a href='add_day_pc.php?day=2&type=1'><input type='button' name='back' class='btn btn-default' value='28 มีนาคม 2560'></a>";
+					} else {
+						echo "<input type='button' name='back' class='btn btn-default' value='28 มีนาคม 2560 (เต็ม)'>";
+					}
+				} else {
+					$sql = "SELECT * FROM day WHERE day = 2 AND type = 2";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					if ($number1 < 64) {
+						echo "<a href='add_day_pc.php?day=2&type=2'><input type='button' name='back' class='btn btn-default' value='28 มีนาคม 2560'></a>";
+					} else {
+						echo "<input type='button' name='back' class='btn btn-default' value='28 มีนาคม 2560 (เต็ม)'>";
+					}
+				}
+				?>
+			</div>
+			<div style="width: 50%; float:left;">
+				<?php 
+				if ($type == 1 || $type == 2 || $type == 3) {
+					$sql = "SELECT * FROM day WHERE day = 2 AND type = 1";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					echo $number1."/200";
+				} else {
+					$sql = "SELECT * FROM day WHERE day = 2 AND type = 2";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					echo $number1."/63";
+				}	
+				
+				 ?>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<center>
+			<div style="width: 50%; float:left;">
+				<?php 
+				if ($type == 1 || $type == 2 || $type == 3) {
+					$sql = "SELECT * FROM day WHERE day = 3 AND type = 1";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					if ($number1 < 201) {
+						echo "<a href='add_day_pc.php?day=3&type=1'><input type='button' name='back' class='btn btn-default' value='29 มีนาคม 2560'></a>";
+					} else {
+						echo "<input type='button' name='back' class='btn btn-default' value='29 มีนาคม 2560 (เต็ม)'>";
+					}
+				} else {
+					$sql = "SELECT * FROM day WHERE day = 3 AND type = 2";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					if ($number1 < 64) {
+						echo "<a href='add_day_pc.php?day=3&type=2'><input type='button' name='back' class='btn btn-default' value='29 มีนาคม 2560'></a>";
+					} else {
+						echo "<input type='button' name='back' class='btn btn-default' value='29 มีนาคม 2560 (เต็ม)'>";
+					}
+				}
+				?>
+			</div>
+			<div style="width: 50%; float:left;">
+				<?php 
+				if ($type == 1 || $type == 2 || $type == 3) {
+					$sql = "SELECT * FROM day WHERE day = 3 AND type = 1";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					echo $number1."/200";
+				} else {
+					$sql = "SELECT * FROM day WHERE day = 3 AND type = 2";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					echo $number1."/63";
+				}	
+				
+				 ?>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<center>
+			<div style="width: 50%; float:left;">
+				<?php 
+				if ($type == 1 || $type == 2 || $type == 3) {
+					$sql = "SELECT * FROM day WHERE day = 4 AND type = 1";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					if ($number1 < 201) {
+						echo "<a href='add_day_pc.php?day=4&type=1'><input type='button' name='back' class='btn btn-default' value='30 มีนาคม 2560'></a>";
+					} else {
+						echo "<input type='button' name='back' class='btn btn-default' value='30 มีนาคม 2560 (เต็ม)'>";
+					}
+				} else {
+					$sql = "SELECT * FROM day WHERE day = 4 AND type = 2";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					if ($number1 < 64) {
+						echo "<a href='add_day_pc.php?day=4&type=2'><input type='button' name='back' class='btn btn-default' value='30 มีนาคม 2560'></a>";
+					} else {
+						echo "<input type='button' name='back' class='btn btn-default' value='30 มีนาคม 2560 (เต็ม)'>";
+					}
+				}
+				?>
+			</div>
+			<div style="width: 50%; float:left;">
+				<?php 
+				if ($type == 1 || $type == 2 || $type == 3) {
+					$sql = "SELECT * FROM day WHERE day = 4 AND type = 1";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					echo $number1."/200";
+				} else {
+					$sql = "SELECT * FROM day WHERE day = 4 AND type = 2";
+					$query = mysql_query($sql);	
+					$number1 = mysql_num_rows($query);
+					echo $number1."/63";
+				}	
+				
+				 ?>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" style="margin-top:5vh; color:#1c1c86;">
 		<div class="col-md-2"></div>
 		<div class="col-md-8" style="border-bottom:1px solid #1c1c86; font-size:20px;">
 			<center>
@@ -191,7 +366,8 @@ if (isset($_POST['type'])) {
 				ชื่อผู้ใช้งาน
 			</div>
 			<div class="col-md-3" style="color:blue;">
-				<?php echo $input2; ?>
+				<!-- <?php echo $input2; ?> -->
+				<?php echo $id_history; ?>
 			</div>
 			<div class="col-md-3"></div>
 		</div>
@@ -201,7 +377,12 @@ if (isset($_POST['type'])) {
 				รหัสผ่าน
 			</div>
 			<div class="col-md-3" style="color:blue;">
-				<?php echo $input11.$input12.$input13; ?>
+				<?php 
+				$sql = "SELECT * FROM user_ps WHERE id_user = $id_history";
+				$query = mysql_query($sql);
+				$data = mysql_fetch_array($query);
+				echo $data['password'];
+				 ?>
 			</div>
 			<div class="col-md-3"></div>
 		</div>
