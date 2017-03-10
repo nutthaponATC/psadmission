@@ -401,23 +401,21 @@ $input56 = $data['num_old'];
 
 
 		<div class="container" id="form-table" style="margin-top:30px; background-color:rgba(255,255,255,0.6);">
-			<div class="col-md-3" style="padding-bottom:20px;"></div>
-			<div class="col-md-6" style="padding-bottom:20px; font-size:1.5vw;">
+			<div class="col-md-1" style="padding-bottom:20px;"></div>
+			<div class="col-md-10" style="padding-bottom:20px; font-size:1.5vw;">
 				<?php 
 				if ($type == 1 || $type == 2 || $type == 3) {
 					echo "
-					<div class='col-md-1'>
-						<input id='t13' type='radio' class='rdo' name='type' value='3'>
+					<div class='col-md-6'>
+						<input id='t12' type='radio' class='rdo' name='type' value='2'>
+						<label for='t12'>Intensive English <br> Program (IEP)</label>
 					</div>
-					<div class='col-md-5'>
+					<div class='col-md-6'>
+						<input id='t13' type='radio' class='rdo' name='type' value='3'>
 						<label for='t13'>ภาคปกติ (GP)</label>
 					</div>";
 				} else {
 					echo "
-					<div class='col-md-6'>
-						<input id='t15' type='radio' class='rdo' name='type' value='5'>
-						<label for='t15'>Intensive English Program (IEP)</label>
-					</div>
 					<div class='col-md-6'>
 						<input id='t16' type='radio' class='rdo' name='type' value='6'>
 						<label for='t16'>ภาคปกติ (GP)</label>
@@ -426,7 +424,7 @@ $input56 = $data['num_old'];
 				
 				 ?>
 			</div>
-			<div class="col-md-3" style="padding-bottom:20px;"></div>
+			<div class="col-md-1" style="padding-bottom:20px;"></div>
 			<div id="wt11"  class="col-md-12">
 				<input id='abc' type='radio' name='sType' class='rdo' value='1' >
 				<label for='abc'>วิทย์ - คณิต</label>

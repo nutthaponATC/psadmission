@@ -346,35 +346,37 @@ if ($type == 1) {
 		</div>
 		
 		<div class="container" style="margin-top:5vh; border-bottom:2px solid #1c1c86; padding-bottom:5vh;">
+			<div class="container">
 				<?php 
 				if ($type == 1 || $type == 2 || $type == 3) {
 					echo "
-					<div class='col-md-4'>
+					<div style='width:50%; float:left;'>
+						<input id='t12' type='radio' class='rdo' name='type' value='2'>
+						<label for='t12'>Intensive English <br> Program (IEP)</label>
+					</div>
+					<div style='width:50%; float:left;'>
 						<input id='t13' type='radio' class='rdo' name='type' value='3'>
 						<label for='t13'>ภาคปกติ (GP)</label>
 					</div>";
 				} else {
 					echo "
-					<div style='width:50%; float:left;'>
-						<input id='t15' type='radio' class='rdo' name='type' value='5'>
-						<label for='t15'>Intensive English Program (IEP)</label>
-					</div>
-					<div style='width:50%; float:left;'>
+					<div class='col-md-4'>
 						<input id='t16' type='radio' class='rdo' name='type' value='6'>
 						<label for='t16'>ภาคปกติ (GP)</label>
 					</div>";
 				}
 				?>
+			</div>
 		
-			<div style="font-weight:bold; margin-top: 2vh;">
-				<div id="wt11"  class="col-md-12">
+			<div  class="container" style="font-weight:bold; margin-top: 2vh;">
+				<div id="wt11"  class="container" >
 					<input id='abc' type='radio' name='sType' class='rdo' value='1' >
 					<label for='abc'>วิทย์ - คณิต</label>
 					<br>
 					<input id='abv' type='radio' name='sType' class='rdo' value='2' >
 					<label for='abv'>คณิต - ภาษาจีน</label>
 				</div>
-				<div id="wt12" class="col-md-12">
+				<div id="wt12" class="container" >
 					<input id='abs' type='radio' name='sType' class='rdo' value='1' >
 					<label for='abs'>ในเขตพื้นที่บริการ สอบคัดเลือก</label>
 					<br>
@@ -387,7 +389,7 @@ if ($type == 1) {
 					<input id='abg' type='radio' name='sType' class='rdo' value='4' >
 						<label for='abg'>นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ</label>
 				</div>
-				<div id="wt13" class="col-md-12">
+				<div id="wt13" class="container" >
 					<input id='abq' type='radio' name='sType' class='rdo' value='1' >
 					<label for='abq'>ในเขตพื้นที่บริการ สอบคัดเลือก</label>
 					<br>
@@ -400,7 +402,7 @@ if ($type == 1) {
 					<input id='abr' type='radio' name='sType' class='rdo' value='4' >
 					<label for='abr'>นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ</label>
 				</div>
-				<div id="wt14" class="col-md-12">
+				<div id="wt14" class="container" >
 					<input id='abp' type='radio' name='sType' class='rdo' value='1' >
 					<label for='abp'>วิทย์ - คณิต</label>
 					<br>
@@ -416,7 +418,7 @@ if ($type == 1) {
 					<input id='azv' type='radio' name='sType' class='rdo' value='5' >
 					<label for='azv'>อังกฤษ - ภาษา เลือก จีน</label>
 				</div>
-				<div id="wt15" class="col-md-12">
+				<div id="wt15" class="container" >
 					<input id='azd' type='radio' name='sType' class='rdo' value='1' >
 					<label for='azd'>วิทย์ - คณิต</label>
 					<br>
@@ -432,7 +434,7 @@ if ($type == 1) {
 					<input id='azj' type='radio' name='sType' class='rdo' value='5' >
 					<label for='azj'>อังกฤษ - ภาษา เลือก จีน</label>
 				</div>
-				<div id="wt16" class="col-md-12">
+				<div id="wt16" class="container" >
 					<input id='azr' type='radio' name='sType' class='rdo' value='1' >
 					<label for='azr'>วิทย์ - คณิต</label>
 					<br>
