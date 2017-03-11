@@ -394,13 +394,13 @@ for ($i=1; $i < 51; $i++) {
 
 					 ?>
 					<div class="col-md-6" id="form-line">
-						<?php echo $checkEmpty[0]; ?>
-						<input type="text" name="input1" maxlength="5" onKeyUp="javascript:inputDigits(this);">
-						ดูจากใบสมัคร
-					</div>
-					<div class="col-md-6" id="form-line">
+						<!-- <?php echo $checkEmpty[0]; ?> -->
+						<input type="hidden" name="input1" maxlength="5" onKeyUp="javascript:inputDigits(this);" value="<?php echo $_SESSION['id_user']; ?>">
+						<!-- ดูจากใบสมัคร -->
 						<?php echo $checkEmpty[1]; ?> 
 						<input name="input2" type="text" id="data" maxlength="13" style="width:280px;" onKeyUp="javascript:inputDigits(this);">
+					</div>
+					<div class="col-md-6" id="form-line">
 					</div>
 				</div>
 
@@ -1133,9 +1133,9 @@ for ($i=1; $i < 51; $i++) {
 
 				 ?>
 				<br>
-				<?php echo $checkEmpty[0]; ?> ดูจากใบสมัคร
-				<input type="text" class="form-control" name="input1" maxlength="5">
-				<br>
+				<!-- <?php echo $checkEmpty[0]; ?> ดูจากใบสมัคร -->
+				<input type="hidden" class="form-control" name="input1" value="<?php echo $_SESSION['id_user']; ?>" maxlength="5">
+				<!-- <br> -->
 				
 				<?php echo $checkEmpty[1]; ?> 
 				<input name="input2" type="text" id="data" maxlength="13" class="form-control">

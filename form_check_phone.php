@@ -690,14 +690,14 @@ if ($type == 1) {
 					echo "
 					<center>*ถ้าเป็นนักเรียนที่จบ ม.3 จากโรงเรียนโพธิสารพิทยากร ให้ใส่เลขประจำตัวเดิม
 					</center>
-				<input type='text' class='form-control' name='input56' value=".$input56." maxlength='5' onKeyUp='javascript:inputDigits(this);'>";
+				<input type='text' class='form-control' name='input56' maxlength='5' onKeyUp='javascript:inputDigits(this);' value=".$input56.">";
 			}
 
 			 ?>
 			<br>
-			<?php echo $checkEmpty[0]; ?> ดูจากใบสมัคร
-			<input type="text" class="form-control" name="input1" maxlength="5" value="<?php echo $input1; ?>" onKeyUp="javascript:inputDigits(this);">
-			<br>
+			<!-- <?php echo $checkEmpty[0]; ?> ดูจากใบสมัคร -->
+			<input type="hidden" class="form-control" name="input1" maxlength="5" value="<?php echo $input1; ?>" onKeyUp="javascript:inputDigits(this);">
+			<!-- <br> -->
 			
 			<?php echo $checkEmpty[1]; ?> 
 			<input name="input2" type="text" id="data" maxlength="13" value="<?php echo $input2; ?>" class="form-control" onKeyUp="javascript:inputDigits(this);">

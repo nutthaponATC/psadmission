@@ -126,14 +126,15 @@ if (empty($input98) || empty($input99)) {
 
 	$passPS = $input11.$input12.$input13;
 
-	$sql ="UPDATE `user_ps` SET `username` = '$input2', `password` = '$passPS' WHERE `user_ps`.`id_user` = $id_user;";
-	mysql_query("SET NAMES utf8");
-	$query2 = mysql_query($sql);
+	// $sql ="UPDATE `user_ps` SET `username` = '$input2', `password` = '$passPS' WHERE `user_ps`.`id_user` = $id_user;";
+	// mysql_query("SET NAMES utf8");
+	// $query2 = mysql_query($sql);
 
 	$sql = "UPDATE user_ps SET status = 0 WHERE id_user = '$input98'";
 	$query = mysql_query($sql);
 
-	if ($query1 AND $query2) {
+	// if ($query1 AND $query2) {
+	if ($query1) {
 		echo "<script language='javascript'>";
 		echo "alert('แก้ไขข้อมูลเรียบร้อย เรียบร้อย');";
 		echo "location='main_ps.php';";

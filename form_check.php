@@ -780,13 +780,13 @@ if ($sType == 0) {
 				}
 				 ?>
 				<div class="col-md-6" id="form-line">
-					ใบสมัครเลขที
-					<input readonly id='readonly' type="text" name="input1" value="<?php echo $input1; ?>">
-					ดูจากใบสมัคร
-				</div>
-				<div class="col-md-6" id="form-line">
+					<!-- ใบสมัครเลขที -->
+					<input readonly id='readonly' type="hidden" name="input1" value="<?php echo $input1; ?>">
+					<!-- ดูจากใบสมัคร -->
 					รหัสประจำตัวประชาชน 
 					<input readonly id='readonly' name="input2" value="<?php echo $input2; ?>" type="text" id="data" maxlength="13" style="width:280px;">
+				</div>
+				<div class="col-md-6" id="form-line">
 				</div>
 			</div>
 

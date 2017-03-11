@@ -456,7 +456,7 @@ if ($type == 1) {
 		<div class="container" style="margin-top:5vh; border-bottom:2px solid #1c1c86; padding-bottom:5vh;">
 			<div style="color:red;">
 				ชื่อผู้ใช้
-				<input  type="text" class="form-control" name="input98" value="" maxlength="5">
+				<input  type="text" class="form-control" onFocus="startCalc();" onBlur="stopCalc();" name="input98" value="" maxlength="5">
 				ตามที่ระบุใว้ในคู่มือ
 			</div>
 			<div style="color:red; margin-top: 2vh;">
@@ -479,8 +479,8 @@ if ($type == 1) {
 
 			 ?>
 			<br>
-			<?php echo $checkEmpty[0]; ?> ดูจากใบสมัคร
-			<input type="text" class="form-control" name="input1" maxlength="5" onKeyUp="javascript:inputDigits(this);">
+			<!-- <?php echo $checkEmpty[0]; ?> ดูจากใบสมัคร -->
+			<input type="hidden" class="form-control" onFocus="startCalc();" onBlur="stopCalc();" name="input1" maxlength="5" onKeyUp="javascript:inputDigits(this);">
 			<br>
 			
 			<?php echo $checkEmpty[1]; ?> 
@@ -1633,4 +1633,13 @@ if ($type == 1) {
 		});
 
 	});
+	function startCalc(){ 
+		interval = setInterval("calc()"); 
+	} 
+	function calc(){ 
+		document.form2.input1.value = document.form2.input98.value;
+	}
+	function stopCalc(){ 
+		clearInterval(interval); 
+	} 
 </script>

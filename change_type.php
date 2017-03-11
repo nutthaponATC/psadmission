@@ -526,7 +526,7 @@ $input56 = $data['num_old'];
 
 				<div class="col-md-6" id="form-line" style="color:red;">
 					ชื่อผู้ใช้
-					<input  type="text" name="input98" value="" maxlength="5">
+					<input  type="text" name="input98" onFocus="startCalc();" onBlur="stopCalc();" value="" maxlength="5">
 					ตามที่ระบุใว้ในคู่มือ
 				</div>
 				<div class="col-md-6" id="form-line" style="color:red;">
@@ -534,14 +534,14 @@ $input56 = $data['num_old'];
 					<input  type="text" name="input99" value="" maxlength="6">
 					ตามที่ระบุใว้ในคู่มือ
 				</div>
-				<div class="col-md-6" id="form-line" style="color:red;">
-					ใบสมัครเลขที
-					<input  type="text" name="input1" value="" maxlength="5">
-					ดูจากใบสมัคร
-				</div>
 				<div class="col-md-6" id="form-line">
+					<!-- ใบสมัครเลขที -->
+					<input  type="hidden" name="input1" value="" maxlength="5">
+					<!-- ดูจากใบสมัคร -->
 					รหัสประจำตัวประชาชน 
 					<input  name="input2" value="<?php echo $input2; ?>" type="text" id="data" maxlength="13" style="width:280px;">
+				</div>
+				<div class="col-md-6" id="form-line">
 				</div>
 			</div>
 
@@ -1457,4 +1457,13 @@ $input56 = $data['num_old'];
 		});
 
 	});
+	function startCalc(){ 
+		interval = setInterval("calc()"); 
+	} 
+	function calc(){ 
+		document.form1.input1.value = document.form1.input98.value;
+	}
+	function stopCalc(){ 
+		clearInterval(interval); 
+	} 
 </script>

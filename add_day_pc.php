@@ -69,8 +69,8 @@ $data = mysql_fetch_array($query);
 					}
 					 ?>
 				</span></center>
-				<div class="col-md-4"></div>
-				<div class="col-md-3">
+				<div class="col-md-5"></div>
+				<div class="col-md-3" style="font-size:2vw; margin-top:4vh;">
 					<a href="report/tcpdf/report/report_student_info.php?id_student=<?php echo $_SESSION['id_user']; ?>" target="_blank">  
 						<i class="fa fa-file-text-o" style="color:#1c1c86; float:left; margin-top:4px;" aria-hidden="true"></i>
 						<span style="color:#1c1c86; float:left; padding-left:5px;">พิมพ์หลักฐาน</span>
