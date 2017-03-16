@@ -149,11 +149,11 @@ if ($type == 1) {
 	if ($sType == 1) {
 		$subType = "<input type='radio' name='sType' class='rdo' value='1' checked>ในเขตพื้นที่บริการ สอบคัดเลือก";
 	} elseif ($sType == 2) {
-		$subType = "<input type='radio' name='sType' class='rdo' value='2' checked>ในเขตพื้นที่บริการ ความสามารถพิเศษกีฬา";
+		$subType = "<input type='radio' name='sType' class='rdo' value='2' checked>ในเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ";
 	} elseif ($sType == 3) {
 		$subType = "<input type='radio' name='sType' class='rdo' value='3' checked>นอกเขตพื้นที่บริการ สอบคัดเลือก";
 	} else {
-		$subType = "<input type='radio' name='sType' class='rdo' value='4' checked>นอกเขตพื้นที่บริการ ความสามารถพิเศษกีฬา";
+		$subType = "<input type='radio' name='sType' class='rdo' value='4' checked>นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ";
 	}
 } elseif ($type == 4) {
 	$headerType = "English Program (EP)";

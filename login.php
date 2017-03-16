@@ -22,12 +22,12 @@ $type = $_GET['type'];
 <body style="height: 100vh; width: 100vw;"> 
 	<form action="login_process.php" method="post" name="form1">
 		<input type="hidden" name="type" value="<?php echo $type; ?>">	
-		<div class="col-md-12" style="margin-top:calc(30vh - 150px); color:#1c1c86;">
-			<center><h2 style="font-style: italic;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</h2></center>
-			<center><h2 style="font-style: italic; color:red;">สำหรับผู้ที่เคยสมัครเรียนแล้ว ในรอบที่ผ่านมา มีความประสงค์สมัครเรียนใหม่ <br> ให้ทำการเข้าสู่ระบบ (Login) <br> โดยใช้ชื่อผู้ใช้งานคือเลขประชาชน และรหัสผ่านคือวันเดือนปีเกิด</h2></center>
+		<div class="container" style="margin-top:calc(30vh - 150px); color:#1c1c86;">
+			<center><h2 style="font-style: italic; color:red; border-bottom: 4px solid #1c1c86; padding-bottom: 1vh;">สำหรับผู้ที่เคยสมัครเรียนแล้ว ในรอบที่ผ่านมา มีความประสงค์สมัครเรียนใหม่ <br> ให้ทำการเข้าสู่ระบบ (Login) <br> โดยใช้ชื่อผู้ใช้งานคือเลขประชาชน และรหัสผ่านคือวันเดือนปีเกิด</h2></center>
+			<center><h2 style="font-style: italic;">สำหรับผู้ที่ไม่ได้สมัคร  ม.1 (EP) และ ม.4 (EP,IEP) ในรอบที่ผ่านมา <br> ให้ใช้ชื่อผูัใช้งาน (username) และรหัสผ่าน (password) <br> ที่โรงเรียนให้ไปพร้อมกับคู่มือการสมัคร</h2></center>
 
 		</div>
-		<div class="login">
+		<div class="login" style="margin-top:3vh;">
 			<div class="col-md-12" style="margin-top: 50px;">
 				<div style="width: 30%; float:left;" style="margin-top: 20px;">
 					<h4 style="padding-left:30px;">ชื่อผู้ใช้งาน</h4>
@@ -51,8 +51,8 @@ $type = $_GET['type'];
 			</div>	
 		</div>
 	</form>
-	<div class="col-md-12" style="margin-top:calc(70vh - 150px); positon:relative; color:#1c1c86;">
+	<!-- <div class="col-md-12" style="margin-top:calc(70vh - 150px); positon:relative; color:#1c1c86;">
 		<center><h2>ใช้ชื่อผูัใช้งาน (username) และรหัสผ่าน (password) ที่โรงเรียนให้ไปพร้อมกับคู่มือการสมัคร</h2></center>
-	</div>	
+	</div>	 -->
 </body>
 </html>

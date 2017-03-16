@@ -44,8 +44,10 @@ if ($datad['day'] == 1) {
 	$day = "28 มีนาคม 2560";
 } elseif ($datad['day'] == 3) {
 	$day = "29 มีนาคม 2560";
-} else {
+} elseif ($datad['day'] == 4) {
 	$day = "30 มีนาคม 2560";
+} else {
+	$day = "";
 }
 
 $sql = 'SELECT * FROM history_ps WHERE id_history = '.$id_student.'';
@@ -148,11 +150,11 @@ if ($type == 1) {
 	if ($sType == 1) {
 		$subType = "<input type='radio' name='sType' class='rdo' value='1' checked>ในเขตพื้นที่บริการ สอบคัดเลือก";
 	} elseif ($sType == 2) {
-		$subType = "<input type='radio' name='sType' class='rdo' value='2' checked>ในเขตพื้นที่บริการ ความสามารถพิเศษกีฬา";
+		$subType = "<input type='radio' name='sType' class='rdo' value='2' checked>ในเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ";
 	} elseif ($sType == 3) {
 		$subType = "<input type='radio' name='sType' class='rdo' value='3' checked>นอกเขตพื้นที่บริการ สอบคัดเลือก";
 	} else {
-		$subType = "<input type='radio' name='sType' class='rdo' value='4' checked>นอกเขตพื้นที่บริการ ความสามารถพิเศษกีฬา";
+		$subType = "<input type='radio' name='sType' class='rdo' value='4' checked>นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ";
 	}
 } elseif ($type == 4) {
 	$headerType = "English Program (EP)";
@@ -916,7 +918,7 @@ $html = '
 			</tr>
 		</table>
 	</td></tr></table>
-	<strong>'.$text15.'</strong>
+	'.$text15.'
 	<table width="710" border="1"><tr><td>
 		<table width="710">
 			<tr>

@@ -81,126 +81,6 @@ include('config.php');
 			</div>
 		</div>
 
-		<div class="container" id="calendar" style="margin-top:30px;">
-			<div class="col-md-4">
-				<h1 style="color:#0000b9;">ปฏิทินการรับสมัคร</h1>
-			</div>
-			<div class="col-md-12">
-				<table class="table table-bordered table-inverse">
-					<thead>
-						<tr class="bg-danger">
-							<th width="25%">ระดับชั้น มัธยมศึกษาปีที่ 1 (490)</th>
-							<th width="11.5%">รับสมัคร</th>
-							<th width="11.5%">สอบ/คัดเลือก</th>
-							<th width="11.5%">สอบสัมภาษณ์</th>
-							<th width="11.5%">ประกาศผล</th>
-							<th width="11.5%">รายงานตัว</th>
-							<th width="11.5%">มอบตัว</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr class="bg-warning">
-							<th width="25%">
-							โครงการ EP (90 คน)
-							</th>
-							<th width="11.5%">20-24 ก.พ. 2560</th>
-							<th width="11.5%">4 มี.ค. 2560</th>
-							<th width="11.5%">7 มี.ค. 2560</th>
-							<th width="11.5%">9 มี.ค. 2560</th>
-							<th width="11.5%">9 มี.ค. 2560</th>
-							<th width="11.5%">18 มี.ค. 2560</th>
-						</tr>
-						<tr class="bg-warning">
-							<th width="25%">ความสามารถพิเศษ</th>
-							<th width="11.5%">27-28 มี.ค. 2560</th>
-							<th width="11.5%">30 มี.ค. 2560</th>
-							<th width="11.5%">-</th>
-							<th width="11.5%">31 มี.ค. 2560</th>
-							<th width="11.5%">31 มี.ค. 2560</th>
-							<th width="11.5%">19 เม.ย. 2560</th>
-						</tr>
-						<tr class="bg-warning">
-							<th width="25%">ทั่วไป (ใน+นอกพื้นที่) สอบคัดเลือก (192 คน)</th>
-							<th width="11.5%">27-30 มี.ค. 2560</th>
-							<th width="11.5%">1 เม.ย. 2560</th>
-							<th width="11.5%">-</th>
-							<th width="11.5%">5 เม.ย. 2560</th>
-							<th width="11.5%">5 เม.ย. 2560</th>
-							<th width="11.5%">19 เม.ย. 2560</th>
-						</tr>
-						<tr class="bg-warning">
-							<th width="25%">ในเขตพื้นที่ (สอบ 128 คน)</th>
-							<th width="11.5%">27-30 มี.ค. 2560</th>
-							<th width="11.5%">1 เม.ย. 2560</th>
-							<th width="11.5%">-</th>
-							<th width="11.5%">5 เม.ย. 2560</th>
-							<th width="11.5%">5 เม.ย. 2560</th>
-							<th width="11.5%">19 เม.ย. 2560</th>
-						</tr>
-						<tr class="bg-warning">
-							<th width="25%">เงื่อนไขพิเศษ (70 คน)</th>
-							<th width="11.5%">27-30 มี.ค. 2560</th>
-							<th width="11.5%">1 เม.ย. 2560</th>
-							<th width="11.5%">-</th>
-							<th width="11.5%">5 เม.ย. 2560</th>
-							<th width="11.5%">5 เม.ย. 2560</th>
-							<th width="11.5%">19 เม.ย. 2560</th>
-						</tr>
-						<tr class="bg-danger">
-							<th width="25%">ระดับชั้น มัธยมศึกษาปีที่ 4 (420)</th>
-							<th width="11.5%">รับสมัคร</th>
-							<th width="11.5%">สอบ/คัดเลือก</th>
-							<th width="11.5%">สอบสัมภาษณ์</th>
-							<th width="11.5%">ประกาศผล</th>
-							<th width="11.5%">รายงานตัว</th>
-							<th width="11.5%">มอบตัว</th>
-						</tr>
-						<tr class="bg-warning">
-							<th width="25%">
-							โครงการ EP (30 คน),IEP (30 คน)
-							</th>
-							<th width="11.5%">20-24 ก.พ. 2560</th>
-							<th width="11.5%">5 มี.ค. 2560</th>
-							<th width="11.5%">8 มี.ค. 2560</th>
-							<th width="11.5%">10 มี.ค. 2560</th>
-							<th width="11.5%">10 มี.ค. 2560</th>
-							<th width="11.5%">18 มี.ค. 2560</th>
-						</tr>
-						<tr class="bg-warning">
-							<th width="25%">นักเรียนที่จบ ม.3
-							<br>
-							โรงเรียนโพธิสารพิทยากร (290 คน)
-							</th>
-							<th width="11.5%">1-30 ธ.ค. 2559</th>
-							<th width="11.5%">19 ม.ค. 2560</th>
-							<th width="11.5%">-</th>
-							<th width="11.5%">20 ก.พ. 2560</th>
-							<th width="11.5%">4 เม.ย. 2560</th>
-							<th width="11.5%">20 เม.ย. 2560</th>
-						</tr>
-						<tr class="bg-warning">
-							<th width="25%">นักเรียนที่จบ ม.3 จาก ร.ร.อื่น (30 คน)</th>
-							<th width="11.5%">27-30 มี.ค. 2560</th>
-							<th width="11.5%">2 เม.ย. 2560</th>
-							<th width="11.5%">-</th>
-							<th width="11.5%">6 เม.ย. 2560</th>
-							<th width="11.5%">6 เม.ย. 2560</th>
-							<th width="11.5%">20 เม.ย. 2560</th>
-						</tr>
-						<tr class="bg-warning">
-							<th width="25%">เงื่อนไขพิเศษ (40 คน)</th>
-							<th width="11.5%">27-30 มี.ค. 2560</th>
-							<th width="11.5%">2 เม.ย. 2560</th>
-							<th width="11.5%">-</th>
-							<th width="11.5%">6 เม.ย. 2560</th>
-							<th width="11.5%">6 เม.ย. 2560</th>
-							<th width="11.5%">20 เม.ย. 2560</th>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-
 		<div class="container" id="typeStudent" style="padding-top:30px; padding-bottom:30px;">
 			<div class="col-md-3" style="color:#0000b9; font-weight:bold;">
 				<h3>ประเภทการคัดเลือก</h3>
@@ -332,6 +212,126 @@ include('config.php');
 					</a>';
 				}
 				 ?>
+			</div>
+		</div>
+
+		<div class="container" id="calendar" style="margin-top:30px;">
+			<div class="col-md-4">
+				<h1 style="color:#0000b9;">ปฏิทินการรับสมัคร</h1>
+			</div>
+			<div class="col-md-12">
+				<table class="table table-bordered table-inverse">
+					<thead>
+						<tr class="bg-danger">
+							<th width="25%">ระดับชั้น มัธยมศึกษาปีที่ 1 (490)</th>
+							<th width="11.5%">รับสมัคร</th>
+							<th width="11.5%">สอบ/คัดเลือก</th>
+							<th width="11.5%">สอบสัมภาษณ์</th>
+							<th width="11.5%">ประกาศผล</th>
+							<th width="11.5%">รายงานตัว</th>
+							<th width="11.5%">มอบตัว</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="bg-warning">
+							<th width="25%">
+							โครงการ EP (90 คน)
+							</th>
+							<th width="11.5%">20-24 ก.พ. 2560</th>
+							<th width="11.5%">4 มี.ค. 2560</th>
+							<th width="11.5%">7 มี.ค. 2560</th>
+							<th width="11.5%">9 มี.ค. 2560</th>
+							<th width="11.5%">9 มี.ค. 2560</th>
+							<th width="11.5%">18 มี.ค. 2560</th>
+						</tr>
+						<tr class="bg-warning">
+							<th width="25%">ความสามารถพิเศษ</th>
+							<th width="11.5%">27-28 มี.ค. 2560</th>
+							<th width="11.5%">30 มี.ค. 2560</th>
+							<th width="11.5%">-</th>
+							<th width="11.5%">31 มี.ค. 2560</th>
+							<th width="11.5%">31 มี.ค. 2560</th>
+							<th width="11.5%">19 เม.ย. 2560</th>
+						</tr>
+						<tr class="bg-warning">
+							<th width="25%">ทั่วไป (ใน+นอกพื้นที่) สอบคัดเลือก (192 คน)</th>
+							<th width="11.5%">27-30 มี.ค. 2560</th>
+							<th width="11.5%">1 เม.ย. 2560</th>
+							<th width="11.5%">-</th>
+							<th width="11.5%">5 เม.ย. 2560</th>
+							<th width="11.5%">5 เม.ย. 2560</th>
+							<th width="11.5%">19 เม.ย. 2560</th>
+						</tr>
+						<tr class="bg-warning">
+							<th width="25%">ในเขตพื้นที่ (สอบ 128 คน)</th>
+							<th width="11.5%">27-30 มี.ค. 2560</th>
+							<th width="11.5%">1 เม.ย. 2560</th>
+							<th width="11.5%">-</th>
+							<th width="11.5%">5 เม.ย. 2560</th>
+							<th width="11.5%">5 เม.ย. 2560</th>
+							<th width="11.5%">19 เม.ย. 2560</th>
+						</tr>
+						<tr class="bg-warning">
+							<th width="25%">เงื่อนไขพิเศษ (70 คน)</th>
+							<th width="11.5%">27-30 มี.ค. 2560</th>
+							<th width="11.5%">1 เม.ย. 2560</th>
+							<th width="11.5%">-</th>
+							<th width="11.5%">5 เม.ย. 2560</th>
+							<th width="11.5%">5 เม.ย. 2560</th>
+							<th width="11.5%">19 เม.ย. 2560</th>
+						</tr>
+						<tr class="bg-danger">
+							<th width="25%">ระดับชั้น มัธยมศึกษาปีที่ 4 (420)</th>
+							<th width="11.5%">รับสมัคร</th>
+							<th width="11.5%">สอบ/คัดเลือก</th>
+							<th width="11.5%">สอบสัมภาษณ์</th>
+							<th width="11.5%">ประกาศผล</th>
+							<th width="11.5%">รายงานตัว</th>
+							<th width="11.5%">มอบตัว</th>
+						</tr>
+						<tr class="bg-warning">
+							<th width="25%">
+							โครงการ EP (30 คน),IEP (30 คน)
+							</th>
+							<th width="11.5%">20-24 ก.พ. 2560</th>
+							<th width="11.5%">5 มี.ค. 2560</th>
+							<th width="11.5%">8 มี.ค. 2560</th>
+							<th width="11.5%">10 มี.ค. 2560</th>
+							<th width="11.5%">10 มี.ค. 2560</th>
+							<th width="11.5%">18 มี.ค. 2560</th>
+						</tr>
+						<tr class="bg-warning">
+							<th width="25%">นักเรียนที่จบ ม.3
+							<br>
+							โรงเรียนโพธิสารพิทยากร (290 คน)
+							</th>
+							<th width="11.5%">1-30 ธ.ค. 2559</th>
+							<th width="11.5%">19 ม.ค. 2560</th>
+							<th width="11.5%">-</th>
+							<th width="11.5%">20 ก.พ. 2560</th>
+							<th width="11.5%">4 เม.ย. 2560</th>
+							<th width="11.5%">20 เม.ย. 2560</th>
+						</tr>
+						<tr class="bg-warning">
+							<th width="25%">นักเรียนที่จบ ม.3 จาก ร.ร.อื่น (30 คน)</th>
+							<th width="11.5%">27-30 มี.ค. 2560</th>
+							<th width="11.5%">2 เม.ย. 2560</th>
+							<th width="11.5%">-</th>
+							<th width="11.5%">6 เม.ย. 2560</th>
+							<th width="11.5%">6 เม.ย. 2560</th>
+							<th width="11.5%">20 เม.ย. 2560</th>
+						</tr>
+						<tr class="bg-warning">
+							<th width="25%">เงื่อนไขพิเศษ (40 คน)</th>
+							<th width="11.5%">27-30 มี.ค. 2560</th>
+							<th width="11.5%">2 เม.ย. 2560</th>
+							<th width="11.5%">-</th>
+							<th width="11.5%">6 เม.ย. 2560</th>
+							<th width="11.5%">6 เม.ย. 2560</th>
+							<th width="11.5%">20 เม.ย. 2560</th>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 
@@ -467,12 +467,12 @@ include('config.php');
 			<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count8; ?></h3></div>
 			<div class="col-md-5" style="color:#1c1c86;"></div>
 			<div class="col-md-5" style="color:#1c1c86;">
-				<h3>ในเขตพื้นที่บริการ ความสามารถพิเศษกีฬา</h3>
+				<h3>ในเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ</h3>
 			</div>
 			<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count9; ?></h3></div>
 			<div class="col-md-5" style="color:#1c1c86;"></div>
 			<div class="col-md-5" style="color:#1c1c86;">
-				<h3>นอกเขตพื้นที่บริการ ความสามารถพิเศษกีฬา</h3>
+				<h3>นอกเขตพื้นที่บริการ ความสามารถพิเศษศิลปะ</h3>
 			</div>
 			<div class="col-md-2" style="color:#e100e1;"><h3><?php echo $count10; ?></h3></div>
 
@@ -584,10 +584,10 @@ include('config.php');
 		</div>
 		<div class="container">
 			<!-- <center><img src="image/logoC.png" style="margin-top: 2vh; width:10vw;"><div style="margin-top: 2vh; font-size:5vw; color:#1c1c86;">ระบบสนับสนุนให้ใช้ Google Chrome</div></center> -->
-			<center><span style="font-size:5vw; color:red;">สำหรับผู้ที่เคยสมัครเรียนแล้ว ในรอบที่ผ่านมา มีความประสงค์สมัครเรียนใหม่ <br> ให้ทำการเข้าสู่ระบบ (Login) <br> โดยใช้ชื่อผู้ใช้งานคือเลขประชาชน และรหัสผ่านคือวันเดือนปีเกิด</span></center>
+			<center><span style="font-size:4.5vw; color:red;">สำหรับผู้ที่เคยสมัครเรียนแล้ว ในรอบที่ผ่านมา มีความประสงค์สมัครเรียนใหม่ <br> ให้ทำการเข้าสู่ระบบ (Login) <br> โดยใช้ชื่อผู้ใช้งานคือเลขประชาชน และรหัสผ่านคือวันเดือนปีเกิด</span></center>
 			<form action="login_process_2.php" method="post" name="form1">
 				<div class="col-xs-12" style="margin-top:2vh; color:#1c1c86;">
-					<center><h3>ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</h3></center>
+					<center><span style="font-size:4.5vw; color:#1c1c86;">สำหรับผู้ที่ไม่ได้สมัคร  ม.1 (EP) และ ม.4 (EP,IEP) ในรอบที่ผ่านมา <br> ให้ใช้ชื่อผูัใช้งาน (username) และรหัสผ่าน (password) <br> ที่โรงเรียนให้ไปพร้อมกับคู่มือการสมัคร</span></center>
 				</div>
 				<div class="login-phone">
 					<div class="col-xs-12">
@@ -614,13 +614,13 @@ include('config.php');
 					</div>	
 				</div>
 			</form>
-			<div class="col-xs-12" style="top: 45vh; position:relative; color:#1c1c86;">
+			<!-- <div class="col-xs-12" style="top: 45vh; position:relative; color:#1c1c86;">
 				<center>
 				<span style="font-size:4vw;">
 				ใช้ชื่อผูัใช้งาน (username) และรหัสผ่าน (password) ที่โรงเรียนให้ไปพร้อมกับคู่มือการสมัคร
 				<span>
 				</center>
-			</div>	
+			</div>	 -->
 		</div>
 
 	</div>
