@@ -36,7 +36,23 @@ if (empty($user) || empty($pass)) {
 	$id_user2 = $fetchData2['id_history'];
 	$status2 = $fetchData2['status'];
 
-	if ($countCheckOld == 1) {
+	if ($status == 7 || $status == 8 || $status == 9) {
+		$_SESSION['id_user'] = $id_user;
+		$_SESSION['status'] = $status;
+		if ($status == 7) {
+			echo "<script language='javascript'>";
+			echo "location='main_print.php';";
+			echo "</script>";
+		} elseif ($status == 9) {
+			echo "<script language='javascript'>";
+			echo "location='admin_ps.php';";
+			echo "</script>";
+		} elseif ($status == 8) {
+			echo "<script language='javascript'>";
+			echo "location='sup_admin_ps.php';";
+			echo "</script>";
+		} 			
+	}elseif ($countCheckOld == 1) {
 		$_SESSION['id_user'] = $id_user2;
 		$_SESSION['status'] = $status2;
 		if ($status2 != 0) {
@@ -60,14 +76,6 @@ if (empty($user) || empty($pass)) {
 		if ($status == 1) {
 			echo "<script language='javascript'>";
 			echo "location='form.php?type=".$type."';";
-			echo "</script>";
-		} elseif ($status == 9) {
-			echo "<script language='javascript'>";
-			echo "location='admin_ps.php';";
-			echo "</script>";
-		} elseif ($status == 8) {
-			echo "<script language='javascript'>";
-			echo "location='sup_admin_ps.php';";
 			echo "</script>";
 		} else {
 			echo "<script language='javascript'>";
