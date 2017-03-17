@@ -95,7 +95,7 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] == 0) {
 			<h4>ชื่อ <?php echo $frontName.$data['input4']." ".$data['input5']; ?></h4>
 		</div>
 		<div class="col-md-3">
-			<h4><?php echo $frontNameEng." ".$data['input6']." ".$data['input7']; ?></h4>
+			<h4><?php echo " ".$data['input6']." ".$data['input7']; ?></h4>
 		</div>
 
 		<div class="col-md-4">
