@@ -86,19 +86,10 @@ if (isset($_POST['type'])) {
 	mysql_query("SET NAMES utf8");
 	$query = mysql_query($sql);
 
-	$sqlSearch = "SELECT * FROM history_ps WHERE input2 = $input2";
-	$querySearch = mysql_query($sqlSearch);
-	$dataID = mysql_fetch_array($querySearch);
-	$dataIDps = $dataID['id_history'];
-	$passPS = $input11.$input12.$input13;
-
-	$sqlUser = "INSERT INTO user_ps VALUES($dataIDps,'$input2','$passPS',1);";
-	$queryUser = mysql_query($sqlUser);
-
-	$sql2 = "INSERT INTO `group_type` (`id_group_type`, `id_student_group`,`class_exam`, `score`, `status`) VALUES ('$dataIDps', '$groupType', '$class_exam', NULL, 1);";
+	$sql2 = "INSERT INTO `group_type` (`id_group_type`, `id_student_group`,`class_exam`, `date`, `status`) VALUES ('$dataIDps', '$groupType', '$class_exam', '$date', 1);";
 	$query2 = mysql_query($sql2);
 
-	if ($query AND $queryUser AND $query2) {
+	if ($query AND $query2) {
 		$alert = "เพิ่มข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร เรียบร้อย";
 	} else {
 		$alert = "เพิ่มข้อมูลไม่สำเร็จ กรุณาติดต่อผู้ดูแลระบบ";

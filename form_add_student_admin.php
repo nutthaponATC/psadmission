@@ -200,7 +200,7 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 8) {
 				<a style="color:white;" href="index.php"><span style="font-size:22px; margin-top:10px; float:left; margin-left:10px;">ระบบบันทึกข้อมูลแจ้งความประสงค์เข้าศึกษาต่อโรงเรียนโพธิสารพิทยากร</span></a>
 			</div>
 			<div class="col-md-1">
-				<a href="index.php">
+				<a href="sup_admin_ps.php">
 					<h4 style="margin-top:15px; color:white; float:left; padding-left:5px;">หน้าแรก</h4>
 				</a>
 			</div>

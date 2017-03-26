@@ -86,19 +86,14 @@ if ($num == 1) {
 	echo "javascript:history.back()";
 	echo "</script>";
 } else {
-	$sql = "INSERT INTO `group_type` (`id_group_type`, `id_student_group`,`class_exam`, `score`, `status`) VALUES ('$id_student', '$groupType', '$class_exam', NULL, 1);";
+	$date = date("Y/m/d");
+	$sql = "INSERT INTO `group_type` (`id_group_type`, `id_student_group`,`class_exam`, `date`, `status`) VALUES ('$id_student', '$groupType', '$class_exam', '$date', 1);";
 	$query = mysql_query($sql);
 
 	$sql2 ="UPDATE `history_ps` SET `stype` = '$sType', `radio1` = '$radio1', `radio2` = '$radio2', `radio3` = '$radio3', `radio4` = '$radio4', `radio5` = '$radio5', `radio6` = '$radio6', `radio7` = '$radio7', `radio8` = '$radio8', `radio9` = '$radio9', `radio10` = '$radio10', `radio11` = '$radio11', `radio12` = '$radio12', `radio13` = '$radio13', `input1` = '$input1', `input2` = '$input2', `input3` = '$input3', `input4` = '$input4', `input5` = '$input5 ', `input6` = '$input6', `input7` = '$input7', `input8` = '$input8', `input9` = '$input9', `input10` = '$input10', `input11` = '$input11', `input12` = '$input12', `input13` = '$input13', `input14` = '$input14', `input15` = '$input15', `input16` = '$input16', `input17` = '$input17', `input18` = '$input18', `input19` = '$input19', `input20` = '$input20', `input21` = '$input21', `input22` = '$input22', `input23` = '$input23', `input24` = '$input24', `input25` = '$input25', `input26` = '$input26', `input27` = '$input27', `input28` = '$input28', `input29` = '$input29', `input30` = '$input30', `input31` = '$input31', `input32` = '$input32', `input33` = '$input33', `input34` = '$input34', `input35` = '$input35', `input36` = '$input36', `input37` = '$input37', `input38` = '$input38', `input39` = '$input39', `input40` = '$input40', `input41` = '$input41', `input42` = '$input42', `input43` = '$input43', `input44` = '$input44', `input45` = '$input45', `input46` = '$input46', `input47` = '$input47', `input48` = '$input48', `input49` = '$input49', `input50` = '$input50', `input51` = '$input51', `input52` = '$input52', `input53` = '$input53', `input54` = '$input54', `input55` = '$input55', `num_old` = '$input56' , `status` = 2 WHERE `history_ps`.`id_history` = $id_student;";
 	$query2 = mysql_query($sql2);
 
-	$passPS = $input11.$input12.$input13;
-
-	$sql3 ="UPDATE `user_ps` SET `username` = '$input2', `password` = '$passPS' WHERE `user_ps`.`id_user` = $id_student;";
-	mysql_query("SET NAMES utf8");
-	$query3 = mysql_query($sql3);
-
-	if ($query AND $query2 AND $query3) {
+	if ($query AND $query2) {
 		echo "<script language='javascript'>";
 		echo "alert('บันทึกข้อมูลเรียบร้อย');";
 		echo "location='form_sup_admin.php?id_student=$id_student';";

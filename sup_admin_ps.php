@@ -52,10 +52,10 @@ if (empty($_SESSION['id_user']) OR $_SESSION['status'] != 8) {
 		</div>
 	</div>
 
-	<div class="container">
+	<!-- <div class="container">
 	 	<div class="col-md-4"><a href="add_student_admin.php"><h2>ระบบเพิ่มข้อมูลนักเรียน</h2></a>
 	 	</div>
-	 </div>
+	 </div> -->
 
 	<div class="container" style="margin-top:20px;">
 	 <table id="example" class="display" style="font-size: 20px;" cellspacing="0" width="100%">
